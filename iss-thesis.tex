@@ -70,8 +70,8 @@
 % Language: 
 % affects generic titles, Figure term, titlepage and bibliography
 % (Note:if you switch the language, compile tex and bib >2 times)
-%\def \doclang{english} 	% For theses/reports in English
-\def \doclang{german} 		% For theses/reports in German
+\def \doclang{english} 	% For theses/reports in English
+%\def \doclang{german} 		% For theses/reports in German
 
 % Hyperref links in the document:
 \def \colortype{color} % links with colored text
@@ -280,7 +280,7 @@ Pro-gramm-aus-schnitt Mi-kro-fon-sig-nal}
 
 \chapter{Introduction}
 \section{Explanations}
-As shown in \cite{C2}, we present an equation
+As shown in \cite{Cx}, we present an equation
 \begin{align}
 	H(\omega) = \int h(t) \e{\im\omega t} \delta t \in \N
 \end{align}
@@ -312,6 +312,83 @@ Lorem ipsum dolor sit amet, consetetur sadipscing elitr, sed diam nonumy eirmod 
 \newpage
 Lorem ipsum dolor sit amet, consetetur sadipscing elitr, sed diam nonumy eirmod tempor invidunt ut labore et dolore magna aliquyam erat, sed diam voluptua. At vero eos et accusam et justo duo dolores et ea rebum. Stet clita kasd gubergren, no sea takimata sanctus est Lorem ipsum dolor sit amet. Lorem ipsum dolor sit amet, consetetur sadipscing elitr, sed diam nonumy eirmod tempor invidunt ut labore et dolore magna aliquyam erat, sed diam voluptua. At vero eos et accusam et justo duo dolores et ea rebum. Stet clita kasd gubergren, no sea takimata sanctus est Lorem ipsum dolor sit amet.
 
+\chapter{Background}
+\section{6 DoF Pose Estimation}
+\subsection{Definition}
+Six degree-of-freedom(DoF) pose refers to the six degrees of freedom of movement of a rigid body in three-dimensional space. Especially, it represents the freedom of a rigid body to move in three perpendicular directions, called translations, and to rotate about three perpendicular axes, called rotations. This concept is widely applied in the industial and automotive field to measure and analyize the spacial properties of objects.
+
+In domain of computer vision and robotics, 6 DoF pose estimation is a fundamental task that aims to estimate the 3D translation $t=(t_{x} ,t_{y} ,t_{z} )$ and rotation $R=(\Phi_{x} ,\Phi_{y} ,\Phi_{z} )$ of an object related to a canonical coordinate system using the sensor input, such as RGB or RGB-D data.\cite{peng_pvnet_2019}
+The object $M$ is typically a known 3D CAD model, consisting of a set of vertices $V=\{v_1,...,v_N\}$, with $v_i\in \mathbb{R}^3$ and $V\in \mathbb{R}^{3 \times N}$ and triangles $E=\{e_1,...,e_M\}$, with $e_i\in \mathbb{R}^3$ and $E\in \mathbb{R}^{3\times M}$ connecting the vertices. Furthermore, if the query image is a multi-object scenario with N objects $O=\{M_1,...,M_N\}$, we need to detect and estimate the pose of each object $M_i$ in the image.\cite{Fabian_2021}
+
+-----------------image here----------------
+\subsection{Representing 6 DoF Pose}
+6 DoF pose can be treated seperately as 3D translation and 3D rotation. The 3D translation is simply represented by 3 scalars along the X, Y, and Z axis of the canonical coordinate system. We can use either the deep learning methods to estimate the depth and the corresponding 2D projection from RGB images or even get the depth information fused from RGB-D data.\cite{DBLP:journals/corr/abs-1711-00199} After that, the object can be shifted back to the camera coordinate system by adding translation vector to the object vertices $V$
+\begin{align}
+  V^{'} = V + \textbf{t}
+\end{align}
+Similarly, the 3D rotation can be represented by 3 rotation matrics around the X, Y and Z axis. And rotating the object vertices $V$ by the rotation matrix $\textbf{R}_{i}$ with $i\in \{X,Y,Z\}$ can be achieved by multiplying them. Rotation around X axis is defined as
+\begin{align}
+  V^{'} = \textbf{R}_{X}(\Phi_{x})V = \begin{bmatrix}
+    1 & 0 & 0 \\
+    0 & cos(\Phi_{x}) & -sin(\Phi_{x}) \\
+    0 & sin(\Phi_{x}) & cos(\Phi_{x})
+  \end{bmatrix}V
+\end{align}
+Rotation matrix $\textbf{R}_{Y}$ and $\textbf{R}_{Z}$ can be defined repectively with
+\begin{align}
+  \textbf{R}_{Y}(\Phi_{y}) = \begin{bmatrix}
+    cos(\Phi_{y}) & 0 & sin(\Phi_{y}) \\
+    0 & 1 & 0 \\
+    -sin(\Phi_{y}) & 0 & cos(\Phi_{y})
+  \end{bmatrix}
+\end{align}
+\begin{align}
+  \textbf{R}_{Z}(\Phi_{z}) = \begin{bmatrix}
+    cos(\Phi_{z}) & -sin(\Phi_{z}) & 0 \\
+    sin(\Phi_{z}) & cos(\Phi_{z}) & 0 \\
+    0 & 0 & 1
+  \end{bmatrix}
+\end{align}
+The rotation matrix $\textbf{R}$ can be obtained by multiplying the three rotation matrices $\textbf{R}_{X}$, $\textbf{R}_{Y}$ and $\textbf{R}_{Z}$ together, but changing the order of the multiplication will result in different rotation matrix. The common order is defined a $Z-Y-X$ order, which means the rotation around X axis is performed first, then Y axis and finally Z axis. All possible rotations in 3D Euclidean space establish a natual manifold known as special orthognal group $\mathbb{S} \mathbb{O} (3)$.
+
+Togather with the translation vector $\textbf{t}$, the 6 DoF pose can be represented by a 4x4 transformation matrix $\textbf{T}$ as
+\begin{align}
+  \textbf{T} = \begin{bmatrix}
+    \textbf{R} & \textbf{t} \\
+    0 & 1
+  \end{bmatrix}
+  = \begin{bmatrix}
+    r_{11} & r_{12} & r_{13} & t_{1} \\
+    r_{21} & r_{22} & r_{23} & t_{2} \\
+    r_{31} & r_{32} & r_{33} & t_{3} \\
+    0 & 0 & 0 & 1
+  \end{bmatrix}
+  \in \mathbb{S} \mathbb{E} (3)
+\end{align}
+The partitioned transformation matrix with 3x3 rotation matrix $\textbf{R}$ and a column vector $\textbf{t}$ that represents the translation is also called homogeneous representation of a transformation. All possible transformation matrices of this form generate the special Euclidean group $\mathbb{S} \mathbb{E} (3)$
+\begin{align}
+  \mathbb{S} \mathbb{E} (3) = \{\textbf{T} = \begin{bmatrix}
+    \textbf{R} & \textbf{t} \\
+    0 & 1
+  \end{bmatrix}\in \mathbb{R}^{4 \times 4}| \textbf{R} \in \mathbb{S} \mathbb{O} (3), \textbf{t} \in \mathbb{R}^{3} \}
+\end{align}
+An alternative representation of 6 DoF pose is a 7-dimensional vector that consists of translation and rotation quaternion
+\begin{align}
+  \textbf{T} = (t_{x}, t_{y}, t_{z}, q_{w}, q_{x}, q_{y}, q_{z})^{T}
+\end{align}
+\subsection{Applications}
+\subsection{Challenges}
+
+
+\section{Generative Models}
+
+\chapter{Methodology}
+
+\chapter{Experiments}
+
+\chapter{Discussion}
+
+\chapter{Conclusion}
 
 \appendix
 \chapter{Additionally}
