@@ -315,18 +315,31 @@ Lorem ipsum dolor sit amet, consetetur sadipscing elitr, sed diam nonumy eirmod 
 \chapter{Background}
 \section{6 DoF Pose Estimation}
 \subsection{Definition}
-Six degree-of-freedom(DoF) pose refers to the six degrees of freedom of movement of a rigid body in three-dimensional space. Especially, it represents the freedom of a rigid body to move in three perpendicular directions, called translations, and to rotate about three perpendicular axes, called rotations. This concept is widely applied in the industial and automotive field to measure and analyize the spacial properties of objects.
+Six degree-of-freedom(DoF) pose refers to the six degrees of freedom of movement of a rigid body in three-dimensional space. 
+Especially, it represents the freedom of a rigid body to move in three perpendicular directions, called translations, and to rotate about three perpendicular axes, 
+called rotations. This concept is widely applied in the industial and automotive field to measure and analyize the spacial properties of objects.
 
-In domain of computer vision and robotics, 6 DoF pose estimation is a fundamental task that aims to estimate the 3D translation $t=(t_{x} ,t_{y} ,t_{z} )$ and rotation $R=(\Phi_{x} ,\Phi_{y} ,\Phi_{z} )$ of an object related to a canonical coordinate system using the sensor input, such as RGB or RGB-D data.\cite{peng_pvnet_2019}
-The object $M$ is typically a known 3D CAD model, consisting of a set of vertices $V=\{v_1,...,v_N\}$, with $v_i\in \mathbb{R}^3$ and $V\in \mathbb{R}^{3 \times N}$ and triangles $E=\{e_1,...,e_M\}$, with $e_i\in \mathbb{R}^3$ and $E\in \mathbb{R}^{3\times M}$ connecting the vertices. Furthermore, if the query image is a multi-object scenario with N objects $O=\{M_1,...,M_N\}$, we need to detect and estimate the pose of each object $M_i$ in the image.\cite{Fabian_2021}
+In domain of computer vision and robotics, 6 DoF pose estimation is a fundamental task that aims to estimate the 3D translation $t=(t_{x} ,t_{y} ,t_{z} )$ 
+and rotation $R=(\Phi_{x} ,\Phi_{y} ,\Phi_{z} )$ of an object related to a canonical coordinate system using the sensor input, such as RGB or RGB-D data\cite{peng_pvnet_2019}.
+The object $M$ is typically a known 3D CAD model, consisting of a set of vertices $V=\{v_1,...,v_N\}$, 
+with $v_i\in \mathbb{R}^3$ and $V\in \mathbb{R}^{3 \times N}$ and triangles $E=\{e_1,...,e_M\}$, 
+with $e_i\in \mathbb{R}^3$ and $E\in \mathbb{R}^{3\times M}$ connecting the vertices. 
+Furthermore, if the query image is a multi-object scenario with N objects $O=\{M_1,...,M_N\}$, 
+we need to detect and estimate the pose of each object $M_i$ in the image\cite{Fabian_2021}.
 
 -----------------image here----------------
 \subsection{Representing 6 DoF Pose}
-6 DoF pose can be treated seperately as 3D translation and 3D rotation. The 3D translation is simply represented by 3 scalars along the X, Y, and Z axis of the canonical coordinate system. We can use either the deep learning methods to estimate the depth and the corresponding 2D projection from RGB images or even get the depth information fused from RGB-D data.\cite{DBLP:journals/corr/abs-1711-00199} After that, the object can be shifted back to the camera coordinate system by adding translation vector to the object vertices $V$
+6 DoF pose can be treated seperately as 3D translation and 3D rotation. 
+The 3D translation is simply represented by 3 scalars along the X, Y, and Z axis of the canonical coordinate system. 
+We can use either the deep learning methods to estimate the depth and the corresponding 2D projection from RGB images 
+or even get the depth information fused from RGB-D data\cite{DBLP:journals/corr/abs-1711-00199}. 
+After that, the object can be shifted back to the camera coordinate system by adding translation vector to the object vertices $V$
 \begin{align}
   V^{'} = V + \textbf{t}
 \end{align}
-Similarly, the 3D rotation can be represented by 3 rotation matrics around the X, Y and Z axis. And rotating the object vertices $V$ by the rotation matrix $\textbf{R}_{i}$ with $i\in \{X,Y,Z\}$ can be achieved by multiplying them. Rotation around X axis is defined as
+Similarly, the 3D rotation can be represented by 3 rotation matrics around the X, Y and Z axis. 
+And rotating the object vertices $V$ by the rotation matrix $\textbf{R}_{i}$ with $i\in \{X,Y,Z\}$ can be achieved by multiplying them. 
+Rotation around X axis is defined as
 \begin{align}
   V^{'} = \textbf{R}_{X}(\Phi_{x})V = \begin{bmatrix}
     1 & 0 & 0 \\
@@ -349,7 +362,10 @@ Rotation matrix $\textbf{R}_{Y}$ and $\textbf{R}_{Z}$ can be defined repectively
     0 & 0 & 1
   \end{bmatrix}
 \end{align}
-The rotation matrix $\textbf{R}$ can be obtained by multiplying the three rotation matrices $\textbf{R}_{X}$, $\textbf{R}_{Y}$ and $\textbf{R}_{Z}$ together, but changing the order of the multiplication will result in different rotation matrix. The common order is defined a $Z-Y-X$ order, which means the rotation around X axis is performed first, then Y axis and finally Z axis. All possible rotations in 3D Euclidean space establish a natual manifold known as special orthognal group $\mathbb{S} \mathbb{O} (3)$.
+The rotation matrix $\textbf{R}$ can be obtained by multiplying the three rotation matrices $\textbf{R}_{X}$, $\textbf{R}_{Y}$ and $\textbf{R}_{Z}$ together, 
+but changing the order of the multiplication will result in different rotation matrix. The common order is defined a $Z-Y-X$ order, 
+which means the rotation around X axis is performed first, then Y axis and finally Z axis. All possible rotations in 3D Euclidean space establish 
+a natual manifold known as special orthognal group $\mathbb{S} \mathbb{O} (3)$\cite{hashim2019special}.
 
 Togather with the translation vector $\textbf{t}$, the 6 DoF pose can be represented by a 4x4 transformation matrix $\textbf{T}$ as
 \begin{align}
@@ -365,21 +381,75 @@ Togather with the translation vector $\textbf{t}$, the 6 DoF pose can be represe
   \end{bmatrix}
   \in \mathbb{S} \mathbb{E} (3)
 \end{align}
-The partitioned transformation matrix with 3x3 rotation matrix $\textbf{R}$ and a column vector $\textbf{t}$ that represents the translation is also called homogeneous representation of a transformation. All possible transformation matrices of this form generate the special Euclidean group $\mathbb{S} \mathbb{E} (3)$
+The partitioned transformation matrix with 3x3 rotation matrix $\textbf{R}$ and a column vector $\textbf{t}$ that represents the translation 
+is also called homogeneous representation of a transformation. All possible transformation matrices of this form generate the 
+special Euclidean group $\mathbb{S} \mathbb{E} (3)$
 \begin{align}
   \mathbb{S} \mathbb{E} (3) = \{\textbf{T} = \begin{bmatrix}
     \textbf{R} & \textbf{t} \\
     0 & 1
   \end{bmatrix}\in \mathbb{R}^{4 \times 4}| \textbf{R} \in \mathbb{S} \mathbb{O} (3), \textbf{t} \in \mathbb{R}^{3} \}
 \end{align}
-An alternative representation of 6 DoF pose is a 7-dimensional vector that consists of translation and rotation quaternion
+An alternative representation of 6 DoF pose is a 7-dimensional vector that consists of translation and rotation quaternion which has a compacter form
 \begin{align}
   \textbf{T} = (t_{x}, t_{y}, t_{z}, q_{w}, q_{x}, q_{y}, q_{z})^{T}
 \end{align}
+Where the quaternion $q$ is defined as
+\begin{align}
+  q = q_{w} + q_{x}i + q_{y}j + q_{z}k \quad \textrm{with} \quad i^{2} = j^{2} = k^{2} = ijk = -1
+\end{align}
+Normally, regressing the rotation matrix directly is not a common choice since the same rotation can be achieved via different combinations of Euler angles. 
+And the unit quaterion form is in many case prefered because it can ensure the uniqueness by restricting the quaterion on the upper hemisphere of $q_{w}=0$ plane 
+and can also guarantee a gimbal-lock free rotation in $\mathbb{S} \mathbb{O} (3)$\cite{9231126}. 
+However, rotation matrix is widely used in many dataset to represent the ground truth transformation. 
 \subsection{Applications}
+6 DoF pose estimation is a central technology that can be the critical part of many computer vision applications such as 
+augmented reality(AR), robotics, 3D scene understanding and autonomous driving.
+
+\subsubsection{Augmented Reality}
+AR applications use 6 DoF pose estimation to accurately place the virtual objects in the real world. 
+With precise estimation and quick inference of the pose guarantee a immersive and interactive experience 
+which is the direction of the development of AR applications\cite{9836663}. 
+Furthermore, 6 DoF pose estimation can also be utilized to track the real world objects, enabling more natural interactions.
+
+\subsubsection{Robotics}
+6 DoF pose estimation helps robots to understand the scene so that the grasping and manipulation of objects can be achieved. 
+In the field of medical robotics, it can be used to track the surgical instrument or a patient's body part\cite{cao20236impose}. 
+In manufacturing, robots use the estimated pose to identify, sort and assemble the objects in field like automatic logistic sorting and manufacturing line.
+
+\subsubsection{3D Scene Understanding}
+In order to register the 3D objects into the scene or reconstruct the 3D environment from 2D images or 3D point clouds, 6 DoF pose estimation is required. 
+The alignment of the 3D objects or 3D scenes is realized by estimating the rigid transformation using method like correspondance matching\cite{qin2022geometric} 
+or direct transformation estimation\cite{fu2021robust} follows the ideas of ICP\cite{Besl1992AMF}.
+
+\subsubsection{Autonomous Driving}
+Autonomous driving is also a cross-domain topic that requires many different technologies to work together. 
+A well estimated pose of the vehicle inside the scene is the basis of many other subtasks of autonomous driving such as collision avoidance,
+trajectory planning and so on. Subtle errors in the pose estimation may lead to fatal consequences\cite{auto}, because the vehicle move normally in high speed 
+and the heading direction cause a large deviation in a long distance considering also the reaction time of the vehicle.
 \subsection{Challenges}
+6 DoF pose is widely used in many applications and became a popular research topic of computer vision in recent years. 
+However, solving this problem is not trivial and even challenging in many cases.
 
+First constrain would be the auto-occlusion or symmetries of the object since the object cannot be clearly and unequivocally observed from all angles\cite{maru2022}.
+The auto-occlusion means that the object itself is partially occluded by other parts of the object such as LINEMOD-O dataset\cite{data_V4MUMX_2020}. 
+This is common in many real world objects such as table or chair. The symmetries of the object means that the object has same appearance from different angles, 
+which will cause ambiguity in the estimation such as T-LESS dataset\cite{hodan2017tless}. 
+Imagining an image of mug with the handle hidden behind it, it is hard to tell the orientation of the mug without the handle.
 
+Textureless object is also a challenge for 6 DoF pose estimation, since many methods rely not only on the geometry of the object but also on the texture. 
+It is hard for RGB-only methods\cite{kendall2016posenet} or keypoint based method\cite{pavlakos20176dof} to extract enough local features if the object is complete textureless.
+
+Another difficulty is the domain gap between the training and testing data. Normally, the training data consists of synthetic CAD models and images 
+which are clean and annotated with the ground truth pose in order to have a precise supervision. But lacking the information of the real world, 
+for example lighting and occlusion, the model trained on the synthetic data cannot generalize well to the real world data. 
+Some dataset provides the real world data or 3D rendered images which can reduce the domain gap in some degree\cite{hodan2019photorealistic}, 
+but the noise and unvalid training samples still confuse the model.
+
+If facing the multi-object scenario, which is common in the application like robotics and autonomous driving, 
+the unknown number and type of objects will increase the difficulty of pose estimation for each object in the scene.
+
+-----------------image here----------------
 \section{Generative Models}
 
 \chapter{Methodology}
