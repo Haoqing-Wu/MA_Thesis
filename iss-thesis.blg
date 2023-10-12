@@ -15,45 +15,45 @@ Warning--entry type for "dataV4MUMX2020" isn't style-file defined
 -- See the "IEEEtran_bst_HOWTO.pdf" manual for usage information.
 
 Done.
-You've used 30 entries,
+You've used 32 entries,
             4186 wiz_defined-function locations,
-            966 strings with 12526 characters,
-and the built_in function-call counts, 16280 in all, are:
-= -- 1158
-> -- 521
+            975 strings with 12767 characters,
+and the built_in function-call counts, 17037 in all, are:
+= -- 1219
+> -- 534
 < -- 56
-+ -- 263
-- -- 113
-* -- 723
-:= -- 2481
-add.period$ -- 62
-call.type$ -- 30
-change.case$ -- 30
++ -- 269
+- -- 116
+* -- 752
+:= -- 2623
+add.period$ -- 66
+call.type$ -- 32
+change.case$ -- 32
 chr.to.int$ -- 132
-cite$ -- 30
-duplicate$ -- 1277
-empty$ -- 1455
-format.name$ -- 138
-if$ -- 3659
+cite$ -- 32
+duplicate$ -- 1344
+empty$ -- 1529
+format.name$ -- 142
+if$ -- 3821
 int.to.chr$ -- 0
-int.to.str$ -- 30
-missing$ -- 294
-newline$ -- 121
-num.names$ -- 30
-pop$ -- 834
+int.to.str$ -- 32
+missing$ -- 307
+newline$ -- 129
+num.names$ -- 32
+pop$ -- 870
 preamble$ -- 1
 purify$ -- 0
 quote$ -- 2
-skip$ -- 1236
+skip$ -- 1297
 stack$ -- 0
-substring$ -- 337
-swap$ -- 871
+substring$ -- 339
+swap$ -- 909
 text.length$ -- 12
 text.prefix$ -- 0
 top$ -- 5
-type$ -- 30
+type$ -- 32
 warning$ -- 0
-while$ -- 49
-width$ -- 32
-write$ -- 268
+while$ -- 51
+width$ -- 34
+write$ -- 286
 (There was 1 warning)

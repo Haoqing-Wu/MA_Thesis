@@ -1,4 +1,4 @@
-This is pdfTeX, Version 3.141592653-2.6-1.40.25 (TeX Live 2023) (preloaded format=pdflatex 2023.10.5)  11 OCT 2023 18:50
+This is pdfTeX, Version 3.141592653-2.6-1.40.25 (TeX Live 2023) (preloaded format=pdflatex 2023.10.5)  12 OCT 2023 18:47
 entering extended mode
  restricted \write18 enabled.
  file:line:error style messages enabled.
@@ -705,51 +705,51 @@ chapter 2.
 [3
 
 
-] [4] [5] [6] [7] [8] [9] [10]
+] [4] [5] [6] [7] [8] [9] [10] [11] [12]
 chapter 3.
-[11
+[13
 
 
-] [12
+] [14
 
 
 ]
 chapter 4.
-[13] [14
-
-
-]
-chapter 5.
 [15] [16
 
 
 ]
-chapter 6.
+chapter 5.
 [17] [18
 
 
 ]
-chapter 7.
+chapter 6.
 [19] [20
 
 
 ]
-chapter A.
+chapter 7.
 [21] [22
+
+
+]
+chapter A.
+[23] [24
 
 
 ] (./iss-thesis.lof)
 \tf@lof=\write5
 \openout5 = `iss-thesis.lof'.
 
- [23] [24
+ [25] [26
 
 
 ] (./iss-thesis.lot)
 \tf@lot=\write6
 \openout6 = `iss-thesis.lot'.
 
- (./iss-thesis.bbl [25] [26
+ (./iss-thesis.bbl [27] [28
 
 
 ]
@@ -760,10 +760,10 @@ chapter without number
 ** WARNING: IEEEtran.bst: No hyphenation pattern has been
 ** loaded for the language `en'. Using the pattern for
 ** the default language instead.
-[27]) [28]
+[29]) [30]
 LaTeX Font Info:    Font shape `T1/txr/b/n' in size <20.74> not available
-(Font)              Font shape `T1/txr/bx/n' tried instead on input line 651.
- [29
+(Font)              Font shape `T1/txr/bx/n' tried instead on input line 723.
+ [31
 
 
 ] (./iss-thesis.aux)
@@ -771,18 +771,18 @@ Package rerunfilecheck Info: File `iss-thesis.out' has not changed.
 (rerunfilecheck)             Checksum: D41D8CD98F00B204E9800998ECF8427E;0.
  ) 
 Here is how much of TeX's memory you used:
- 17231 strings out of 476025
- 325607 string characters out of 5790017
- 1872388 words of memory out of 5000000
- 37282 multiletter control sequences out of 15000+600000
- 583705 words of font info for 158 fonts, out of 8000000 for 9000
+ 17297 strings out of 476025
+ 326419 string characters out of 5790017
+ 1875388 words of memory out of 5000000
+ 37316 multiletter control sequences out of 15000+600000
+ 596854 words of font info for 196 fonts, out of 8000000 for 9000
  1145 hyphenation exceptions out of 8191
  108i,20n,106p,10680b,609s stack positions out of 10000i,1000n,20000p,200000b,200000s
-</usr/local/texlive/2023/texmf-dist/fonts/type1/public/txfonts/rtxb.pfb></usr/local/texlive/2023/texmf-dist/fonts/type1/public/txfonts/rtxi.pfb></usr/local/texlive/2023/texmf-dist/fonts/type1/public/txfonts/rtxmi.pfb></usr/local/texlive/2023/texmf-dist/fonts/type1/public/txfonts/rtxr.pfb></usr/local/texlive/2023/texmf-dist/fonts/type1/public/txfonts/rtxr.pfb></usr/local/texlive/2023/texmf-dist/fonts/type1/public/txfonts/t1xtt.pfb></usr/local/texlive/2023/texmf-dist/fonts/type1/public/txfonts/txex.pfb></usr/local/texlive/2023/texmf-dist/fonts/type1/public/txfonts/txsy.pfb></usr/local/texlive/2023/texmf-dist/fonts/type1/public/txfonts/txsyb.pfb></usr/local/texlive/2023/texmf-dist/fonts/type1/urw/times/utmb8a.pfb></usr/local/texlive/2023/texmf-dist/fonts/type1/urw/times/utmr8a.pfb></usr/local/texlive/2023/texmf-dist/fonts/type1/urw/times/utmr8a.pfb></usr/local/texlive/2023/texmf-dist/fonts/type1/urw/times/utmri8a.pfb>
-Output written on iss-thesis.pdf (33 pages, 190405 bytes).
+</usr/local/texlive/2023/texmf-dist/fonts/type1/public/txfonts/rtxb.pfb></usr/local/texlive/2023/texmf-dist/fonts/type1/public/txfonts/rtxbmi.pfb></usr/local/texlive/2023/texmf-dist/fonts/type1/public/txfonts/rtxi.pfb></usr/local/texlive/2023/texmf-dist/fonts/type1/public/txfonts/rtxmi.pfb></usr/local/texlive/2023/texmf-dist/fonts/type1/public/txfonts/rtxr.pfb></usr/local/texlive/2023/texmf-dist/fonts/type1/public/txfonts/rtxr.pfb></usr/local/texlive/2023/texmf-dist/fonts/type1/public/txfonts/t1xtt.pfb></usr/local/texlive/2023/texmf-dist/fonts/type1/public/txfonts/txex.pfb></usr/local/texlive/2023/texmf-dist/fonts/type1/public/txfonts/txexa.pfb></usr/local/texlive/2023/texmf-dist/fonts/type1/public/txfonts/txsy.pfb></usr/local/texlive/2023/texmf-dist/fonts/type1/public/txfonts/txsyb.pfb></usr/local/texlive/2023/texmf-dist/fonts/type1/urw/times/utmb8a.pfb></usr/local/texlive/2023/texmf-dist/fonts/type1/urw/times/utmr8a.pfb></usr/local/texlive/2023/texmf-dist/fonts/type1/urw/times/utmr8a.pfb></usr/local/texlive/2023/texmf-dist/fonts/type1/urw/times/utmri8a.pfb>
+Output written on iss-thesis.pdf (35 pages, 205498 bytes).
 PDF statistics:
- 483 PDF objects out of 1000 (max. 8388607)
- 415 compressed objects within 5 object streams
- 137 named destinations out of 1000 (max. 500000)
+ 526 PDF objects out of 1000 (max. 8388607)
+ 452 compressed objects within 5 object streams
+ 151 named destinations out of 1000 (max. 500000)
  195 words of extra memory for PDF output out of 10000 (max. 10000000)
 

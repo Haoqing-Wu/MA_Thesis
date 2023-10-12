@@ -324,8 +324,8 @@ Six degree-of-freedom(DoF) pose refers to the six degrees of freedom of movement
 Especially, it represents the freedom of a rigid body to move in three perpendicular directions, called translations, and to rotate about three perpendicular axes, 
 called rotations. This concept is widely applied in the industial and automotive field to measure and analyize the spacial properties of objects.
 
-In domain of computer vision and robotics, 6 DoF pose estimation is a fundamental task that aims to estimate the 3D translation $t=(t_{x} ,t_{y} ,t_{z} )$ 
-and rotation $R=(\Phi_{x} ,\Phi_{y} ,\Phi_{z} )$ of an object related to a canonical coordinate system using the sensor input, such as RGB or RGB-D data\cite{peng_pvnet_2019}.
+In domain of computer vision and robotics, 6 DoF pose estimation is a fundamental task that aims to estimate the 3D translation $\mathbf{t}=(t_{x} ,t_{y} ,t_{z} )$ 
+and rotation $\mathbf{R}=(\Phi_{x} ,\Phi_{y} ,\Phi_{z} )$ of an object related to a canonical coordinate system using the sensor input, such as RGB or RGB-D data\cite{peng_pvnet_2019}.
 The object $M$ is typically a known 3D CAD model, consisting of a set of vertices $V=\{v_1,...,v_N\}$, 
 with $v_i\in \mathbb{R}^3$ and $V\in \mathbb{R}^{3 \times N}$ and triangles $E=\{e_1,...,e_M\}$, 
 with $e_i\in \mathbb{R}^3$ and $E\in \mathbb{R}^{3\times M}$ connecting the vertices. 
@@ -340,42 +340,42 @@ We can use either the deep learning methods to estimate the depth and the corres
 or even get the depth information fused from RGB-D data\cite{DBLP:journals/corr/abs-1711-00199}. 
 After that, the object can be shifted back to the camera coordinate system by adding translation vector to the object vertices $V$
 \begin{align}
-  V^{'} = V + \textbf{t}
+  V^{'} = V + \mathbf{t}
 \end{align}
 Similarly, the 3D rotation can be represented by 3 rotation matrics around the X, Y and Z axis. 
-And rotating the object vertices $V$ by the rotation matrix $\textbf{R}_{i}$ with $i\in \{X,Y,Z\}$ can be achieved by multiplying them. 
+And rotating the object vertices $V$ by the rotation matrix $\mathbf{R}_{i}$ with $i\in \{X,Y,Z\}$ can be achieved by multiplying them. 
 Rotation around X axis is defined as
 \begin{align}
-  V^{'} = \textbf{R}_{X}(\Phi_{x})V = \begin{bmatrix}
+  V^{'} = \mathbf{R}_{X}(\Phi_{x})V = \begin{bmatrix}
     1 & 0 & 0 \\
     0 & cos(\Phi_{x}) & -sin(\Phi_{x}) \\
     0 & sin(\Phi_{x}) & cos(\Phi_{x})
   \end{bmatrix}V
 \end{align}
-Rotation matrix $\textbf{R}_{Y}$ and $\textbf{R}_{Z}$ can be defined repectively with
+Rotation matrix $\mathbf{R}_{Y}$ and $\mathbf{R}_{Z}$ can be defined repectively with
 \begin{align}
-  \textbf{R}_{Y}(\Phi_{y}) = \begin{bmatrix}
+  \mathbf{R}_{Y}(\Phi_{y}) = \begin{bmatrix}
     cos(\Phi_{y}) & 0 & sin(\Phi_{y}) \\
     0 & 1 & 0 \\
     -sin(\Phi_{y}) & 0 & cos(\Phi_{y})
   \end{bmatrix}
 \end{align}
 \begin{align}
-  \textbf{R}_{Z}(\Phi_{z}) = \begin{bmatrix}
+  \mathbf{R}_{Z}(\Phi_{z}) = \begin{bmatrix}
     cos(\Phi_{z}) & -sin(\Phi_{z}) & 0 \\
     sin(\Phi_{z}) & cos(\Phi_{z}) & 0 \\
     0 & 0 & 1
   \end{bmatrix}
 \end{align}
-The rotation matrix $\textbf{R}$ can be obtained by multiplying the three rotation matrices $\textbf{R}_{X}$, $\textbf{R}_{Y}$ and $\textbf{R}_{Z}$ together, 
+The rotation matrix $\mathbf{R}$ can be obtained by multiplying the three rotation matrices $\mathbf{R}_{X}$, $\mathbf{R}_{Y}$ and $\mathbf{R}_{Z}$ together, 
 but changing the order of the multiplication will result in different rotation matrix. The common order is defined a $Z-Y-X$ order, 
 which means the rotation around X axis is performed first, then Y axis and finally Z axis. All possible rotations in 3D Euclidean space establish 
 a natual manifold known as special orthognal group $\mathbb{S} \mathbb{O} (3)$\cite{hashim2019special}.
 
-Togather with the translation vector $\textbf{t}$, the 6 DoF pose can be represented by a 4x4 transformation matrix $\textbf{T}$ as
+Togather with the translation vector $\mathbf{t}$, the 6 DoF pose can be represented by a 4x4 transformation matrix $\mathbf{T}$ as
 \begin{align}
-  \textbf{T} = \begin{bmatrix}
-    \textbf{R} & \textbf{t} \\
+  \mathbf{T} = \begin{bmatrix}
+    \mathbf{R} & \mathbf{t} \\
     0 & 1
   \end{bmatrix}
   = \begin{bmatrix}
@@ -386,18 +386,18 @@ Togather with the translation vector $\textbf{t}$, the 6 DoF pose can be represe
   \end{bmatrix}
   \in \mathbb{S} \mathbb{E} (3)
 \end{align}
-The partitioned transformation matrix with 3x3 rotation matrix $\textbf{R}$ and a column vector $\textbf{t}$ that represents the translation 
+The partitioned transformation matrix with 3x3 rotation matrix $\mathbf{R}$ and a column vector $\mathbf{t}$ that represents the translation 
 is also called homogeneous representation of a transformation. All possible transformation matrices of this form generate the 
 special Euclidean group $\mathbb{S} \mathbb{E} (3)$
 \begin{align}
-  \mathbb{S} \mathbb{E} (3) = \{\textbf{T} = \begin{bmatrix}
-    \textbf{R} & \textbf{t} \\
+  \mathbb{S} \mathbb{E} (3) = \{\mathbf{T} = \begin{bmatrix}
+    \mathbf{R} & \mathbf{t} \\
     0 & 1
-  \end{bmatrix}\in \mathbb{R}^{4 \times 4}| \textbf{R} \in \mathbb{S} \mathbb{O} (3), \textbf{t} \in \mathbb{R}^{3} \}
+  \end{bmatrix}\in \mathbb{R}^{4 \times 4}| \mathbf{R} \in \mathbb{S} \mathbb{O} (3), \mathbf{t} \in \mathbb{R}^{3} \}
 \end{align}
 An alternative representation of 6 DoF pose is a 7-dimensional vector that consists of translation and rotation quaternion which has a compacter form
 \begin{align}
-  \textbf{T} = (t_{x}, t_{y}, t_{z}, q_{w}, q_{x}, q_{y}, q_{z})^{T}
+  \mathbf{T} = (t_{x}, t_{y}, t_{z}, q_{w}, q_{x}, q_{y}, q_{z})^{T}
 \end{align}
 Where the quaternion $q$ is defined as
 \begin{align}
@@ -561,56 +561,128 @@ it can synthesize highest-quality images than other generative models. This pote
 -----------------image here----------------
 
 \subsection{Theory and Fundamentals}
-In this section, we will introduce the detail of the diffusion model, the mathematical background in the forward process and the sampling process, and the training process.
-The extended version of the classic DDPM will also be briefly introduced.
+In this section, we will introduce the detail of the diffusion model, the mathematical background in the forward process and the sampling process, 
+and the conditional diffusion model. The extended version of the classic DDPM will also be briefly introduced.
 
 \subsubsection{Forward Process}
-Given an input data $x_{0}$ from the target data distribution $q(x)$, we first define a forward process that gradually adds Gaussian noise to 
-$x_{0}$ with variance $\beta_{t}\in (0, 1)$ at each step $t$ and finally get a sequence of noised data $x_{1},...,x_{T}$. 
+Given an input data $\mathbf{x}_{0}$ from the target data distribution $q(\mathbf{x})$, we first define a forward process that gradually adds Gaussian noise to 
+$\mathbf{x}_{0}$ with variance $\beta_{t}\in (0, 1)$ at each step $t$ and finally get a sequence of noised data $\mathbf{x}_{1},...,\mathbf{x}_{T}$. 
 At each step $t$, we have the new data $x_{t}$ with the conditional distribution $q(x_{t}|x_{t-1})$ defined as:
 \begin{align}
-  q(x_{t}|x_{t-1}) = \mathcal{N}(x_{t}; \sqrt{1-\beta_{t}}x_{t-1}, \beta_{t}\textbf{I})
+  q(\mathbf{x}_{t}|\mathbf{x}_{t-1}) = \mathcal{N}(\mathbf{x}_{t}; \sqrt{1-\beta_{t}}\mathbf{x}_{t-1}, \beta_{t}\mathbf{I})
 \end{align}
-where $q(x_{t}|x_{t-1})$ is a normal distribution with mean $\sqrt{1-\beta_{t}}x_{t-1}$ and variance $\beta_{t}\textbf{I}$. 
-Thus, we can derive the posterior distribution from the input data $x_{0}$ to $x_{T}$ in a tractable way:
+where $q(\mathbf{x}_{t}|\mathbf{x}_{t-1})$ is a normal distribution with mean $\sqrt{1-\beta_{t}}\mathbf{x}_{t-1}$ and variance $\beta_{t}\mathbf{I}$. 
+Thus, we can derive the posterior distribution from the input data $\mathbf{x}_{0}$ to $\mathbf{x}_{T}$ in a tractable way:
 \begin{align}
-  q(x_{1:T}|x_{0}) = \prod_{t=1}^{T}q(x_{t}|x_{t-1})
+  q(\mathbf{x}_{1:T}|\mathbf{x}_{0}) = \prod_{t=1}^{T}q(\mathbf{x}_{t}|\mathbf{x}_{t-1})
 \end{align}
 
 -----------------image here----------------
 
-Our goal is to track the noised data at an arbitrary step $t$ with a close-form posterior distribution $q(x_{t}|x_{0})$. 
-So the reparemeterization trick is introduced so that we don't need to calculate the $x_{t}$ iteratively from $t=0$.
+Our goal is to track the noised data at an arbitrary step $t$ with a close-form posterior distribution $q(\mathbf{x}_{t}|\mathbf{x}_{0})$. 
+So the reparemeterization trick is introduced so that we don't need to calculate the $\mathbf{x}_{t}$ iteratively from $t=0$.
 
 Let $\alpha_{t} = 1 - \beta_{t}$ and $\bar{\alpha}_{t} = \prod_{i=1}^{t}\alpha_{i}$ 
-with Gaussian noise $\epsilon_{0},...,\epsilon_{t-2},\epsilon_{t-1} \sim \mathcal{N}(0, \textbf{I})$,
-we can simplify the noised the data $x_{t}$ in such a recursive way:
+with Gaussian noise $\boldsymbol{\epsilon}_{0},...,\boldsymbol{\epsilon}_{t-2},\boldsymbol{\epsilon}_{t-1} \sim \mathcal{N}(0, \mathbf{I})$,
+we can simplify the noised the data $\mathbf{x}_{t}$ in such a recursive way:
 \begin{align*}
-  x_{t} &= \sqrt{\alpha_{t}}x_{t-1} + \sqrt{1-\alpha_{t}}\epsilon_{t-1}\\
-        &= \sqrt{\alpha_{t}}(\sqrt{\alpha_{t-1}}x_{t-2} + \sqrt{1-\alpha_{t-1}}\epsilon_{t-2}) + \sqrt{1-\alpha_{t}}\epsilon_{t-1}\\
-        &= \sqrt{\alpha_{t}\alpha_{t-1}}x_{t-2} + \sqrt{\alpha_{t}(1-\alpha_{t-1})}\epsilon_{t-2} + \sqrt{1-\alpha_{t}}\epsilon_{t-1}
+  \mathbf{x}_{t} &= \sqrt{\alpha_{t}}\mathbf{x}_{t-1} + \sqrt{1-\alpha_{t}}\boldsymbol{\epsilon}_{t-1}\\
+                 &= \sqrt{\alpha_{t}}(\sqrt{\alpha_{t-1}}\mathbf{x}_{t-2} + \sqrt{1-\alpha_{t-1}}\boldsymbol{\epsilon}_{t-2}) + \sqrt{1-\alpha_{t}}\boldsymbol{\epsilon}_{t-1}\\
+                 &= \sqrt{\alpha_{t}\alpha_{t-1}}\mathbf{x}_{t-2} + \sqrt{\alpha_{t}(1-\alpha_{t-1})}\boldsymbol{\epsilon}_{t-2} + \sqrt{1-\alpha_{t}}\boldsymbol{\epsilon}_{t-1}
 \end{align*}
-Notice that when we merge two Gaussian distributions with different variance, $\mathcal{N} (0, \sigma^{2}_{1}\textbf{I})$ and $\mathcal{N} (0, \sigma^{2}_{2}\textbf{I})$,
-the new merged distribution is $\mathcal{N} (0, (\sigma^{2}_{1} + \sigma^{2}_{2})\textbf{I})$. 
-So we can merge the second and third term in the equation above where $\bar{\epsilon}_{t-2}$ is the new distribution and get:
+Notice that when we merge two Gaussian distributions with different variance, $\mathcal{N} (0, \sigma^{2}_{1}\mathbf{I})$ and $\mathcal{N} (0, \sigma^{2}_{2}\mathbf{I})$,
+the new merged distribution is $\mathcal{N} (0, (\sigma^{2}_{1} + \sigma^{2}_{2})\mathbf{I})$. 
+So we can merge the second and third term in the equation above where $\bar{\boldsymbol{\epsilon}}_{t-2}$ is the new Gaussian and get:
 \begin{align}
-  x_{t} &= \sqrt{\alpha_{t}\alpha_{t-1}}x_{t-2} + \sqrt{\alpha_{t}(1-\alpha_{t-1})}\epsilon_{t-2} + \sqrt{1-\alpha_{t}}\epsilon_{t-1}\notag\\
-        &= \sqrt{\alpha_{t}\alpha_{t-1}}x_{t-2} + \sqrt{\alpha_{t}(1-\alpha_{t-1}) + (1-\alpha_{t})}\bar{\epsilon}_{t-2}\notag\\
-        &= \sqrt{\alpha_{t}\alpha_{t-1}}x_{t-2} + \sqrt{1-\alpha_{t}\alpha_{t-1}}\bar{\epsilon}_{t-2}\notag\\
-        &=...\notag\\
-        &= \sqrt{\bar{\alpha}_{t}}x_{0} + \sqrt{1-\bar{\alpha}_{t}}\epsilon
+  \mathbf{x}_{t} &= \sqrt{\alpha_{t}\alpha_{t-1}}\mathbf{x}_{t-2} + \sqrt{\alpha_{t}(1-\alpha_{t-1})}\boldsymbol{\epsilon}_{t-2} + \sqrt{1-\alpha_{t}}\boldsymbol{\epsilon}_{t-1}\notag\\
+                 &= \sqrt{\alpha_{t}\alpha_{t-1}}\mathbf{x}_{t-2} + \sqrt{\alpha_{t}(1-\alpha_{t-1}) + (1-\alpha_{t})}\bar{\boldsymbol{\epsilon}}_{t-2}\notag\\
+                 &= \sqrt{\alpha_{t}\alpha_{t-1}}\mathbf{x}_{t-2} + \sqrt{1-\alpha_{t}\alpha_{t-1}}\bar{\boldsymbol{\epsilon}}_{t-2}\notag\\
+                 &=...\notag\\
+                 &= \sqrt{\bar{\alpha}_{t}}\mathbf{x}_{0} + \sqrt{1-\bar{\alpha}_{t}}\boldsymbol{\epsilon}
+  \label{eq:xt_x0}
 \end{align}
-Finally, we can represent the sample $x_{t}$ with the following distribution:
+Finally, we can represent the sample $\mathbf{x}_{t}$ with the following distribution:
 \begin{align}
-  x_{t} \sim q(x_{t}|x_{0}) = \mathcal{N}(x_{t}; \sqrt{\bar{\alpha}_{t}}x_{0}, (1-\bar{\alpha}_{t})\textbf{I})
+  \mathbf{x}_{t} \sim q(\mathbf{x}_{t}|\mathbf{x}_{0}) = \mathcal{N}(\mathbf{x}_{t}; \sqrt{\bar{\alpha}_{t}}\mathbf{x}_{0}, (1-\bar{\alpha}_{t})\mathbf{I})
 \end{align}
-where $\alpha_{t}$ and $\bar{\alpha}_{t}$ can be precomputed for an arbitrary step $t$ and sample out noised variable $x_{t}$ from the distribution.
+where $\alpha_{t}$ and $\bar{\alpha}_{t}$ can be precomputed for any arbitrary step $t$ from $\beta_{t}$. 
+The variance hyperparemeter $\beta_{t}$ is normally chosen as a linear, quadratic or cosine schedule.
+The orginal design of DDPM used a linear schedule from $\beta_{1} = 10^{-4}$ to $\beta_{T} = 0.02$ which is also commonly used in other diffusion models.
 \subsubsection{Reverse Process}
+The purpose of the reverse process is to reverse the forward process above
+and recover the original data $\mathbf{x}_{0}$ from a random Gaussian noise $\mathbf{x}_{T} \sim \mathcal{N}(0, \mathbf{I})$. 
+Practically, the reverse conditional distribution is not directly tractable, because the computations involve the whole data distribtion.
+Therefore, we need to train a model $p_{\theta}(\mathbf{x}_{t-1}|\mathbf{x}_{t})$ to estimate the reverse conditional distribution $q(\mathbf{x}_{t-1}|\mathbf{x}_{t})$.
+Since the variance $\beta_{t}$ is small enough, $q(\mathbf{x}_{t-1}|\mathbf{x}_{t})$ can be treated as Gaussian distribution, 
+so does $p_{\theta}(\mathbf{x}_{t-1}|\mathbf{x}_{t})$, which can be defined as follow:
+\begin{align}
+  p_{\theta}(\mathbf{x}_{t-1}|\mathbf{x}_{t}) = \mathcal{N}(\mathbf{x}_{t-1}; \boldsymbol{\mu}_{\theta}(\mathbf{x}_{t},t), \mathbf{\Sigma}_{\theta}(\mathbf{x}_{t},t))
+  \label{eq:reverse}
+\end{align}
+Applying the estimated reverse conditional distribution for all timesteps we get:
+\begin{align}
+  p_{\theta}(\mathbf{x}_{0:T}) = p_{\theta}(\mathbf{x}_{T})\prod_{t=1}^{T}p_{\theta}(\mathbf{x}_{t-1}|\mathbf{x}_{t})
+  \label{eq:reverse_all}
+\end{align}
+The reverse conditional probability is only trackable when conditioned on $\mathbf{x}_{0}$:
+\begin{align}
+  q(\mathbf{x}_{t-1}|\mathbf{x}_{t},\mathbf{x}_{0}) = \mathcal{N} (\mathbf{x}_{t-1}; \boldsymbol{\tilde{\mu}}(\mathbf{x}_{t}, \mathbf{x}_{0}), \tilde{\beta}_{t}\mathbf{I})
+\end{align}
+With the help of Bayes' Rule and the properties of Gaussian probability density function, we can prove that:
+\begin{gather}
+  \tilde{\beta}_{t} = \frac{1-\tilde{\alpha}_{t-1}}{1-\tilde{\alpha_{t}}} \cdot  \beta_{t}\\
+  \boldsymbol{\tilde{\mu}}_{t} = \frac{\sqrt{\alpha_{t}}(1-\tilde{\alpha}_{t-1})}{1-\tilde{\alpha}_{t}}\mathbf{x_{t}} + \frac{\sqrt{\tilde{\alpha}_{t-1}}\beta_{t}}{1-\tilde{\alpha}_{t}}\mathbf{x_{0}}
+\end{gather}
+Thanks to the reparemeterization trick, we can represent $\mathbf{x_{0}} = \frac{1}{\sqrt{\alpha_{t}}}(\mathbf{x_{t}} - \sqrt{1-\tilde{\alpha_{t}}}\epsilon_{t})$ 
+from \ref{eq:xt_x0} and further simplify the expression of $\boldsymbol{\tilde{\mu}}$ as:
+\begin{align}
+  \boldsymbol{\tilde{\mu}}_{t} = \frac{1}{\sqrt{\alpha_{t}}}\left(\mathbf{x}_{t} - \frac{1-\alpha_{t}}{\sqrt{1-\tilde{\alpha}_{t}}}\epsilon_{t}\right)
+  \label{eq:mu_tilde}
+\end{align}
+Notice that such a setup of $p$ and $q$ is similar to VAEs, so we can optimize the negative log-likelihood using the variational bound:
+\begin{align}
+  -\log p_{\theta}(\mathbf{x}_{0}) &\leq -\log p_{\theta}(\mathbf{x}_{0}) + D_{KL}(q(\mathbf{x}_{1:T}|\mathbf{x}_{0})||p_{\theta}(\mathbf{x}_{1:T}|\mathbf{x}_{0}))\notag\\
+                                   &= -\log p_{\theta}(\mathbf{x}_{0}) + \mathbb{E}_{q}\left[\log\frac{q(\mathbf{x}_{1:T}|\mathbf{x}_{0})}{p_{\theta}(\mathbf{x}_{0:T})/p_{\theta}(\mathbf{x}_{0})}\right]\notag\\       
+                                   &= -\log p_{\theta}(\mathbf{x}_{0}) + \mathbb{E}_{q}\left[\log\frac{q(\mathbf{x}_{1:T}|\mathbf{x}_{0})}{p_{\theta}(\mathbf{x}_{0:T})} + \log p_{\theta}(\mathbf{x}_{0})\right]\notag\\
+                                   &= \mathbb{E}_{q}\left[\log\frac{q(\mathbf{x}_{1:T}|\mathbf{x}_{0})}{p_{\theta}(\mathbf{x}_{0:T})}\right] =: L             
+\end{align}
+To make the lower bound $L$ computable, the expression can be further rewritten after some manipulations in Appendix of \cite{ho2020denoising} as:
+\begin{align}
+  L = \mathbb{E}_{q}\left[\underbrace{D_{KL}(q(\mathbf{x}_{T}|\mathbf{x}_{0})||p_{\theta}(\mathbf{x}_{T}))}_{L_{T}} + \sum_{t=2}^{T}\underbrace{D_{KL}(q(\mathbf{x}_{t-1}|\mathbf{x}_{t})||p_{\theta}(\mathbf{x}_{t-1}|\mathbf{x}_{t}))}_{L_{t-1}} \underbrace{- \log p_{\theta}(\mathbf{x}_{0}|\mathbf{x}_{1})}_{L_{0}}\right]
+\end{align}
+Each term $L_{i}$ with $i\in \{0,...,T\}$ compares the forward and reverse conditional distributions at each timestep $i$ and in closed form,
+where $L_{T}$ is constant and can be ignored during training, $L_{0}$ is the reconstruction term and is learned using a seperate decoder in the original model\cite{weng2021diffusion}.
 
-\subsubsection{Training Process}
+The second term $L_{t-1}$ describe the difference of $p_{\theta}(\mathbf{x}_{t}|\mathbf{x}_{t-1})$ against the posteriors in forward process, 
+which we need to learn during the training process. Replace $t-1$ with $t$ and $t$ with $t+1$ in the equation above in order to express it in a natual way,
+we use $L_{t}$ in the following calculation.
 
+Revisit the reverse process from \ref{eq:reverse}, we need to train $\boldsymbol{\mu}_{\theta}$ to approximate $\boldsymbol{\tilde{\mu}}_{t}$ in \ref{eq:mu_tilde},
+where $\epsilon_{t}$ can be reparameterized as the prediction from the input $\mathbf{x}_{t}$ at time step $t$. 
+Finally, we can have the expression of the approximation of the mean:
+\begin{align}
+  \boldsymbol{\mu}_{\theta} = \frac{1}{\sqrt{\alpha_{t}}}\left(\mathbf{x}_{t} - \frac{1-\alpha_{t}}{\sqrt{1-\tilde{\alpha}_{t}}}\boldsymbol{\epsilon}_{\theta}(\mathbf{x}_{t}, t)\right)
+\end{align}
+The lost term $L_{t}$ can be formulated using $l_{2}$ distance:
+\begin{align}
+  L_{t} = \mathbb{E}_{\mathbf{x}_{0},\boldsymbol{\epsilon}}\left[\frac{1}{2 \left\lVert \mathbf{\Sigma}_{\theta}(\mathbf{x}_{t},t)\right\rVert_{2}^{2}}\left\lVert\boldsymbol{\tilde{\mu}}_{t}(\mathbf{x}_{t},\mathbf{x}_{0}) - \boldsymbol{\mu}_{\theta}(\mathbf{x}_{t},t) \right\rVert ^{2}\right]
+\end{align}
+which can be simplified ignoring the weighting term according to the original paper\cite{ho2020denoising} as:
+\begin{align}
+  L_{simple} = \mathbb{E}_{t\sim[1,T],\mathbf{x}_{0},\boldsymbol{\epsilon}}\left[\left\lVert\boldsymbol{\epsilon}_{t} - \boldsymbol{\epsilon}_{\theta}(\sqrt{\tilde{\alpha}_{t}}\mathbf{x}_{0} + \sqrt{1 - \tilde{\alpha}_{t}}\boldsymbol{\epsilon}_{t}, t)\right\rVert ^{2}\right] + C
+\end{align}
+where C is a constant term which not related to $\theta$ and can be ignored during training.  
+And we the variance is not considered in the loss function and it is improved in the later research\cite{nichol2021improved} 
+to let the network also learn the covariance matrix $\mathbf{\Sigma}_{\theta}$.
 \subsubsection{Conditional Diffusion Model}
+Conditional diffusion, also called guided diffusion is very practical in many applications 
+since we normally want to generate the data in paricular style, direction or distribution and not in an arbitrary way.
+Typical usage of conditional diffusion is to sample data from a given class or category, as well as text prompt, image prompt and so on.
 
+Mathematically, condition means the prior distribution $p(\mathbf{x})$ is conditioned on a given input $y$. Modifiy the equation \ref{eq:reverse_all}, we get
+\begin{align}
+  p_{\theta}(\mathbf{x}_{0:T}|y) = p_{\theta}(\mathbf{x}_{T})\prod_{t=1}^{T}p_{\theta}(\mathbf{x}_{t-1}|\mathbf{x}_{t},y)
+\end{align}
 \subsubsection{Extensions}
 
 \subsection{Applications}

@@ -118,4 +118,12 @@ A.~Nichol, P.~Dhariwal, A.~Ramesh, P.~Shyam, P.~Mishkin, B.~McGrew, I.~Sutskever
 \bibitem{ramesh2022hierarchical}
 A.~Ramesh, P.~Dhariwal, A.~Nichol, C.~Chu and M.~Chen, ``Hierarchical text-conditional image generation with clip latents,'' 2022.
 
+\bibitem{weng2021diffusion}
+\BIBentryALTinterwordspacing
+L.~Weng, ``What are diffusion models?'' \emph{lilianweng.github.io}, Jul 2021. [Online]. Available: \url{https://lilianweng.github.io/posts/2021-07-11-diffusion-models/}
+\BIBentrySTDinterwordspacing
+
+\bibitem{nichol2021improved}
+A.~Nichol and P.~Dhariwal, ``Improved denoising diffusion probabilistic models,'' 2021.
+
 \end{thebibliography}
