@@ -126,4 +126,75 @@ L.~Weng, ``What are diffusion models?'' \emph{lilianweng.github.io}, Jul 2021. [
 \bibitem{nichol2021improved}
 A.~Nichol and P.~Dhariwal, ``Improved denoising diffusion probabilistic models,'' 2021.
 
+\bibitem{song2020generative}
+Y.~Song and S.~Ermon, ``Generative modeling by estimating gradients of the data distribution,'' 2020.
+
+\bibitem{ho2022classifierfree}
+J.~Ho and T.~Salimans, ``Classifier-free diffusion guidance,'' 2022.
+
+\bibitem{yang2023diffusion}
+L.~Yang, Z.~Zhang, Y.~Song, S.~Hong, R.~Xu, Y.~Zhao, W.~Zhang, B.~Cui and M.-H. Yang, ``Diffusion models: A comprehensive survey of methods and applications,'' 2023.
+
+\bibitem{saharia2021image}
+C.~Saharia, J.~Ho, W.~Chan, T.~Salimans, D.~J. Fleet and M.~Norouzi, ``Image super-resolution via iterative refinement,'' \emph{arXiv:2104.07636}, 2021.
+
+\bibitem{ho2021cascaded}
+J.~Ho, C.~Saharia, W.~Chan, D.~J. Fleet, M.~Norouzi and T.~Salimans, ``Cascaded diffusion models for high fidelity image generation,'' \emph{arXiv preprint arXiv:2106.15282}, 2021.
+
+\bibitem{gao2023implicit}
+S.~Gao, X.~Liu, B.~Zeng, S.~Xu, Y.~Li, X.~Luo, J.~Liu, X.~Zhen and B.~Zhang, ``Implicit diffusion models for continuous super-resolution,'' 2023.
+
+\bibitem{lugmayr2022repaint}
+A.~Lugmayr, M.~Danelljan, A.~Romero, F.~Yu, R.~Timofte and L.~V. Gool, ``Repaint: Inpainting using denoising diffusion probabilistic models,'' 2022.
+
+\bibitem{saharia2022palette}
+C.~Saharia, W.~Chan, H.~Chang, C.~A. Lee, J.~Ho, T.~Salimans, D.~J. Fleet and M.~Norouzi, ``Palette: Image-to-image diffusion models,'' 2022.
+
+\bibitem{kwon2023diffusionbased}
+G.~Kwon and J.~C. Ye, ``Diffusion-based image translation using disentangled style and content representation,'' 2023.
+
+\bibitem{luo2021diffusion}
+S.~Luo and W.~Hu, ``Diffusion probabilistic models for 3d point cloud generation,'' 2021.
+
+\bibitem{zeng2022lion}
+X.~Zeng, A.~Vahdat, F.~Williams, Z.~Gojcic, O.~Litany, S.~Fidler and K.~Kreis, ``Lion: Latent point diffusion models for 3d shape generation,'' 2022.
+
+\bibitem{lyu2022conditional}
+Z.~Lyu, Z.~Kong, X.~Xu, L.~Pan and D.~Lin, ``A conditional point diffusion-refinement paradigm for 3d point cloud completion,'' 2022.
+
+\bibitem{devlin2019bert}
+J.~Devlin, M.-W. Chang, K.~Lee and K.~Toutanova, ``Bert: Pre-training of deep bidirectional transformers for language understanding,'' 2019.
+
+\bibitem{Radford2018ImprovingLU}
+\BIBentryALTinterwordspacing
+A.~Radford and K.~Narasimhan, ``Improving language understanding by generative pre-training,'' 2018. [Online]. Available: \url{https://api.semanticscholar.org/CorpusID:49313245}
+\BIBentrySTDinterwordspacing
+
+\bibitem{touvron2023llama}
+H.~Touvron, T.~Lavril, G.~Izacard, X.~Martinet, M.-A. Lachaux, T.~Lacroix, B.~Rozière, N.~Goyal, E.~Hambro, F.~Azhar, A.~Rodriguez, A.~Joulin, E.~Grave and G.~Lample, ``Llama: Open and efficient foundation language models,'' 2023.
+
+\bibitem{zou2023survey}
+H.~Zou, Z.~M. Kim and D.~Kang, ``A survey of diffusion models in natural language processing,'' 2023.
+
+\bibitem{austin2023structured}
+J.~Austin, D.~D. Johnson, J.~Ho, D.~Tarlow and R.~van~den Berg, ``Structured denoising diffusion models in discrete state-spaces,'' 2023.
+
+\bibitem{hoogeboom2021argmax}
+E.~Hoogeboom, D.~Nielsen, P.~Jaini, P.~Forré and M.~Welling, ``Argmax flows and multinomial diffusion: Learning categorical distributions,'' 2021.
+
+\bibitem{li2022diffusionlm}
+X.~L. Li, J.~Thickstun, I.~Gulrajani, P.~Liang and T.~B. Hashimoto, ``Diffusion-lm improves controllable text generation,'' 2022.
+
+\bibitem{radford2021learning}
+A.~Radford, J.~W. Kim, C.~Hallacy, A.~Ramesh, G.~Goh, S.~Agarwal, G.~Sastry, A.~Askell, P.~Mishkin, J.~Clark, G.~Krueger and I.~Sutskever, ``Learning transferable visual models from natural language supervision,'' 2021.
+
+\bibitem{rombach2022highresolution}
+R.~Rombach, A.~Blattmann, D.~Lorenz, P.~Esser and B.~Ommer, ``High-resolution image synthesis with latent diffusion models,'' 2022.
+
+\bibitem{zhang2023adding}
+L.~Zhang, A.~Rao and M.~Agrawala, ``Adding conditional control to text-to-image diffusion models,'' 2023.
+
+\bibitem{poole2022dreamfusion}
+B.~Poole, A.~Jain, J.~T. Barron and B.~Mildenhall, ``Dreamfusion: Text-to-3d using 2d diffusion,'' 2022.
+
 \end{thebibliography}

@@ -25,13 +25,16 @@
 \contentsline {subsubsection}{\nonumberline Conditional Diffusion Model}{12}{subsubsection*.27}%
 \contentsline {subsubsection}{\nonumberline Extensions}{12}{subsubsection*.29}%
 \contentsline {subsection}{\numberline {2.2.3}Applications}{12}{subsection.2.2.3}%
-\contentsline {chapter}{\numberline {3}Related Work}{13}{chapter.3}%
-\contentsline {chapter}{\numberline {4}Methodology}{15}{chapter.4}%
-\contentsline {chapter}{\numberline {5}Experiments}{17}{chapter.5}%
-\contentsline {chapter}{\numberline {6}Discussion}{19}{chapter.6}%
-\contentsline {chapter}{\numberline {7}Conclusion}{21}{chapter.7}%
-\contentsline {chapter}{\numberline {A}Additionally}{23}{appendix.A}%
-\contentsline {chapter}{\nonumberline List of Figures}{25}{chapter*.30}%
-\contentsline {chapter}{\nonumberline List of Tables}{27}{chapter*.31}%
-\contentsline {chapter}{\nonumberline Bibliography}{29}{chapter*.32}%
+\contentsline {subsubsection}{\nonumberline Computer Vision}{12}{subsubsection*.31}%
+\contentsline {subsubsection}{\nonumberline Natural Language Processing}{13}{subsubsection*.33}%
+\contentsline {subsubsection}{\nonumberline Multi-Modal Learning}{13}{subsubsection*.35}%
+\contentsline {chapter}{\numberline {3}Related Work}{15}{chapter.3}%
+\contentsline {chapter}{\numberline {4}Methodology}{17}{chapter.4}%
+\contentsline {chapter}{\numberline {5}Experiments}{19}{chapter.5}%
+\contentsline {chapter}{\numberline {6}Discussion}{21}{chapter.6}%
+\contentsline {chapter}{\numberline {7}Conclusion}{23}{chapter.7}%
+\contentsline {chapter}{\numberline {A}Additionally}{25}{appendix.A}%
+\contentsline {chapter}{\nonumberline List of Figures}{27}{chapter*.36}%
+\contentsline {chapter}{\nonumberline List of Tables}{29}{chapter*.37}%
+\contentsline {chapter}{\nonumberline Bibliography}{31}{chapter*.38}%
 \providecommand \tocbasic@end@toc@file {}\tocbasic@end@toc@file 

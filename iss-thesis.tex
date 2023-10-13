@@ -593,13 +593,12 @@ we can simplify the noised the data $\mathbf{x}_{t}$ in such a recursive way:
 Notice that when we merge two Gaussian distributions with different variance, $\mathcal{N} (0, \sigma^{2}_{1}\mathbf{I})$ and $\mathcal{N} (0, \sigma^{2}_{2}\mathbf{I})$,
 the new merged distribution is $\mathcal{N} (0, (\sigma^{2}_{1} + \sigma^{2}_{2})\mathbf{I})$. 
 So we can merge the second and third term in the equation above where $\bar{\boldsymbol{\epsilon}}_{t-2}$ is the new Gaussian and get:
-\begin{align}
+\begin{align}\label{eq:xt_x0}
   \mathbf{x}_{t} &= \sqrt{\alpha_{t}\alpha_{t-1}}\mathbf{x}_{t-2} + \sqrt{\alpha_{t}(1-\alpha_{t-1})}\boldsymbol{\epsilon}_{t-2} + \sqrt{1-\alpha_{t}}\boldsymbol{\epsilon}_{t-1}\notag\\
                  &= \sqrt{\alpha_{t}\alpha_{t-1}}\mathbf{x}_{t-2} + \sqrt{\alpha_{t}(1-\alpha_{t-1}) + (1-\alpha_{t})}\bar{\boldsymbol{\epsilon}}_{t-2}\notag\\
                  &= \sqrt{\alpha_{t}\alpha_{t-1}}\mathbf{x}_{t-2} + \sqrt{1-\alpha_{t}\alpha_{t-1}}\bar{\boldsymbol{\epsilon}}_{t-2}\notag\\
                  &=...\notag\\
-                 &= \sqrt{\bar{\alpha}_{t}}\mathbf{x}_{0} + \sqrt{1-\bar{\alpha}_{t}}\boldsymbol{\epsilon}
-  \label{eq:xt_x0}
+                 &= \sqrt{\bar{\alpha}_{t}}\mathbf{x}_{0} + \sqrt{1-\bar{\alpha}_{t}}\boldsymbol{\epsilon} 
 \end{align}
 Finally, we can represent the sample $\mathbf{x}_{t}$ with the following distribution:
 \begin{align}
@@ -615,14 +614,12 @@ Practically, the reverse conditional distribution is not directly tractable, bec
 Therefore, we need to train a model $p_{\theta}(\mathbf{x}_{t-1}|\mathbf{x}_{t})$ to estimate the reverse conditional distribution $q(\mathbf{x}_{t-1}|\mathbf{x}_{t})$.
 Since the variance $\beta_{t}$ is small enough, $q(\mathbf{x}_{t-1}|\mathbf{x}_{t})$ can be treated as Gaussian distribution, 
 so does $p_{\theta}(\mathbf{x}_{t-1}|\mathbf{x}_{t})$, which can be defined as follow:
-\begin{align}
+\begin{align}\label{eq:reverse}
   p_{\theta}(\mathbf{x}_{t-1}|\mathbf{x}_{t}) = \mathcal{N}(\mathbf{x}_{t-1}; \boldsymbol{\mu}_{\theta}(\mathbf{x}_{t},t), \mathbf{\Sigma}_{\theta}(\mathbf{x}_{t},t))
-  \label{eq:reverse}
 \end{align}
 Applying the estimated reverse conditional distribution for all timesteps we get:
-\begin{align}
+\begin{align}\label{eq:reverse_all}
   p_{\theta}(\mathbf{x}_{0:T}) = p_{\theta}(\mathbf{x}_{T})\prod_{t=1}^{T}p_{\theta}(\mathbf{x}_{t-1}|\mathbf{x}_{t})
-  \label{eq:reverse_all}
 \end{align}
 The reverse conditional probability is only trackable when conditioned on $\mathbf{x}_{0}$:
 \begin{align}
@@ -635,9 +632,8 @@ With the help of Bayes' Rule and the properties of Gaussian probability density 
 \end{gather}
 Thanks to the reparemeterization trick, we can represent $\mathbf{x_{0}} = \frac{1}{\sqrt{\alpha_{t}}}(\mathbf{x_{t}} - \sqrt{1-\tilde{\alpha_{t}}}\epsilon_{t})$ 
 from \ref{eq:xt_x0} and further simplify the expression of $\boldsymbol{\tilde{\mu}}$ as:
-\begin{align}
+\begin{align}\label{eq:mu_tilde}
   \boldsymbol{\tilde{\mu}}_{t} = \frac{1}{\sqrt{\alpha_{t}}}\left(\mathbf{x}_{t} - \frac{1-\alpha_{t}}{\sqrt{1-\tilde{\alpha}_{t}}}\epsilon_{t}\right)
-  \label{eq:mu_tilde}
 \end{align}
 Notice that such a setup of $p$ and $q$ is similar to VAEs, so we can optimize the negative log-likelihood using the variational bound:
 \begin{align}
@@ -679,13 +675,94 @@ Conditional diffusion, also called guided diffusion is very practical in many ap
 since we normally want to generate the data in paricular style, direction or distribution and not in an arbitrary way.
 Typical usage of conditional diffusion is to sample data from a given class or category, as well as text prompt, image prompt and so on.
 
-Mathematically, condition means the prior distribution $p(\mathbf{x})$ is conditioned on a given input $y$. Modifiy the equation \ref{eq:reverse_all}, we get
+Mathematically, condition means the prior distribution $p(\mathbf{x})$ is conditioned on a given input $y$. By modifiying the equation \ref{eq:reverse_all}, we get
 \begin{align}
   p_{\theta}(\mathbf{x}_{0:T}|y) = p_{\theta}(\mathbf{x}_{T})\prod_{t=1}^{T}p_{\theta}(\mathbf{x}_{t-1}|\mathbf{x}_{t},y)
 \end{align}
-\subsubsection{Extensions}
+Using the idea of the score-based generative model\cite{song2020generative}, we can train a score network for an unconditioned diffusion with score function:
+\begin{align}
+  \mathbf{s}_{\theta}(\mathbf{x}_{t}, t)\approx \nabla _{\mathbf{x}_{t}}\log p_{\theta}(\mathbf{x}_{t})
+\end{align}
+Extend the score function with condition $y$, we can get the conditional score function after applying Bayes' Rule:
+\begin{align}
+  \nabla _{\mathbf{x}_{t}}\log p_{\theta}(\mathbf{x}_{t}|y)=\nabla _{\mathbf{x}_{t}}\log p_{\theta}(\mathbf{x}_{t}) + \nabla _{\mathbf{x}_{t}}\log p_{\theta}(y|\mathbf{x}_{t})
+\end{align}
+Based on the score function we can derive the conditional diffusion model with two variations, namely the classifier guidance and classifier-free guidance.
 
+Classifier guidance is a method that balances the trade-off between mode coverage and sample fidelity post-training. 
+It combines the score estimate of a diffusion model with the gradient of an image classifier, 
+which requires training an classifier $f_{\phi}$ separate from the diffusion model and use the gradients of the classifier as the guidance.
+
+Without the an separate classifier $f_{\phi}$, it is still possible to let the conditional and unconditional score function share the same network, 
+which is called classifier-free guidance. The diffusion model is trained by randomly dropping the condition $y$ during training. 
+And the result turns out to be that the conditonal and unconditional score estimates are combined to attain a good tradeoff 
+between quality and diversity\cite{ho2022classifierfree}.
+\subsubsection{Extensions}
+---------------Add if needed----------------
 \subsection{Applications}
+
+\subsubsection{Computer Vision}
+The majority of the applications of diffusion models lies in the field of computer vision, 
+including super resolution, translation, inpainting and so on\cite{yang2023diffusion}.
+Diffusion models have shown a great performance in these 2D based manipulation tasks compared with other generative models such as GANs and VAEs.
+
+Super-Resolution via Repeated Refinement (SR3)\cite{saharia2021image} and Cascaded Diffusion Models (CDM)\cite{ho2021cascaded} 
+are two representative works in the field of super resolution. 
+They use either an iterative way or concatination of diffusion models to generate high-resolution image from low-resolution imput.
+Implicit Diffusion Models (IDM) for Continuous Super-Resolution\cite{gao2023implicit} integrates an implicit neural representation in the decoding process.
+
+Inpainting and image translation are also two popular image manipulation tasks with different conditional inputs. 
+Typical works are RePaint\cite{lugmayr2022repaint}, Palette\cite{saharia2022palette} 
+and Diffusion-based Image Translation using Disentangled Style and Content Representation\cite{kwon2023diffusionbased}.
+
+-----------------image here----------------
+
+In 3D domain, the diffusion model is also applied to the task of point cloud generation and completion. 
+Luo et al.2021\cite{luo2021diffusion} and Zeng et al.2022\cite{zeng2022lion} have presented the diffusion models for point cloud generation 
+by treating point clouds as particles in a thermodynamic system. 
+Lyu et al.2022\cite{lyu2022conditional} have proposed a coarse-to-fine point cloud completion diffusion model 
+and also established a point-wise mapping between the output and ground truth.
+
+-----------------image here----------------
+
+\subsubsection{Natural Language Processing}
+Natural language processing (NLP) has been dramatically developed in recent years. 
+The iconic models like BERT\cite{devlin2019bert}, GPT series\cite{Radford2018ImprovingLU} 
+and LLaMA\cite{touvron2023llama} are all based on the transformer architecture.
+However, there are also some diffusion based methods that can generate text with high quality and diversity.
+In fact, diffusion models have been shown to have significant advantages over autoregressive models in terms of parallel generation, 
+text interpolation, token-level controls such as syntactic structures and semantic contents, and robustness\cite{zou2023survey}.
+
+Discrete Denoising Diffusion Probabilistic Models (D3PMs)\cite{austin2023structured}, is diffusion-like generative models for discrete data 
+that generalize the multinomial diffusion model\cite{hoogeboom2021argmax}, by going beyond corruption processes with uniform transition probabilities. 
+
+Diffusion-LM\cite{li2022diffusionlm} proposes a non-autoregressive language model based on continuous diffusions, 
+which iteratively denoises a sequence of Gaussian vectors into word vectors, yielding a sequence of intermediate latent variables, 
+which makes it possible for simple, gradient-based methods to achieve complex control.
+\subsubsection{Multi-Modal Learning}
+Multi-modal learning is a field that combines different modalities such as text, image, video and audio.
+It tends to become the mainstream of the future research in the field o machine learning because of the higher requirement of the real-world applications.
+
+Text-to-Image generation is a typical task in this field. A common pipeline is to first train a prior model 
+that can generate image embedding conditioned on a text prompt,e.g. CLIP\cite{radford2021learning}.
+Then we use the prior output as condition to train a diffusion model to generate the final image.
+Famous works like Stable Diffusion\cite{rombach2022highresolution} and DALLE-2\cite{ramesh2022hierarchical} followed this pipeline 
+and achieved state-of-the-art results in text-to-image generation.
+
+-----------------image here----------------
+
+ControlNet\cite{zhang2023adding} attempts to control pre-trained large diffusion models to support additional semantic maps, 
+like edge maps, segmentation maps, keypoints, shape normals, depths, etc. 
+Authors use the "trainable copy" of the original weights of the pretrained diffusion model and connect these "copy" blocks with the original model
+with zero convolution layer. Thus, we don't need to retrain the whole model and also gaurentee the quality as well as the flexibility of the model.
+
+Text-to-3D generation and Image-to-3D are novel tasks in the field of multi-modal learning and 
+has the potential to be applied in many cases such as 3D object reconstruction, 3D scene generation and so on.
+DreamFusion\cite{poole2022dreamfusion} adopts a pre-trained 2D text-to-image diffusion model to perform text-to-3D synthesis. 
+It optimizes a randomly-initialized 3D model (a Neural Radiance Field, or NeRF) with a probability density distillation loss, 
+which utilizes a 2D diffusion model as a prior for optimization of a parametric image generator. 
+
+-----------------image here----------------
 
 \chapter{Related Work}
 
