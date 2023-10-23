@@ -42,6 +42,12 @@ H.~A. Hashim, ``Special orthogonal group so(3), euler angles, angle-axis, rodrig
 \bibitem{9231126}
 V.~Mansur, S.~Reddy, S.~R and R.~Sujatha, ``Deploying complementary filter to avert gimbal lock in drones using quaternion angles,'' in \emph{2020 IEEE International Conference on Computing, Power and Communication Technologies (GUCON)}, 2020, pp. 751--756.
 
+\bibitem{rodrigues}
+G.~Terzakis, M.~Lourakis and D.~Ait-Boudaoud, ``Modified rodrigues parameters: An efficient representation of orientation in 3d vision and graphics,'' \emph{Journal of Mathematical Imaging and Vision}, vol.~60, 03 2018.
+
+\bibitem{Zhou_2019_CVPR}
+Y.~Zhou, C.~Barnes, L.~Jingwan, Y.~Jimei and L.~Hao, ``On the continuity of rotation representations in neural networks,'' in \emph{The IEEE Conference on Computer Vision and Pattern Recognition (CVPR)}, June 2019.
+
 \bibitem{9836663}
 Y.~Zhu, M.~Li, W.~Yao and C.~Chen, ``A review of 6d object pose estimation,'' in \emph{2022 IEEE 10th Joint International Information Technology and Artificial Intelligence Conference (ITAIC)}, vol.~10, 2022, pp. 1647--1655.
 
@@ -196,5 +202,23 @@ L.~Zhang, A.~Rao and M.~Agrawala, ``Adding conditional control to text-to-image 
 
 \bibitem{poole2022dreamfusion}
 B.~Poole, A.~Jain, J.~T. Barron and B.~Mildenhall, ``Dreamfusion: Text-to-3d using 2d diffusion,'' 2022.
+
+\bibitem{ronneberger2015unet}
+O.~Ronneberger, P.~Fischer and T.~Brox, ``U-net: Convolutional networks for biomedical image segmentation,'' 2015.
+
+\bibitem{caron2021emerging}
+M.~Caron, H.~Touvron, I.~Misra, H.~J\'egou, J.~Mairal, P.~Bojanowski and A.~Joulin, ``Emerging properties in self-supervised vision transformers,'' in \emph{Proceedings of the International Conference on Computer Vision (ICCV)}, 2021.
+
+\bibitem{yang2018foldingnet}
+Y.~Yang, C.~Feng, Y.~Shen and D.~Tian, ``Foldingnet: Point cloud auto-encoder via deep grid deformation,'' 2018.
+
+\bibitem{121791}
+P.~Besl and N.~D. McKay, ``A method for registration of 3-d shapes,'' \emph{IEEE Transactions on Pattern Analysis and Machine Intelligence}, vol.~14, no.~2, pp. 239--256, 1992.
+
+\bibitem{vaswani2023attention}
+A.~Vaswani, N.~Shazeer, N.~Parmar, J.~Uszkoreit, L.~Jones, A.~N. Gomez, L.~Kaiser and I.~Polosukhin, ``Attention is all you need,'' 2023.
+
+\bibitem{dosovitskiy2021image}
+A.~Dosovitskiy, L.~Beyer, A.~Kolesnikov, D.~Weissenborn, X.~Zhai, T.~Unterthiner, M.~Dehghani, M.~Minderer, G.~Heigold, S.~Gelly, J.~Uszkoreit and N.~Houlsby, ``An image is worth 16x16 words: Transformers for image recognition at scale,'' 2021.
 
 \end{thebibliography}

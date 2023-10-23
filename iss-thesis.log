@@ -1,4 +1,4 @@
-This is pdfTeX, Version 3.141592653-2.6-1.40.25 (TeX Live 2023) (preloaded format=pdflatex 2023.10.5)  13 OCT 2023 16:30
+This is pdfTeX, Version 3.141592653-2.6-1.40.25 (TeX Live 2023) (preloaded format=pdflatex 2023.10.5)  23 OCT 2023 18:17
 entering extended mode
  restricted \write18 enabled.
  file:line:error style messages enabled.
@@ -681,17 +681,14 @@ File: t1txtt.fd 2000/12/15 v3.1
 {/usr/local/texlive/2023/texmf-var/fonts/map/pdftex/updmap/pdftex.map}{/usr/local/texlive/2023/texmf-dist/fonts/enc/dvips/base/8r.enc} <./university-logo-eps-converted-to.pdf> <./isslogocolor.pdf>] [2
 
 
-] (./iss-thesis.toc)
+] (./iss-thesis.toc [1
+
+
+])
 \tf@toc=\write4
 \openout4 = `iss-thesis.toc'.
 
- [1
-
-
-] [2
-
-
-]
+ [2]
 chapter 1.
 File: isslogocolor.pdf Graphic file (type pdf)
 <use isslogocolor.pdf>
@@ -700,56 +697,78 @@ Package pdftex.def Info: isslogocolor.pdf  used on input line 296.
 [1
 
 
+
+
 ] [2]
 chapter 2.
 [3
 
 
-] [4] [5] [6] [7] [8] [9] [10] [11] [12] [13] [14]
-chapter 3.
-[15
-
-
-] [16
+] [4] [5] [6] [7] [8] [9] [10] [11] [12] [13] [14] [15] [16
 
 
 ]
-chapter 4.
+chapter 3.
 [17] [18
 
 
 ]
+chapter 4.
+[19]
+<img/train.png, id=399, 1860.9525pt x 688.5725pt>
+File: img/train.png Graphic file (type png)
+<use img/train.png>
+Package pdftex.def Info: img/train.png  used on input line 713.
+(pdftex.def)             Requested size: 428.01007pt x 158.36833pt.
+ [20 <./img/train.png>]
+<img/sample.png, id=417, 1860.9525pt x 743.77875pt>
+File: img/sample.png Graphic file (type png)
+<use img/sample.png>
+Package pdftex.def Info: img/sample.png  used on input line 727.
+(pdftex.def)             Requested size: 428.01007pt x 171.0655pt.
+<img/denoiser.png, id=419, 1374.13374pt x 1136.245pt>
+File: img/denoiser.png Graphic file (type png)
+<use img/denoiser.png>
+Package pdftex.def Info: img/denoiser.png  used on input line 738.
+(pdftex.def)             Requested size: 412.2433pt x 340.87613pt.
+
+Underfull \vbox (badness 2205) has occurred while \output is active []
+
+ [21 <./img/sample.png>] [22 <./img/denoiser.png>] [23] [24
+
+
+]
 chapter 5.
-[19] [20
+[25] [26
 
 
 ]
 chapter 6.
-[21] [22
+[27] [28
 
 
 ]
 chapter 7.
-[23] [24
+[29] [30
 
 
 ]
 chapter A.
-[25] [26
+[31] [32
 
 
 ] (./iss-thesis.lof)
 \tf@lof=\write5
 \openout5 = `iss-thesis.lof'.
 
- [27] [28
+ [33] [34
 
 
 ] (./iss-thesis.lot)
 \tf@lot=\write6
 \openout6 = `iss-thesis.lot'.
 
- (./iss-thesis.bbl [29] [30
+ (./iss-thesis.bbl [35] [36
 
 
 ]
@@ -760,29 +779,29 @@ chapter without number
 ** WARNING: IEEEtran.bst: No hyphenation pattern has been
 ** loaded for the language `en'. Using the pattern for
 ** the default language instead.
-[31] [32]) [33] [34
-
-
-]
+[37] [38] [39]) [40]
 LaTeX Font Info:    Font shape `T1/txr/b/n' in size <20.74> not available
-(Font)              Font shape `T1/txr/bx/n' tried instead on input line 800.
- [35] (./iss-thesis.aux)
+(Font)              Font shape `T1/txr/bx/n' tried instead on input line 797.
+ [41
+
+
+] (./iss-thesis.aux)
 Package rerunfilecheck Info: File `iss-thesis.out' has not changed.
 (rerunfilecheck)             Checksum: D41D8CD98F00B204E9800998ECF8427E;0.
  ) 
 Here is how much of TeX's memory you used:
- 17355 strings out of 476025
- 327526 string characters out of 5790017
+ 17461 strings out of 476025
+ 328985 string characters out of 5790017
  1875388 words of memory out of 5000000
- 37339 multiletter control sequences out of 15000+600000
+ 37385 multiletter control sequences out of 15000+600000
  596854 words of font info for 196 fonts, out of 8000000 for 9000
  1145 hyphenation exceptions out of 8191
- 108i,20n,106p,10680b,609s stack positions out of 10000i,1000n,20000p,200000b,200000s
+ 108i,20n,106p,10680b,611s stack positions out of 10000i,1000n,20000p,200000b,200000s
 </usr/local/texlive/2023/texmf-dist/fonts/type1/public/txfonts/rtxb.pfb></usr/local/texlive/2023/texmf-dist/fonts/type1/public/txfonts/rtxbmi.pfb></usr/local/texlive/2023/texmf-dist/fonts/type1/public/txfonts/rtxi.pfb></usr/local/texlive/2023/texmf-dist/fonts/type1/public/txfonts/rtxmi.pfb></usr/local/texlive/2023/texmf-dist/fonts/type1/public/txfonts/rtxr.pfb></usr/local/texlive/2023/texmf-dist/fonts/type1/public/txfonts/rtxr.pfb></usr/local/texlive/2023/texmf-dist/fonts/type1/public/txfonts/t1xtt.pfb></usr/local/texlive/2023/texmf-dist/fonts/type1/public/txfonts/txex.pfb></usr/local/texlive/2023/texmf-dist/fonts/type1/public/txfonts/txexa.pfb></usr/local/texlive/2023/texmf-dist/fonts/type1/public/txfonts/txsy.pfb></usr/local/texlive/2023/texmf-dist/fonts/type1/public/txfonts/txsyb.pfb></usr/local/texlive/2023/texmf-dist/fonts/type1/urw/times/utmb8a.pfb></usr/local/texlive/2023/texmf-dist/fonts/type1/urw/times/utmr8a.pfb></usr/local/texlive/2023/texmf-dist/fonts/type1/urw/times/utmr8a.pfb></usr/local/texlive/2023/texmf-dist/fonts/type1/urw/times/utmri8a.pfb>
-Output written on iss-thesis.pdf (39 pages, 218443 bytes).
+Output written on iss-thesis.pdf (45 pages, 658617 bytes).
 PDF statistics:
- 609 PDF objects out of 1000 (max. 8388607)
- 530 compressed objects within 6 object streams
- 186 named destinations out of 1000 (max. 500000)
- 195 words of extra memory for PDF output out of 10000 (max. 10000000)
+ 783 PDF objects out of 1000 (max. 8388607)
+ 691 compressed objects within 7 object streams
+ 242 named destinations out of 1000 (max. 500000)
+ 330 words of extra memory for PDF output out of 10000 (max. 10000000)
 

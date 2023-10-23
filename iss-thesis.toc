@@ -6,35 +6,59 @@
 \contentsline {section}{\numberline {2.1}6 DoF Pose Estimation}{3}{section.2.1}%
 \contentsline {subsection}{\numberline {2.1.1}Definition}{3}{subsection.2.1.1}%
 \contentsline {subsection}{\numberline {2.1.2}Representing 6 DoF Pose}{3}{subsection.2.1.2}%
-\contentsline {subsection}{\numberline {2.1.3}Applications}{4}{subsection.2.1.3}%
-\contentsline {subsubsection}{\nonumberline Augmented Reality}{5}{subsubsection*.5}%
-\contentsline {subsubsection}{\nonumberline Robotics}{5}{subsubsection*.7}%
-\contentsline {subsubsection}{\nonumberline 3D Scene Understanding}{5}{subsubsection*.9}%
-\contentsline {subsubsection}{\nonumberline Autonomous Driving}{5}{subsubsection*.11}%
-\contentsline {subsection}{\numberline {2.1.4}Challenges}{5}{subsection.2.1.4}%
-\contentsline {section}{\numberline {2.2}Diffusion Model}{6}{section.2.2}%
-\contentsline {subsection}{\numberline {2.2.1}Generative Models}{6}{subsection.2.2.1}%
-\contentsline {subsubsection}{\nonumberline Generative Adversarial Networks}{6}{subsubsection*.13}%
-\contentsline {subsubsection}{\nonumberline Variational Autoencoders}{7}{subsubsection*.15}%
-\contentsline {subsubsection}{\nonumberline Normalizing Flows}{8}{subsubsection*.17}%
-\contentsline {subsubsection}{\nonumberline Transformer}{8}{subsubsection*.19}%
-\contentsline {subsubsection}{\nonumberline Diffusion Model}{8}{subsubsection*.21}%
-\contentsline {subsection}{\numberline {2.2.2}Theory and Fundamentals}{9}{subsection.2.2.2}%
-\contentsline {subsubsection}{\nonumberline Forward Process}{9}{subsubsection*.23}%
-\contentsline {subsubsection}{\nonumberline Reverse Process}{10}{subsubsection*.25}%
-\contentsline {subsubsection}{\nonumberline Conditional Diffusion Model}{12}{subsubsection*.27}%
-\contentsline {subsubsection}{\nonumberline Extensions}{12}{subsubsection*.29}%
-\contentsline {subsection}{\numberline {2.2.3}Applications}{12}{subsection.2.2.3}%
-\contentsline {subsubsection}{\nonumberline Computer Vision}{12}{subsubsection*.31}%
-\contentsline {subsubsection}{\nonumberline Natural Language Processing}{13}{subsubsection*.33}%
-\contentsline {subsubsection}{\nonumberline Multi-Modal Learning}{13}{subsubsection*.35}%
-\contentsline {chapter}{\numberline {3}Related Work}{15}{chapter.3}%
-\contentsline {chapter}{\numberline {4}Methodology}{17}{chapter.4}%
-\contentsline {chapter}{\numberline {5}Experiments}{19}{chapter.5}%
-\contentsline {chapter}{\numberline {6}Discussion}{21}{chapter.6}%
-\contentsline {chapter}{\numberline {7}Conclusion}{23}{chapter.7}%
-\contentsline {chapter}{\numberline {A}Additionally}{25}{appendix.A}%
-\contentsline {chapter}{\nonumberline List of Figures}{27}{chapter*.36}%
-\contentsline {chapter}{\nonumberline List of Tables}{29}{chapter*.37}%
-\contentsline {chapter}{\nonumberline Bibliography}{31}{chapter*.38}%
+\contentsline {subsection}{\numberline {2.1.3}Applications}{5}{subsection.2.1.3}%
+\contentsline {subsubsection}{\nonumberline Augmented Reality}{6}{subsubsection*.5}%
+\contentsline {subsubsection}{\nonumberline Robotics}{6}{subsubsection*.7}%
+\contentsline {subsubsection}{\nonumberline 3D Scene Understanding}{6}{subsubsection*.9}%
+\contentsline {subsubsection}{\nonumberline Autonomous Driving}{6}{subsubsection*.11}%
+\contentsline {subsection}{\numberline {2.1.4}Challenges}{6}{subsection.2.1.4}%
+\contentsline {section}{\numberline {2.2}Diffusion Model}{7}{section.2.2}%
+\contentsline {subsection}{\numberline {2.2.1}Generative Models}{7}{subsection.2.2.1}%
+\contentsline {subsubsection}{\nonumberline Generative Adversarial Networks}{7}{subsubsection*.13}%
+\contentsline {subsubsection}{\nonumberline Variational Autoencoders}{8}{subsubsection*.15}%
+\contentsline {subsubsection}{\nonumberline Normalizing Flows}{9}{subsubsection*.17}%
+\contentsline {subsubsection}{\nonumberline Transformer}{9}{subsubsection*.19}%
+\contentsline {subsubsection}{\nonumberline Diffusion Model}{9}{subsubsection*.21}%
+\contentsline {subsection}{\numberline {2.2.2}Theory and Fundamentals}{10}{subsection.2.2.2}%
+\contentsline {subsubsection}{\nonumberline Forward Process}{10}{subsubsection*.23}%
+\contentsline {subsubsection}{\nonumberline Reverse Process}{11}{subsubsection*.25}%
+\contentsline {subsubsection}{\nonumberline Conditional Diffusion Model}{13}{subsubsection*.27}%
+\contentsline {subsubsection}{\nonumberline Extensions}{13}{subsubsection*.29}%
+\contentsline {subsection}{\numberline {2.2.3}Applications}{13}{subsection.2.2.3}%
+\contentsline {subsubsection}{\nonumberline Computer Vision}{13}{subsubsection*.31}%
+\contentsline {subsubsection}{\nonumberline Natural Language Processing}{14}{subsubsection*.33}%
+\contentsline {subsubsection}{\nonumberline Multi-Modal Learning}{14}{subsubsection*.35}%
+\contentsline {chapter}{\numberline {3}Related Work}{17}{chapter.3}%
+\contentsline {chapter}{\numberline {4}Pose Hypotheses Diffusion}{19}{chapter.4}%
+\contentsline {section}{\numberline {4.1}Introduction}{19}{section.4.1}%
+\contentsline {section}{\numberline {4.2}Methodology}{19}{section.4.2}%
+\contentsline {subsection}{\numberline {4.2.1}Structure}{19}{subsection.4.2.1}%
+\contentsline {subsubsection}{\nonumberline Training Phase}{20}{subsubsection*.37}%
+\contentsline {subsubsection}{\nonumberline Sampling Phase}{20}{subsubsection*.40}%
+\contentsline {subsection}{\numberline {4.2.2}Models}{21}{subsection.4.2.2}%
+\contentsline {subsubsection}{\nonumberline Denoiser Network}{21}{subsubsection*.43}%
+\contentsline {subsubsection}{\nonumberline Backbone}{23}{subsubsection*.46}%
+\contentsline {subsubsection}{\nonumberline Time Embedding and Postion Embedding}{23}{subsubsection*.48}%
+\contentsline {subsubsection}{\nonumberline 2D Feature Extractor}{23}{subsubsection*.50}%
+\contentsline {subsubsection}{\nonumberline 3D Feature Extractor}{23}{subsubsection*.52}%
+\contentsline {subsubsection}{\nonumberline Multi-Hypotheses Inference}{23}{subsubsection*.54}%
+\contentsline {subsubsection}{\nonumberline Pose Refinement}{23}{subsubsection*.56}%
+\contentsline {section}{\numberline {4.3}Experiments}{23}{section.4.3}%
+\contentsline {subsection}{\numberline {4.3.1}Datasets}{23}{subsection.4.3.1}%
+\contentsline {subsection}{\numberline {4.3.2}Training}{23}{subsection.4.3.2}%
+\contentsline {subsection}{\numberline {4.3.3}Evaluation}{23}{subsection.4.3.3}%
+\contentsline {chapter}{\numberline {5}Correspondance Diffusion}{25}{chapter.5}%
+\contentsline {section}{\numberline {5.1}Introduction}{25}{section.5.1}%
+\contentsline {section}{\numberline {5.2}Methodology}{25}{section.5.2}%
+\contentsline {subsection}{\numberline {5.2.1}Pipeline}{25}{subsection.5.2.1}%
+\contentsline {subsection}{\numberline {5.2.2}Models}{25}{subsection.5.2.2}%
+\contentsline {section}{\numberline {5.3}Experiments}{25}{section.5.3}%
+\contentsline {subsection}{\numberline {5.3.1}Datasets}{25}{subsection.5.3.1}%
+\contentsline {subsection}{\numberline {5.3.2}Evaluation}{25}{subsection.5.3.2}%
+\contentsline {chapter}{\numberline {6}Discussion}{27}{chapter.6}%
+\contentsline {chapter}{\numberline {7}Conclusion}{29}{chapter.7}%
+\contentsline {chapter}{\numberline {A}Additionally}{31}{appendix.A}%
+\contentsline {chapter}{\nonumberline List of Figures}{33}{chapter*.57}%
+\contentsline {chapter}{\nonumberline List of Tables}{35}{chapter*.58}%
+\contentsline {chapter}{\nonumberline Bibliography}{37}{chapter*.59}%
 \providecommand \tocbasic@end@toc@file {}\tocbasic@end@toc@file 

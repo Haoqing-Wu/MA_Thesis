@@ -3,6 +3,9 @@
 \addvspace {10\p@ }
 \addvspace {10\p@ }
 \addvspace {10\p@ }
+\contentsline {figure}{\numberline {4.1}{\ignorespaces Structure of the training phase of the pose hypotheses diffusion\relax }}{20}{figure.caption.38}%
+\contentsline {figure}{\numberline {4.2}{\ignorespaces Structure of the sampling phase of the pose hypotheses diffusion\relax }}{21}{figure.caption.41}%
+\contentsline {figure}{\numberline {4.3}{\ignorespaces Denoiser network with backbone and feature extractor\relax }}{22}{figure.caption.44}%
 \addvspace {10\p@ }
 \addvspace {10\p@ }
 \addvspace {10\p@ }
