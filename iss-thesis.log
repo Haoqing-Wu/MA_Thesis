@@ -1,4 +1,4 @@
-This is pdfTeX, Version 3.141592653-2.6-1.40.25 (TeX Live 2023) (preloaded format=pdflatex 2023.10.5)  23 OCT 2023 18:17
+This is pdfTeX, Version 3.141592653-2.6-1.40.25 (TeX Live 2023) (preloaded format=pdflatex 2023.10.5)  24 OCT 2023 18:47
 entering extended mode
  restricted \write18 enabled.
  file:line:error style messages enabled.
@@ -734,41 +734,71 @@ Package pdftex.def Info: img/denoiser.png  used on input line 738.
 
 Underfull \vbox (badness 2205) has occurred while \output is active []
 
- [21 <./img/sample.png>] [22 <./img/denoiser.png>] [23] [24
+ [21 <./img/sample.png>] [22 <./img/denoiser.png>]
+<img/mhsa.png, id=439, 1005.7575pt x 580.1675pt>
+File: img/mhsa.png Graphic file (type png)
+<use img/mhsa.png>
+Package pdftex.def Info: img/mhsa.png  used on input line 748.
+(pdftex.def)             Requested size: 301.72958pt x 174.05157pt.
+ [23 <./img/mhsa.png>]
+LaTeX Font Info:    Trying to load font information for TS1+txr on input line 776.
+ (/usr/local/texlive/2023/texmf-dist/tex/latex/txfonts/ts1txr.fd
+File: ts1txr.fd 2000/12/15 v3.1
+)
+<img/pe.png, id=459, 672.8337pt x 244.2726pt>
+File: img/pe.png Graphic file (type png)
+<use img/pe.png>
+Package pdftex.def Info: img/pe.png  used on input line 788.
+(pdftex.def)             Requested size: 437.33672pt x 158.7753pt.
+ [24]
 
+Package amsmath Warning: Foreign command \atop;
+(amsmath)                \frac or \genfrac should be used instead
+(amsmath)                 on input line 802.
 
-]
+<img/dino.png, id=479, 927.465pt x 268.00125pt>
+File: img/dino.png Graphic file (type png)
+<use img/dino.png>
+Package pdftex.def Info: img/dino.png  used on input line 808.
+(pdftex.def)             Requested size: 352.44037pt x 101.84152pt.
+
+Underfull \vbox (badness 4303) has occurred while \output is active []
+
+ [25 <./img/pe.png>] [26 <./img/dino.png>]
 chapter 5.
-[25] [26
+[27
+
+
+] [28
 
 
 ]
 chapter 6.
-[27] [28
-
-
-]
-chapter 7.
 [29] [30
 
 
 ]
-chapter A.
+chapter 7.
 [31] [32
+
+
+]
+chapter A.
+[33] [34
 
 
 ] (./iss-thesis.lof)
 \tf@lof=\write5
 \openout5 = `iss-thesis.lof'.
 
- [33] [34
+ [35] [36
 
 
 ] (./iss-thesis.lot)
 \tf@lot=\write6
 \openout6 = `iss-thesis.lot'.
 
- (./iss-thesis.bbl [35] [36
+ (./iss-thesis.bbl [37] [38
 
 
 ]
@@ -779,10 +809,10 @@ chapter without number
 ** WARNING: IEEEtran.bst: No hyphenation pattern has been
 ** loaded for the language `en'. Using the pattern for
 ** the default language instead.
-[37] [38] [39]) [40]
+[39] [40] [41]) [42]
 LaTeX Font Info:    Font shape `T1/txr/b/n' in size <20.74> not available
-(Font)              Font shape `T1/txr/bx/n' tried instead on input line 797.
- [41
+(Font)              Font shape `T1/txr/bx/n' tried instead on input line 855.
+ [43
 
 
 ] (./iss-thesis.aux)
@@ -790,18 +820,18 @@ Package rerunfilecheck Info: File `iss-thesis.out' has not changed.
 (rerunfilecheck)             Checksum: D41D8CD98F00B204E9800998ECF8427E;0.
  ) 
 Here is how much of TeX's memory you used:
- 17461 strings out of 476025
- 328985 string characters out of 5790017
+ 17536 strings out of 476025
+ 330051 string characters out of 5790017
  1875388 words of memory out of 5000000
- 37385 multiletter control sequences out of 15000+600000
- 596854 words of font info for 196 fonts, out of 8000000 for 9000
+ 37437 multiletter control sequences out of 15000+600000
+ 597515 words of font info for 198 fonts, out of 8000000 for 9000
  1145 hyphenation exceptions out of 8191
  108i,20n,106p,10680b,611s stack positions out of 10000i,1000n,20000p,200000b,200000s
-</usr/local/texlive/2023/texmf-dist/fonts/type1/public/txfonts/rtxb.pfb></usr/local/texlive/2023/texmf-dist/fonts/type1/public/txfonts/rtxbmi.pfb></usr/local/texlive/2023/texmf-dist/fonts/type1/public/txfonts/rtxi.pfb></usr/local/texlive/2023/texmf-dist/fonts/type1/public/txfonts/rtxmi.pfb></usr/local/texlive/2023/texmf-dist/fonts/type1/public/txfonts/rtxr.pfb></usr/local/texlive/2023/texmf-dist/fonts/type1/public/txfonts/rtxr.pfb></usr/local/texlive/2023/texmf-dist/fonts/type1/public/txfonts/t1xtt.pfb></usr/local/texlive/2023/texmf-dist/fonts/type1/public/txfonts/txex.pfb></usr/local/texlive/2023/texmf-dist/fonts/type1/public/txfonts/txexa.pfb></usr/local/texlive/2023/texmf-dist/fonts/type1/public/txfonts/txsy.pfb></usr/local/texlive/2023/texmf-dist/fonts/type1/public/txfonts/txsyb.pfb></usr/local/texlive/2023/texmf-dist/fonts/type1/urw/times/utmb8a.pfb></usr/local/texlive/2023/texmf-dist/fonts/type1/urw/times/utmr8a.pfb></usr/local/texlive/2023/texmf-dist/fonts/type1/urw/times/utmr8a.pfb></usr/local/texlive/2023/texmf-dist/fonts/type1/urw/times/utmri8a.pfb>
-Output written on iss-thesis.pdf (45 pages, 658617 bytes).
+</usr/local/texlive/2023/texmf-dist/fonts/type1/public/txfonts/rtcxr.pfb></usr/local/texlive/2023/texmf-dist/fonts/type1/public/txfonts/rtxb.pfb></usr/local/texlive/2023/texmf-dist/fonts/type1/public/txfonts/rtxbmi.pfb></usr/local/texlive/2023/texmf-dist/fonts/type1/public/txfonts/rtxi.pfb></usr/local/texlive/2023/texmf-dist/fonts/type1/public/txfonts/rtxmi.pfb></usr/local/texlive/2023/texmf-dist/fonts/type1/public/txfonts/rtxr.pfb></usr/local/texlive/2023/texmf-dist/fonts/type1/public/txfonts/rtxr.pfb></usr/local/texlive/2023/texmf-dist/fonts/type1/public/txfonts/t1xtt.pfb></usr/local/texlive/2023/texmf-dist/fonts/type1/public/txfonts/txex.pfb></usr/local/texlive/2023/texmf-dist/fonts/type1/public/txfonts/txexa.pfb></usr/local/texlive/2023/texmf-dist/fonts/type1/public/txfonts/txsy.pfb></usr/local/texlive/2023/texmf-dist/fonts/type1/public/txfonts/txsyb.pfb></usr/local/texlive/2023/texmf-dist/fonts/type1/public/txfonts/txsyc.pfb></usr/local/texlive/2023/texmf-dist/fonts/type1/urw/times/utmb8a.pfb></usr/local/texlive/2023/texmf-dist/fonts/type1/urw/times/utmr8a.pfb></usr/local/texlive/2023/texmf-dist/fonts/type1/urw/times/utmr8a.pfb></usr/local/texlive/2023/texmf-dist/fonts/type1/urw/times/utmri8a.pfb>
+Output written on iss-thesis.pdf (47 pages, 758748 bytes).
 PDF statistics:
- 783 PDF objects out of 1000 (max. 8388607)
- 691 compressed objects within 7 object streams
- 242 named destinations out of 1000 (max. 500000)
- 330 words of extra memory for PDF output out of 10000 (max. 10000000)
+ 837 PDF objects out of 1000 (max. 8388607)
+ 732 compressed objects within 8 object streams
+ 257 named destinations out of 1000 (max. 500000)
+ 345 words of extra memory for PDF output out of 10000 (max. 10000000)
 

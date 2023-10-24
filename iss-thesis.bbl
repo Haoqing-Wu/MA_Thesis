@@ -221,4 +221,15 @@ A.~Vaswani, N.~Shazeer, N.~Parmar, J.~Uszkoreit, L.~Jones, A.~N. Gomez, L.~Kaise
 \bibitem{dosovitskiy2021image}
 A.~Dosovitskiy, L.~Beyer, A.~Kolesnikov, D.~Weissenborn, X.~Zhai, T.~Unterthiner, M.~Dehghani, M.~Minderer, G.~Heigold, S.~Gelly, J.~Uszkoreit and N.~Houlsby, ``An image is worth 16x16 words: Transformers for image recognition at scale,'' 2021.
 
+\bibitem{perez2017film}
+E.~Perez, F.~Strub, H.~de~Vries, V.~Dumoulin and A.~Courville, ``Film: Visual reasoning with a general conditioning layer,'' 2017.
+
+\bibitem{Peebles2022DiT}
+W.~Peebles and S.~Xie, ``Scalable diffusion models with transformers,'' \emph{arXiv preprint arXiv:2212.09748}, 2022.
+
+\bibitem{kazemnejad2019:pencoding}
+\BIBentryALTinterwordspacing
+A.~Kazemnejad, ``Transformer architecture: The positional encoding,'' \emph{kazemnejad.com}, 2019. [Online]. Available: \url{https://kazemnejad.com/blog/transformer_architecture_positional_encoding/}
+\BIBentrySTDinterwordspacing
+
 \end{thebibliography}

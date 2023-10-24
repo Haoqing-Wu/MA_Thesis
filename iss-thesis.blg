@@ -16,45 +16,45 @@ Warning--entry type for "dataV4MUMX2020" isn't style-file defined
 Warning--empty booktitle in Radford2018ImprovingLU
 
 Done.
-You've used 63 entries,
+You've used 66 entries,
             4186 wiz_defined-function locations,
-            1081 strings with 18511 characters,
-and the built_in function-call counts, 33031 in all, are:
-= -- 2226
-> -- 1252
+            1094 strings with 18984 characters,
+and the built_in function-call counts, 34276 in all, are:
+= -- 2322
+> -- 1286
 < -- 67
-+ -- 615
-- -- 286
-* -- 1437
-:= -- 4943
-add.period$ -- 128
-call.type$ -- 63
-change.case$ -- 63
++ -- 631
+- -- 294
+* -- 1489
+:= -- 5166
+add.period$ -- 134
+call.type$ -- 66
+change.case$ -- 66
 chr.to.int$ -- 153
-cite$ -- 64
-duplicate$ -- 2644
-empty$ -- 2996
-format.name$ -- 343
-if$ -- 7412
+cite$ -- 67
+duplicate$ -- 2752
+empty$ -- 3112
+format.name$ -- 353
+if$ -- 7682
 int.to.chr$ -- 0
-int.to.str$ -- 63
-missing$ -- 659
-newline$ -- 224
-num.names$ -- 63
-pop$ -- 1931
+int.to.str$ -- 66
+missing$ -- 681
+newline$ -- 235
+num.names$ -- 66
+pop$ -- 1994
 preamble$ -- 1
 purify$ -- 0
 quote$ -- 2
-skip$ -- 2489
+skip$ -- 2586
 stack$ -- 0
-substring$ -- 419
-swap$ -- 1737
+substring$ -- 422
+swap$ -- 1797
 text.length$ -- 16
 text.prefix$ -- 0
 top$ -- 5
-type$ -- 63
+type$ -- 66
 warning$ -- 1
-while$ -- 85
-width$ -- 65
-write$ -- 516
+while$ -- 88
+width$ -- 68
+write$ -- 542
 (There were 2 warnings)

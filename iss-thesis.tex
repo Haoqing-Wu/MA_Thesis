@@ -743,14 +743,72 @@ It is worth mentioning that the fusion of 2D and 3D feature is not pointwise ali
 A modified transformer encoder is utilized as the backbone of our diffusion model. The Transformer\cite{vaswani2023attention} is a sequence-to-sequence model that uses multi-head self-attension layers to understand the relevant token in the sequence and follows the encoder-decoder structure in the NLP tasks. However, in our case the encoder part is what we need to estimate the noise.
 
 Similar to the vanilla transformer, our model consists of N stacked transformer encoder blocks. As shown in the left part of figure \ref{denoiser}, each block is made up of two sub-layers. The first is a multi-head self-attention mechanism, and the second is a simple, position-wise fully connected feed-forward network. We use residual connections around each of the two sub-layers and the Layer norm (LN) is applied before each sub-layer, which follows the design of Vision Transformer (ViT)\cite{dosovitskiy2021image}.
-
-The core of the transformer encoder is the multi-head self-attention mechanism. First, we create three vectors from each input vector $\mathbf{x}_{i}$, namely the query vector $\mathbf{q}_{i}$, the key vector $\mathbf{k}_{i}$ and the value vector $\mathbf{v}_{i}$. These vectors are created by multiplying the input vector $\mathbf{x}_{i}$ with three matrices $\mathbf{W}^{Q}$, $\mathbf{W}^{K}$ and $\mathbf{W}^{V}$ respectively that we trained during the training phase. Then we use the scaled dot-product attention to calculate the output vector $\mathbf{y}_{i}$:
+\begin{figure}
+	\centering
+	\includegraphics[scale=.30]{img/mhsa.png}
+	\caption{Multi-head self-attention and scaled dot-product attention}
+	\label{mhsa}
+\end{figure}
+The core of the transformer encoder is the multi-head self-attention mechanism, which is illustrated in figure \ref{mhsa}. First, we create three vectors from each input vector $\mathbf{x}_{i}$, namely the query vector $\mathbf{q}_{i}$, the key vector $\mathbf{k}_{i}$ and the value vector $\mathbf{v}_{i}$. These vectors are created by multiplying the input vector $\mathbf{x}_{i}$ with three matrices $\mathbf{W}^{Q}$, $\mathbf{W}^{K}$ and $\mathbf{W}^{V}$ respectively that we trained during the training phase. Then we use the scaled dot-product attention to calculate the output vector $\mathbf{y}_{i}$:
 \begin{align}
   \mathbf{y}_{i} = \text{softmax}\left(\frac{\mathbf{q}_{i}\mathbf{k}_{i}^{T}}{\sqrt{d_{k}}}\right)\mathbf{v}_{i}
 \end{align}
+where $d_{k}$ is the dimension of the key vector $\mathbf{k}_{i}$. The scaled dot-product attention is the core of the transformer encoder and the multi-head self-attention is the extension of the scaled dot-product attention. The multi-head self-attention is defined as:
+\begin{align}
+  \text{MultiHead}(\mathbf{Q}, \mathbf{K}, \mathbf{V}) = \text{Concat}(\mathbf{h}_{1},...,\mathbf{h}_{n})\mathbf{W}^{O}
+\end{align}
+where $\mathbf{h}_{i} = \text{Attention}(\mathbf{Q}\mathbf{W}_{i}^{Q}, \mathbf{K}\mathbf{W}_{i}^{K}, \mathbf{V}\mathbf{W}_{i}^{V})$ and $\mathbf{W}_{i}^{Q}$, $\mathbf{W}_{i}^{K}$, $\mathbf{W}_{i}^{V}$ and $\mathbf{W}^{O}$ are the trainable parameters. The multi-head self-attention allows the model to jointly attend to information from different representation subspaces at different positions. With a linear projection at the end, the model is able to learn a more complex function.
+
+To effectively process the conditional input, we use modified adaptive layer normalization (adaLN) to replace the original layer normalization in the transformer encoder which is introduced in \cite{perez2017film,Peebles2022DiT}. The learnable scale and shift parameters are regressed from the conditional input and applied in each sub-layer of the transformer encoder blocks. The modified transformer encoder block can be formulated as:
+\begin{align}
+  \mathbf{y}^{'} &= \alpha_{1}(\mathbf{c})\odot {\text{Attention}[\gamma_{1}(\mathbf{c})\odot N(\mathbf{x}) + \beta_{1}(\mathbf{c})]}\\
+  \mathbf{y} &= \alpha_{2}(\mathbf{c})\odot {\text{FeedForward}[\gamma_{2}(\mathbf{c})\odot N(\mathbf{y}^{'}) + \beta_{2}(\mathbf{c})]}
+\end{align}
+where $\mathbf{y}$ is the output of the block, $\mathbf{y}^{'}$ is the intermediate expression after the first sub-layer,  $\mathbf{c}$ is the conditional input, $\alpha_{1}(\mathbf{c})$, $\alpha_{2}(\mathbf{c})$, $\beta_{1}(\mathbf{c})$, $\beta_{2}(\mathbf{c})$, $\gamma_{1}(\mathbf{c})$ and $\gamma_{1}(\mathbf{c})$ are the learnable parameters and $N$ is the layer normalization. The $\odot$ denotes the element-wise multiplication.
+
+-----------------Reason for using transformer----------------
 
 \subsubsection{Time Embedding and Postion Embedding}
+Why we need time embedding and position embedding in our case? As the architecture of diffusion model determines that we need to let the network learn the influence of timestep on the noise estimation. So we have to encode the timestep information into the network. For the same reason, the sequence of the transformer input which is the transformation vector is also relevant and should be encoded, because the each bit of the vector represents the different meaning and can not be shuffled.
+
+The way we embed time and position information is generally called positional encoding. It should satisfy the following conditions\cite{kazemnejad2019:pencoding}:
+\begin{itemize}
+  \item It should be unique and deterministic defined for each position (or timestep).
+  \item The encoded distance between any two steps should be consistent across different timesteps.
+  \item The value should be bounded and generalize to any input.
+\end{itemize}
+The most common positional encoding is the sine and cosine positional encoding\cite{vaswani2023attention}, which is defined as:
+\begin{align}
+  \text{PE}_{(pos, 2i)} &= \sin\left(\frac{pos}{10000^{2i/d_{model}}}\right)\\
+  \text{PE}_{(pos, 2i+1)} &= \cos\left(\frac{pos}{10000^{2i/d_{model}}}\right)
+\end{align}
+where $pos$ is the position, $i$ is the dimension and $d_{model}$ is the dimension of the input vector. And we add a fully connected layer to the positional encoding to make it trainable. Figure \ref{pe} shows the 64-dimensional positional encoding for a sequence with length of 100 using the sine and cosine positional encoding.
+\begin{figure}
+	\centering
+	\includegraphics[scale=.65]{img/pe.png}
+	\caption{The 64-dimensional positional encoding for a sequence with length of 100}
+	\label{pe}
+\end{figure}
 \subsubsection{2D Feature Extractor}
+As the 2D feature extractor, the self-supervised vision transformer with DINO\cite{caron2021emerging} is used. DINO is a self-supervised learning method that trains a vision transformer with a small set of negative examples. It is a contrastive learning method that maximizes the agreement between differently augmented views of the same image. The architecture of DINO shares the same overall structure with recent self-supervised approaches and also the similarites with knowledge distillation.
+
+Knowledge distillation is a learning paradigm where a student network $g_{\theta_{s}}$ is trained to match the output of a given teacher network $g_{\theta_{t}}$, parameterized by $\theta_{s}$ and $\theta_{t}$ respectively. Given an input image $x$, both networks output probability distributions over $K$ dimensions denoted by $P_{s}$ and $P_{t}$. The probability $P$ is obtained by normalizing the output of the network $g$ with a softmax function. Given a fixed teacher network $g_{\theta_{t}}$, the student network $g_{\theta_{s}}$ is trained to minimize the cross-entropy loss between the two distributions w.r.t the student parameters $\theta_{s}$:
+\begin{align}
+  \mathop{min}_{\theta_{s}}H(P_{t}(x), P_{s}(x))
+\end{align}
+where $H(a,b)=-a \log b$ is the cross-entropy loss. And this optimizatiin problem is adapted to self-supervised learning by constructing different distorted views or crops of an image with multi-crop strategy. Making a set of two global views, $x_{1}^{g}$ and $x_{2}^{g}$ and several local views with smaller resolution, the loss function can be formulated as:
+\begin{align}
+  \mathop{min}_{\theta_{s}}\mathop{\sum}_{x\in \{x_{1}^{g},x_{2}^{g}\}} \ \mathop{\sum}_{x^{'}\in V \atop x^{'}\neq x}H(P_{t}(x), P_{s}(x^{'}))
+\end{align}
+The structure of the self-supervised architecture is shown in figure \ref{dino}. The model passes two different random transformations of the input image to both networks with same stucture but different parameters. The output of the teacher network is centered and a stop-gradient (sg) is applied on the teacher to let the gradients only propagate through the student network. The teacher parameters are updated with an exponential moving average (ema).
+
+The backbone of the DINO is ViT, which proved that the transformer architecture also performs well on the 2D vision tasks.
+\begin{figure}
+	\centering
+	\includegraphics[scale=.38]{img/dino.png}
+	\caption{Self-supervised architecture of DINO}
+	\label{dino}
+\end{figure}
 \subsubsection{3D Feature Extractor}
 \subsubsection{Multi-Hypotheses Inference}
 \subsubsection{Pose Refinement}
