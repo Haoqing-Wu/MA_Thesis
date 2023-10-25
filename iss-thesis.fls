@@ -1030,6 +1030,11 @@ INPUT ./img/dino.png
 INPUT img/dino.png
 INPUT ./img/dino.png
 INPUT ./img/dino.png
+INPUT ./img/vit.png
+INPUT ./img/vit.png
+INPUT img/vit.png
+INPUT ./img/vit.png
+INPUT ./img/vit.png
 INPUT ./iss-thesis.lof
 INPUT iss-thesis.lof
 INPUT iss-thesis.lof

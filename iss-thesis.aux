@@ -151,82 +151,92 @@
 \@writefile{toc}{\contentsline {subsection}{\numberline {4.2.1}Structure}{19}{subsection.4.2.1}\protected@file@percent }
 \citation{caron2021emerging}
 \citation{yang2018foldingnet}
-\@writefile{lof}{\contentsline {figure}{\numberline {4.1}{\ignorespaces Structure of the training phase of the pose hypotheses diffusion\relax }}{20}{figure.caption.38}\protected@file@percent }
-\newlabel{train}{{4.1}{20}{Structure of the training phase of the pose hypotheses diffusion\relax }{figure.caption.38}{}}
 \@writefile{toc}{\contentsline {subsubsection}{\nonumberline Training Phase}{20}{subsubsection*.37}\protected@file@percent }
+\@writefile{lof}{\contentsline {figure}{\numberline {4.1}{\ignorespaces Structure of the training phase of the pose hypotheses diffusion\relax }}{20}{figure.caption.38}\protected@file@percent }
+\newlabel{img:train}{{4.1}{20}{Structure of the training phase of the pose hypotheses diffusion\relax }{figure.caption.38}{}}
 \@writefile{toc}{\contentsline {subsubsection}{\nonumberline Sampling Phase}{20}{subsubsection*.40}\protected@file@percent }
 \citation{121791}
-\BKM@entry{id=20,dest={73756273656374696F6E2E342E322E32},srcline={731}}{5C3337365C3337375C3030304D5C3030306F5C303030645C303030655C3030306C5C30303073}
+\BKM@entry{id=20,dest={73756273656374696F6E2E342E322E32},srcline={734}}{5C3337365C3337375C3030304D5C3030306F5C303030645C303030655C3030306C5C30303073}
 \citation{vaswani2023attention}
 \@writefile{lof}{\contentsline {figure}{\numberline {4.2}{\ignorespaces Structure of the sampling phase of the pose hypotheses diffusion\relax }}{21}{figure.caption.41}\protected@file@percent }
-\newlabel{sample}{{4.2}{21}{Structure of the sampling phase of the pose hypotheses diffusion\relax }{figure.caption.41}{}}
+\newlabel{img:sample}{{4.2}{21}{Structure of the sampling phase of the pose hypotheses diffusion\relax }{figure.caption.41}{}}
 \@writefile{toc}{\contentsline {subsection}{\numberline {4.2.2}Models}{21}{subsection.4.2.2}\protected@file@percent }
 \@writefile{toc}{\contentsline {subsubsection}{\nonumberline Denoiser Network}{21}{subsubsection*.43}\protected@file@percent }
-\@writefile{lof}{\contentsline {figure}{\numberline {4.3}{\ignorespaces Denoiser network with backbone and feature extractor\relax }}{22}{figure.caption.44}\protected@file@percent }
-\newlabel{denoiser}{{4.3}{22}{Denoiser network with backbone and feature extractor\relax }{figure.caption.44}{}}
 \citation{dosovitskiy2021image}
+\@writefile{lof}{\contentsline {figure}{\numberline {4.3}{\ignorespaces Denoiser network with backbone and feature extractor\relax }}{22}{figure.caption.44}\protected@file@percent }
+\newlabel{img:denoiser}{{4.3}{22}{Denoiser network with backbone and feature extractor\relax }{figure.caption.44}{}}
+\@writefile{toc}{\contentsline {subsubsection}{\nonumberline Backbone}{22}{subsubsection*.46}\protected@file@percent }
 \citation{perez2017film}
 \citation{Peebles2022DiT}
 \@writefile{lof}{\contentsline {figure}{\numberline {4.4}{\ignorespaces Multi-head self-attention and scaled dot-product attention\relax }}{23}{figure.caption.47}\protected@file@percent }
-\newlabel{mhsa}{{4.4}{23}{Multi-head self-attention and scaled dot-product attention\relax }{figure.caption.47}{}}
-\@writefile{toc}{\contentsline {subsubsection}{\nonumberline Backbone}{23}{subsubsection*.46}\protected@file@percent }
+\newlabel{img:mhsa}{{4.4}{23}{Multi-head self-attention and scaled dot-product attention\relax }{figure.caption.47}{}}
+\@writefile{toc}{\contentsline {subsubsection}{\nonumberline Time Embedding and Postion Embedding}{23}{subsubsection*.49}\protected@file@percent }
 \citation{kazemnejad2019:pencoding}
 \citation{vaswani2023attention}
 \citation{caron2021emerging}
-\@writefile{toc}{\contentsline {subsubsection}{\nonumberline Time Embedding and Postion Embedding}{24}{subsubsection*.49}\protected@file@percent }
+\@writefile{lof}{\contentsline {figure}{\numberline {4.5}{\ignorespaces The 64-dimensional positional encoding for a sequence with length of 100\relax }}{24}{figure.caption.50}\protected@file@percent }
+\newlabel{img:pe}{{4.5}{24}{The 64-dimensional positional encoding for a sequence with length of 100\relax }{figure.caption.50}{}}
 \@writefile{toc}{\contentsline {subsubsection}{\nonumberline 2D Feature Extractor}{24}{subsubsection*.52}\protected@file@percent }
-\BKM@entry{id=21,dest={73656374696F6E2E342E33},srcline={816}}{5C3337365C3337375C303030455C303030785C303030705C303030655C303030725C303030695C3030306D5C303030655C3030306E5C303030745C30303073}
-\BKM@entry{id=22,dest={73756273656374696F6E2E342E332E31},srcline={817}}{5C3337365C3337375C303030445C303030615C303030745C303030615C303030735C303030655C303030745C30303073}
-\BKM@entry{id=23,dest={73756273656374696F6E2E342E332E32},srcline={818}}{5C3337365C3337375C303030545C303030725C303030615C303030695C3030306E5C303030695C3030306E5C30303067}
-\BKM@entry{id=24,dest={73756273656374696F6E2E342E332E33},srcline={819}}{5C3337365C3337375C303030455C303030765C303030615C3030306C5C303030755C303030615C303030745C303030695C3030306F5C3030306E}
-\@writefile{lof}{\contentsline {figure}{\numberline {4.5}{\ignorespaces The 64-dimensional positional encoding for a sequence with length of 100\relax }}{25}{figure.caption.50}\protected@file@percent }
-\newlabel{pe}{{4.5}{25}{The 64-dimensional positional encoding for a sequence with length of 100\relax }{figure.caption.50}{}}
-\@writefile{lof}{\contentsline {figure}{\numberline {4.6}{\ignorespaces Self-supervised architecture of DINO\relax }}{26}{figure.caption.53}\protected@file@percent }
-\newlabel{dino}{{4.6}{26}{Self-supervised architecture of DINO\relax }{figure.caption.53}{}}
-\@writefile{toc}{\contentsline {subsubsection}{\nonumberline 3D Feature Extractor}{26}{subsubsection*.55}\protected@file@percent }
-\@writefile{toc}{\contentsline {subsubsection}{\nonumberline Multi-Hypotheses Inference}{26}{subsubsection*.57}\protected@file@percent }
-\@writefile{toc}{\contentsline {subsubsection}{\nonumberline Pose Refinement}{26}{subsubsection*.59}\protected@file@percent }
-\@writefile{toc}{\contentsline {section}{\numberline {4.3}Experiments}{26}{section.4.3}\protected@file@percent }
-\@writefile{toc}{\contentsline {subsection}{\numberline {4.3.1}Datasets}{26}{subsection.4.3.1}\protected@file@percent }
-\@writefile{toc}{\contentsline {subsection}{\numberline {4.3.2}Training}{26}{subsection.4.3.2}\protected@file@percent }
-\@writefile{toc}{\contentsline {subsection}{\numberline {4.3.3}Evaluation}{26}{subsection.4.3.3}\protected@file@percent }
-\BKM@entry{id=25,dest={636861707465722E35},srcline={820}}{5C3337365C3337375C303030435C3030306F5C303030725C303030725C303030655C303030735C303030705C3030306F5C3030306E5C303030645C303030615C3030306E5C303030635C303030655C3030305C3034305C303030445C303030695C303030665C303030665C303030755C303030735C303030695C3030306F5C3030306E}
-\BKM@entry{id=26,dest={73656374696F6E2E352E31},srcline={821}}{5C3337365C3337375C303030495C3030306E5C303030745C303030725C3030306F5C303030645C303030755C303030635C303030745C303030695C3030306F5C3030306E}
-\BKM@entry{id=27,dest={73656374696F6E2E352E32},srcline={822}}{5C3337365C3337375C3030304D5C303030655C303030745C303030685C3030306F5C303030645C3030306F5C3030306C5C3030306F5C303030675C30303079}
-\BKM@entry{id=28,dest={73756273656374696F6E2E352E322E31},srcline={823}}{5C3337365C3337375C303030505C303030695C303030705C303030655C3030306C5C303030695C3030306E5C30303065}
-\BKM@entry{id=29,dest={73756273656374696F6E2E352E322E32},srcline={824}}{5C3337365C3337375C3030304D5C3030306F5C303030645C303030655C3030306C5C30303073}
-\BKM@entry{id=30,dest={73656374696F6E2E352E33},srcline={825}}{5C3337365C3337375C303030455C303030785C303030705C303030655C303030725C303030695C3030306D5C303030655C3030306E5C303030745C30303073}
-\BKM@entry{id=31,dest={73756273656374696F6E2E352E332E31},srcline={826}}{5C3337365C3337375C303030445C303030615C303030745C303030615C303030735C303030655C303030745C30303073}
-\BKM@entry{id=32,dest={73756273656374696F6E2E352E332E32},srcline={827}}{5C3337365C3337375C303030455C303030765C303030615C3030306C5C303030755C303030615C303030745C303030695C3030306F5C3030306E}
-\@writefile{toc}{\contentsline {chapter}{\numberline {5}Correspondance Diffusion}{27}{chapter.5}\protected@file@percent }
+\citation{dosovitskiy2021image}
+\citation{dosovitskiy2021image}
+\citation{dosovitskiy2021image}
+\@writefile{lof}{\contentsline {figure}{\numberline {4.6}{\ignorespaces Self-supervised architecture of DINO\relax }}{25}{figure.caption.53}\protected@file@percent }
+\newlabel{img:dino}{{4.6}{25}{Self-supervised architecture of DINO\relax }{figure.caption.53}{}}
+\citation{5206848}
+\citation{qi2017pointnet}
+\citation{qi2017pointnet++}
+\citation{thomas2019kpconv}
+\BKM@entry{id=21,dest={73656374696F6E2E342E33},srcline={839}}{5C3337365C3337375C303030455C303030785C303030705C303030655C303030725C303030695C3030306D5C303030655C3030306E5C303030745C30303073}
+\BKM@entry{id=22,dest={73756273656374696F6E2E342E332E31},srcline={840}}{5C3337365C3337375C303030445C303030615C303030745C303030615C303030735C303030655C303030745C30303073}
+\BKM@entry{id=23,dest={73756273656374696F6E2E342E332E32},srcline={841}}{5C3337365C3337375C303030545C303030725C303030615C303030695C3030306E5C303030695C3030306E5C30303067}
+\BKM@entry{id=24,dest={73756273656374696F6E2E342E332E33},srcline={842}}{5C3337365C3337375C303030455C303030765C303030615C3030306C5C303030755C303030615C303030745C303030695C3030306F5C3030306E}
+\@writefile{lof}{\contentsline {figure}{\numberline {4.7}{\ignorespaces Sturcture of the ViT model, image adapted from \cite  {dosovitskiy2021image}\relax }}{26}{figure.caption.54}\protected@file@percent }
+\newlabel{img:vit}{{4.7}{26}{Sturcture of the ViT model, image adapted from \cite {dosovitskiy2021image}\relax }{figure.caption.54}{}}
+\@writefile{toc}{\contentsline {subsubsection}{\nonumberline 3D Feature Extractor}{26}{subsubsection*.56}\protected@file@percent }
+\@writefile{toc}{\contentsline {subsubsection}{\nonumberline Multi-Hypotheses Inference}{27}{subsubsection*.58}\protected@file@percent }
+\@writefile{toc}{\contentsline {subsubsection}{\nonumberline Pose Refinement}{27}{subsubsection*.60}\protected@file@percent }
+\@writefile{toc}{\contentsline {section}{\numberline {4.3}Experiments}{27}{section.4.3}\protected@file@percent }
+\@writefile{toc}{\contentsline {subsection}{\numberline {4.3.1}Datasets}{27}{subsection.4.3.1}\protected@file@percent }
+\@writefile{toc}{\contentsline {subsection}{\numberline {4.3.2}Training}{27}{subsection.4.3.2}\protected@file@percent }
+\@writefile{toc}{\contentsline {subsection}{\numberline {4.3.3}Evaluation}{27}{subsection.4.3.3}\protected@file@percent }
+\BKM@entry{id=25,dest={636861707465722E35},srcline={843}}{5C3337365C3337375C303030435C3030306F5C303030725C303030725C303030655C303030735C303030705C3030306F5C3030306E5C303030645C303030615C3030306E5C303030635C303030655C3030305C3034305C303030445C303030695C303030665C303030665C303030755C303030735C303030695C3030306F5C3030306E}
+\BKM@entry{id=26,dest={73656374696F6E2E352E31},srcline={844}}{5C3337365C3337375C303030495C3030306E5C303030745C303030725C3030306F5C303030645C303030755C303030635C303030745C303030695C3030306F5C3030306E}
+\BKM@entry{id=27,dest={73656374696F6E2E352E32},srcline={845}}{5C3337365C3337375C3030304D5C303030655C303030745C303030685C3030306F5C303030645C3030306F5C3030306C5C3030306F5C303030675C30303079}
+\BKM@entry{id=28,dest={73756273656374696F6E2E352E322E31},srcline={846}}{5C3337365C3337375C303030505C303030695C303030705C303030655C3030306C5C303030695C3030306E5C30303065}
+\BKM@entry{id=29,dest={73756273656374696F6E2E352E322E32},srcline={847}}{5C3337365C3337375C3030304D5C3030306F5C303030645C303030655C3030306C5C30303073}
+\BKM@entry{id=30,dest={73656374696F6E2E352E33},srcline={848}}{5C3337365C3337375C303030455C303030785C303030705C303030655C303030725C303030695C3030306D5C303030655C3030306E5C303030745C30303073}
+\BKM@entry{id=31,dest={73756273656374696F6E2E352E332E31},srcline={849}}{5C3337365C3337375C303030445C303030615C303030745C303030615C303030735C303030655C303030745C30303073}
+\BKM@entry{id=32,dest={73756273656374696F6E2E352E332E32},srcline={850}}{5C3337365C3337375C303030455C303030765C303030615C3030306C5C303030755C303030615C303030745C303030695C3030306F5C3030306E}
+\@writefile{toc}{\contentsline {chapter}{\numberline {5}Correspondance Diffusion}{29}{chapter.5}\protected@file@percent }
 \@writefile{lof}{\addvspace {10\p@ }}
 \@writefile{lot}{\addvspace {10\p@ }}
-\@writefile{toc}{\contentsline {section}{\numberline {5.1}Introduction}{27}{section.5.1}\protected@file@percent }
-\@writefile{toc}{\contentsline {section}{\numberline {5.2}Methodology}{27}{section.5.2}\protected@file@percent }
-\@writefile{toc}{\contentsline {subsection}{\numberline {5.2.1}Pipeline}{27}{subsection.5.2.1}\protected@file@percent }
-\@writefile{toc}{\contentsline {subsection}{\numberline {5.2.2}Models}{27}{subsection.5.2.2}\protected@file@percent }
-\@writefile{toc}{\contentsline {section}{\numberline {5.3}Experiments}{27}{section.5.3}\protected@file@percent }
-\@writefile{toc}{\contentsline {subsection}{\numberline {5.3.1}Datasets}{27}{subsection.5.3.1}\protected@file@percent }
-\@writefile{toc}{\contentsline {subsection}{\numberline {5.3.2}Evaluation}{27}{subsection.5.3.2}\protected@file@percent }
-\BKM@entry{id=33,dest={636861707465722E36},srcline={828}}{5C3337365C3337375C303030445C303030695C303030735C303030635C303030755C303030735C303030735C303030695C3030306F5C3030306E}
-\@writefile{toc}{\contentsline {chapter}{\numberline {6}Discussion}{29}{chapter.6}\protected@file@percent }
+\@writefile{toc}{\contentsline {section}{\numberline {5.1}Introduction}{29}{section.5.1}\protected@file@percent }
+\@writefile{toc}{\contentsline {section}{\numberline {5.2}Methodology}{29}{section.5.2}\protected@file@percent }
+\@writefile{toc}{\contentsline {subsection}{\numberline {5.2.1}Pipeline}{29}{subsection.5.2.1}\protected@file@percent }
+\@writefile{toc}{\contentsline {subsection}{\numberline {5.2.2}Models}{29}{subsection.5.2.2}\protected@file@percent }
+\@writefile{toc}{\contentsline {section}{\numberline {5.3}Experiments}{29}{section.5.3}\protected@file@percent }
+\@writefile{toc}{\contentsline {subsection}{\numberline {5.3.1}Datasets}{29}{subsection.5.3.1}\protected@file@percent }
+\@writefile{toc}{\contentsline {subsection}{\numberline {5.3.2}Evaluation}{29}{subsection.5.3.2}\protected@file@percent }
+\BKM@entry{id=33,dest={636861707465722E36},srcline={851}}{5C3337365C3337375C303030445C303030695C303030735C303030635C303030755C303030735C303030735C303030695C3030306F5C3030306E}
+\@writefile{toc}{\contentsline {chapter}{\numberline {6}Discussion}{31}{chapter.6}\protected@file@percent }
 \@writefile{lof}{\addvspace {10\p@ }}
 \@writefile{lot}{\addvspace {10\p@ }}
-\BKM@entry{id=34,dest={636861707465722E37},srcline={830}}{5C3337365C3337375C303030435C3030306F5C3030306E5C303030635C3030306C5C303030755C303030735C303030695C3030306F5C3030306E}
-\@writefile{toc}{\contentsline {chapter}{\numberline {7}Conclusion}{31}{chapter.7}\protected@file@percent }
+\BKM@entry{id=34,dest={636861707465722E37},srcline={853}}{5C3337365C3337375C303030435C3030306F5C3030306E5C303030635C3030306C5C303030755C303030735C303030695C3030306F5C3030306E}
+\@writefile{toc}{\contentsline {chapter}{\numberline {7}Conclusion}{33}{chapter.7}\protected@file@percent }
 \@writefile{lof}{\addvspace {10\p@ }}
 \@writefile{lot}{\addvspace {10\p@ }}
-\BKM@entry{id=35,dest={617070656E6469782E41},srcline={833}}{5C3337365C3337375C303030415C303030645C303030645C303030695C303030745C303030695C3030306F5C3030306E5C303030615C3030306C5C3030306C5C30303079}
-\@writefile{toc}{\contentsline {chapter}{\numberline {A}Additionally}{33}{appendix.A}\protected@file@percent }
+\BKM@entry{id=35,dest={617070656E6469782E41},srcline={856}}{5C3337365C3337375C303030415C303030645C303030645C303030695C303030745C303030695C3030306F5C3030306E5C303030615C3030306C5C3030306C5C30303079}
+\@writefile{toc}{\contentsline {chapter}{\numberline {A}Additionally}{35}{appendix.A}\protected@file@percent }
 \@writefile{lof}{\addvspace {10\p@ }}
 \@writefile{lot}{\addvspace {10\p@ }}
-\BKM@entry{id=36,dest={636861707465722A2E3630},srcline={840}}{5C3337365C3337375C3030304C5C303030695C303030735C303030745C3030305C3034305C3030306F5C303030665C3030305C3034305C303030465C303030695C303030675C303030755C303030725C303030655C30303073}
-\@writefile{toc}{\contentsline {chapter}{\nonumberline List of Figures}{35}{chapter*.60}\protected@file@percent }
-\BKM@entry{id=37,dest={636861707465722A2E3631},srcline={841}}{5C3337365C3337375C3030304C5C303030695C303030735C303030745C3030305C3034305C3030306F5C303030665C3030305C3034305C303030545C303030615C303030625C3030306C5C303030655C30303073}
+\BKM@entry{id=36,dest={636861707465722A2E3631},srcline={863}}{5C3337365C3337375C3030304C5C303030695C303030735C303030745C3030305C3034305C3030306F5C303030665C3030305C3034305C303030465C303030695C303030675C303030755C303030725C303030655C30303073}
+\citation{dosovitskiy2021image}
+\@writefile{toc}{\contentsline {chapter}{\nonumberline List of Figures}{37}{chapter*.61}\protected@file@percent }
+\BKM@entry{id=37,dest={636861707465722A2E3632},srcline={864}}{5C3337365C3337375C3030304C5C303030695C303030735C303030745C3030305C3034305C3030306F5C303030665C3030305C3034305C303030545C303030615C303030625C3030306C5C303030655C30303073}
 \bibstyle{IEEEtran_ISS}
 \bibdata{refs}
-\@writefile{toc}{\contentsline {chapter}{\nonumberline List of Tables}{37}{chapter*.61}\protected@file@percent }
-\BKM@entry{id=38,dest={636861707465722A2E3632},srcline={2}}{5C3337365C3337375C303030425C303030695C303030625C3030306C5C303030695C3030306F5C303030675C303030725C303030615C303030705C303030685C30303079}
+\@writefile{toc}{\contentsline {chapter}{\nonumberline List of Tables}{39}{chapter*.62}\protected@file@percent }
+\BKM@entry{id=38,dest={636861707465722A2E3633},srcline={2}}{5C3337365C3337375C303030425C303030695C303030625C3030306C5C303030695C3030306F5C303030675C303030725C303030615C303030705C303030685C30303079}
 \bibcite{Cx}{1}
 \bibcite{peng_pvnet_2019}{2}
 \bibcite{Fabian_2021}{3}
@@ -241,7 +251,7 @@
 \bibcite{fu2021robust}{12}
 \bibcite{Besl1992AMF}{13}
 \bibcite{auto}{14}
-\@writefile{toc}{\contentsline {chapter}{\nonumberline Bibliography}{39}{chapter*.62}\protected@file@percent }
+\@writefile{toc}{\contentsline {chapter}{\nonumberline Bibliography}{41}{chapter*.63}\protected@file@percent }
 \@writefile{lof}{\addvspace {10\p@ }}
 \@writefile{lot}{\addvspace {10\p@ }}
 \bibcite{maru2022}{15}
@@ -296,6 +306,10 @@
 \bibcite{perez2017film}{64}
 \bibcite{Peebles2022DiT}{65}
 \bibcite{kazemnejad2019:pencoding}{66}
+\bibcite{5206848}{67}
+\bibcite{qi2017pointnet}{68}
+\bibcite{qi2017pointnet++}{69}
+\bibcite{thomas2019kpconv}{70}
 \global\csname @altsecnumformattrue\endcsname
 \global\@namedef{scr@dte@chapter@lastmaxnumwidth}{16.46393pt}
 \global\@namedef{scr@dte@section@lastmaxnumwidth}{22.79993pt}
@@ -305,4 +319,4 @@
 \@writefile{toc}{\providecommand\tocbasic@end@toc@file{}\tocbasic@end@toc@file}
 \@writefile{lof}{\providecommand\tocbasic@end@toc@file{}\tocbasic@end@toc@file}
 \@writefile{lot}{\providecommand\tocbasic@end@toc@file{}\tocbasic@end@toc@file}
-\gdef \@abspage@last{47}
+\gdef \@abspage@last{49}

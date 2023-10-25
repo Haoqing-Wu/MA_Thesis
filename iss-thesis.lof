@@ -7,8 +7,9 @@
 \contentsline {figure}{\numberline {4.2}{\ignorespaces Structure of the sampling phase of the pose hypotheses diffusion\relax }}{21}{figure.caption.41}%
 \contentsline {figure}{\numberline {4.3}{\ignorespaces Denoiser network with backbone and feature extractor\relax }}{22}{figure.caption.44}%
 \contentsline {figure}{\numberline {4.4}{\ignorespaces Multi-head self-attention and scaled dot-product attention\relax }}{23}{figure.caption.47}%
-\contentsline {figure}{\numberline {4.5}{\ignorespaces The 64-dimensional positional encoding for a sequence with length of 100\relax }}{25}{figure.caption.50}%
-\contentsline {figure}{\numberline {4.6}{\ignorespaces Self-supervised architecture of DINO\relax }}{26}{figure.caption.53}%
+\contentsline {figure}{\numberline {4.5}{\ignorespaces The 64-dimensional positional encoding for a sequence with length of 100\relax }}{24}{figure.caption.50}%
+\contentsline {figure}{\numberline {4.6}{\ignorespaces Self-supervised architecture of DINO\relax }}{25}{figure.caption.53}%
+\contentsline {figure}{\numberline {4.7}{\ignorespaces Sturcture of the ViT model, image adapted from \cite {dosovitskiy2021image}\relax }}{26}{figure.caption.54}%
 \addvspace {10\p@ }
 \addvspace {10\p@ }
 \addvspace {10\p@ }

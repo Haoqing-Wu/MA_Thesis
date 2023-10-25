@@ -232,4 +232,16 @@ W.~Peebles and S.~Xie, ``Scalable diffusion models with transformers,'' \emph{ar
 A.~Kazemnejad, ``Transformer architecture: The positional encoding,'' \emph{kazemnejad.com}, 2019. [Online]. Available: \url{https://kazemnejad.com/blog/transformer_architecture_positional_encoding/}
 \BIBentrySTDinterwordspacing
 
+\bibitem{5206848}
+J.~Deng, W.~Dong, R.~Socher, L.-J. Li, K.~Li and L.~Fei-Fei, ``Imagenet: A large-scale hierarchical image database,'' in \emph{2009 IEEE Conference on Computer Vision and Pattern Recognition}, 2009, pp. 248--255.
+
+\bibitem{qi2017pointnet}
+C.~R. Qi, H.~Su, K.~Mo and L.~J. Guibas, ``Pointnet: Deep learning on point sets for 3d classification and segmentation,'' 2017.
+
+\bibitem{qi2017pointnet++}
+C.~R. Qi, L.~Yi, H.~Su and L.~J. Guibas, ``Pointnet++: Deep hierarchical feature learning on point sets in a metric space,'' 2017.
+
+\bibitem{thomas2019kpconv}
+H.~Thomas, C.~R. Qi, J.-E. Deschaud, B.~Marcotegui, F.~Goulette and L.~J. Guibas, ``Kpconv: Flexible and deformable convolution for point clouds,'' 2019.
+
 \end{thebibliography}

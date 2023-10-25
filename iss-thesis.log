@@ -1,4 +1,4 @@
-This is pdfTeX, Version 3.141592653-2.6-1.40.25 (TeX Live 2023) (preloaded format=pdflatex 2023.10.5)  24 OCT 2023 18:47
+This is pdfTeX, Version 3.141592653-2.6-1.40.25 (TeX Live 2023) (preloaded format=pdflatex 2023.10.5)  25 OCT 2023 18:38
 entering extended mode
  restricted \write18 enabled.
  file:line:error style messages enabled.
@@ -718,87 +718,103 @@ chapter 4.
 <img/train.png, id=399, 1860.9525pt x 688.5725pt>
 File: img/train.png Graphic file (type png)
 <use img/train.png>
-Package pdftex.def Info: img/train.png  used on input line 713.
+Package pdftex.def Info: img/train.png  used on input line 714.
 (pdftex.def)             Requested size: 428.01007pt x 158.36833pt.
  [20 <./img/train.png>]
 <img/sample.png, id=417, 1860.9525pt x 743.77875pt>
 File: img/sample.png Graphic file (type png)
 <use img/sample.png>
-Package pdftex.def Info: img/sample.png  used on input line 727.
+Package pdftex.def Info: img/sample.png  used on input line 729.
 (pdftex.def)             Requested size: 428.01007pt x 171.0655pt.
 <img/denoiser.png, id=419, 1374.13374pt x 1136.245pt>
 File: img/denoiser.png Graphic file (type png)
 <use img/denoiser.png>
-Package pdftex.def Info: img/denoiser.png  used on input line 738.
+Package pdftex.def Info: img/denoiser.png  used on input line 741.
 (pdftex.def)             Requested size: 412.2433pt x 340.87613pt.
 
-Underfull \vbox (badness 2205) has occurred while \output is active []
 
- [21 <./img/sample.png>] [22 <./img/denoiser.png>]
-<img/mhsa.png, id=439, 1005.7575pt x 580.1675pt>
+LaTeX Warning: `h' float specifier changed to `ht'.
+
+[21 <./img/sample.png>]
+<img/mhsa.png, id=434, 1005.7575pt x 580.1675pt>
 File: img/mhsa.png Graphic file (type png)
 <use img/mhsa.png>
-Package pdftex.def Info: img/mhsa.png  used on input line 748.
+Package pdftex.def Info: img/mhsa.png  used on input line 753.
 (pdftex.def)             Requested size: 301.72958pt x 174.05157pt.
- [23 <./img/mhsa.png>]
-LaTeX Font Info:    Trying to load font information for TS1+txr on input line 776.
+
+
+LaTeX Warning: `h' float specifier changed to `ht'.
+
+
+Underfull \vbox (badness 10000) has occurred while \output is active []
+
+ [22 <./img/denoiser.png>] [23 <./img/mhsa.png>]
+LaTeX Font Info:    Trying to load font information for TS1+txr on input line 782.
  (/usr/local/texlive/2023/texmf-dist/tex/latex/txfonts/ts1txr.fd
 File: ts1txr.fd 2000/12/15 v3.1
 )
-<img/pe.png, id=459, 672.8337pt x 244.2726pt>
+<img/pe.png, id=465, 672.8337pt x 244.2726pt>
 File: img/pe.png Graphic file (type png)
 <use img/pe.png>
-Package pdftex.def Info: img/pe.png  used on input line 788.
+Package pdftex.def Info: img/pe.png  used on input line 794.
 (pdftex.def)             Requested size: 437.33672pt x 158.7753pt.
- [24]
+ [24 <./img/pe.png>]
 
 Package amsmath Warning: Foreign command \atop;
 (amsmath)                \frac or \genfrac should be used instead
-(amsmath)                 on input line 802.
+(amsmath)                 on input line 811.
 
-<img/dino.png, id=479, 927.465pt x 268.00125pt>
+<img/dino.png, id=480, 927.465pt x 268.00125pt>
 File: img/dino.png Graphic file (type png)
 <use img/dino.png>
-Package pdftex.def Info: img/dino.png  used on input line 808.
+Package pdftex.def Info: img/dino.png  used on input line 815.
 (pdftex.def)             Requested size: 352.44037pt x 101.84152pt.
+<img/vit.png, id=483, 1850.915pt x 941.5175pt>
+File: img/vit.png Graphic file (type png)
+<use img/vit.png>
+Package pdftex.def Info: img/vit.png  used on input line 825.
+(pdftex.def)             Requested size: 425.70149pt x 216.54446pt.
 
-Underfull \vbox (badness 4303) has occurred while \output is active []
+LaTeX Warning: `h' float specifier changed to `ht'.
 
- [25 <./img/pe.png>] [26 <./img/dino.png>]
-chapter 5.
-[27
+[25 <./img/dino.png>]
+Underfull \vbox (badness 10000) has occurred while \output is active []
 
-
-] [28
+ [26 <./img/vit.png>] [27] [28
 
 
 ]
-chapter 6.
+chapter 5.
 [29] [30
 
 
 ]
-chapter 7.
+chapter 6.
 [31] [32
 
 
 ]
-chapter A.
+chapter 7.
 [33] [34
+
+
+]
+chapter A.
+[35] [36
 
 
 ] (./iss-thesis.lof)
 \tf@lof=\write5
 \openout5 = `iss-thesis.lof'.
 
- [35] [36
+ [37] [38
 
 
 ] (./iss-thesis.lot)
 \tf@lot=\write6
 \openout6 = `iss-thesis.lot'.
 
- (./iss-thesis.bbl [37] [38
+ (./iss-thesis.bbl [39] [40
 
 
 ]
@@ -809,10 +825,10 @@ chapter without number
 ** WARNING: IEEEtran.bst: No hyphenation pattern has been
 ** loaded for the language `en'. Using the pattern for
 ** the default language instead.
-[39] [40] [41]) [42]
+[41] [42] [43]) [44]
 LaTeX Font Info:    Font shape `T1/txr/b/n' in size <20.74> not available
-(Font)              Font shape `T1/txr/bx/n' tried instead on input line 855.
- [43
+(Font)              Font shape `T1/txr/bx/n' tried instead on input line 878.
+ [45
 
 
 ] (./iss-thesis.aux)
@@ -820,18 +836,18 @@ Package rerunfilecheck Info: File `iss-thesis.out' has not changed.
 (rerunfilecheck)             Checksum: D41D8CD98F00B204E9800998ECF8427E;0.
  ) 
 Here is how much of TeX's memory you used:
- 17536 strings out of 476025
- 330051 string characters out of 5790017
+ 17555 strings out of 476025
+ 330353 string characters out of 5790017
  1875388 words of memory out of 5000000
- 37437 multiletter control sequences out of 15000+600000
+ 37448 multiletter control sequences out of 15000+600000
  597515 words of font info for 198 fonts, out of 8000000 for 9000
  1145 hyphenation exceptions out of 8191
  108i,20n,106p,10680b,611s stack positions out of 10000i,1000n,20000p,200000b,200000s
 </usr/local/texlive/2023/texmf-dist/fonts/type1/public/txfonts/rtcxr.pfb></usr/local/texlive/2023/texmf-dist/fonts/type1/public/txfonts/rtxb.pfb></usr/local/texlive/2023/texmf-dist/fonts/type1/public/txfonts/rtxbmi.pfb></usr/local/texlive/2023/texmf-dist/fonts/type1/public/txfonts/rtxi.pfb></usr/local/texlive/2023/texmf-dist/fonts/type1/public/txfonts/rtxmi.pfb></usr/local/texlive/2023/texmf-dist/fonts/type1/public/txfonts/rtxr.pfb></usr/local/texlive/2023/texmf-dist/fonts/type1/public/txfonts/rtxr.pfb></usr/local/texlive/2023/texmf-dist/fonts/type1/public/txfonts/t1xtt.pfb></usr/local/texlive/2023/texmf-dist/fonts/type1/public/txfonts/txex.pfb></usr/local/texlive/2023/texmf-dist/fonts/type1/public/txfonts/txexa.pfb></usr/local/texlive/2023/texmf-dist/fonts/type1/public/txfonts/txsy.pfb></usr/local/texlive/2023/texmf-dist/fonts/type1/public/txfonts/txsyb.pfb></usr/local/texlive/2023/texmf-dist/fonts/type1/public/txfonts/txsyc.pfb></usr/local/texlive/2023/texmf-dist/fonts/type1/urw/times/utmb8a.pfb></usr/local/texlive/2023/texmf-dist/fonts/type1/urw/times/utmr8a.pfb></usr/local/texlive/2023/texmf-dist/fonts/type1/urw/times/utmr8a.pfb></usr/local/texlive/2023/texmf-dist/fonts/type1/urw/times/utmri8a.pfb>
-Output written on iss-thesis.pdf (47 pages, 758748 bytes).
+Output written on iss-thesis.pdf (49 pages, 1084129 bytes).
 PDF statistics:
- 837 PDF objects out of 1000 (max. 8388607)
- 732 compressed objects within 8 object streams
- 257 named destinations out of 1000 (max. 500000)
- 345 words of extra memory for PDF output out of 10000 (max. 10000000)
+ 864 PDF objects out of 1000 (max. 8388607)
+ 754 compressed objects within 8 object streams
+ 264 named destinations out of 1000 (max. 500000)
+ 350 words of extra memory for PDF output out of 10000 (max. 10000000)
 
