@@ -125,6 +125,9 @@
 \usepackage{subfig}                     % for subfigures
 \usepackage{wrapfig}                    % for figures floating in text, alternatively you can use >>floatflt<<
 \usepackage{booktabs}                   % nice looking tables (for tables with ONLY horizontal lines)
+\usepackage{algorithm}                  % for pseudocode
+\usepackage{algorithmicx}                % for pseudocode
+\usepackage{algpseudocode}              % for pseudocode
 
 %%%%% Tikz / PGF - drawing beautiful graphics and plots in Latex
 % \usepackage{tikz}
@@ -560,13 +563,13 @@ where $q(\mathbf{x}_{t}|\mathbf{x}_{t-1})$ is a normal distribution with mean $\
 
 Our goal is to track the noised data at an arbitrary step $t$ with a close-form posterior distribution $q(\mathbf{x}_{t}|\mathbf{x}_{0})$. So the reparemeterization trick is introduced so that we don't need to calculate the $\mathbf{x}_{t}$ iteratively from $t=0$.
 
-Let $\alpha_{t} = 1 - \beta_{t}$ and $\bar{\alpha}_{t} = \prod_{i=1}^{t}\alpha_{i}$ with Gaussian noise $\boldsymbol{\epsilon}_{0},...,\boldsymbol{\epsilon}_{t-2},\boldsymbol{\epsilon}_{t-1} \sim \mathcal{N}(0, \mathbf{I})$, we can simplify the noised the data $\mathbf{x}_{t}$ in such a recursive way:
+Let $\alpha_{t} = 1 - \beta_{t}$ and $\bar{\alpha}_{t} = \prod_{i=1}^{t}\alpha_{i}$ with Gaussian noise $\boldsymbol{\epsilon}_{0},...,\boldsymbol{\epsilon}_{t-2},\boldsymbol{\epsilon}_{t-1} \sim \mathcal{N}(\mathbf{0}, \mathbf{I})$, we can simplify the noised the data $\mathbf{x}_{t}$ in such a recursive way:
 \begin{align*}
   \mathbf{x}_{t} &= \sqrt{\alpha_{t}}\mathbf{x}_{t-1} + \sqrt{1-\alpha_{t}}\boldsymbol{\epsilon}_{t-1}\\
                  &= \sqrt{\alpha_{t}}(\sqrt{\alpha_{t-1}}\mathbf{x}_{t-2} + \sqrt{1-\alpha_{t-1}}\boldsymbol{\epsilon}_{t-2}) + \sqrt{1-\alpha_{t}}\boldsymbol{\epsilon}_{t-1}\\
                  &= \sqrt{\alpha_{t}\alpha_{t-1}}\mathbf{x}_{t-2} + \sqrt{\alpha_{t}(1-\alpha_{t-1})}\boldsymbol{\epsilon}_{t-2} + \sqrt{1-\alpha_{t}}\boldsymbol{\epsilon}_{t-1}
 \end{align*}
-Notice that when we merge two Gaussian distributions with different variance, $\mathcal{N} (0, \sigma^{2}_{1}\mathbf{I})$ and $\mathcal{N} (0, \sigma^{2}_{2}\mathbf{I})$, the new merged distribution is $\mathcal{N} (0, (\sigma^{2}_{1} + \sigma^{2}_{2})\mathbf{I})$. So we can merge the second and third term in the equation above where $\bar{\boldsymbol{\epsilon}}_{t-2}$ is the new Gaussian and get:
+Notice that when we merge two Gaussian distributions with different variance, $\mathcal{N} (\mathbf{0}, \sigma^{2}_{1}\mathbf{I})$ and $\mathcal{N} (\mathbf{0}, \sigma^{2}_{2}\mathbf{I})$, the new merged distribution is $\mathcal{N} (\mathbf{0}, (\sigma^{2}_{1} + \sigma^{2}_{2})\mathbf{I})$. So we can merge the second and third term in the equation above where $\bar{\boldsymbol{\epsilon}}_{t-2}$ is the new Gaussian and get:
 \begin{align}\label{eq:xt_x0}
   \mathbf{x}_{t} &= \sqrt{\alpha_{t}\alpha_{t-1}}\mathbf{x}_{t-2} + \sqrt{\alpha_{t}(1-\alpha_{t-1})}\boldsymbol{\epsilon}_{t-2} + \sqrt{1-\alpha_{t}}\boldsymbol{\epsilon}_{t-1}\notag\\
                  &= \sqrt{\alpha_{t}\alpha_{t-1}}\mathbf{x}_{t-2} + \sqrt{\alpha_{t}(1-\alpha_{t-1}) + (1-\alpha_{t})}\bar{\boldsymbol{\epsilon}}_{t-2}\notag\\
@@ -580,7 +583,7 @@ Finally, we can represent the sample $\mathbf{x}_{t}$ with the following distrib
 \end{align}
 where $\alpha_{t}$ and $\bar{\alpha}_{t}$ can be precomputed for any arbitrary step $t$ from $\beta_{t}$. The variance hyperparemeter $\beta_{t}$ is normally chosen as a linear, quadratic or cosine schedule. The orginal design of DDPM used a linear schedule from $\beta_{1} = 10^{-4}$ to $\beta_{T} = 0.02$ which is also commonly used in other diffusion models.
 \subsubsection{Reverse Process}
-The purpose of the reverse process is to reverse the forward process above and recover the original data $\mathbf{x}_{0}$ from a random Gaussian noise $\mathbf{x}_{T} \sim \mathcal{N}(0, \mathbf{I})$. Practically, the reverse conditional distribution is not directly tractable, because the computations involve the whole data distribtion. Therefore, we need to train a model $p_{\theta}(\mathbf{x}_{t-1}|\mathbf{x}_{t})$ to estimate the reverse conditional distribution $q(\mathbf{x}_{t-1}|\mathbf{x}_{t})$. Since the variance $\beta_{t}$ is small enough, $q(\mathbf{x}_{t-1}|\mathbf{x}_{t})$ can be treated as Gaussian distribution, so does $p_{\theta}(\mathbf{x}_{t-1}|\mathbf{x}_{t})$, which can be defined as follow:
+The purpose of the reverse process is to reverse the forward process above and recover the original data $\mathbf{x}_{0}$ from a random Gaussian noise $\mathbf{x}_{T} \sim \mathcal{N}(\mathbf{0}, \mathbf{I})$. Practically, the reverse conditional distribution is not directly tractable, because the computations involve the whole data distribtion. Therefore, we need to train a model $p_{\theta}(\mathbf{x}_{t-1}|\mathbf{x}_{t})$ to estimate the reverse conditional distribution $q(\mathbf{x}_{t-1}|\mathbf{x}_{t})$. Since the variance $\beta_{t}$ is small enough, $q(\mathbf{x}_{t-1}|\mathbf{x}_{t})$ can be treated as Gaussian distribution, so does $p_{\theta}(\mathbf{x}_{t-1}|\mathbf{x}_{t})$, which can be defined as follow:
 \begin{align}\label{eq:reverse}
   p_{\theta}(\mathbf{x}_{t-1}|\mathbf{x}_{t}) = \mathcal{N}(\mathbf{x}_{t-1}; \boldsymbol{\mu}_{\theta}(\mathbf{x}_{t},t), \mathbf{\Sigma}_{\theta}(\mathbf{x}_{t},t))
 \end{align}
@@ -589,18 +592,18 @@ Applying the estimated reverse conditional distribution for all timesteps we get
   p_{\theta}(\mathbf{x}_{0:T}) = p_{\theta}(\mathbf{x}_{T})\prod_{t=1}^{T}p_{\theta}(\mathbf{x}_{t-1}|\mathbf{x}_{t})
 \end{align}
 The reverse conditional probability is only trackable when conditioned on $\mathbf{x}_{0}$:
-\begin{align}
+\begin{align}\label{eq:reverse_q}
   q(\mathbf{x}_{t-1}|\mathbf{x}_{t},\mathbf{x}_{0}) = \mathcal{N} (\mathbf{x}_{t-1}; \boldsymbol{\tilde{\mu}}(\mathbf{x}_{t}, \mathbf{x}_{0}), \tilde{\beta}_{t}\mathbf{I})
 \end{align}
 With the help of Bayes' Rule and the properties of Gaussian probability density function, we can prove that:
 \begin{gather}
-  \tilde{\beta}_{t} = \frac{1-\tilde{\alpha}_{t-1}}{1-\tilde{\alpha_{t}}} \cdot  \beta_{t}\\
-  \boldsymbol{\tilde{\mu}}_{t} = \frac{\sqrt{\alpha_{t}}(1-\tilde{\alpha}_{t-1})}{1-\tilde{\alpha}_{t}}\mathbf{x_{t}} + \frac{\sqrt{\tilde{\alpha}_{t-1}}\beta_{t}}{1-\tilde{\alpha}_{t}}\mathbf{x_{0}}
+  \tilde{\beta}_{t} = \frac{1-\bar{\alpha}_{t-1}}{1-\bar{\alpha_{t}}} \cdot  \beta_{t}\\
+  \boldsymbol{\tilde{\mu}}_{t} = \frac{\sqrt{\alpha_{t}}(1-\bar{\alpha}_{t-1})}{1-\bar{\alpha}_{t}}\mathbf{x_{t}} + \frac{\sqrt{\bar{\alpha}_{t-1}}\beta_{t}}{1-\bar{\alpha}_{t}}\mathbf{x_{0}}
 \end{gather}
-Thanks to the reparemeterization trick, we can represent $\mathbf{x_{0}} = \frac{1}{\sqrt{\alpha_{t}}}(\mathbf{x_{t}} - \sqrt{1-\tilde{\alpha_{t}}}\epsilon_{t})$ 
+Thanks to the reparemeterization trick, we can represent $\mathbf{x_{0}} = \frac{1}{\sqrt{\alpha_{t}}}(\mathbf{x_{t}} - \sqrt{1-\bar{\alpha_{t}}}\epsilon_{t})$ 
 from \ref{eq:xt_x0} and further simplify the expression of $\boldsymbol{\tilde{\mu}}$ as:
 \begin{align}\label{eq:mu_tilde}
-  \boldsymbol{\tilde{\mu}}_{t} = \frac{1}{\sqrt{\alpha_{t}}}\left(\mathbf{x}_{t} - \frac{1-\alpha_{t}}{\sqrt{1-\tilde{\alpha}_{t}}}\epsilon_{t}\right)
+  \boldsymbol{\tilde{\mu}}_{t} = \frac{1}{\sqrt{\alpha_{t}}}\left(\mathbf{x}_{t} - \frac{1-\alpha_{t}}{\sqrt{1-\bar{\alpha}_{t}}}\epsilon_{t}\right)
 \end{align}
 Notice that such a setup of $p$ and $q$ is similar to VAEs, so we can optimize the negative log-likelihood using the variational bound:
 \begin{align}
@@ -619,7 +622,7 @@ The second term $L_{t-1}$ describe the difference of $p_{\theta}(\mathbf{x}_{t}|
 
 Revisit the reverse process from \ref{eq:reverse}, we need to train $\boldsymbol{\mu}_{\theta}$ to approximate $\boldsymbol{\tilde{\mu}}_{t}$ in \ref{eq:mu_tilde}, where $\epsilon_{t}$ can be reparameterized as the prediction from the input $\mathbf{x}_{t}$ at time step $t$. Finally, we can have the expression of the approximation of the mean:
 \begin{align}
-  \boldsymbol{\mu}_{\theta} = \frac{1}{\sqrt{\alpha_{t}}}\left(\mathbf{x}_{t} - \frac{1-\alpha_{t}}{\sqrt{1-\tilde{\alpha}_{t}}}\boldsymbol{\epsilon}_{\theta}(\mathbf{x}_{t}, t)\right)
+  \boldsymbol{\mu}_{\theta} = \frac{1}{\sqrt{\alpha_{t}}}\left(\mathbf{x}_{t} - \frac{1-\alpha_{t}}{\sqrt{1-\bar{\alpha}_{t}}}\boldsymbol{\epsilon}_{\theta}(\mathbf{x}_{t}, t)\right)
 \end{align}
 The lost term $L_{t}$ can be formulated using $l_{2}$ distance:
 \begin{align}
@@ -627,9 +630,10 @@ The lost term $L_{t}$ can be formulated using $l_{2}$ distance:
 \end{align}
 which can be simplified ignoring the weighting term according to the original paper\cite{ho2020denoising} as:
 \begin{align}
-  L_{simple} = \mathbb{E}_{t\sim[1,T],\mathbf{x}_{0},\boldsymbol{\epsilon}}\left[\left\lVert\boldsymbol{\epsilon}_{t} - \boldsymbol{\epsilon}_{\theta}(\sqrt{\tilde{\alpha}_{t}}\mathbf{x}_{0} + \sqrt{1 - \tilde{\alpha}_{t}}\boldsymbol{\epsilon}_{t}, t)\right\rVert ^{2}\right] + C
+  L_{simple} = \mathbb{E}_{t\sim[1,T],\mathbf{x}_{0},\boldsymbol{\epsilon}}\left[\left\lVert\boldsymbol{\epsilon}_{t} - \boldsymbol{\epsilon}_{\theta}(\sqrt{\bar{\alpha}_{t}}\mathbf{x}_{0} + \sqrt{1 - \bar{\alpha}_{t}}\boldsymbol{\epsilon}_{t}, t)\right\rVert ^{2}\right] + C
 \end{align}
 where C is a constant term which not related to $\theta$ and can be ignored during training.  And we the variance is not considered in the loss function and it is improved in the later research\cite{nichol2021improved} to let the network also learn the covariance matrix $\mathbf{\Sigma}_{\theta}$.
+
 \subsubsection{Conditional Diffusion Model}
 Conditional diffusion, also called guided diffusion is very practical in many applications since we normally want to generate the data in paricular style, direction or distribution and not in an arbitrary way.Typical usage of conditional diffusion is to sample data from a given class or category, as well as text prompt, image prompt and so on.
 
@@ -650,6 +654,32 @@ Based on the score function we can derive the conditional diffusion model with t
 Classifier guidance is a method that balances the trade-off between mode coverage and sample fidelity post-training. It combines the score estimate of a diffusion model with the gradient of an image classifier, which requires training an classifier $f_{\phi}$ separate from the diffusion model and use the gradients of the classifier as the guidance.
 
 Without the an separate classifier $f_{\phi}$, it is still possible to let the conditional and unconditional score function share the same network, which is called classifier-free guidance. The diffusion model is trained by randomly dropping the condition $y$ during training. And the result turns out to be that the conditonal and unconditional score estimates are combined to attain a good tradeoff between quality and diversity\cite{ho2022classifierfree}.
+
+The training and sampling algorithm of the conditional denoising diffusion probabilistic model can be summarized as following algorithm \ref{algo:ddpm_train} and \ref{algo:ddpm_sample}.
+\begin{algorithm}[H]
+  \caption{Training of Conditional Diffusion Model}
+  \label{algo:ddpm_train}
+  \begin{algorithmic}[1]
+    \Repeat
+      \State $\mathbf{x}_{0}\sim q(\mathbf{x}_{0})$, conditional input $y$
+      \State $t\sim \text{Uniform}(\{1,...,T\})$
+      \State $\mathbf{\epsilon}\sim \mathcal{N} (\mathbf{0}, \mathbf{I})$
+      \State Take a gradient descent step on $\nabla_{\theta}\left\lVert\boldsymbol{\epsilon} - \boldsymbol{\epsilon}_{\theta}(\sqrt{\bar{\alpha}_{t}}\mathbf{x}_{0} + \sqrt{1 - \bar{\alpha}_{t}}\boldsymbol{\epsilon}, t, y)\right\rVert ^{2}$ 
+    \Until converged
+  \end{algorithmic}
+\end{algorithm}
+\begin{algorithm}[H]
+  \caption{Sampling of Conditional Diffusion Model}
+  \label{algo:ddpm_sample}
+  \begin{algorithmic}[1]
+    \State $\mathbf{x}_{T}\sim \mathcal{N} (\mathbf{0}, \mathbf{I})$
+    \For{$t=T$ to $1$}
+      \State $\mathbf{z}\sim \mathcal{N} (\mathbf{0}, \mathbf{I})$ if $t>1$, else $\mathbf{z} = \mathbf{0}$
+      \State $\mathbf{x}_{t-1}=\frac{1}{\sqrt{\alpha_{t}}}\left(\mathbf{x}_{t} - \frac{1-\alpha_{t}}{\sqrt{1-\bar{\alpha}_{t}}}\epsilon_{\theta}(\mathbf{x}_{t},t,y)\right) + \sigma_{t}\mathbf{z}$
+    \EndFor
+    \State \Return $\mathbf{x}_{0}$
+  \end{algorithmic}
+\end{algorithm}
 \subsubsection{Extensions}
 ---------------Add if needed----------------
 \subsection{Applications}
@@ -716,6 +746,8 @@ Additionally, we also need to provide the timestep $t$ and the guidance $\mathbf
 	\label{img:train}
 \end{figure}
 
+---------------------algo---------------------
+
 \subsubsection{Sampling Phase}
 Assuming that the denoiser is converged in the training phase, we can use the denoiser to iteratively generate the pose hypotheses with the randomly initialized the transformation $\mathbf{T}_{T}$. Same as the training phase, we need to provide the timestep $t$ and the guidance $\mathbf{y}$ to the backbone. Given a reference RGB-D image, we use the pretrained 2D and 3D encoder to extract the downstream features and concatinate them as the conditional embedding of the diffusion backbone. 
 
@@ -731,6 +763,22 @@ After the optional multi-hypotheses inference, we can further use some algorithm
 	\label{img:sample}
 \end{figure}
 
+\subsubsection{Speed up Sampling with DDIM}
+It is relatively slow to generate the sample from DDPM, because the denoising process follows the whole Markov chain of the reverse process which is quite long. Slow inference reduced performance of the real-time application of pose estimation, which we need to optimizd. the In order to speed up the sampling process, we use the dinoising diffusion implicit model (DDIM)\cite{song2022denoising} with same training procedure as DDPM but more efficient in the reverse process.
+
+First, we rewrite the reverse conditional probability in \ref{eq:reverse_q} to be parameterized by a desired standard deviation $\sigma_{t}$ using the reparameterization trick in \ref{eq:xt_x0} as:
+\begin{align}
+  q_{\sigma}(\mathbf{x}_{t-1}|\mathbf{x}_{t},\mathbf{x}_{0}) = \mathcal{N} (\mathbf{x}_{t-1}; \sqrt{\bar{\alpha}_{t-1}}\mathbf{x}_{0}+\sqrt{1-\bar{\alpha}_{t-1} - \sigma_{t}^{2}}\frac{\mathbf{x}_{t}-\sqrt{\bar{\alpha}_{t}}\mathbf{x}_{0}}{\sqrt{1-\bar{\alpha}_{t}}}, \sigma_{t}^{2}\mathbf{I})
+\end{align}
+Compared with the original probability $q(\mathbf{x}_{t-1}|\mathbf{x}_{t},\mathbf{x}_{0}) = \mathcal{N} (\mathbf{x}_{t-1}; \boldsymbol{\tilde{\mu}}(\mathbf{x}_{t}, \mathbf{x}_{0}), \tilde{\beta}_{t}\mathbf{I})$, we have:
+\begin{align}
+  \tilde{\beta}_{t}=\sigma_{t}^{2}=\frac{1-\bar{\alpha}_{t-1}}{1-\bar{\alpha}_{t}}\cdot\beta_{t}
+\end{align}
+Then we let $\sigma_{t}^{2}=\eta\cdot\tilde{\beta}_{t}$ where $\eta$ is a hyperparemeter that controls the sampling stochasticity. $\eta=0$ corresponds the best performance of the model and $\eta=1$ corresponds to the original DDPM. In the reverse process, we only sample a subset of the complete diffusion steps $\{\tau_{1},...\tau_{S}\}$ and the reverse process can be formulated as:
+\begin{align}
+  q_{\sigma,\tau}(\mathbf{x}_{\tau_{i}-1}|\mathbf{x}_{\tau_{i}},\mathbf{x}_{0}) = \mathcal{N} (\mathbf{x}_{\tau_{i}-1}; \sqrt{\bar{\alpha}_{t-1}}\mathbf{x}_{0}+\sqrt{1-\bar{\alpha}_{t-1} - \sigma_{t}^{2}}\frac{\mathbf{x}_{\tau_{i}}-\sqrt{\bar{\alpha}_{t}}\mathbf{x}_{0}}{\sqrt{1-\bar{\alpha}_{t}}}, \sigma_{t}^{2}\mathbf{I})
+\end{align}
+With DDIM we can use a non-Markovian diffusion process whose reverse process can be much faster than the original DDPM, and still keep the quality of the samples. It also remains the consistency of the reverse process when $\eta=0$, where the reverse process is deterministic. That makes sure that multiple samples from the same reference input have similar high-level features and in our case the pose hypotheses are consistent with each other.
 \subsection{Models}
 \subsubsection{Denoiser Network}
 The following figure \ref{img:denoiser} illustrates the structure of our main network in diffusion model. As in previous section mentioned, the transformer encoder processes the translation and rotaion vector together with their position embedding conditioned with time embedding and 2D/3D feature embedding of the reference image and predicts the noise added at this timestep. 
@@ -803,11 +851,11 @@ As the 2D feature extractor, the self-supervised Vision Transformer
 
 Knowledge distillation is a learning paradigm where a student network $g_{\theta_{s}}$ is trained to match the output of a given teacher network $g_{\theta_{t}}$, parameterized by $\theta_{s}$ and $\theta_{t}$ respectively. Given an input image $x$, both networks output probability distributions over $K$ dimensions denoted by $P_{s}$ and $P_{t}$. The probability $P$ is obtained by normalizing the output of the network $g$ with a softmax function. Given a fixed teacher network $g_{\theta_{t}}$, the student network $g_{\theta_{s}}$ is trained to minimize the cross-entropy loss between the two distributions w.r.t the student parameters $\theta_{s}$:
 \begin{align}
-  \mathop{min}_{\theta_{s}}H(P_{t}(x), P_{s}(x))
+  L = \mathop{min}_{\theta_{s}}H(P_{t}(x), P_{s}(x))
 \end{align}
 where $H(a,b)=-a \log b$ is the cross-entropy loss. And this optimizatiin problem is adapted to self-supervised learning by constructing different distorted views or crops of an image with multi-crop strategy. Making a set of two global views, $x_{1}^{g}$ and $x_{2}^{g}$ and several local views with smaller resolution, the loss function can be formulated as:
 \begin{align}
-  \mathop{min}_{\theta_{s}}\mathop{\sum}_{x\in \{x_{1}^{g},x_{2}^{g}\}} \ \mathop{\sum}_{x^{'}\in V \atop x^{'}\neq x}H(P_{t}(x), P_{s}(x^{'}))
+  L_{DINO}=\mathop{min}_{\theta_{s}}\mathop{\sum}_{x\in \{x_{1}^{g},x_{2}^{g}\}} \ \mathop{\sum}_{x^{'}\in V \atop x^{'}\neq x}H(P_{t}(x), P_{s}(x^{'}))
 \end{align}
 The structure of the self-supervised architecture is shown in figure \ref{img:dino}. The model passes two different random transformations of the input image to both networks with same stucture but different parameters. The output of the teacher network is centered and a stop-gradient (sg) is applied on the teacher to let the gradients only propagate through the student network. The teacher parameters are updated with an exponential moving average (ema).
 \begin{figure}
@@ -817,9 +865,9 @@ The structure of the self-supervised architecture is shown in figure \ref{img:di
 	\label{img:dino}
 \end{figure}[h]
 
-The backbone of the DINO is ViT\cite{dosovitskiy2021image}, which proved that the transformer architecture also performs well on the 2D vision tasks. The standard transformer processes 1D sequences, and in order to handle 2D images, the input is first flattened into a sequence of patches. For a input image $x\in R^{H\times W\times C}$ and patch size $p$, the patchified input can be denoted as $x_p\in R^{N\times(p^{2}C)}$ with the number of patches $N=\frac{HW}{p^{2}}$. The reason why the patches are feeded into the transformer rather the raw image is that it is relatively easier for the network to understand the relationship between the patches than the raw pixels.
+The backbone of the DINO is ViT\cite{dosovitskiy2021image}, which proved that the transformer architecture also performs well on the 2D vision tasks. The standard transformer processes 1D sequences, and in order to handle 2D images, the input is first flattened into a sequence of patches. For a input image $x\in R^{H\times W\times C}$ and patch size $p$, the patchified input can be denoted as $x_p\in R^{N\times(p^{2}C)}$ with the number of patches $N=\frac{HW}{p^{2}}$. The reason why the patches are fed into the transformer rather the raw image is that it is relatively easier for the network to understand the relationship between the patches than the raw pixels.
 
-Similar to the vanilla transformer for NLP tasks, the patches need to be embedded with the positional encoding. A standard learnable 1D postion embedding is used in the original paper. In order to solve the classification task with ViT, an extra token is add to the sequence of patches, which is called class token. An additional MLP layer is used for the classification. But for the downstream tasks like ours, we only need the latent feature from the transformer encoder output. The overview of the ViT model is shown in figure \ref{img:vit}, using the illustration in the original publication.
+Similar to the vanilla transformer for NLP tasks, the patches need to be embedded with the positional encoding. A standard learnable 1D postion embedding is used in the original paper. In order to solve the classification task with ViT, an extra token is add to the sequence of patches, which is called class token. An additional multi-layer perceptron (MLP) layer is used for the classification. But for the downstream tasks like ours, we only need the latent feature from the transformer encoder output. The overview of the ViT model is shown in figure \ref{img:vit}, using the illustration in the original publication.
 \begin{figure}[h]
 	\centering
 	\includegraphics[scale=.23]{img/vit.png}
@@ -832,9 +880,64 @@ Compared with convolutional neural network which has a dominant position in the 
 We directly use the weights of the model pretrained on ImageNet\cite{5206848}, because the 2D feature downstream network generalizes well on other datasets than 3D feature extractor, which has right now rare well generalized downstream backbone that can cover any 3D objects. Out of this reason, we train the 3D feature extractor from scratch on the dataset we use and this part will be introduced in next section.
 
 \subsubsection{3D Feature Extractor}
-Because of the permutation invariance of the point cloud, the 3D networks are differently constructed compared with the 2D networks. Famous works like PointNet\cite{qi2017pointnet} and PointNet++\cite{qi2017pointnet++} are the pioneer of the 3D deep learning. After that the convolutional neural network is also introduced to the 3D domain such as KPConv\cite{thomas2019kpconv}. 
+Due to the permutation invariance and transformation invariance of the point cloud, the 3D networks are differently constructed compared with the 2D networks. Famous works like PointNet\cite{qi2017pointnet} and PointNet++\cite{qi2017pointnet++} are the pioneers of the 3D deep learning. After that the convolutional neural network is also introduced to the 3D domain such as KPConv\cite{thomas2019kpconv}. 
+
+In our case, we use an encoder-decorder architecture to first build up a point cloud completion task of the target dataset and utilize the latent feature from the encoder output as the 3D global feature of the reference RGB-D image. The reason of using the point cloud completion task rather than classification or semantic segmentation task is because we need the network to learn the geometrical feature such as shape, position and orientation of the object. And the point cloud completion is more suitable than seperately reconstruct the CAD model and reference partial point cloud, because the network can learn the relationship between the two point clouds and the latent feature is more robust and generalizable.
+\begin{figure}[h]
+	\centering
+	\includegraphics[scale=.2]{img/fold.png}
+	\caption{3D feature extraction with FoldingNet based point cloud completion}
+	\label{img:fold}
+\end{figure}
+
+FoldingNet consists of a graph-based encoder and a folding-based decoder. The graph-based encoder follow the design of \cite{shen2018mining} using the graph structure of the point cloud neighborhood. The encoder is built up with MLP and graph-based maxpooling layers, which are constructed from the k-nearset neighbor through the spatial postion of the nodes in the point cloud. For each point, a local covariance matrix with the size of 3x3 is computed, flattened to a vector and concatinate with the point position as the input vector fed to the network. Afterward, the input vector is passed through MLP and graph layers to get the topology information of the local neighborhood. Then the max-pooling is applied to all nodes and the global feature is projected to a latent space by using another perceptron.
+
+The folding-based decoder is built up with with two consecutive MLP to wrap a fixed 2D grid into the shape of the reference point cloud and that explains why this network is called FoldingNet. First, a 2D grid matrix is initialized in a standard square shape at the origin and is concatenated with the replicated latent feature from the encoder output to become the input of the first folding MLP. The output is the first folded point cloud and it is again concatinated with the replicated latent feature and fed to the second folding MLP.
+
+The final output point cloud is aligned with the reference point cloud using the bi-directional Chamfer distance as the loss function, which can be formulated as:
+\begin{align}
+  L_{CD}(S, \hat{S}) = \max \left\{\frac{1}{\lvert S\rvert }\mathop{\sum}_{x\in S} \mathop{\min}_{\hat{x}\in \hat{S}}||x-\hat{x}||_{2} ,\ \frac{1}{\lvert \hat{S}\rvert }\mathop{\sum}_{\hat{x}\in \hat{S}} \mathop{\min}_{x\in S}||\hat{x}-x||_{2}\right\}
+\end{align}
+where $S$ is the reference point cloud and $\hat{S}$ is the output point cloud. The formulation enforces that the output point cloud is close to the reference point cloud and vice versa. In our case, given a partial point cloud as input, the reconstruct point cloud is aligned with the CAD model. The structure of the FoldingNet is shown in figure \ref{img:fold}.
 \subsubsection{Multi-Hypotheses Inference}
+One of the advantages of diffusion model is the high quality and diversity of the generated objects. Using the case of image synthesis as an example, we can derive dozen of high-resolution and meaningful images from the diffusion model with the same prompt. In our case, we want to explore the diversity of the pose hypotheses if there is ambiguity in the reference input. In another word, for a symmetrical object, we want to derive a distribution which fit the symmetry pattern of the object and for an object with uniquely determined pose, we want to use the multi-hypotheses inference to get a more precise estimation of the pose.
+-------------------------To be determined-------------------------
+
 \subsubsection{Pose Refinement}
+To further refine the 6 DoF pose of the reference input, we can use the coarse pose estimation from the diffusion model as the initial pose and use some algorithms to refine the pose. Iterative and not learning-based method like random sample consensus (RANSAC)\cite{10.1145/358669.358692} and iterative closest point (ICP)\cite{121791} are widely used in the field of pose estimation. RANSAC, for example, uses repeated random sub-sampling to iteratively estimate the optimal result in the set of data containing outliers. The goal of RANSAC is to find a global optimal solution which excludes the outliers and contains the inliers as much as possible. This technique is widly used in the correspondance based point cloud registration. Our pose hypotheses diffusion model samples directly the estimated 6 DoF pose of the reference input and we utilize ICP to the point cloud transformed via the coarse pose estimation. 
+
+The ICP algorithm is also an iterative solution to the rigid point cloud registration problem. Given a set of source points $A$ and a set of target points $B$, the goal of ICP is to find a rigid transformation $(\mathbf{R},\mathbf{t})$ that minimizes the distance between the source points and the transformed target points. First step is to find the corresponding points pair using nearst neighbor search. Let the set of corresponding pairs be:
+\begin{align}
+  C = \{(i,j)\ \vert \ \mathbf{a}_{i}\in A \ \text{and} \ \mathbf{b}_{j}\in B \ \text{are corresponding points}\}
+\end{align}
+After that we use sum of squared distance of the corresponding point pairs as the error to be minimized. The minimization problem can be formulated as:
+\begin{align}
+  (\mathbf{R}^{*}, \mathbf{t}^{*})=\mathop{argmin}_{\mathbf{R},\mathbf{t}}\sum_{(i,j)\in C}||\mathbf{Ra}_{i}+\mathbf{t}-\mathbf{b}_{j}||_{2}^{2}
+\end{align}
+To solve this problem efficiently, we normally use the singular value decomposition (SVD) which guarantees the accuracy and speed during a large number of iterations. The ICP algorithm is summarized in the following algorithm \ref{algo:icp}:
+\begin{algorithm}[h]
+  \caption{Iterative Closest Point}
+  \label{algo:icp}
+  \begin{algorithmic}[1]
+    \Require
+      Source point cloud $A=\{\mathbf{a}_{i}\}_{i=1}^{N}$, target point cloud $B=\{\mathbf{b}_{i}\}_{i=1}^{N}$, maximum number of iterations $k_{max}$, threshold $\epsilon$
+    \Ensure
+      Rigid transformation $(\mathbf{R},\mathbf{t})$
+    \State Initialize $(\mathbf{R},\mathbf{t})$ with coarse pose estimation
+    \For{$k=1$ to $k_{max}$}
+      \State $A^{*}\longleftarrow \text{Trans}(A, (\mathbf{R},\mathbf{t}))$
+      \State $C=\{(i,j)\ \vert \ \mathbf{a}_{i}\in A \ \text{and} \ \mathbf{b}_{j}\in B \}\longleftarrow \text{NearstSearch}(A^{*}, B)$
+      \State $(\mathbf{R}, \mathbf{t})\longleftarrow \text{SVD}(C)$
+      \State $e = \frac{1}{\lvert C\rvert}\sum_{(i,j)\in C}||\mathbf{Ra}_{i}+\mathbf{t}-\mathbf{b}_{j}||_{2}^{2}$
+      
+      \If{$e<\epsilon$}
+        \State Break
+      \EndIf
+    \EndFor
+  \end{algorithmic}
+\end{algorithm}
+
+Theoretically, the ICP algorithm can converge to the global optimal solution if the initial pose is close enough to the ground truth pose. However, in practice, the ICP algorithm is sensitive to the initial pose and can easily get stuck in the local optimal solution. Because of that , we use the coarse pose estimation from the diffusion model as the initial pose and run the ICP algorithm within an acceptable number of iterations to have a good tradeoff of inference speed and accuracy. 
 
 \section{Experiments}
 \subsection{Datasets}

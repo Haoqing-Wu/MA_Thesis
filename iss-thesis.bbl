@@ -215,6 +215,9 @@ Y.~Yang, C.~Feng, Y.~Shen and D.~Tian, ``Foldingnet: Point cloud auto-encoder vi
 \bibitem{121791}
 P.~Besl and N.~D. McKay, ``A method for registration of 3-d shapes,'' \emph{IEEE Transactions on Pattern Analysis and Machine Intelligence}, vol.~14, no.~2, pp. 239--256, 1992.
 
+\bibitem{song2022denoising}
+J.~Song, C.~Meng and S.~Ermon, ``Denoising diffusion implicit models,'' 2022.
+
 \bibitem{vaswani2023attention}
 A.~Vaswani, N.~Shazeer, N.~Parmar, J.~Uszkoreit, L.~Jones, A.~N. Gomez, L.~Kaiser and I.~Polosukhin, ``Attention is all you need,'' 2023.
 
@@ -243,5 +246,13 @@ C.~R. Qi, L.~Yi, H.~Su and L.~J. Guibas, ``Pointnet++: Deep hierarchical feature
 
 \bibitem{thomas2019kpconv}
 H.~Thomas, C.~R. Qi, J.-E. Deschaud, B.~Marcotegui, F.~Goulette and L.~J. Guibas, ``Kpconv: Flexible and deformable convolution for point clouds,'' 2019.
+
+\bibitem{shen2018mining}
+Y.~Shen, C.~Feng, Y.~Yang and D.~Tian, ``Mining point cloud local structures by kernel correlation and graph pooling,'' 2018.
+
+\bibitem{10.1145/358669.358692}
+\BIBentryALTinterwordspacing
+M.~A. Fischler and R.~C. Bolles, ``Random sample consensus: A paradigm for model fitting with applications to image analysis and automated cartography,'' \emph{Commun. ACM}, vol.~24, no.~6, p. 381–395, jun 1981. [Online]. Available: \url{https://doi.org/10.1145/358669.358692}
+\BIBentrySTDinterwordspacing
 
 \end{thebibliography}
