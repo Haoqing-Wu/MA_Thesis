@@ -128,6 +128,7 @@
 \usepackage{algorithm}                  % for pseudocode
 \usepackage{algorithmicx}                % for pseudocode
 \usepackage{algpseudocode}              % for pseudocode
+\usepackage[inkscapeformat=png]{svg}
 
 %%%%% Tikz / PGF - drawing beautiful graphics and plots in Latex
 % \usepackage{tikz}
@@ -326,8 +327,15 @@ Lorem ipsum dolor sit amet, consetetur sadipscing elitr, sed diam nonumy eirmod 
 Six degree-of-freedom(DoF) pose refers to the six degrees of freedom of movement of a rigid body in three-dimensional space. Especially, it represents the freedom of a rigid body to move in three perpendicular directions, called translations, and to rotate about three perpendicular axes, called rotations. This concept is widely applied in the industial and automotive field to measure and analyize the spacial properties of objects.
 
 In domain of computer vision and robotics, 6 DoF pose estimation is a fundamental task that aims to estimate the 3D translation $\mathbf{t}=(t_{x} ,t_{y} ,t_{z} )$ and rotation $\mathbf{R}=(\Phi_{x} ,\Phi_{y} ,\Phi_{z} )$ of an object related to a canonical coordinate system using the sensor input, such as RGB or RGB-D data\cite{peng_pvnet_2019}.The object $M$ is typically a known 3D CAD model, consisting of a set of vertices $V=\{v_1,...,v_N\}$, with $v_i\in \mathbb{R}^3$ and $V\in \mathbb{R}^{3 \times N}$ and triangles $E=\{e_1,...,e_M\}$, with $e_i\in \mathbb{R}^3$ and $E\in \mathbb{R}^{3\times M}$ connecting the vertices. Furthermore, if the query image is a multi-object scenario with N objects $O=\{M_1,...,M_N\}$, we need to detect and estimate the pose of each object $M_i$ in the image\cite{Fabian_2021}.
+Following figure \ref{img:6d} shows a general structure of the learning-based 6 DoF pose estimation.
 
------------------image here----------------
+\begin{figure}[h]
+	\centering
+	\includegraphics[scale=.2]{img/6d.png}
+	\caption{Overview of the 6 DoF pose estimation}
+	\label{img:6d}
+\end{figure}
+
 \subsection{Representing 6 DoF Pose}
 6 DoF pose can be treated seperately as 3D translation and 3D rotation. The 3D translation is simply represented by 3 scalars along the X, Y, and Z axis of the canonical coordinate system. 
 We can use either the deep learning methods to estimate the depth and the corresponding 2D projection from RGB images or even get the depth information fused from RGB-D data\cite{DBLP:journals/corr/abs-1711-00199}. After that, the object can be shifted back to the camera coordinate system by adding translation vector to the object vertices $V$
@@ -495,8 +503,6 @@ Generative Adversarial Networks(GANs)\cite{goodfellow2014generative} is a smart 
 \end{align}
 The generator is optimized to maximize the probability of that the discriminator will classify the generated data as real, which explains the word "adversarial" in the name of GANs.
 
------------------image here----------------
-
 GANs have shown a great success in many applications such as generating high-resolution images which are difficult to distinguish from the real ones and the ability to learn the complicated distributions. However, the main challenge of GANs is the instablitity of the training process, which increases the difficulty of training and tuning the model. It will sometimes suffer from the mode collapse problem, where the generator only learns to generate a subset of the data distribution\cite{borji2018pros}.
 
 Some works have been done to solve these problems. For example, Wasserstein GANs\cite{arjovsky2017wasserstein} use a different loss function to stablize the training process and avoid the mode collapse. Spectral Normalization\cite{miyato2018spectral} is another method to stablize the training process by constraining the Lipschitz constant of the discriminator.
@@ -507,8 +513,6 @@ Variational autoencoders(VAEs)\cite{kingma2022autoencoding} is another popular g
 \end{align}
 The first term is the reconstruction loss, which is the negative log-likelihood of the input data $x$ given the latent representation $z$. The second term is the regularization term, which is the Kullback-Leibler divergence between the latent distribution $q(z|x)$ and the prior distribution $p(z)$. With the regularisation term, we prevent the model to encode the input data far apart in the latent space, which will cause the model to generate unrealistic data.
 
------------------image here----------------
-
 And the reparameterization trick\cite{kingma2015variational} is introduced afterwards to make the stochastic part of the loss function which is the latent representation $z$ differentiable, so that the model can be trained with backpropagation. The latent representation $z$ is sampled from a distribution $q(z|x)$, which is normally a Gaussian distribution. The trick constructs the random variable $z$ into following expression where $\epsilon$ is a random variable sampled from a standard Gaussian distribution.
 \begin{align}
   z \in \mathcal{N} (\mu, \sigma^{2}) \longrightarrow z = \mu + \sigma \odot \epsilon, \quad \epsilon \sim \mathcal{N} (0, 1)
@@ -516,8 +520,6 @@ And the reparameterization trick\cite{kingma2015variational} is introduced after
 VAEs allow us to easily sample the latent representation $z$ from the prior distribution $p(z)$ and generate novel data from the decoder $D$. It can alse be used to make data compression and denoising, which is the main application of autoencoders. Since the flexibility and the robustness of VAEs, It is widely used in many applications such as image manipulation, text generation and speech synthesis.
 \subsubsection{Normalizing Flows}
 Normalizing flows\cite{rezende2016variational} are a familiy of generative models with tractable marginal likelihood which can not be achieved with VAEs. A normalizing flow is a transformation of a simple distribution into a more complex distribution by a series of invertible and differentiable mappings. By repeating the rule of transformation, the initial probability densitiy "flows" through the sequence of invertible mappings and become a valid distribution.
-
------------------image here----------------
 
 The basic rule for transformation of densities considers an inverible, smooth mapping $f: \mathbb{R}^{D} \rightarrow \mathbb{R}^{D}$, with inverse $f^{-1} = g$. Transforming a random variable $z$ with distribution $q(z)$ through $f$ results in a random variable $z^{'}  = f(z)$ has a distribution:
 \begin{align}
@@ -532,19 +534,21 @@ The path of the transformation can be seen as a flow of the probability density 
 
 Normalizating flows provide a flexible framework for modeling complex distributions, which is difficult to achieve with previous generative models. However the samples that are generated througn flow-based models are not as realistic as the samples from GANs or VAEs, and the data will be projected into also high dimensional space, which is hard to interpret.
 
-\subsubsection{Transformer}
----------------Add if needed----------------
-
 \subsubsection{Diffusion Model}
 Diffusion models are a new class of state-of-the-art generative models that can synthesize high-quality images in recent years. The representative one, which is the Denosing Diffusion Probabilistic Models(DDPM) was initialized by Sohl-Dickstein et al\cite{sohldickstein2015deep} and proposed recently by Ho. et al\cite{ho2020denoising}. 
 
 A diffusion probabilistic model(diffusion model), inspired by the nonequilibrium thermodynamics, is a parameterized Markov chain trained using variational inference to produce samples from a given target distribution after finite steps. The basic idea behind diffusion models is trivial. Given an input data $x_{0}$, we first gradually add Gaussian noise to it and finally get a sequence of noised data $x_{1},...,x_{T}$, which we call it forward process. Afterward, a neural network is trained to recover the original data by estimating the noise and reversing the forward precess, which we call it sampling process or reverse process.
 
------------------image here----------------
+Figure \ref{img:gen} shows an overview of four different types of generative models that we mentioned in this section. Unlike VAE and flow-based model, diffusion model is based on the Markov chain and the latent variable has high dimensionality which has the same size of the input data. We recover the original data by estimating the noise and reversing the forward process iteratively, which ensures the high quality of the generated data.
 
 The great succuss of some architecture using the diffusion model such as GLIDE\cite{nichol2022glide} and DALLE-2/3\cite{ramesh2022hierarchical} has shown the potential of the diffusion model in the field of generative models. The advantage of diffision model is that it is large-scale, flexible and offer high-quality samples. With the tradeoff of the relative longer training time and inference time because of its 2-phases architecture, it can synthesize highest-quality images than other generative models. This potential motivates us to apply the diffusion model also to 3D domain and the related tasks.
 
------------------image here----------------
+\begin{figure}[h]
+	\centering
+	\includegraphics[scale=.3]{img/gen.png}
+	\caption{Overwiew of different types of generative models}
+	\label{img:gen}
+\end{figure}
 
 \subsection{Theory and Fundamentals}\label{sec:theory}
 In this section, we will introduce the detail of the diffusion model, the mathematical background in the forward process and the sampling process, and the conditional diffusion model. The extended version of the classic DDPM will also be briefly introduced.
@@ -558,8 +562,6 @@ where $q(\mathbf{x}_{t}|\mathbf{x}_{t-1})$ is a normal distribution with mean $\
 \begin{align}
   q(\mathbf{x}_{1:T}|\mathbf{x}_{0}) = \prod_{t=1}^{T}q(\mathbf{x}_{t}|\mathbf{x}_{t-1})
 \end{align}
-
------------------image here----------------
 
 Our goal is to track the noised data at an arbitrary step $t$ with a close-form posterior distribution $q(\mathbf{x}_{t}|\mathbf{x}_{0})$. So the reparemeterization trick is introduced so that we don't need to calculate the $\mathbf{x}_{t}$ iteratively from $t=0$.
 
@@ -634,6 +636,14 @@ which can be simplified ignoring the weighting term according to the original pa
 \end{align}
 where C is a constant term which not related to $\theta$ and can be ignored during training.  And we the variance is not considered in the loss function and it is improved in the later research\cite{nichol2021improved} to let the network also learn the covariance matrix $\mathbf{\Sigma}_{\theta}$.
 
+An overview of the forward and reverse process using a cat image as example is shown in figure \ref{img:diff_process}.
+\begin{figure}[h]
+	\centering
+	\includegraphics[scale=.2]{img/diff_process.png}
+	\caption{Forward and reverse process of diffusion model using 2D image as example}
+	\label{img:diff_process}
+\end{figure}
+
 \subsubsection{Conditional Diffusion Model}
 Conditional diffusion, also called guided diffusion is very practical in many applications since we normally want to generate the data in paricular style, direction or distribution and not in an arbitrary way.Typical usage of conditional diffusion is to sample data from a given class or category, as well as text prompt, image prompt and so on.
 
@@ -687,15 +697,26 @@ The training and sampling algorithm of the conditional denoising diffusion proba
 \subsubsection{Computer Vision}
 The majority of the applications of diffusion models lies in the field of computer vision, including super resolution, translation, inpainting and so on\cite{yang2023diffusion}. Diffusion models have shown a great performance in these 2D based manipulation tasks compared with other generative models such as GANs and VAEs.
 
-Super-Resolution via Repeated Refinement (SR3)\cite{saharia2021image} and Cascaded Diffusion Models (CDM)\cite{ho2021cascaded} are two representative works in the field of super resolution. They use either an iterative way or concatination of diffusion models to generate high-resolution image from low-resolution imput. Implicit Diffusion Models (IDM) for Continuous Super-Resolution\cite{gao2023implicit} integrates an implicit neural representation in the decoding process.
+Super-Resolution via Repeated Refinement (SR3)\cite{saharia2021image} and Cascaded Diffusion Models (CDM)\cite{ho2021cascaded} are two representative works in the field of super resolution. They use either an iterative way or concatination of diffusion models to generate high-resolution image from low-resolution imput. Figure \ref{img:sr3} illustrates the process of cascaded super resolution, which is taken from the project page of the SR3. Implicit Diffusion Models (IDM) for Continuous Super-Resolution\cite{gao2023implicit} integrates an implicit neural representation in the decoding process.
 
 Inpainting and image translation are also two popular image manipulation tasks with different conditional inputs. Typical works are RePaint\cite{lugmayr2022repaint}, Palette\cite{saharia2022palette} and Diffusion-based Image Translation using Disentangled Style and Content Representation\cite{kwon2023diffusionbased}.
+\begin{figure}[h]
+	\centering
+	\includegraphics[scale=.08]{img/cascade_fig.png}
+	\caption{Super resolution using diffusion model}
+	\label{img:sr3}
+\end{figure}
 
------------------image here----------------
 
-In 3D domain, the diffusion model is also applied to the task of point cloud generation and completion. Luo et al.2021\cite{luo2021diffusion} and Zeng et al.2022\cite{zeng2022lion} have presented the diffusion models for point cloud generation by treating point clouds as particles in a thermodynamic system. Lyu et al.2022\cite{lyu2022conditional} have proposed a coarse-to-fine point cloud completion diffusion model and also established a point-wise mapping between the output and ground truth.
+In 3D domain, the diffusion model is also applied to the task of point cloud generation and completion. Luo et al.2021\cite{luo2021diffusion} and Zeng et al.2022\cite{zeng2022lion} have presented the diffusion models for point cloud generation by treating point clouds as particles in a thermodynamic system. Lyu et al.2022\cite{lyu2022conditional} have proposed a coarse-to-fine point cloud completion diffusion model and also established a point-wise mapping between the output and ground truth. Figure \ref{img:pcd} adapted from the paper shows the point cloud generation using diffusion architecture.
 
------------------image here----------------
+\begin{figure}[h]
+	\centering
+	\includegraphics[scale=1.8]{img/teaser.png}
+	\caption{Point cloud generation using diffusion model}
+	\label{img:pcd}
+\end{figure}
+
 
 \subsubsection{Natural Language Processing}
 Natural language processing (NLP) has been dramatically developed in recent years. The iconic models like BERT\cite{devlin2019bert}, GPT series\cite{Radford2018ImprovingLU} and LLaMA\cite{touvron2023llama} are all based on the transformer architecture. However, there are also some diffusion based methods that can generate text with high quality and diversity. In fact, diffusion models have been shown to have significant advantages over autoregressive models in terms of parallel generation, text interpolation, token-level controls such as syntactic structures and semantic contents, and robustness\cite{zou2023survey}.
@@ -706,15 +727,25 @@ Diffusion-LM\cite{li2022diffusionlm} proposes a non-autoregressive language mode
 \subsubsection{Multi-Modal Learning}
 Multi-modal learning is a field that combines different modalities such as text, image, video and audio. It tends to become the mainstream of the future research in the field o machine learning because of the higher requirement of the real-world applications.
 
-Text-to-Image generation is a typical task in this field. A common pipeline is to first train a prior model that can generate image embedding conditioned on a text prompt,e.g. CLIP\cite{radford2021learning}. Then we use the prior output as condition to train a diffusion model to generate the final image. Famous works like Stable Diffusion\cite{rombach2022highresolution} and DALLE-2\cite{ramesh2022hierarchical} followed this pipeline and achieved state-of-the-art results in text-to-image generation.
+Text-to-Image generation is a typical task in this field. A common pipeline is to first train a prior model that can generate image embedding conditioned on a text prompt,e.g. CLIP\cite{radford2021learning}. Then we use the prior output as condition to train a diffusion model to generate the final image. Famous works like Stable Diffusion\cite{rombach2022highresolution} and DALLE-2\cite{ramesh2022hierarchical} followed this pipeline and achieved state-of-the-art results in text-to-image generation. Following Text-to-Image samples \ref{img:sd} are generated using Stable Diffusion.
 
------------------image here----------------
+\begin{figure}[h]
+	\centering
+	\includegraphics[scale=0.217]{img/sd.png}
+	\caption{Image synthesis with text prompt in different styles using Stable Diffusion}
+	\label{img:sd}
+\end{figure}
 
 ControlNet\cite{zhang2023adding} attempts to control pre-trained large diffusion models to support additional semantic maps, like edge maps, segmentation maps, keypoints, shape normals, depths, etc. Authors use the "trainable copy" of the original weights of the pretrained diffusion model and connect these "copy" blocks with the original model with zero convolution layer. Thus, we don't need to retrain the whole model and also gaurentee the quality as well as the flexibility of the model.
 
-Text-to-3D generation and Image-to-3D are novel tasks in the field of multi-modal learning and has the potential to be applied in many cases such as 3D object reconstruction, 3D scene generation and so on. DreamFusion\cite{poole2022dreamfusion} adopts a pre-trained 2D text-to-image diffusion model to perform text-to-3D synthesis. It optimizes a randomly-initialized 3D model (a Neural Radiance Field, or NeRF) with a probability density distillation loss, which utilizes a 2D diffusion model as a prior for optimization of a parametric image generator. 
+Text-to-3D generation and Image-to-3D are novel tasks in the field of multi-modal learning and has the potential to be applied in many cases such as 3D object reconstruction, 3D scene generation and so on. DreamFusion\cite{poole2022dreamfusion} adopts a pre-trained 2D text-to-image diffusion model to perform text-to-3D synthesis. It optimizes a randomly-initialized 3D model (a Neural Radiance Field, or NeRF) with a probability density distillation loss, which utilizes a 2D diffusion model as a prior for optimization of a parametric image generator. Figure \ref{img:df} illustrates the process of the text-to-3D generation using DreamFusion, and the image is adapted from the demo in original work.
 
------------------image here----------------
+\begin{figure}[h]
+	\centering
+	\includegraphics[scale=0.28]{img/df.png}
+	\caption{3D model (NeRF) synthesis prompt using DreamFusion}
+	\label{img:df}
+\end{figure}
 
 \chapter{Related Work}
 
@@ -865,13 +896,13 @@ The structure of the self-supervised architecture is shown in figure \ref{img:di
 	\label{img:dino}
 \end{figure}[h]
 
-The backbone of the DINO is ViT\cite{dosovitskiy2021image}, which proved that the transformer architecture also performs well on the 2D vision tasks. The standard transformer processes 1D sequences, and in order to handle 2D images, the input is first flattened into a sequence of patches. For a input image $x\in R^{H\times W\times C}$ and patch size $p$, the patchified input can be denoted as $x_p\in R^{N\times(p^{2}C)}$ with the number of patches $N=\frac{HW}{p^{2}}$. The reason why the patches are fed into the transformer rather the raw image is that it is relatively easier for the network to understand the relationship between the patches than the raw pixels.
+The backbone of the DINO is ViT\cite{dosovitskiy2021image}, which proved that the transformer architecture also performs well on the 2D vision tasks. The standard transformer processes 1D sequences, and in order to handle 2D images, the input is first flattened into a sequence of patches. For a input image $x\in R^{H\times W\times C}$ and patch size $p$, the patchified input can be denoted as $x_p\in R^{N\times(p^{2}C)}$ with the number of patches $N=HW/{p^{2}}$. The reason why the patches are fed into the transformer rather the raw image is that it is relatively easier for the network to understand the relationship between the patches than the raw pixels.
 
 Similar to the vanilla transformer for NLP tasks, the patches need to be embedded with the positional encoding. A standard learnable 1D postion embedding is used in the original paper. In order to solve the classification task with ViT, an extra token is add to the sequence of patches, which is called class token. An additional multi-layer perceptron (MLP) layer is used for the classification. But for the downstream tasks like ours, we only need the latent feature from the transformer encoder output. The overview of the ViT model is shown in figure \ref{img:vit}, using the illustration in the original publication.
 \begin{figure}[h]
 	\centering
 	\includegraphics[scale=.23]{img/vit.png}
-	\caption{Sturcture of the ViT model, image adapted from \cite{dosovitskiy2021image}}
+	\caption{Sturcture of the ViT model}
 	\label{img:vit}
 \end{figure}
 
