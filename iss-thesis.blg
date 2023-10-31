@@ -14,47 +14,48 @@ Warning--entry type for "dataV4MUMX2020" isn't style-file defined
 -- http://www.michaelshell.org/tex/ieeetran/bibtex/
 -- See the "IEEEtran_bst_HOWTO.pdf" manual for usage information.
 Warning--empty booktitle in Radford2018ImprovingLU
+Warning--empty booktitle in hinterstoisser2012model
 
 Done.
-You've used 73 entries,
+You've used 78 entries,
             4186 wiz_defined-function locations,
-            1125 strings with 20240 characters,
-and the built_in function-call counts, 38231 in all, are:
-= -- 2615
-> -- 1416
-< -- 78
-+ -- 695
-- -- 323
-* -- 1656
-:= -- 5744
-add.period$ -- 148
-call.type$ -- 73
-change.case$ -- 73
-chr.to.int$ -- 174
-cite$ -- 74
-duplicate$ -- 3071
-empty$ -- 3461
-format.name$ -- 389
-if$ -- 8589
+            1145 strings with 21557 characters,
+and the built_in function-call counts, 41927 in all, are:
+= -- 2832
+> -- 1610
+< -- 89
++ -- 793
+- -- 368
+* -- 1830
+:= -- 6220
+add.period$ -- 158
+call.type$ -- 78
+change.case$ -- 78
+chr.to.int$ -- 201
+cite$ -- 80
+duplicate$ -- 3345
+empty$ -- 3782
+format.name$ -- 439
+if$ -- 9444
 int.to.chr$ -- 0
-int.to.str$ -- 73
-missing$ -- 754
-newline$ -- 258
-num.names$ -- 73
-pop$ -- 2201
+int.to.str$ -- 78
+missing$ -- 831
+newline$ -- 273
+num.names$ -- 78
+pop$ -- 2431
 preamble$ -- 1
 purify$ -- 0
 quote$ -- 2
-skip$ -- 2901
+skip$ -- 3170
 stack$ -- 0
-substring$ -- 496
-swap$ -- 2020
-text.length$ -- 20
+substring$ -- 564
+swap$ -- 2220
+text.length$ -- 22
 text.prefix$ -- 0
 top$ -- 5
-type$ -- 73
-warning$ -- 1
-while$ -- 99
-width$ -- 75
-write$ -- 600
-(There were 2 warnings)
+type$ -- 78
+warning$ -- 2
+while$ -- 107
+width$ -- 80
+write$ -- 638
+(There were 3 warnings)

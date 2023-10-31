@@ -18,6 +18,8 @@
 \contentsline {figure}{\numberline {4.6}{\ignorespaces Self-supervised architecture of DINO\relax }}{28}{figure.caption.60}%
 \contentsline {figure}{\numberline {4.7}{\ignorespaces Sturcture of the ViT model\relax }}{28}{figure.caption.61}%
 \contentsline {figure}{\numberline {4.8}{\ignorespaces 3D feature extraction with FoldingNet based point cloud completion\relax }}{30}{figure.caption.64}%
+\contentsline {figure}{\numberline {4.9}{\ignorespaces LIMEMOD dataset. Left: training data with Synthetic CAD Model; Middle: training data rendered with PBR-BlenderProc4BOP; Right: test data captured with Kinect Sensor\relax }}{32}{figure.caption.71}%
+\contentsline {figure}{\numberline {4.10}{\ignorespaces Comparison of LINEMOD-O dataset with LINEMOD dataset. Left: low-level occluded scene; Right: high-level occluded scene\relax }}{33}{figure.caption.74}%
 \addvspace {10\p@ }
 \addvspace {10\p@ }
 \addvspace {10\p@ }

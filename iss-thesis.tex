@@ -128,7 +128,7 @@
 \usepackage{algorithm}                  % for pseudocode
 \usepackage{algorithmicx}                % for pseudocode
 \usepackage{algpseudocode}              % for pseudocode
-\usepackage[inkscapeformat=png]{svg}
+
 
 %%%%% Tikz / PGF - drawing beautiful graphics and plots in Latex
 % \usepackage{tikz}
@@ -336,7 +336,7 @@ Following figure \ref{img:6d} shows a general structure of the learning-based 6 
 	\label{img:6d}
 \end{figure}
 
-\subsection{Representing 6 DoF Pose}
+\subsection{Representing 6 DoF Pose}\label{sec:representation}
 6 DoF pose can be treated seperately as 3D translation and 3D rotation. The 3D translation is simply represented by 3 scalars along the X, Y, and Z axis of the canonical coordinate system. 
 We can use either the deep learning methods to estimate the depth and the corresponding 2D projection from RGB images or even get the depth information fused from RGB-D data\cite{DBLP:journals/corr/abs-1711-00199}. After that, the object can be shifted back to the camera coordinate system by adding translation vector to the object vertices $V$
 \begin{align}
@@ -971,17 +971,159 @@ To solve this problem efficiently, we normally use the singular value decomposit
 Theoretically, the ICP algorithm can converge to the global optimal solution if the initial pose is close enough to the ground truth pose. However, in practice, the ICP algorithm is sensitive to the initial pose and can easily get stuck in the local optimal solution. Because of that , we use the coarse pose estimation from the diffusion model as the initial pose and run the ICP algorithm within an acceptable number of iterations to have a good tradeoff of inference speed and accuracy. 
 
 \section{Experiments}
+In this section, we first introduce the datasets we use in our experiments and then we show the details of the training and evaluation of the pose hypotheses diffusion model and its feature extractors on the datasets. We compare our model with other methods and show the ablation study of our model.
 \subsection{Datasets}
-\subsection{Training}
+\subsubsection{LINEMOD Dataset}
+The LINEMOD dataset \cite{hinterstoisser2012model} is a widely used dataset for the 6 DoF pose estimation. It contains 15 objects containing ape, bench vise, bowl, can, cat, driller, duck, glue, hole puncher, iron, lamp, phone, camera, and egg box. These objects are texture-less with discriminative color, shape and size and are placed in a cluttered scene. As the training dataset, it provide for each object 1312 RGB-D images from different view points annotated with the ground truth. These training data are based on the synthetic CAD Model without any occlusion and noise. There are also vividly rendered training data placed together in the scene to simulate the real scenario. The Benchmark for 6D Pose Estimation (BOP) \cite{hodan2018bop}introduced the training data generated from an open-source, light-weight, procedural and photorealistic (PBR) renderer BlenderProc\cite{denninger2019blenderproc}into the LINEMOD dataset.
+This set of PBR-BlenderProc4BOP training images are sorted in 50 different scenes with 50000 images in total which are rendered with different lighting, occlusion. The test dataset are captured with the Kinect sensor. The following figures \ref{fig:linemod} show the training data and test data of the LINEMOD dataset.
+\begin{figure}[h]
+  \centering
+  \begin{minipage}{.33\textwidth}
+    \centering
+    \includegraphics[scale=.588]{img/syn.png}
+    \label{fig:linemod_syn}
+  \end{minipage}%
+  \begin{minipage}{.33\textwidth}
+    \centering
+    \includegraphics[scale=.588]{img/pbr.png}
+    \label{fig:linemod_pbr}
+  \end{minipage}%
+  \begin{minipage}{.33\textwidth}
+    \centering
+    \includegraphics[scale=.588]{img/kine.png}
+    \label{fig:linemod_kine}
+  \end{minipage}
+  \caption{LIMEMOD dataset. Left: training data with Synthetic CAD Model; Middle: training data rendered with PBR-BlenderProc4BOP; Right: test data captured with Kinect Sensor}
+  \label{fig:linemod}
+\end{figure}
+
+\subsubsection{LINEMOD-O Dataset}
+To evaluate the model on the occluded scene, Brachmann et al. \cite{dataV4MUMX2020} refined the benchvise partion of the LINEMOD dataset with occluded objects and annotated ground truth pose under different light conditions to make the pose estimation more challenging. The meaning of the high-level occulusion data is to simulate the real scenario where the object is partially occluded by other objects, so that the model can learn the robustness of the pose estimation and generalize better to the real world data. The following figure \ref{fig:linemod_o} shows the low-level occluded scene and high-level occluded scene.
+\begin{figure}[h]
+  \centering
+  \begin{minipage}{.5\textwidth}
+    \centering
+    \includegraphics[scale=.6]{img/nooclu.png}
+    \label{fig:nooclu}
+  \end{minipage}%
+  \begin{minipage}{.5\textwidth}
+    \centering
+    \includegraphics[scale=.6]{img/oclu.png}
+    \label{fig:oclu}
+  \end{minipage}
+  \caption{Comparison of LINEMOD-O dataset with LINEMOD dataset. Left: low-level occluded scene; Right: high-level occluded scene}
+  \label{fig:linemod_o}
+\end{figure}
+\subsubsection{Data Format}
+In order to unify the data format of the different dataset for 6 DoF pose estimation task. We follow the data format of the BOP dataset. The structure of the dataset is shown in the following table \ref{tab:dataset}.
+\begin{table}[ht]
+  \centering
+  \caption{Dataset Structure of BOP Format}
+  \label{tab:dataset}
+  \begin{tabular}{l l}
+      \toprule
+      Directory & Contents \\
+      \midrule
+      DATASET\_NAME & \\
+      |--- camera[\_TYPE].json & Camera parameters\\
+      |--- dataset\_info.json & Dataset-specific information\\
+      |--- test\_targets\_bop19.json & Test targets for the BOP Challenge \\
+      |--- models[\_MODELTYPE][\_eval] & \\
+      | \quad |--- models\_info.json & Dimension and symmetry\\
+      | \quad |--- obj\_OBJ\_ID.ply & 3D file of the object\\
+      |--- train|val|test[\_TYPE] & Training/Validation/Test images\\
+      | \quad |--- SCENE\_ID|OBJ\_ID & \\
+      | \quad | \quad |--- scene\_camera.json & Camera parameters of the scene\\
+      | \quad | \quad |--- scene\_gt.json & Ground truth annotation\\
+      | \quad | \quad |--- scene\_gt\_info.json & Meta information\\
+      | \quad | \quad |--- depth & Depth images\\
+      | \quad | \quad |--- mask & Masks of object silhouettes\\
+      | \quad | \quad |--- mask\_visib & Masks of the visible parts of object silhouettes\\
+      | \quad | \quad |--- rgb|gray & Color/gray images\\
+      \bottomrule
+  \end{tabular}
+\end{table}
+
+Clarification of the naming in table \ref{tab:dataset}:
+\begin{itemize}
+  \item models[\_MODELTYPE]\_eval: "Uniformly" resampled and decimated 3D object models used for calculation of errors of object pose estimates.
+  \item MODELTYPE, TRAINTYPE, VALTYPE and TESTTYPE are optional and used if more data types are available (e.g. images from different sensors).
+\end{itemize}
+Camera parameters in scene\_camera.json:
+\begin{itemize}
+  \item cam\_K - 3x3 intrinsic camera matrix K (saved row-wise).
+  \item depth\_scale - Multiply the depth image with this factor to get depth in mm.
+  \item cam\_R\_w2c (optional) - 3x3 rotation matrix R\_w2c (saved row-wise).
+  \item cam\_t\_w2c (optional) - 3x1 translation vector t\_w2c.
+  \item view\_level (optional) - Viewpoint subdivision level.
+\end{itemize}
+Ground truth annotation in scene\_gt.json:
+\begin{itemize}
+  \item obj\_id - Object ID.
+  \item cam\_R\_m2c - 3x3 rotation matrix R\_m2c (saved row-wise).
+  \item cam\_t\_m2c - 3x1 translation vector t\_m2c.
+\end{itemize}
+Meta information of the ground truth in scene\_gt\_info.json:
+\begin{itemize}
+  \item bbox\_obj - 2D bounding box of the object silhouette given by (x, y, width, height), where (x, y) is the top-left corner of the bounding box.
+  \item bbox\_visib - 2D bounding box of the visible part of the object silhouette.
+  \item px\_count\_all - Number of pixels in the object silhouette.
+  \item px\_count\_valid - Number of pixels in the object silhouette with valid depth.
+  \item px\_count\_visib - Number of pixels in the visible part of the object silhouette.
+  \item isib\_fract - The visible fraction of the object silhouette.
+\end{itemize}
+
+\subsection{2D Feature Extractor}
+\subsubsection{Pretrained Model} 
+\subsubsection{Evaluation}
+\subsection{3D Feature Extractor}
+\subsubsection{Training} 
+\subsubsection{Evaluation}
+
+\subsection{Training} 
 \subsection{Evaluation}
+\subsubsection{Evaluation Metrics}
+No matter we use which form of the rotation representation during the training phase that is introduced in section \ref{sec:representation}, we transform it back to the rotation matrix $\mathbf{R}$ to evaluate the pose estimation together with the tranlation, in order to meet the requirement of the data format of BOP. The pose is represented by a 4x4 matrix $\mathbf{T}=[\mathbf{R},\mathbf{t},\mathbf{0},1]$, where $\mathbf{R}$ is a 3x3 rotation matrix and $\mathbf{t}$ is a 3x1 translation vector. As evaluation metrics, we adopt the same metrics used in BOP Challenge 2019/2020/2022/2023 \cite{hodan2018bop,hodan2020bop}. The following metrics are used to evaluate the pose estimation:
+
+Visible Surface Discrepancy (VSD): 
+\begin{align}
+ e_{\text{VSD}}\left(\hat{D},\bar{D},\hat{V},\bar{V},\tau\right)=\text{avg}_{p\in \hat{V}\cup \bar{V}}
+  \begin{cases}
+    0 & \text{if} \ p\in \hat{V}\cap  \bar{V} \land \left|\bar{D}(p)-\hat{D}(p)\right|<\tau\\
+    1 & \text{otherwise}
+  \end{cases}
+\end{align}
+An object model is rendered in two poses: the estimated pose $\mathbf{\hat{P}}$ and the ground truth pose $\mathbf{\bar{P}}$. And the result of the rendering is two distance maps $\hat{S}$ and $\bar{S}$. The distance maps are compared with the distance map $S_I$ of the test image $I$ to calculate the visibility masks $\hat{V}$ and $\bar{V}$. The error is control by a misalignment tolerence $\tau$.
+
+Maximum Symmetry-Aware Surface Distance (MSSD):
+\begin{align}
+  e_{\text{MSSD}}\left(\mathbf{\hat{P}},\mathbf{\bar{P}},S_{M},V_{M}\right)=\min_{\mathbf{S}\in S_{M}}\max_{\mathbf{x}\in V_{M}}\left\Vert \hat{\mathbf{P}}\mathbf{x}-\bar{\mathbf{P}}\mathbf{Sx}\right\Vert _{2} 
+ \end{align}
+where $S_{M}$ is the set of all symmetry transformations of the object model and $V_{M}$ is the set of model vertices. The MSSD is the minimum of the maximum symmetric-aware surface distance between the estimated pose $\mathbf{\hat{P}}$ and the ground truth pose $\mathbf{\bar{P}}$. The maximum distance between the model vertices is important for robotic application, where the maximum surface deviation strongly indicates the chance of a successful grasp.
+
+Maximum Symmetry-Aware Projection Distance (MSPD):
+\begin{align}
+  e_{\text{MSPD}}\left(\mathbf{\hat{P}},\mathbf{\bar{P}},S_{M},V_{M}\right)=\min_{\mathbf{S}\in S_{M}}\max_{\mathbf{x}\in V_{M}}\left\Vert \text{proj}\left(\hat{\mathbf{P}}\mathbf{x}\right)-\text{proj}\left(\bar{\mathbf{P}}\mathbf{Sx}\right)\right\Vert _{2} 
+ \end{align}
+The proj() is the 2D projection which results in pixels and other variables are identical to the MSSD. The MSPD considers global object symmetries and replaces the average by the maximum distance to increase robustness against the sampling of the object model compared with the previous method \cite{7780735}.
+
+After the error functions are determined, we use the threshold of the error to define the correctness of the pose estimation. The pose is correctly estimated if the error $e<\theta_{e}$, where $e\in \left\{e_{\text{VSD}},e_{\text{MSSD}},e_{\text{MSPD}}\right\}$ and $\theta_{e}$ is the threshold of correctness.
+
+$\text{AR}_{\text{VSD}}$ is the average recall rates calculated for the misalignment tolerence $\tau$ from $5\%$ to $50\%$ of the object diameter with a step of $5\%$, and the threshold of correctness $\theta_{\text{VSD}}$ ranging from $0.05$ to $0.5$ with a step of $0.05$. $\text{AR}_{\text{MSSD}}$ is the average recall rate calculated for the threshold of correctness $\theta_{\text{MSSD}}$ ranging from $0.05$ to $0.5$ of the object diameter with a step of $0.05$. $\text{AR}_{\text{MSPD}}$ is the average recall rate calculated for the threshold of correctness $\theta_{\text{MSPD}}$ ranging from $5r$ to $50r$ with a step of $5r$, where $r=w/640$ and $w$ is the image width in pixels. The average recall rate is defined as:
+\begin{align}
+  \text{AR}=\left(\text{AR}_{\text{VSD}}+\text{AR}_{\text{MSSD}}+\text{AR}_{\text{MSPD}}\right)/3
+\end{align}
+
+\subsection{Ablation Study}
 \chapter{Correspondance Diffusion}
 \section{Introduction}
-\section{Methodology}
+|<section{Methodology}
 \subsection{Pipeline}
 \subsection{Models}
 \section{Experiments}
 \subsection{Datasets}
 \subsection{Evaluation}
+\subsubsection{Evaluation Metrics}
 \chapter{Discussion}
 
 \chapter{Conclusion}

@@ -255,4 +255,19 @@ Y.~Shen, C.~Feng, Y.~Yang and D.~Tian, ``Mining point cloud local structures by 
 M.~A. Fischler and R.~C. Bolles, ``Random sample consensus: A paradigm for model fitting with applications to image analysis and automated cartography,'' \emph{Commun. ACM}, vol.~24, no.~6, p. 381–395, jun 1981. [Online]. Available: \url{https://doi.org/10.1145/358669.358692}
 \BIBentrySTDinterwordspacing
 
+\bibitem{hinterstoisser2012model}
+S.~Hinterstoisser, V.~Lepetit, S.~Ilic, S.~Holzer, G.~Bradski, K.~Konolige and N.~Navab, ``Model based training, detection and pose estimation of texture-less 3d objects in heavily cluttered scenes,'' vol. 7724, 10 2012.
+
+\bibitem{hodan2018bop}
+T.~Hodan, F.~Michel, E.~Brachmann, W.~Kehl, A.~G. Buch, D.~Kraft, B.~Drost, J.~Vidal, S.~Ihrke, X.~Zabulis, C.~Sahin, F.~Manhardt, F.~Tombari, T.-K. Kim, J.~Matas and C.~Rother, ``Bop: Benchmark for 6d object pose estimation,'' 2018.
+
+\bibitem{denninger2019blenderproc}
+M.~Denninger, M.~Sundermeyer, D.~Winkelbauer, Y.~Zidan, D.~Olefir, M.~Elbadrawy, A.~Lodhi and H.~Katam, ``Blenderproc,'' 2019.
+
+\bibitem{hodan2020bop}
+T.~Hodan, M.~Sundermeyer, B.~Drost, Y.~Labbe, E.~Brachmann, F.~Michel, C.~Rother and J.~Matas, ``Bop challenge 2020 on 6d object localization,'' 2020.
+
+\bibitem{7780735}
+E.~Brachmann, F.~Michel, A.~Krull, M.~Y. Yang, S.~Gumhold and C.~Rother, ``Uncertainty-driven 6d pose estimation of objects and scenes from a single rgb image,'' in \emph{2016 IEEE Conference on Computer Vision and Pattern Recognition (CVPR)}, 2016, pp. 3364--3372.
+
 \end{thebibliography}
