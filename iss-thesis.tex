@@ -128,7 +128,8 @@
 \usepackage{algorithm}                  % for pseudocode
 \usepackage{algorithmicx}                % for pseudocode
 \usepackage{algpseudocode}              % for pseudocode
-
+\usepackage{subfig}
+\usepackage[export]{adjustbox}
 
 %%%%% Tikz / PGF - drawing beautiful graphics and plots in Latex
 % \usepackage{tikz}
@@ -975,44 +976,44 @@ In this section, we first introduce the datasets we use in our experiments and t
 \subsection{Datasets}
 \subsubsection{LINEMOD Dataset}
 The LINEMOD dataset \cite{hinterstoisser2012model} is a widely used dataset for the 6 DoF pose estimation. It contains 15 objects containing ape, bench vise, bowl, can, cat, driller, duck, glue, hole puncher, iron, lamp, phone, camera, and egg box. These objects are texture-less with discriminative color, shape and size and are placed in a cluttered scene. As the training dataset, it provide for each object 1312 RGB-D images from different view points annotated with the ground truth. These training data are based on the synthetic CAD Model without any occlusion and noise. There are also vividly rendered training data placed together in the scene to simulate the real scenario. The Benchmark for 6D Pose Estimation (BOP) \cite{hodan2018bop}introduced the training data generated from an open-source, light-weight, procedural and photorealistic (PBR) renderer BlenderProc\cite{denninger2019blenderproc}into the LINEMOD dataset.
-This set of PBR-BlenderProc4BOP training images are sorted in 50 different scenes with 50000 images in total which are rendered with different lighting, occlusion. The test dataset are captured with the Kinect sensor. The following figures \ref{fig:linemod} show the training data and test data of the LINEMOD dataset.
+This set of PBR-BlenderProc4BOP training images are sorted in 50 different scenes with 50000 images in total which are rendered with different lighting, occlusion. The test dataset are captured with the Kinect sensor. The following figures \ref{img:linemod} show the training data and test data of the LINEMOD dataset.
 \begin{figure}[h]
   \centering
   \begin{minipage}{.33\textwidth}
     \centering
     \includegraphics[scale=.588]{img/syn.png}
-    \label{fig:linemod_syn}
+    \label{img:linemod_syn}
   \end{minipage}%
   \begin{minipage}{.33\textwidth}
     \centering
     \includegraphics[scale=.588]{img/pbr.png}
-    \label{fig:linemod_pbr}
+    \label{img:linemod_pbr}
   \end{minipage}%
   \begin{minipage}{.33\textwidth}
     \centering
     \includegraphics[scale=.588]{img/kine.png}
-    \label{fig:linemod_kine}
+    \label{img:linemod_kine}
   \end{minipage}
   \caption{LIMEMOD dataset. Left: training data with Synthetic CAD Model; Middle: training data rendered with PBR-BlenderProc4BOP; Right: test data captured with Kinect Sensor}
-  \label{fig:linemod}
+  \label{img:linemod}
 \end{figure}
 
 \subsubsection{LINEMOD-O Dataset}
-To evaluate the model on the occluded scene, Brachmann et al. \cite{dataV4MUMX2020} refined the benchvise partion of the LINEMOD dataset with occluded objects and annotated ground truth pose under different light conditions to make the pose estimation more challenging. The meaning of the high-level occulusion data is to simulate the real scenario where the object is partially occluded by other objects, so that the model can learn the robustness of the pose estimation and generalize better to the real world data. The following figure \ref{fig:linemod_o} shows the low-level occluded scene and high-level occluded scene.
+To evaluate the model on the occluded scene, Brachmann et al. \cite{dataV4MUMX2020} refined the benchvise partion of the LINEMOD dataset with occluded objects and annotated ground truth pose under different light conditions to make the pose estimation more challenging. The meaning of the high-level occulusion data is to simulate the real scenario where the object is partially occluded by other objects, so that the model can learn the robustness of the pose estimation and generalize better to the real world data. The following figure \ref{img:linemod_o} shows the low-level occluded scene and high-level occluded scene.
 \begin{figure}[h]
   \centering
   \begin{minipage}{.5\textwidth}
     \centering
     \includegraphics[scale=.6]{img/nooclu.png}
-    \label{fig:nooclu}
+    \label{img:nooclu}
   \end{minipage}%
   \begin{minipage}{.5\textwidth}
     \centering
     \includegraphics[scale=.6]{img/oclu.png}
-    \label{fig:oclu}
+    \label{img:oclu}
   \end{minipage}
   \caption{Comparison of LINEMOD-O dataset with LINEMOD dataset. Left: low-level occluded scene; Right: high-level occluded scene}
-  \label{fig:linemod_o}
+  \label{img:linemod_o}
 \end{figure}
 \subsubsection{Data Format}
 In order to unify the data format of the different dataset for 6 DoF pose estimation task. We follow the data format of the BOP dataset. The structure of the dataset is shown in the following table \ref{tab:dataset}.
@@ -1074,16 +1075,62 @@ Meta information of the ground truth in scene\_gt\_info.json:
 \end{itemize}
 
 \subsection{2D Feature Extractor}
+
 \subsubsection{Pretrained Model} 
+DINO, as our 2D feature encoder, provides many pretrained weight of the backbone with different number of parameters and backbone architecture which are pretrained on ImageNet for general image downstream tasks. The evaluation of the self-supervised architecture is using the linear and $k$-NN classifier on the feature extracted from the model. The following table \ref{tab:dino} shows the evaluation results of the different pretrained backbones on the ImageNet dataset according to the original paper \cite{caron2021emerging}.
+\begin{table}[ht]
+  \centering
+  \caption{Evaluation of the pretrained DINO model on ImageNet}
+  \label{tab:dino}
+  \begin{tabular}{l c c c c c c c}
+      \toprule
+      Backbone & \#Params. & Dim. & \#Layers & \#Heads & Patch Size & $k$-NN & Linear\\
+      \midrule
+      ViT-S/16 & 21M & 384 & 12 & 6 & 16 & 74.5 & 77.0 \\
+      ViT-S/8 & 21M & 384 & 12 & 6 & 8 & 78.3 & 79.7 \\
+      ViT-B/16 & 85M & 768 & 12 & 12 & 16 & 76.1 & 78.2 \\
+      ViT-B/8 & 85M & 768 & 12 & 12 & 8 & 77.4 & 80.1 \\
+      \bottomrule
+  \end{tabular}
+\end{table}
+
+After we register the pretrained 2D backbone to our model, we need to feed the image with some preprocessing into the ViT. The image is first cropped to a bounding box with the object we want to estimate its pose. Then we resize the cropped image to the size of 224x224 and normalize the image with the mean and standard deviation of the ImageNet dataset, while the ViT is pretrained on the ImageNet. The mean and standard deviation of the RGB channels are $(0.485, 0.456, 0.406)$ and $(0.229, 0.224, 0.225)$ respectively. After that, the image is processed following the ViT architecture and as output we get the feature we can use in the pose estimation task. 
+
+The 2D encoder need to be lightweight since it is just a downstream task for our diffusion model, so in our setup we don't use the backbone with a very deep network and large number of parameters, e.g.,ViT-L or ViT-G. And it needs also to be well generalized, because the image in our case is not seen during the training of the 2D encoder. ImageNet used in DINO contains more than 1.4 million annotated images from different categories, which has the capability to let the network learn the latent feature expression from the majority of the real-life objects. 
+
 \subsubsection{Evaluation}
+Since we use the 2D feature not for the classification or segmentation tasks, but as the input for the pose estimation where the feature is the latent expression of pose that is hard to quantitatively evaluate, we evaluate the influence of the 2D feature extractor together with the pose estimation diffusion model later. Instead, the attention map of the input image can be visualized to indirectly evaluate the network and validate whether the Transformer can grasp the important part of the image. The attention map is the output of the last attention layer in the Transformer encoder. Figure \ref{img:atten} shows the attention maps of 3 objects as examples fed to the ViT.
+
+\begin{figure}[h]
+  \centering
+  \subfloat{\includegraphics[scale=0.68]{img/atten_cl.png} } \\
+  \centering
+  \subfloat{\includegraphics[scale=0.68]{img/atten_bo.png} } \\
+  \centering
+  \subfloat{\includegraphics[scale=0.68]{img/atten_ph.png} } 
+  \caption{Visualization of the attention maps of the input image, where 12 heatmaps represent 12 attension heads output in transformer. Top: hole puncher; Middle: glue; Bottem: phone (occluded)}
+  \label{img:atten}
+\end{figure}
+
+By Comparing the outputs from different scale of ViT models and patch size, we can find that the patch size significantly determine the attention map. Because the object we dealing with has relative simple geometry and some times textureless, the transformer can not encode the image in a very accurate way for the pose difference if the patch size is too big. The following figure \ref{img:atten_patch} shows the attention maps of the same image fed to the ViT with different patch size and scale of ViTs. 
+\begin{figure}[h]
+	\centering
+	\includegraphics[scale=.65]{img/atten_cat.png}
+	\caption{Attension maps of the different scale of ViTs and patch size. From left to right: ViT-S/16, ViT-S/8, ViT-B/16, ViT-B/8. Each column represents 3 random attention heads.}
+	\label{img:atten_patch}
+\end{figure}
+
+From the figure we can see that the key points of the cat e.g., ears, tail and eyes are not precisely localized if the patch size is not small enough. For the classification task is this drawback not that obvious, because the network can learn the latent feature from the majority of the image. But for the pose estimation task, the network need to learn the latent feature from the key points or edges of the object, which is more sensitive to the resolution.
+
+Considering the tradeoff of the inference speed and performance, we use ViT-B/8 in our experiments which has a quite satistied performance and relative acceptable number of parameters. The ablation study of different setups will be shown later in this experiments section.
+
 \subsection{3D Feature Extractor}
 \subsubsection{Training} 
 \subsubsection{Evaluation}
-
 \subsection{Training} 
 \subsection{Evaluation}
 \subsubsection{Evaluation Metrics}
-No matter we use which form of the rotation representation during the training phase that is introduced in section \ref{sec:representation}, we transform it back to the rotation matrix $\mathbf{R}$ to evaluate the pose estimation together with the tranlation, in order to meet the requirement of the data format of BOP. The pose is represented by a 4x4 matrix $\mathbf{T}=[\mathbf{R},\mathbf{t},\mathbf{0},1]$, where $\mathbf{R}$ is a 3x3 rotation matrix and $\mathbf{t}$ is a 3x1 translation vector. As evaluation metrics, we adopt the same metrics used in BOP Challenge 2019/2020/2022/2023 \cite{hodan2018bop,hodan2020bop}. The following metrics are used to evaluate the pose estimation:
+No matter we use which form of the rotation representation during the training phase that is introduced in section \ref{sec:representation}, we transform it back to the rotation matrix $\mathbf{R}$ to evaluate the pose estimation together with the tranlation, in order to meet the requirement of the data format of BOP. The pose is represented by a 4x4 matrix $\mathbf{T}=[\mathbf{R},\mathbf{t},\mathbf{0},1]$, where $\mathbf{R}$ is a 3x3 rotation matrix and $\mathbf{t}$ is a 3x1 translation vector. As evaluation metrics, we adopt the same metrics used in BOP Challenge 2019/2020/2022/2023 \cite{hodan2018bop,hodan2020bop}. The following metrics are used to evaluate the pose estimation.
 
 Visible Surface Discrepancy (VSD): 
 \begin{align}
@@ -1117,7 +1164,7 @@ $\text{AR}_{\text{VSD}}$ is the average recall rates calculated for the misalign
 \subsection{Ablation Study}
 \chapter{Correspondance Diffusion}
 \section{Introduction}
-|<section{Methodology}
+\section{Methodology}
 \subsection{Pipeline}
 \subsection{Models}
 \section{Experiments}
