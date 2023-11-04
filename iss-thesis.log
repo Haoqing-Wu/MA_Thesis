@@ -1,4 +1,4 @@
-This is pdfTeX, Version 3.141592653-2.6-1.40.25 (TeX Live 2023) (preloaded format=pdflatex 2023.10.5)  3 NOV 2023 17:19
+This is pdfTeX, Version 3.141592653-2.6-1.40.25 (TeX Live 2023) (preloaded format=pdflatex 2023.10.5)  4 NOV 2023 18:29
 entering extended mode
  restricted \write18 enabled.
  file:line:error style messages enabled.
@@ -949,72 +949,65 @@ File: img/oclu.png Graphic file (type png)
 <use img/oclu.png>
 Package pdftex.def Info: img/oclu.png  used on input line 1012.
 (pdftex.def)             Requested size: 171.04031pt x 120.45091pt.
- [32 <./img/syn.png> <./img/pbr.png> <./img/kine.png>] [33 <./img/nooclu.png> <./img/oclu.png>] [34]
-<img/atten_cl.png, id=643, 634.224pt x 174.543pt>
+ [32 <./img/syn.png> <./img/pbr.png> <./img/kine.png>] [33 <./img/nooclu.png> <./img/oclu.png>] [34] [35]
+<img/atten_cl.png, id=649, 634.224pt x 174.543pt>
 File: img/atten_cl.png Graphic file (type png)
 <use img/atten_cl.png>
-Package pdftex.def Info: img/atten_cl.png  used on input line 1106.
+Package pdftex.def Info: img/atten_cl.png  used on input line 1113.
 (pdftex.def)             Requested size: 431.26662pt x 118.68765pt.
-<img/atten_bo.png, id=644, 635.319pt x 174.543pt>
+<img/atten_bo.png, id=650, 635.319pt x 174.543pt>
 File: img/atten_bo.png Graphic file (type png)
 <use img/atten_bo.png>
-Package pdftex.def Info: img/atten_bo.png  used on input line 1108.
+Package pdftex.def Info: img/atten_bo.png  used on input line 1115.
 (pdftex.def)             Requested size: 432.0112pt x 118.68765pt.
-<img/atten_ph.png, id=645, 635.319pt x 174.543pt>
+<img/atten_ph.png, id=651, 635.319pt x 174.543pt>
 File: img/atten_ph.png Graphic file (type png)
 <use img/atten_ph.png>
-Package pdftex.def Info: img/atten_ph.png  used on input line 1110.
+Package pdftex.def Info: img/atten_ph.png  used on input line 1117.
 (pdftex.def)             Requested size: 432.0112pt x 118.68765pt.
-
-
-LaTeX Warning: `h' float specifier changed to `ht'.
-
-<img/atten_cat.png, id=647, 657.438pt x 386.316pt>
+<img/atten_cat.png, id=653, 657.438pt x 386.316pt>
 File: img/atten_cat.png Graphic file (type png)
 <use img/atten_cat.png>
-Package pdftex.def Info: img/atten_cat.png  used on input line 1118.
+Package pdftex.def Info: img/atten_cat.png  used on input line 1125.
 (pdftex.def)             Requested size: 427.32964pt x 251.10242pt.
+ [36 <./img/atten_cl.png> <./img/atten_bo.png> <./img/atten_ph.png>] [37 <./img/atten_cat.png>]
+Underfull \vbox (badness 7759) has occurred while \output is active []
 
-LaTeX Warning: `h' float specifier changed to `ht'.
-
-
-Underfull \vbox (badness 6412) has occurred while \output is active []
-
- [35] [36 <./img/atten_cl.png> <./img/atten_bo.png> <./img/atten_ph.png>] [37 <./img/atten_cat.png>] [38]
+ [38] [39] [40]
 chapter 5.
-[39
+[41
 
 
-] [40
+] [42
 
 
 ]
 chapter 6.
-[41] [42
-
-
-]
-chapter 7.
 [43] [44
 
 
 ]
-chapter A.
+chapter 7.
 [45] [46
+
+
+]
+chapter A.
+[47] [48
 
 
 ] (./iss-thesis.lof)
 \tf@lof=\write5
 \openout5 = `iss-thesis.lof'.
 
- [47] [48
+ [49] [50
 
 
 ] (./iss-thesis.lot)
 \tf@lot=\write6
 \openout6 = `iss-thesis.lot'.
 
- (./iss-thesis.bbl [49] [50
+ (./iss-thesis.bbl [51] [52
 
 
 ]
@@ -1025,29 +1018,29 @@ chapter without number
 ** WARNING: IEEEtran.bst: No hyphenation pattern has been
 ** loaded for the language `en'. Using the pattern for
 ** the default language instead.
-[51] [52] [53] [54]) [55] [56
+[53] [54] [55] [56]) [57] [58
 
 
 ]
 LaTeX Font Info:    Font shape `T1/txr/b/n' in size <20.74> not available
-(Font)              Font shape `T1/txr/bx/n' tried instead on input line 1201.
- [57] (./iss-thesis.aux)
+(Font)              Font shape `T1/txr/bx/n' tried instead on input line 1234.
+ [59] (./iss-thesis.aux)
 Package rerunfilecheck Info: File `iss-thesis.out' has not changed.
 (rerunfilecheck)             Checksum: D41D8CD98F00B204E9800998ECF8427E;0.
  ) 
 Here is how much of TeX's memory you used:
- 19543 strings out of 476025
- 364856 string characters out of 5790017
+ 19548 strings out of 476025
+ 364905 string characters out of 5790017
  1875388 words of memory out of 5000000
- 39297 multiletter control sequences out of 15000+600000
+ 39298 multiletter control sequences out of 15000+600000
  600486 words of font info for 201 fonts, out of 8000000 for 9000
  1145 hyphenation exceptions out of 8191
  108i,20n,106p,10680b,646s stack positions out of 10000i,1000n,20000p,200000b,200000s
 </usr/local/texlive/2023/texmf-dist/fonts/type1/public/txfonts/rtcxr.pfb></usr/local/texlive/2023/texmf-dist/fonts/type1/public/txfonts/rtxb.pfb></usr/local/texlive/2023/texmf-dist/fonts/type1/public/txfonts/rtxbmi.pfb></usr/local/texlive/2023/texmf-dist/fonts/type1/public/txfonts/rtxi.pfb></usr/local/texlive/2023/texmf-dist/fonts/type1/public/txfonts/rtxmi.pfb></usr/local/texlive/2023/texmf-dist/fonts/type1/public/txfonts/rtxr.pfb></usr/local/texlive/2023/texmf-dist/fonts/type1/public/txfonts/rtxr.pfb></usr/local/texlive/2023/texmf-dist/fonts/type1/public/txfonts/t1xtt.pfb></usr/local/texlive/2023/texmf-dist/fonts/type1/public/txfonts/txex.pfb></usr/local/texlive/2023/texmf-dist/fonts/type1/public/txfonts/txexa.pfb></usr/local/texlive/2023/texmf-dist/fonts/type1/public/txfonts/txsy.pfb></usr/local/texlive/2023/texmf-dist/fonts/type1/public/txfonts/txsyb.pfb></usr/local/texlive/2023/texmf-dist/fonts/type1/public/txfonts/txsyc.pfb></usr/local/texlive/2023/texmf-dist/fonts/type1/urw/times/utmb8a.pfb></usr/local/texlive/2023/texmf-dist/fonts/type1/urw/times/utmr8a.pfb></usr/local/texlive/2023/texmf-dist/fonts/type1/urw/times/utmr8a.pfb></usr/local/texlive/2023/texmf-dist/fonts/type1/urw/times/utmri8a.pfb>
-Output written on iss-thesis.pdf (61 pages, 13772709 bytes).
+Output written on iss-thesis.pdf (63 pages, 13777776 bytes).
 PDF statistics:
- 1087 PDF objects out of 1200 (max. 8388607)
- 930 compressed objects within 10 object streams
- 335 named destinations out of 1000 (max. 500000)
+ 1100 PDF objects out of 1200 (max. 8388607)
+ 941 compressed objects within 10 object streams
+ 339 named destinations out of 1000 (max. 500000)
  459 words of extra memory for PDF output out of 10000 (max. 10000000)
 
