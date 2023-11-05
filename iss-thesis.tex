@@ -86,7 +86,7 @@
 % *****************************************************************
 % Please fill in all items denoted by "to be defined (TBD)"
 \def \deworktitle{Arbeitstitel, to be defined (TBD)}        % German title/translation
-\def \enworktitle{Thesis title TBD}        % English title/translation
+\def \enworktitle{6 DoF Pose Esitmation with Diffusion Models from single RGB-D Image}        % English title/translation
 \def \tutor{Supervisor's name TBD}
 \def \student{Student's name TBD}
 \def \worksubject{Masterarbeit Dxxxx TBD}  % type and number (S/Dxxxx) of your thesis
@@ -645,7 +645,7 @@ An overview of the forward and reverse process using a cat image as example is s
 	\label{img:diff_process}
 \end{figure}
 
-\subsubsection{Conditional Diffusion Model}
+\subsubsection{Conditional Diffusion Model}\label{sec:cond}
 Conditional diffusion, also called guided diffusion is very practical in many applications since we normally want to generate the data in paricular style, direction or distribution and not in an arbitrary way.Typical usage of conditional diffusion is to sample data from a given class or category, as well as text prompt, image prompt and so on.
 
 Mathematically, condition means the prior distribution $p(\mathbf{x})$ is conditioned on a given input $y$. By modifiying the equation \ref{eq:reverse_all}, we get
@@ -931,6 +931,9 @@ The final output point cloud is aligned with the reference point cloud using the
   L_{CD}(S, \hat{S}) = \max \left\{\frac{1}{\lvert S\rvert }\mathop{\sum}_{x\in S} \mathop{\min}_{\hat{x}\in \hat{S}}||x-\hat{x}||_{2} ,\ \frac{1}{\lvert \hat{S}\rvert }\mathop{\sum}_{\hat{x}\in \hat{S}} \mathop{\min}_{x\in S}||\hat{x}-x||_{2}\right\}
 \end{align}
 where $S$ is the reference point cloud and $\hat{S}$ is the output point cloud. The formulation enforces that the output point cloud is close to the reference point cloud and vice versa. In our case, given a partial point cloud as input, the reconstruct point cloud is aligned with the CAD model at the pose of partial point cloud. The structure of the FoldingNet is shown in figure \ref{img:fold}.
+
+\subsubsection{Feature Fusion}\label{sec:fusion}
+
 \subsubsection{Multi-Hypotheses Inference}
 One of the advantages of diffusion model is the high quality and diversity of the generated objects. Using the case of image synthesis as an example, we can derive dozen of high-resolution and meaningful images from the diffusion model with the same prompt. In our case, we want to explore the diversity of the pose hypotheses if there is ambiguity in the reference input. In another word, for a symmetrical object, we want to derive a distribution which fit the symmetry pattern of the object and for an object with uniquely determined pose, we want to use the multi-hypotheses inference to get a more precise estimation of the pose.
 -------------------------To be determined-------------------------
@@ -1127,7 +1130,7 @@ By Comparing the outputs from different scale of ViT models and patch size, we c
 	\label{img:atten_patch}
 \end{figure}
 
-From the figure we can see that the key points of the cat e.g., ears, tail and eyes are not precisely localized if the patch size is not small enough. For the classification task is this drawback not that obvious, because the network can learn the latent feature from the majority of the image. But for the pose estimation task, the network need to learn the latent feature from the key points or edges of the object, which is more sensitive to the resolution.
+From the figure \ref{img:atten_patch} we can see that the key points of the cat e.g., ears, tail and eyes are not precisely localized if the patch size is not small enough. For the classification task is this drawback not that obvious, because the network can learn the latent feature from the majority of the image. But for the pose estimation task, the network need to learn the latent feature from the key points or edges of the object, which is more sensitive to the resolution.
 
 Considering the tradeoff of the inference speed and performance, we use ViT-B/8 in our experiments which has a quite satistied performance and relative acceptable number of parameters. The ablation study of different setups will be shown later in this experiments section.
 
@@ -1159,10 +1162,60 @@ From the visualization we can find that the shape of the reconstructed point clo
 
 
 \subsection{Training} 
+The training of the diffusion network for the pose hypotheses estimation can be done after the 2D and 3D feature encoders are pretrained (for 2D feature extractor is the checkpoint of the pretrained model loaded from the public cloud storage). We load the checkpoint of the encoders and freeze the network of these two parts to avoid the parameters of pretrained model being updated during the training of the diffusion network. 
+
+The training is also running on the single Nvidia Tesla V100-SXM2 16G video card. Like setup of the 3D encoder, we use the BlenderProc4BOP training dataset and divide the original data into $90\%/10\%$ partitions for training and validation. After tuning the hyperparemeters from the experiments, we use the following setup (table \ref{tab:hyper}) to represent the pose hypotheses diffusion model.
+\begin{table}[h]
+  \centering
+  \caption{Hyperparemeters of the pose hypotheses diffusion model}
+  \label{tab:hyper}
+  \begin{tabular}{l c | l c | l c}
+      \toprule
+      Training param. & Conf. & Diffusion & Conf. & Backbone & Conf.\\
+      \midrule
+      Batch size & 16 & Steps & 400 & Model & Transformer\\
+      Optimizer & Adam & $\beta_{1}$ & $1e^{-4}$ & \#Layers & 8\\
+      Scheduler & CA & $\beta_{T}$ & $2e^{-2}$ & \#Heads & 4\\
+      Initial lr. & $1e^{-4}$ & Scheduler & Linear & Hidden dim. & 512\\
+      End-up lr. & $1e^{-6}$ & $\Sigma_{\theta}$ & Learnable & FF dim. & 2048\\
+      \#Iterations & 200k & Rotaion & 6D & TE dim. & 256\\
+       &  & Loss func. & MSE & PE dim. & 512\\
+       &  & & & 2D dim. & 768\\
+       &  & & & 3D dim. & 512\\
+       &  & & & Feat. fusion & Add + adaLN\\
+      \bottomrule
+  \end{tabular}
+\end{table}
+
+Clarification of some hyperparemeters in table \ref{tab:hyper}:
+\begin{itemize}
+  \item CA - Cosine annealing learning rate scheduler.
+  \item $\beta_{1}$ - Initial value of the variance schedule at time step 1.
+  \item $\beta_{T}$ - Final value of the variance schedule at time step $T$.
+  \item Scheduler (Diffusion) - Variance scheduler of the forward diffusion process which represents the change of $\beta$ with the time step $t$.
+  \item $\Sigma_{\theta}$ - Diagonal variance of the reverse process which is fixed in the orignial paper \cite{ho2020denoising} but can be optimized to be learnable \cite{nichol2021improved}.
+  \item Rotation - Representation of the rotation matrix for 6 DoF pose. We use the 6D continuous representation in our case. Recall the section \ref{sec:representation}.
+  \item \#layers - Number of the multi-head attention layers.
+  \item \#heads - Number of the attention heads.
+  \item Hidden dim. - Dimension of the hidden layer in the Transformer encoder.
+  \item FF dim. - Dimension of the feed forward layers in the Transformer encoder, which is chosen to be 4 times of the hidden dim.
+  \item TE dim. - Dimension of the time embedding in the diffusion model.
+  \item PE dim. - Dimension of the postion embedding of the input tokens for Transformer encoder.
+  \item 2D dim. - Dimension of the 2D feature extracted from the pretrained 2D encoder.
+  \item 3D dim. - Dimension of the 3D feature extracted from the pretrained 3D encoder.
+  \item Feat. fusion - The operation of the feature fused into the backbone. In our case, we first use the addition of the 2D, 3D features as well as the time embedding and then utilize the adaptive layer normalization (AdaLN) to integrate the features into the network. Recall the section \ref{sec:fusion}.
+\end{itemize}
+The loss function is defined by the mean square error (MSE) between the noise $\epsilon$ added at a particular time step $t$ and the estimated noise $\epsilon_{\theta}$. The loss function is formulated as:
+\begin{align}
+  \mathcal{L}_{\text{MSE}}=\frac{1}{B}\sum_{t\in \mathfrak{T}_{B} }\left\Vert \epsilon_{t}-\epsilon_{\theta}(\mathbf{x}_{0},\epsilon, t, y)\right\Vert^{2} \quad , \mathfrak{T}_{B}\subseteq \mathfrak{T}=\left\{1,\dots,T\right\}
+\end{align}
+where $B$ is the batch size, $\mathfrak{T}_{B}$ is the subset of the whole time steps with the batch size and $\epsilon_{\theta}$ is the estimated noise depending on the input $\mathbf{x}_{0}$, the noise $\epsilon$, the time step $t$ and the condition $y$ (see section \ref{sec:cond}). The loss is calculated with the MSE of the randomly sampled subset controled by the batch size instead of the whole time steps, but it will cover each time step during the training process. Figure shows the loss of the model during the training process.
+
+-----------------------image-------------------------
+
 \subsection{Evaluation}
 \subsubsection{Evaluation Metrics}
-No matter we use which form of the rotation representation during the training phase that is introduced in section \ref{sec:representation}, we transform it back to the rotation matrix $\mathbf{R}$ to evaluate the pose estimation together with the tranlation, in order to meet the requirement of the data format of BOP. The pose is represented by a 4x4 matrix $\mathbf{T}=[\mathbf{R},\mathbf{t},\mathbf{0},1]$, where $\mathbf{R}$ is a 3x3 rotation matrix and $\mathbf{t}$ is a 3x1 translation vector. As evaluation metrics, we adopt the same metrics used in BOP Challenge 2019/2020/2022/2023 \cite{hodan2018bop,hodan2020bop}. The following metrics are used to evaluate the pose estimation.
-
+No matter we use which form of the rotation representation during the training phase that is introduced in section \ref{sec:representation}, we transform it back to the rotation matrix $\mathbf{R}$ to evaluate the pose estimation together with the tranlation, in order to meet the requirement of the data format of BOP. The pose is represented by a 4x4 matrix $\mathbf{T}=[\mathbf{R},\mathbf{t},\mathbf{0},1]$, where $\mathbf{R}$ is a 3x3 rotation matrix and $\mathbf{t}$ is a 3x1 translation vector. As evaluation metrics, we adopt the same metrics used in BOP Challenge 2019/2020/2022/2023 \cite{hodan2018bop,hodan2020bop}. The following metrics are used to evaluate the pose estimation. 
 Visible Surface Discrepancy (VSD): 
 \begin{align}
  e_{\text{VSD}}\left(\hat{D},\bar{D},\hat{V},\bar{V},\tau\right)=\text{avg}_{p\in \hat{V}\cup \bar{V}}
@@ -1193,6 +1246,10 @@ $\text{AR}_{\text{VSD}}$ is the average recall rates calculated for the misalign
 \end{align}
 
 -----------------------why not add-------------------------
+
+\subsubsection{Baseline}
+
+\subsubsection{Pose Estimation Results}
 
 \subsection{Ablation Study}
 \chapter{Correspondance Diffusion}

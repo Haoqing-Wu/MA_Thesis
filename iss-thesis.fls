@@ -1314,6 +1314,7 @@ INPUT /usr/local/texlive/2023/texmf-dist/fonts/type1/public/txfonts/rtxr.pfb
 INPUT /usr/local/texlive/2023/texmf-dist/fonts/type1/public/txfonts/t1xtt.pfb
 INPUT /usr/local/texlive/2023/texmf-dist/fonts/type1/public/txfonts/txex.pfb
 INPUT /usr/local/texlive/2023/texmf-dist/fonts/type1/public/txfonts/txexa.pfb
+INPUT /usr/local/texlive/2023/texmf-dist/fonts/type1/public/txfonts/txmia.pfb
 INPUT /usr/local/texlive/2023/texmf-dist/fonts/type1/public/txfonts/txsy.pfb
 INPUT /usr/local/texlive/2023/texmf-dist/fonts/type1/public/txfonts/txsyb.pfb
 INPUT /usr/local/texlive/2023/texmf-dist/fonts/type1/public/txfonts/txsyc.pfb

@@ -41,37 +41,40 @@
 \contentsline {subsubsection}{\nonumberline Time Embedding and Postion Embedding}{26}{subsubsection*.56}%
 \contentsline {subsubsection}{\nonumberline 2D Feature Extractor}{27}{subsubsection*.59}%
 \contentsline {subsubsection}{\nonumberline 3D Feature Extractor}{29}{subsubsection*.63}%
-\contentsline {subsubsection}{\nonumberline Multi-Hypotheses Inference}{30}{subsubsection*.66}%
-\contentsline {subsubsection}{\nonumberline Pose Refinement}{30}{subsubsection*.68}%
+\contentsline {subsubsection}{\nonumberline Feature Fusion}{30}{subsubsection*.66}%
+\contentsline {subsubsection}{\nonumberline Multi-Hypotheses Inference}{30}{subsubsection*.68}%
+\contentsline {subsubsection}{\nonumberline Pose Refinement}{30}{subsubsection*.70}%
 \contentsline {section}{\numberline {4.3}Experiments}{32}{section.4.3}%
 \contentsline {subsection}{\numberline {4.3.1}Datasets}{32}{subsection.4.3.1}%
-\contentsline {subsubsection}{\nonumberline LINEMOD Dataset}{32}{subsubsection*.70}%
-\contentsline {subsubsection}{\nonumberline LINEMOD-O Dataset}{32}{subsubsection*.73}%
-\contentsline {subsubsection}{\nonumberline Data Format}{33}{subsubsection*.76}%
-\contentsline {subsubsection}{\nonumberline Data Augmentation}{34}{subsubsection*.79}%
+\contentsline {subsubsection}{\nonumberline LINEMOD Dataset}{32}{subsubsection*.72}%
+\contentsline {subsubsection}{\nonumberline LINEMOD-O Dataset}{32}{subsubsection*.75}%
+\contentsline {subsubsection}{\nonumberline Data Format}{33}{subsubsection*.78}%
+\contentsline {subsubsection}{\nonumberline Data Augmentation}{34}{subsubsection*.81}%
 \contentsline {subsection}{\numberline {4.3.2}2D Feature Extractor}{35}{subsection.4.3.2}%
-\contentsline {subsubsection}{\nonumberline Pretrained Model}{35}{subsubsection*.81}%
-\contentsline {subsubsection}{\nonumberline Evaluation}{36}{subsubsection*.84}%
+\contentsline {subsubsection}{\nonumberline Pretrained Model}{35}{subsubsection*.83}%
+\contentsline {subsubsection}{\nonumberline Evaluation}{36}{subsubsection*.86}%
 \contentsline {subsection}{\numberline {4.3.3}3D Feature Extractor}{37}{subsection.4.3.3}%
-\contentsline {subsubsection}{\nonumberline Training}{37}{subsubsection*.88}%
-\contentsline {subsubsection}{\nonumberline Evaluation}{38}{subsubsection*.90}%
-\contentsline {subsection}{\numberline {4.3.4}Training}{39}{subsection.4.3.4}%
-\contentsline {subsection}{\numberline {4.3.5}Evaluation}{39}{subsection.4.3.5}%
-\contentsline {subsubsection}{\nonumberline Evaluation Metrics}{39}{subsubsection*.92}%
-\contentsline {subsection}{\numberline {4.3.6}Ablation Study}{40}{subsection.4.3.6}%
-\contentsline {chapter}{\numberline {5}Correspondance Diffusion}{41}{chapter.5}%
-\contentsline {section}{\numberline {5.1}Introduction}{41}{section.5.1}%
-\contentsline {section}{\numberline {5.2}Methodology}{41}{section.5.2}%
-\contentsline {subsection}{\numberline {5.2.1}Pipeline}{41}{subsection.5.2.1}%
-\contentsline {subsection}{\numberline {5.2.2}Models}{41}{subsection.5.2.2}%
-\contentsline {section}{\numberline {5.3}Experiments}{41}{section.5.3}%
-\contentsline {subsection}{\numberline {5.3.1}Datasets}{41}{subsection.5.3.1}%
-\contentsline {subsection}{\numberline {5.3.2}Evaluation}{41}{subsection.5.3.2}%
-\contentsline {subsubsection}{\nonumberline Evaluation Metrics}{41}{subsubsection*.94}%
-\contentsline {chapter}{\numberline {6}Discussion}{43}{chapter.6}%
-\contentsline {chapter}{\numberline {7}Conclusion}{45}{chapter.7}%
-\contentsline {chapter}{\numberline {A}Additionally}{47}{appendix.A}%
-\contentsline {chapter}{\nonumberline List of Figures}{49}{chapter*.95}%
-\contentsline {chapter}{\nonumberline List of Tables}{51}{chapter*.96}%
-\contentsline {chapter}{\nonumberline Bibliography}{53}{chapter*.97}%
+\contentsline {subsubsection}{\nonumberline Training}{37}{subsubsection*.90}%
+\contentsline {subsubsection}{\nonumberline Evaluation}{38}{subsubsection*.92}%
+\contentsline {subsection}{\numberline {4.3.4}Training}{38}{subsection.4.3.4}%
+\contentsline {subsection}{\numberline {4.3.5}Evaluation}{40}{subsection.4.3.5}%
+\contentsline {subsubsection}{\nonumberline Evaluation Metrics}{40}{subsubsection*.95}%
+\contentsline {subsubsection}{\nonumberline Baseline}{41}{subsubsection*.97}%
+\contentsline {subsubsection}{\nonumberline Pose Estimation Results}{41}{subsubsection*.99}%
+\contentsline {subsection}{\numberline {4.3.6}Ablation Study}{41}{subsection.4.3.6}%
+\contentsline {chapter}{\numberline {5}Correspondance Diffusion}{43}{chapter.5}%
+\contentsline {section}{\numberline {5.1}Introduction}{43}{section.5.1}%
+\contentsline {section}{\numberline {5.2}Methodology}{43}{section.5.2}%
+\contentsline {subsection}{\numberline {5.2.1}Pipeline}{43}{subsection.5.2.1}%
+\contentsline {subsection}{\numberline {5.2.2}Models}{43}{subsection.5.2.2}%
+\contentsline {section}{\numberline {5.3}Experiments}{43}{section.5.3}%
+\contentsline {subsection}{\numberline {5.3.1}Datasets}{43}{subsection.5.3.1}%
+\contentsline {subsection}{\numberline {5.3.2}Evaluation}{43}{subsection.5.3.2}%
+\contentsline {subsubsection}{\nonumberline Evaluation Metrics}{43}{subsubsection*.101}%
+\contentsline {chapter}{\numberline {6}Discussion}{45}{chapter.6}%
+\contentsline {chapter}{\numberline {7}Conclusion}{47}{chapter.7}%
+\contentsline {chapter}{\numberline {A}Additionally}{49}{appendix.A}%
+\contentsline {chapter}{\nonumberline List of Figures}{51}{chapter*.102}%
+\contentsline {chapter}{\nonumberline List of Tables}{53}{chapter*.103}%
+\contentsline {chapter}{\nonumberline Bibliography}{55}{chapter*.104}%
 \providecommand \tocbasic@end@toc@file {}\tocbasic@end@toc@file 

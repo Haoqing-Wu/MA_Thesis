@@ -18,10 +18,10 @@
 \contentsline {figure}{\numberline {4.6}{\ignorespaces Self-supervised architecture of DINO\relax }}{28}{figure.caption.60}%
 \contentsline {figure}{\numberline {4.7}{\ignorespaces Sturcture of the ViT model\relax }}{28}{figure.caption.61}%
 \contentsline {figure}{\numberline {4.8}{\ignorespaces 3D feature extraction with FoldingNet based point cloud completion\relax }}{30}{figure.caption.64}%
-\contentsline {figure}{\numberline {4.9}{\ignorespaces LIMEMOD dataset. Left: training data with Synthetic CAD Model; Middle: training data rendered with PBR-BlenderProc4BOP; Right: test data captured with Kinect Sensor\relax }}{32}{figure.caption.71}%
-\contentsline {figure}{\numberline {4.10}{\ignorespaces Comparison of LINEMOD-O dataset with LINEMOD dataset. Left: low-level occluded scene; Right: high-level occluded scene\relax }}{33}{figure.caption.74}%
-\contentsline {figure}{\numberline {4.11}{\ignorespaces Visualization of the attention maps of the input image, where 12 heatmaps represent 12 attension heads output in transformer. Top: hole puncher; Middle: glue; Bottem: phone (occluded)\relax }}{36}{figure.caption.85}%
-\contentsline {figure}{\numberline {4.12}{\ignorespaces Attension maps of the different scale of ViTs and patch size. From left to right: ViT-S/16, ViT-S/8, ViT-B/16, ViT-B/8. Each column represents 3 random attention heads.\relax }}{37}{figure.caption.86}%
+\contentsline {figure}{\numberline {4.9}{\ignorespaces LIMEMOD dataset. Left: training data with Synthetic CAD Model; Middle: training data rendered with PBR-BlenderProc4BOP; Right: test data captured with Kinect Sensor\relax }}{32}{figure.caption.73}%
+\contentsline {figure}{\numberline {4.10}{\ignorespaces Comparison of LINEMOD-O dataset with LINEMOD dataset. Left: low-level occluded scene; Right: high-level occluded scene\relax }}{33}{figure.caption.76}%
+\contentsline {figure}{\numberline {4.11}{\ignorespaces Visualization of the attention maps of the input image, where 12 heatmaps represent 12 attension heads output in transformer. Top: hole puncher; Middle: glue; Bottem: phone (occluded)\relax }}{36}{figure.caption.87}%
+\contentsline {figure}{\numberline {4.12}{\ignorespaces Attension maps of the different scale of ViTs and patch size. From left to right: ViT-S/16, ViT-S/8, ViT-B/16, ViT-B/8. Each column represents 3 random attention heads.\relax }}{37}{figure.caption.88}%
 \addvspace {10\p@ }
 \addvspace {10\p@ }
 \addvspace {10\p@ }
