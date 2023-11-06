@@ -85,10 +85,10 @@
 % --------------> put student information here <------------------
 % *****************************************************************
 % Please fill in all items denoted by "to be defined (TBD)"
-\def \deworktitle{Arbeitstitel, to be defined (TBD)}        % German title/translation
-\def \enworktitle{6 DoF Pose Esitmation with Diffusion Models from single RGB-D Image}        % English title/translation
+\def \deworktitle{Schätzung der 6-DoF-Pose mit Diffusion Modelle aus einem einzelnen RGB-D-Bild}        % German title/translation
+\def \enworktitle{6 DoF Pose Estimation with Diffusion Models from a Single RGB-D Image}        % English title/translation
 \def \tutor{Supervisor's name TBD}
-\def \student{Student's name TBD}
+\def \student{Haoqing Wu}
 \def \worksubject{Masterarbeit Dxxxx TBD}  % type and number (S/Dxxxx) of your thesis
 \def \startdate{Date of work begin TBD}
 \def \submission{Date of submission TBD}
@@ -285,42 +285,25 @@ Pro-gramm-aus-schnitt Mi-kro-fon-sig-nal}
 
 \chapter{Introduction}
 \section{Motivation}
+In recent years, the field of the computer vision has witnessed a substantial transformation, driven by the increasing demand for more precise and robust object recognition and manipulation in various domains. This transformation is largely attributed to the swift development and integration of advanced technologies, such as deep learning and the use of three-dimensional (3D) data, which have significantly improved the capability of machines to understand and interact with the physical world. Among many subfields of computer vision, 6 DoF pose estimation, which aims to determine the position and orientation of the object in the 3D space, has garnered significiant attention due to its vital role in many applications such as augmented reality, robotics and automation, autonomous driving, object manipulation, quality control and so on.
 
-\section{Main Objective}
+6 DoF pose estimation is also a task that requires many techniques from different fields to work together. It needs the learning-based methods to extract the features from the input data and estimate the pose, and also the not learning-based algorithms to process the data, refine the pose estimation. To meet the requirements of the different data input and increase the accuracy and reliability of the pose estimation, we need to process the data from 2D domain and sometimes also from 3D domain. The task can be extended to the multi-object or multi-view scenario, which is common in the robotics and autonomous driving field. Further considering the time series data, the pose estimation can be used to track the object in the video or even predict the future pose of the object. The complexity of the task increases the difficulty of the pose estimation in real world applications, but meanwhile also injects the vitality to the research toward this field.
 
+Diffusion models, first introduced by Sohl-Dickstein et al\cite{sohldickstein2015deep} and proposed recently by Ho. et al\cite{ho2020denoising}, are a class of generative models that can be used to generate the high-quality data from the random noise. It has achieved the state-of-the-art performance in many image synthesis tasks compared with the previous methods. The application is not limited to the computer vision domain, but also in the natural language processing, temporal data modeling and multi-model learning. The usage of diffusion models in 6 DoF pose estimation task is still in the early stage with only a few works that have done and the potential of the diffusion models in this field is still not fully explored.
+
+RGB-D images have been widely used in the computer vision tasks in the recent years with the increasing popularity of the RGB-D sensors and the data with depth information. It has been shown that the depth information can improve the upper bound of the network compared with RGB only method. So it is worthy to evaluate capability of the diffusion models on the RGB-D data in our pose estimation task.
+\section{Aims and Objectives}
+In this thesis we aim to investigate the possibility of using diffusion models in pose estimation task and adopt the advantage of the diffusion models in 2D domain to 3D domain, such as the capability to the large-scale data and the diversity of the generated data. To this end, we first review the related works about the 6 DoF pose estimation and diffusion models. And then design the diffusion network architecture with the single RGB-D image as input, which contains the diffusion backbone, 2D feature extractor and 3D feature extractor. Finally, we evaluate the performance of the diffusion models on the 6 DoF pose estimation task and compare it with the previous methods with different architecture.
 \section{Structure of the Thesis}
-
-As shown in \cite{Cx}, we present an equation
-\begin{align}
-	H(\omega) = \int h(t) \e{\im\omega t} \delta t \in \N
-\end{align}
-
-Then we include a graphic in figure \ref{mind} and information about captions in table \ref{captions}.\\
-\begin{figure}
-	\centering
-	\includegraphics[scale=.3]{isslogocolor}
-	\caption{A beautiful mind}
-	\label{mind}
-\end{figure}
-
-\begin{table}
-    \centering
-    \caption{Where to put the caption}
-    \label{captions}
-    \begin{tabular}{lcc}
-        \toprule
-         & above & below\\
-        \midrule
-        for figures & no & yes\\
-        for tables & yes & no\\
-        \bottomrule
-    \end{tabular}
-\end{table}
-
-
-Lorem ipsum dolor sit amet, consetetur sadipscing elitr, sed diam nonumy eirmod tempor invidunt ut labore et dolore magna aliquyam erat, sed diam voluptua. At vero eos et accusam et justo duo dolores et ea rebum. Stet clita kasd gubergren, no sea takimata sanctus est Lorem ipsum dolor sit amet. Lorem ipsum dolor sit amet, consetetur sadipscing elitr, sed diam nonumy eirmod tempor invidunt ut labore et dolore magna aliquyam erat, sed diam voluptua. At vero eos et accusam et justo duo dolores et ea rebum. Stet clita kasd gubergren, no sea takimata sanctus est Lorem ipsum dolor sit amet.
-\newpage
-Lorem ipsum dolor sit amet, consetetur sadipscing elitr, sed diam nonumy eirmod tempor invidunt ut labore et dolore magna aliquyam erat, sed diam voluptua. At vero eos et accusam et justo duo dolores et ea rebum. Stet clita kasd gubergren, no sea takimata sanctus est Lorem ipsum dolor sit amet. Lorem ipsum dolor sit amet, consetetur sadipscing elitr, sed diam nonumy eirmod tempor invidunt ut labore et dolore magna aliquyam erat, sed diam voluptua. At vero eos et accusam et justo duo dolores et ea rebum. Stet clita kasd gubergren, no sea takimata sanctus est Lorem ipsum dolor sit amet.
+The thesis is orgnizated into seven chapters and the structure of the thesis is as follows:
+\begin{description}
+  \item[Chapter 2 - Background] This chapter gives an overview of the 6 DoF pose estimation and diffusion models. The 6 DoF pose estimation is introduced with the definition, representation of the pose and typical applications. The challenges of the pose estimation task are also discussed. The diffusion models are introduced with an overview of other generative models and the basic theory behind it together with the applications.
+  \item[Chapter 3 - Related Works] In this chapter, some previous works are reviewed which are related to the 6 DoF pose estimation and diffusion models. Different architectures of the pose estimation models are hierarchically introduced and discussed.
+  \item[Chapter 4 - Methodology] The proposed method and models are introduced in this chapter. The structure of the pose diffusion architecture is presented together with each modules and algorithms of the model in detail.
+  \item[Chapter 5 - Experiments] The experiments are conducted in this chapter. The datasets and evaluation metrics are introduced first. And we describe the setup of the training and evaluation for each models in this work. Then the qualitative and quantitative results of the experiments, the comparison with other methods as well as the ablation study are presented.
+  \item[Chapter 6 - Discussion] The results of the experiments are discussed here. The advantages and disadvantages of the proposed method are analyzed and the possible improvements are also discussed.
+  \item[Chapter 7 - Conclusion ] Finally, we summarize the thesis and the contributuion from this work and give an outlook of the future work.
+\end{description} 
 
 \chapter{Background}
 \section{6 DoF Pose Estimation}
@@ -491,7 +474,7 @@ If facing the multi-object scenario, which is common in the application like rob
 
 -----------------image here----------------
 
-\section{Diffusion Model}
+\section{Diffusion Models}
 \subsection{Generative Models}
 One of the most fascinating and distinctive feature of human brain is the ability to create or imagine objects that do not immediately exist in reality. Humans can spontaneouesly learn the underlying properties of the world and generate the hypotheses of the future. This procedure is similiar to supervised learning and reinforcement learning with little mount of labeled data, but generalizes very well to many unseen scenarios and has a high level of robustness\cite{lamb2021brief}.
 
@@ -535,7 +518,7 @@ The path of the transformation can be seen as a flow of the probability density 
 
 Normalizating flows provide a flexible framework for modeling complex distributions, which is difficult to achieve with previous generative models. However the samples that are generated througn flow-based models are not as realistic as the samples from GANs or VAEs, and the data will be projected into also high dimensional space, which is hard to interpret.
 
-\subsubsection{Diffusion Model}
+\subsubsection{Diffusion Models}
 Diffusion models are a new class of state-of-the-art generative models that can synthesize high-quality images in recent years. The representative one, which is the Denosing Diffusion Probabilistic Models(DDPM) was initialized by Sohl-Dickstein et al\cite{sohldickstein2015deep} and proposed recently by Ho. et al\cite{ho2020denoising}. 
 
 A diffusion probabilistic model(diffusion model), inspired by the nonequilibrium thermodynamics, is a parameterized Markov chain trained using variational inference to produce samples from a given target distribution after finite steps. The basic idea behind diffusion models is trivial. Given an input data $x_{0}$, we first gradually add Gaussian noise to it and finally get a sequence of noised data $x_{1},...,x_{T}$, which we call it forward process. Afterward, a neural network is trained to recover the original data by estimating the noise and reversing the forward precess, which we call it sampling process or reverse process.
@@ -748,11 +731,14 @@ Text-to-3D generation and Image-to-3D are novel tasks in the field of multi-moda
 	\label{img:df}
 \end{figure}
 
-\chapter{Related Work}
+\chapter{Related Works}
 
-\chapter{Pose Hypotheses Diffusion}
+
+
+\chapter{Methodology}
+
 \section{Introduction}
-In this chapter, we will introduce the detail of the first proposed method, namely the pose hypotheses diffusion. The intuitive idea is to directly denoise the pose which consists of translation and rotation, $\mathbf{T} = (\mathbf{t}, \mathbf{r})^{T}$. As the diffusion model is basically one of the generative models, we use the diffusion pipeline to generate the possible pose hypotheses which is similar to the image synthesis but with different objective. So we call this kind of pose estimation method as pose hypotheses diffusion.
+In this chapter, we will introduce the detail of our proposed method, namely the pose hypotheses diffusion. The intuitive idea is to directly denoise the pose which consists of translation and rotation, $\mathbf{T} = (\mathbf{t}, \mathbf{r})^{T}$. As the diffusion model is basically one of the generative models, we use the diffusion pipeline to generate the possible pose hypotheses which is similar to the image synthesis but with different objective. So we call this kind of pose estimation method as pose hypotheses diffusion.
 
 Through the experiments using different representation of the rotation, we find that the 6D representation of the rotation introduced in \ref{eq:ortho6d} is the most efficient one. So we use this representation in the following chapters and the comparision with other forms of rotation will be discussed in the experiment section.
 
@@ -760,12 +746,11 @@ Repeating the sampling process of the pose for one reference input $\mathbf{r}$,
 
 -----------------image here----------------
 
-\section{Methodology}
-This section introduces the overall structure of the pose hypotheses diffusion, 
-including the 2-phase architecture of the diffusion model and the other modules in the whole model.
-\subsection{Structure}
+\section{Framework}
+This section introduces the overall structure of the pose hypotheses diffusion, including the 2-phase architecture of the diffusion model and the other modules in the whole model.
+
 Similarly to the original diffusion pipeline, we first need to train a model to estimate the noise $\boldsymbol{\epsilon}_{\theta}$ conditioned with the input $\mathbf{x}_{t}$, the timestep $t$ as well as the guidance $\mathbf{y}$. Then we can go through the reverse process in which we generate the pose hypothesis $\mathbf{T}_{t-1}$ with conditional distribution $q(\mathbf{T}_{t-1}|\mathbf{T}_{t},\mathbf{y})$ step by step using the equations we derived in section \ref{sec:theory}.
-\subsubsection{Training Phase}
+\subsection{Training Phase}
 In the training phase of the pose hypotheses diffusion, we basically let the backbone network to predict the noise given by the noised pose $\mathbf{T}_{t}$, the noised pose can be derived from the reference pose $\mathbf{T}_{0}$ with the noise schedule $\beta_{t}$ which introduced before in the forward process. The most application using diffusion has a convolutional UNet-like backbone\cite{ronneberger2015unet}, which performs well in the 2D tasks. However, dealing with the pose estimation task, we have a different objective and convolutional neural network is no longer suitable. In our model, we utilize the transformer encoder as the backbone network, which has be proved to be effective and flexiable in not only the natual language processing but also the computer vision tasks.
 
 Additionally, we also need to provide the timestep $t$ and the guidance $\mathbf{y}$ to the backbone. The guidance here is the feature of the reference RGB or RGB-D image depending on the requirement of the task or the dataset. We use RGB-D image in our experiments which has both 2D and 3D features can be extracted and fused in to the model. As 2D feature extractor, a pretrained self-supervised Vision Transformer
@@ -778,9 +763,7 @@ Additionally, we also need to provide the timestep $t$ and the guidance $\mathbf
 	\label{img:train}
 \end{figure}
 
----------------------algo---------------------
-
-\subsubsection{Sampling Phase}
+\subsection{Sampling Phase}
 Assuming that the denoiser is converged in the training phase, we can use the denoiser to iteratively generate the pose hypotheses with the randomly initialized the transformation $\mathbf{T}_{T}$. Same as the training phase, we need to provide the timestep $t$ and the guidance $\mathbf{y}$ to the backbone. Given a reference RGB-D image, we use the pretrained 2D and 3D encoder to extract the downstream features and concatinate them as the conditional embedding of the diffusion backbone. 
 
 Since during the training phase, the network has learned the noise distribution conditioned each timestep embedding, so the denoiser has the capability to predict the noise $\boldsymbol{\epsilon}_{\theta}$ from $t=T$ to $t=0$. Then we can use the equation \ref{eq:reverse} to get the pose hypothesis $\mathbf{T}_{t-1}$ and repeat the process until we get the final pose hypothesis $\mathbf{T}_{0}$. 
@@ -795,7 +778,7 @@ After the optional multi-hypotheses inference, we can further use some algorithm
 	\label{img:sample}
 \end{figure}
 
-\subsubsection{Speed up Sampling with DDIM}
+\subsection{Speed up Sampling with DDIM}
 It is relatively slow to generate the sample from DDPM, because the denoising process follows the whole Markov chain of the reverse process which is quite long. Slow inference reduced performance of the real-time application of pose estimation, which we need to optimizd. the In order to speed up the sampling process, we use the dinoising diffusion implicit model (DDIM)\cite{song2022denoising} with same training procedure as DDPM but more efficient in the reverse process.
 
 First, we rewrite the reverse conditional probability in \ref{eq:reverse_q} to be parameterized by a desired standard deviation $\sigma_{t}$ using the reparameterization trick in \ref{eq:xt_x0} as:
@@ -811,8 +794,8 @@ Then we let $\sigma_{t}^{2}=\eta\cdot\tilde{\beta}_{t}$ where $\eta$ is a hyperp
   q_{\sigma,\tau}(\mathbf{x}_{\tau_{i}-1}|\mathbf{x}_{\tau_{i}},\mathbf{x}_{0}) = \mathcal{N} (\mathbf{x}_{\tau_{i}-1}; \sqrt{\bar{\alpha}_{t-1}}\mathbf{x}_{0}+\sqrt{1-\bar{\alpha}_{t-1} - \sigma_{t}^{2}}\frac{\mathbf{x}_{\tau_{i}}-\sqrt{\bar{\alpha}_{t}}\mathbf{x}_{0}}{\sqrt{1-\bar{\alpha}_{t}}}, \sigma_{t}^{2}\mathbf{I})
 \end{align}
 With DDIM we can use a non-Markovian diffusion process whose reverse process can be much faster than the original DDPM, and still keep the quality of the samples. It also remains the consistency of the reverse process when $\eta=0$, where the reverse process is deterministic. That makes sure that multiple samples from the same reference input have similar high-level features and in our case the pose hypotheses are consistent with each other.
-\subsection{Models}
-\subsubsection{Denoiser Network}
+\section{Models}
+\subsection{Denoiser Network}
 The following figure \ref{img:denoiser} illustrates the structure of our main network in diffusion model. As in previous section mentioned, the transformer encoder processes the translation and rotaion vector together with their position embedding conditioned with time embedding and 2D/3D feature embedding of the reference image and predicts the noise added at this timestep. 
 
 It is worth mentioning that the fusion of 2D and 3D feature is not pointwise aligned, which means we don't extract the pointwise feature from the 2D and 3D domain and feed to the network. Instead of doing that, we seperately extract the global features and concatinate them together in order to reduce the difficulty of the convergence of the backbone with the tradeoff of the robustness and generalization of the model. This part of optimization will be discussed later.
@@ -823,7 +806,7 @@ It is worth mentioning that the fusion of 2D and 3D feature is not pointwise ali
 	\label{img:denoiser}
 \end{figure}
 
-\subsubsection{Backbone}
+\subsection{Backbone}
 A modified transformer encoder is utilized as the backbone of our diffusion model. The Transformer\cite{vaswani2023attention} is a sequence-to-sequence model that uses multi-head self-attension layers to understand the relevant token in the sequence and follows the encoder-decoder structure in the NLP tasks. However, in our case the encoder part is what we need to estimate the noise.
 
 Similar to the vanilla transformer, our model consists of N stacked transformer encoder blocks. As shown in the left part of figure \ref{img:denoiser}, each block is made up of two sub-layers. The first is a multi-head self-attention mechanism, and the second is a simple, position-wise fully connected feed-forward network. We use residual connections around each of the two sub-layers and the Layer norm (LN) is applied before each sub-layer, which follows the design of Vision Transformer
@@ -854,7 +837,7 @@ where $\mathbf{y}$ is the output of the block, $\mathbf{y}^{'}$ is the intermedi
 
 -----------------Reason for using transformer----------------
 
-\subsubsection{Time Embedding and Postion Embedding}
+\subsection{Time Embedding and Postion Embedding}
 Why we need time embedding and position embedding in our case? As the architecture of diffusion model determines that we need to let the network learn the influence of timestep on the noise estimation. So we have to encode the timestep information into the network. For the same reason, the sequence of the transformer input which is the transformation vector is also relevant and should be encoded, because the each bit of the vector represents the different meaning and can not be shuffled.
 
 The way we embed time and position information is generally called positional encoding. It should satisfy the following conditions\cite{kazemnejad2019:pencoding}:
@@ -876,7 +859,7 @@ where $pos$ is the position, $i$ is the dimension and $d_{model}$ is the dimensi
 	\label{img:pe}
 \end{figure}
 
-\subsubsection{2D Feature Extractor}
+\subsection{2D Feature Extractor}
 As the 2D feature extractor, the self-supervised Vision Transformer
  with DINO\cite{caron2021emerging} is used. DINO is a self-supervised learning method that trains a Vision Transformer
  with a small set of negative examples. It is a contrastive learning method that maximizes the agreement between differently augmented views of the same image. The architecture of DINO shares the same overall structure with recent self-supervised approaches and also the similarites with knowledge distillation.
@@ -911,7 +894,7 @@ Compared with convolutional neural network which has a dominant position in the 
 
 We directly use the weights of the model pretrained on ImageNet\cite{5206848}, because the 2D feature downstream network generalizes well on other datasets than 3D feature extractor, which has right now rare well generalized downstream backbone that can cover any 3D objects. Out of this reason, we train the 3D feature extractor from scratch on the dataset we use and this part will be introduced in next section.
 
-\subsubsection{3D Feature Extractor}
+\subsection{3D Feature Extractor}
 Due to the permutation invariance and transformation invariance of the point cloud, the 3D networks are differently constructed compared with the 2D networks. Famous works like PointNet\cite{qi2017pointnet} and PointNet++\cite{qi2017pointnet++} are the pioneers of the 3D deep learning. After that the convolutional neural network is also introduced to the 3D domain such as KPConv\cite{thomas2019kpconv}. 
 
 In our case, we use an encoder-decorder architecture to first build up a point cloud completion task of the target dataset and utilize the latent feature from the encoder output as the 3D global feature of the reference RGB-D image. The reason of using the point cloud completion task rather than classification or semantic segmentation task is because we need the network to learn the geometrical feature such as shape, position and orientation of the object. And the point cloud completion is more suitable than seperately reconstruct the CAD model and reference partial point cloud, because the network can learn the relationship between the two point clouds and the latent feature is more robust and generalizable.
@@ -932,14 +915,28 @@ The final output point cloud is aligned with the reference point cloud using the
 \end{align}
 where $S$ is the reference point cloud and $\hat{S}$ is the output point cloud. The formulation enforces that the output point cloud is close to the reference point cloud and vice versa. In our case, given a partial point cloud as input, the reconstruct point cloud is aligned with the CAD model at the pose of partial point cloud. The structure of the FoldingNet is shown in figure \ref{img:fold}.
 
-\subsubsection{Feature Fusion}\label{sec:fusion}
+\subsection{Feature Fusion}\label{sec:fusion}
+The way of fusing the features and embedding from different domains determines the performance of the model and the convergence of the training phase. Because features may compansate each other or may be redundant in some cases and the network cannot efficiently learn the relationship between the latent feature and the ground truth. In our model, we have the following feature or embedding vectors that need to be integrated into the network: the 2D feature $f_{2D}$ from the pretrained DINO model, the 3D feature $f_{3D}$ from the pretrained FoldingNet model, the positional encoding of the timestep (time embedding) $e_{t}$ and the positional encoding of the transformation vector (postion embedding) $e_{p}$.
 
-\subsubsection{Multi-Hypotheses Inference}
+For the postion embedding $e_{p}$, we follow the pipeline of the Transformer that $e_{p}$ is directly added to the input vector $x_{t}$ which is first replicated to the dimension of the hidden dimension of the network. For the conditional guidance of the diffusion model $f_{2D}$, $f_{3D}$ and $e_{p}$, we have two ways introduced in our setup to merge these features into the backbone. First method is that these features are projected separetely to the hidden dimension of the network with fully connected layers and then add together. Another way is to directly concatinate these features along the feature dimension and then project to the hidden dimension. After that the merged feature vector is fed to the Transformer encoder with adaLN after each attension layer and feed forward layer. Figure illustrate the detail of the feature fusion process using both methods.
+\begin{figure}[h]
+  \centering
+  \subfloat[]{\includegraphics[scale=0.23]{img/fuse_add.png} } \\
+  \centering
+  \subfloat[]{\includegraphics[scale=0.23]{img/fuse_cat.png} } 
+  \caption{Structure of the feature fusion process using (a): addition of the conditional features and embedding; (b): concatination of the conditional features and embedding}
+  \label{img:fuse}
+\end{figure}
+
+
+
+
+\subsection{Multi-Hypotheses Inference}
 One of the advantages of diffusion model is the high quality and diversity of the generated objects. Using the case of image synthesis as an example, we can derive dozen of high-resolution and meaningful images from the diffusion model with the same prompt. In our case, we want to explore the diversity of the pose hypotheses if there is ambiguity in the reference input. In another word, for a symmetrical object, we want to derive a distribution which fit the symmetry pattern of the object and for an object with uniquely determined pose, we want to use the multi-hypotheses inference to get a more precise estimation of the pose.
 -------------------------To be determined-------------------------
 
-\subsubsection{Pose Refinement}
-To further refine the 6 DoF pose of the reference input, we can use the coarse pose estimation from the diffusion model as the initial pose and use some algorithms to refine the pose. Iterative and not learning-based method like random sample consensus (RANSAC)\cite{10.1145/358669.358692} and iterative closest point (ICP)\cite{121791} are widely used in the field of pose estimation. RANSAC, for example, uses repeated random sub-sampling to iteratively estimate the optimal result in the set of data containing outliers. The goal of RANSAC is to find a global optimal solution which excludes the outliers and contains the inliers as much as possible. This technique is widly used in the correspondance based point cloud registration. Our pose hypotheses diffusion model samples directly the estimated 6 DoF pose of the reference input and we utilize ICP to the point cloud transformed via the coarse pose estimation. 
+\subsection{Pose Refinement}
+To further refine the 6 DoF pose of the reference input, we can use the coarse pose estimation from the diffusion model as the initial pose and use some algorithms to refine the pose. Iterative and not learning-based method like random sample consensus (RANSAC)\cite{10.1145/358669.358692} and iterative closest point (ICP)\cite{121791} are popular in the field of pose estimation. RANSAC, for example, uses repeated random sub-sampling to iteratively estimate the optimal result in the set of data containing outliers. The goal of RANSAC is to find a global optimal solution which excludes the outliers and contains the inliers as much as possible. This technique is widely used in the correspondance based point cloud registration. Our pose hypotheses diffusion model samples directly the estimated 6 DoF pose of the reference input and we utilize ICP to the point cloud transformed via the coarse pose estimation. 
 
 The ICP algorithm is also an iterative solution to the rigid point cloud registration problem. Given a set of source points $A$ and a set of target points $B$, the goal of ICP is to find a rigid transformation $(\mathbf{R},\mathbf{t})$ that minimizes the distance between the source points and the transformed target points. First step is to find the corresponding points pair using nearst neighbor search. Let the set of corresponding pairs be:
 \begin{align}
@@ -974,10 +971,10 @@ To solve this problem efficiently, we normally use the singular value decomposit
 
 Theoretically, the ICP algorithm can converge to the global optimal solution if the initial pose is close enough to the ground truth pose. However, in practice, the ICP algorithm is sensitive to the initial pose and can easily get stuck in the local optimal solution. Because of that , we use the coarse pose estimation from the diffusion model as the initial pose and run the ICP algorithm within an acceptable number of iterations to have a good tradeoff of inference speed and accuracy. 
 
-\section{Experiments}
+\chapter{Experiments}
 In this section, we first introduce the datasets we use in our experiments and then we show the details of the training and evaluation of the pose hypotheses diffusion model and its feature extractors on the datasets. We compare our model with other methods and show the ablation study of our model.
-\subsection{Datasets}
-\subsubsection{LINEMOD Dataset}
+\section{Datasets}
+\subsection{LINEMOD Dataset}
 The LINEMOD dataset \cite{hinterstoisser2012model} is a widely used dataset for the 6 DoF pose estimation. It contains 15 objects containing ape, bench vise, bowl, can, cat, driller, duck, glue, hole puncher, iron, lamp, phone, camera, and egg box. These objects are texture-less with discriminative color, shape and size and are placed in a cluttered scene. As the training dataset, it provide for each object 1312 RGB-D images from different view points annotated with the ground truth. These training data are based on the synthetic CAD Model without any occlusion and noise. There are also vividly rendered training data placed together in the scene to simulate the real scenario. The Benchmark for 6D Pose Estimation (BOP) \cite{hodan2018bop}introduced the training data generated from an open-source, light-weight, procedural and photorealistic (PBR) renderer BlenderProc\cite{denninger2019blenderproc}into the LINEMOD dataset.
 This set of PBR-BlenderProc4BOP training images are sorted in 50 different scenes with 50000 images in total which are rendered with different lighting, occlusion. The test dataset are captured with the Kinect sensor. The following figures \ref{img:linemod} show the training data and test data of the LINEMOD dataset.
 \begin{figure}[h]
@@ -1001,7 +998,7 @@ This set of PBR-BlenderProc4BOP training images are sorted in 50 different scene
   \label{img:linemod}
 \end{figure}
 
-\subsubsection{LINEMOD-O Dataset}
+\subsection{LINEMOD-O Dataset}
 To evaluate the model on the occluded scene, Brachmann et al. \cite{dataV4MUMX2020} refined the benchvise partion of the LINEMOD dataset with occluded objects and annotated ground truth pose under different light conditions to make the pose estimation more challenging. The meaning of the high-level occulusion data is to simulate the real scenario where the object is partially occluded by other objects, so that the model can learn the robustness of the pose estimation and generalize better to the real world data. The following figure \ref{img:linemod_o} shows the low-level occluded scene and high-level occluded scene.
 \begin{figure}[h]
   \centering
@@ -1018,7 +1015,7 @@ To evaluate the model on the occluded scene, Brachmann et al. \cite{dataV4MUMX20
   \caption{Comparison of LINEMOD-O dataset with LINEMOD dataset. Left: low-level occluded scene; Right: high-level occluded scene}
   \label{img:linemod_o}
 \end{figure}
-\subsubsection{Data Format}
+\subsection{Data Format}
 In order to unify the data format of the different dataset for 6 DoF pose estimation task. We follow the data format of the BOP dataset. The structure of the dataset is shown in the following table \ref{tab:dataset}.
 \begin{table}[ht]
   \centering
@@ -1077,7 +1074,7 @@ Meta information of the ground truth in scene\_gt\_info.json:
   \item isib\_fract - The visible fraction of the object silhouette.
 \end{itemize}
 
-\subsubsection{Data Augmentation}
+\subsection{Data Augmentation}
 Although the quantity of the training data from the BlenderProc is large enough, we still need some data augmentation tricks to make the model robuster against the noise and invalid data. The data augmentation for point cloud in our case is firstly the random rotation of the partial point cloud and CAD model with the modification of the ground truth transformation. And we add noise to points with a Gaussian distribution scaled by a factor $k_{n}$ related to the scale of the objects to simulate the real-world data captured by the depth sensor. And the symmetry of the object is also considered, that we generate extra data by flipping or rotating the symetrical CAD models with the corresponding ground truth. 
 
 To remove the noise and outliers in the point cloud. We use the statistical outlier filter in the data preprocessing stage. The statistical outlier filter is an algorithm that removes outliers from a point cloud based on the statistical analysis of point neighborhoods. The algorithm removes points that are further away from their neighbors compared to the average for the point cloud. The filter is controled by the the number of neighbors $n_{nb}$ and the standard deviation multiplier $\sigma$. The effect of the algorithm is shown in figure.
@@ -1085,8 +1082,8 @@ To remove the noise and outliers in the point cloud. We use the statistical outl
 After that the point cloud is then downsampled to 1000 points to reduce the computational cost but still maintain the geometry information of the object. The whole original training dataset is divided into the training part (90\%) and validation part (10\%) randomly and together with the separate test dataset we get the dataset we preprocessed for the training and evaluation of our models.
 
 As the 2D image is combined with 3D point cloud in the pose estimation task and we don't need to train the 2D feature extractor, we only use the data augmentation of the random rotaion during the training of the 3D feature extractor. Because the 2D image with 3D depth uniquely defines uniquely the 6 DoF pose of the object. So during the training of the pose estimation task we don't let orginal point cloud rotate, but still add noise and consider the symmetry of the object.
-\subsection{2D Feature Extractor}
-\subsubsection{Pretrained Model} 
+\section{2D Feature Extractor}
+\subsection{Pretrained Model} 
 DINO, as our 2D feature encoder, provides many pretrained weight of the backbone with different number of parameters and backbone architecture which are pretrained on ImageNet for general image downstream tasks. The evaluation of the self-supervised architecture is using the linear and $k$-NN classifier on the feature extracted from the model. The following table \ref{tab:dino} shows the evaluation results of the different pretrained backbones on the ImageNet dataset according to the original paper \cite{caron2021emerging}.
 \begin{table}[ht]
   \centering
@@ -1108,7 +1105,7 @@ After we register the pretrained 2D backbone to our model, we need to feed the i
 
 The 2D encoder need to be lightweight since it is just a downstream task for our diffusion model, so in our setup we don't use the backbone with a very deep network and large number of parameters, e.g.,ViT-L or ViT-G. And it needs also to be well generalized, because the image in our case is not seen during the training of the 2D encoder. ImageNet used in DINO contains more than 1.4 million annotated images from different categories, which has the capability to let the network learn the latent feature expression from the majority of the real-life objects. 
 
-\subsubsection{Evaluation}
+\subsection{Evaluation}
 Since we use the 2D feature not for the classification or segmentation tasks, but as the input for the pose estimation where the feature is the latent expression of pose that is hard to quantitatively evaluate, we evaluate the influence of the 2D feature extractor together with the pose estimation diffusion model later. Instead, the attention map of the input image can be visualized to indirectly evaluate the network and validate whether the Transformer can grasp the important part of the image. The attention map is the output of the last attention layer in the Transformer encoder. Figure \ref{img:atten} shows the attention maps of 3 objects as examples fed to the ViT.
 
 \begin{figure}[h]
@@ -1134,12 +1131,12 @@ From the figure \ref{img:atten_patch} we can see that the key points of the cat 
 
 Considering the tradeoff of the inference speed and performance, we use ViT-B/8 in our experiments which has a quite satistied performance and relative acceptable number of parameters. The ablation study of different setups will be shown later in this experiments section.
 
-\subsection{3D Feature Extractor}
-\subsubsection{Training} 
+\section{3D Feature Extractor}
+\subsection{Training} 
 The 3D feature extractor is trained using a point cloud completion task. The reference partial point cloud is fed to the FoldingNet and the output is aligned with the CAD model transformed with the ground truth pose as the previous figure \ref{img:fold} shows. The loss function is the bi-directional Chamfer distance between the output point cloud and the transformed CAD model (see equation \ref{eq:cd}).
 
 The model is trained on the single Nvidia Tesla V100-SXM2 video card with 16GB memory. We use the BlenderProc4BOP training dataset for LM which contains 50k images with 15 objects and we can further crop several objects from each image. To that end, we finally have more than 560k seperate partial point clouds for training. After the tuning of the hyperparemeters, we use the batch size of 32 and the Adam optimizer with the cosine annealing learning rate scheduler. The initial learning rate is $1e^{-4}$ and the end-up learning rate is $1e^{-6}$. The model specific hyperparemeter is the number of the folding MLP layers, which is by default set to 2 in our case. The number of $k$-nearest neighbor is set to 16 and the number of the graph-based local maxpooling layers is set to 2. The reconstructed point number is set to 2025, whose square root is an integer responding to the size of the 2D grid. The dimension of the latent feature is set to 512 for the downstream task. The model is trained for 200k iteration which is about 114 epochs.
-\subsubsection{Evaluation} 
+\subsection{Evaluation} 
 The evaluation metric of the point cloud completion task is the Chamfer distance (CD) between the output point cloud and the ground truth point cloud. The following graph shows the training, validation and test loss of the model during the whole training process. And the CD of each objects in the test dataset is shown in table 
 
 -----------------------image-------------------------
@@ -1161,7 +1158,7 @@ From the visualization we can find that the shape of the reconstructed point clo
 -----------------------image-------------------------
 
 
-\subsection{Training} 
+\section{Training} 
 The training of the diffusion network for the pose hypotheses estimation can be done after the 2D and 3D feature encoders are pretrained (for 2D feature extractor is the checkpoint of the pretrained model loaded from the public cloud storage). We load the checkpoint of the encoders and freeze the network of these two parts to avoid the parameters of pretrained model being updated during the training of the diffusion network. 
 
 The training is also running on the single Nvidia Tesla V100-SXM2 16G video card. Like setup of the 3D encoder, we use the BlenderProc4BOP training dataset and divide the original data into $90\%/10\%$ partitions for training and validation. After tuning the hyperparemeters from the experiments, we use the following setup (table \ref{tab:hyper}) to represent the pose hypotheses diffusion model.
@@ -1213,9 +1210,10 @@ where $B$ is the batch size, $\mathfrak{T}_{B}$ is the subset of the whole time 
 
 -----------------------image-------------------------
 
-\subsection{Evaluation}
-\subsubsection{Evaluation Metrics}
+\section{Evaluation}
+\subsection{Evaluation Metrics}
 No matter we use which form of the rotation representation during the training phase that is introduced in section \ref{sec:representation}, we transform it back to the rotation matrix $\mathbf{R}$ to evaluate the pose estimation together with the tranlation, in order to meet the requirement of the data format of BOP. The pose is represented by a 4x4 matrix $\mathbf{T}=[\mathbf{R},\mathbf{t},\mathbf{0},1]$, where $\mathbf{R}$ is a 3x3 rotation matrix and $\mathbf{t}$ is a 3x1 translation vector. As evaluation metrics, we adopt the same metrics used in BOP Challenge 2019/2020/2022/2023 \cite{hodan2018bop,hodan2020bop}. The following metrics are used to evaluate the pose estimation. 
+
 Visible Surface Discrepancy (VSD): 
 \begin{align}
  e_{\text{VSD}}\left(\hat{D},\bar{D},\hat{V},\bar{V},\tau\right)=\text{avg}_{p\in \hat{V}\cup \bar{V}}
@@ -1245,22 +1243,19 @@ $\text{AR}_{\text{VSD}}$ is the average recall rates calculated for the misalign
   \text{AR}=\left(\text{AR}_{\text{VSD}}+\text{AR}_{\text{MSSD}}+\text{AR}_{\text{MSPD}}\right)/3
 \end{align}
 
------------------------why not add-------------------------
+The most popular metrics for pose estimation have been average distance (ADD) and the average distance for a rotationally symmetric object (ADD-S) \cite{hinterstoisser2012model}. The ADD is the average distance between the model vertices transformed with the estimated pose and the model vertices transformed with the ground truth pose and the ADD-S is the version considering the pose ambiguity of the rotationally symmetric object. The ADD is defined as:
+\begin{align}
+  \text{ADD}=\frac{1}{\left|V\right|}\sum_{\mathbf{x}\in V}\left\Vert \hat{\mathbf{P}}\mathbf{x}-\bar{\mathbf{P}}\mathbf{x}\right\Vert _{2}
+\end{align}
+where $V$ is the set of model vertices. The ADD-S is defined as:
+It has some limitation ADD comes from a high dependence on the geometry of the object model and the sampling density of its surface, i.e. the average distance is dominated by higher-frequency surface parts such as the thread of a fuse. The maximum distance used in MSSD and MSPD is less dependent on the geometry and sampling of the object model \cite{hodan2020bop}.
 
-\subsubsection{Baseline}
+\subsection{Baseline}
 
-\subsubsection{Pose Estimation Results}
+\subsection{Pose Estimation Results}
 
-\subsection{Ablation Study}
-\chapter{Correspondance Diffusion}
-\section{Introduction}
-\section{Methodology}
-\subsection{Pipeline}
-\subsection{Models}
-\section{Experiments}
-\subsection{Datasets}
-\subsection{Evaluation}
-\subsubsection{Evaluation Metrics}
+\section{Ablation Study}
+
 \chapter{Discussion}
 
 \chapter{Conclusion}

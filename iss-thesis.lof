@@ -1,28 +1,30 @@
 \addvspace {10\p@ }
-\contentsline {figure}{\numberline {1.1}{\ignorespaces A beautiful mind\relax }}{1}{figure.caption.2}%
 \addvspace {10\p@ }
-\contentsline {figure}{\numberline {2.1}{\ignorespaces Overview of the 6 DoF pose estimation\relax }}{3}{figure.caption.4}%
-\contentsline {figure}{\numberline {2.2}{\ignorespaces Overwiew of different types of generative models\relax }}{11}{figure.caption.21}%
-\contentsline {figure}{\numberline {2.3}{\ignorespaces Forward and reverse process of diffusion model using 2D image as example\relax }}{14}{figure.caption.26}%
-\contentsline {figure}{\numberline {2.4}{\ignorespaces Super resolution using diffusion model\relax }}{15}{figure.caption.33}%
-\contentsline {figure}{\numberline {2.5}{\ignorespaces Point cloud generation using diffusion model\relax }}{16}{figure.caption.34}%
-\contentsline {figure}{\numberline {2.6}{\ignorespaces Image synthesis with text prompt in different styles using Stable Diffusion\relax }}{17}{figure.caption.39}%
-\contentsline {figure}{\numberline {2.7}{\ignorespaces 3D model (NeRF) synthesis prompt using DreamFusion\relax }}{17}{figure.caption.40}%
+\contentsline {figure}{\numberline {2.1}{\ignorespaces Overview of the 6 DoF pose estimation\relax }}{3}{figure.caption.2}%
+\contentsline {figure}{\numberline {2.2}{\ignorespaces Overwiew of different types of generative models\relax }}{11}{figure.caption.19}%
+\contentsline {figure}{\numberline {2.3}{\ignorespaces Forward and reverse process of diffusion model using 2D image as example\relax }}{14}{figure.caption.24}%
+\contentsline {figure}{\numberline {2.4}{\ignorespaces Super resolution using diffusion model\relax }}{15}{figure.caption.31}%
+\contentsline {figure}{\numberline {2.5}{\ignorespaces Point cloud generation using diffusion model\relax }}{16}{figure.caption.32}%
+\contentsline {figure}{\numberline {2.6}{\ignorespaces Image synthesis with text prompt in different styles using Stable Diffusion\relax }}{17}{figure.caption.37}%
+\contentsline {figure}{\numberline {2.7}{\ignorespaces 3D model (NeRF) synthesis prompt using DreamFusion\relax }}{17}{figure.caption.38}%
 \addvspace {10\p@ }
 \addvspace {10\p@ }
-\contentsline {figure}{\numberline {4.1}{\ignorespaces Structure of the training phase of the pose hypotheses diffusion\relax }}{22}{figure.caption.43}%
-\contentsline {figure}{\numberline {4.2}{\ignorespaces Structure of the sampling phase of the pose hypotheses diffusion\relax }}{23}{figure.caption.46}%
-\contentsline {figure}{\numberline {4.3}{\ignorespaces Denoiser network with backbone and feature extractor\relax }}{25}{figure.caption.51}%
-\contentsline {figure}{\numberline {4.4}{\ignorespaces Multi-head self-attention and scaled dot-product attention\relax }}{26}{figure.caption.54}%
-\contentsline {figure}{\numberline {4.5}{\ignorespaces The 64-dimensional positional encoding for a sequence with length of 100\relax }}{27}{figure.caption.57}%
-\contentsline {figure}{\numberline {4.6}{\ignorespaces Self-supervised architecture of DINO\relax }}{28}{figure.caption.60}%
-\contentsline {figure}{\numberline {4.7}{\ignorespaces Sturcture of the ViT model\relax }}{28}{figure.caption.61}%
-\contentsline {figure}{\numberline {4.8}{\ignorespaces 3D feature extraction with FoldingNet based point cloud completion\relax }}{30}{figure.caption.64}%
-\contentsline {figure}{\numberline {4.9}{\ignorespaces LIMEMOD dataset. Left: training data with Synthetic CAD Model; Middle: training data rendered with PBR-BlenderProc4BOP; Right: test data captured with Kinect Sensor\relax }}{32}{figure.caption.73}%
-\contentsline {figure}{\numberline {4.10}{\ignorespaces Comparison of LINEMOD-O dataset with LINEMOD dataset. Left: low-level occluded scene; Right: high-level occluded scene\relax }}{33}{figure.caption.76}%
-\contentsline {figure}{\numberline {4.11}{\ignorespaces Visualization of the attention maps of the input image, where 12 heatmaps represent 12 attension heads output in transformer. Top: hole puncher; Middle: glue; Bottem: phone (occluded)\relax }}{36}{figure.caption.87}%
-\contentsline {figure}{\numberline {4.12}{\ignorespaces Attension maps of the different scale of ViTs and patch size. From left to right: ViT-S/16, ViT-S/8, ViT-B/16, ViT-B/8. Each column represents 3 random attention heads.\relax }}{37}{figure.caption.88}%
+\contentsline {figure}{\numberline {4.1}{\ignorespaces Structure of the training phase of the pose hypotheses diffusion\relax }}{22}{figure.caption.39}%
+\contentsline {figure}{\numberline {4.2}{\ignorespaces Structure of the sampling phase of the pose hypotheses diffusion\relax }}{23}{figure.caption.40}%
+\contentsline {figure}{\numberline {4.3}{\ignorespaces Denoiser network with backbone and feature extractor\relax }}{25}{figure.caption.41}%
+\contentsline {figure}{\numberline {4.4}{\ignorespaces Multi-head self-attention and scaled dot-product attention\relax }}{26}{figure.caption.42}%
+\contentsline {figure}{\numberline {4.5}{\ignorespaces The 64-dimensional positional encoding for a sequence with length of 100\relax }}{27}{figure.caption.43}%
+\contentsline {figure}{\numberline {4.6}{\ignorespaces Self-supervised architecture of DINO\relax }}{28}{figure.caption.44}%
+\contentsline {figure}{\numberline {4.7}{\ignorespaces Sturcture of the ViT model\relax }}{28}{figure.caption.45}%
+\contentsline {figure}{\numberline {4.8}{\ignorespaces 3D feature extraction with FoldingNet based point cloud completion\relax }}{30}{figure.caption.46}%
+\contentsline {figure}{\numberline {4.9}{\ignorespaces Structure of the feature fusion process using (a): addition of the conditional features and embedding; (b): concatination of the conditional features and embedding\relax }}{31}{figure.caption.47}%
+\contentsline {subfigure}{\numberline {(a)}{\ignorespaces {}}}{31}{subfigure.9.1}%
+\contentsline {subfigure}{\numberline {(b)}{\ignorespaces {}}}{31}{subfigure.9.2}%
 \addvspace {10\p@ }
+\contentsline {figure}{\numberline {5.1}{\ignorespaces LIMEMOD dataset. Left: training data with Synthetic CAD Model; Middle: training data rendered with PBR-BlenderProc4BOP; Right: test data captured with Kinect Sensor\relax }}{35}{figure.caption.48}%
+\contentsline {figure}{\numberline {5.2}{\ignorespaces Comparison of LINEMOD-O dataset with LINEMOD dataset. Left: low-level occluded scene; Right: high-level occluded scene\relax }}{36}{figure.caption.49}%
+\contentsline {figure}{\numberline {5.3}{\ignorespaces Visualization of the attention maps of the input image, where 12 heatmaps represent 12 attension heads output in transformer. Top: hole puncher; Middle: glue; Bottem: phone (occluded)\relax }}{40}{figure.caption.52}%
+\contentsline {figure}{\numberline {5.4}{\ignorespaces Attension maps of the different scale of ViTs and patch size. From left to right: ViT-S/16, ViT-S/8, ViT-B/16, ViT-B/8. Each column represents 3 random attention heads.\relax }}{41}{figure.caption.53}%
 \addvspace {10\p@ }
 \addvspace {10\p@ }
 \addvspace {10\p@ }

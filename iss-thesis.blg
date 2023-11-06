@@ -17,45 +17,45 @@ Warning--empty booktitle in Radford2018ImprovingLU
 Warning--empty booktitle in hinterstoisser2012model
 
 Done.
-You've used 78 entries,
+You've used 77 entries,
             4186 wiz_defined-function locations,
-            1145 strings with 21557 characters,
-and the built_in function-call counts, 41927 in all, are:
-= -- 2832
-> -- 1610
-< -- 89
-+ -- 793
-- -- 368
-* -- 1830
-:= -- 6220
-add.period$ -- 158
-call.type$ -- 78
-change.case$ -- 78
-chr.to.int$ -- 201
-cite$ -- 80
-duplicate$ -- 3345
-empty$ -- 3782
-format.name$ -- 439
-if$ -- 9444
+            1137 strings with 21465 characters,
+and the built_in function-call counts, 40999 in all, are:
+= -- 2760
+> -- 1590
+< -- 80
++ -- 781
+- -- 365
+* -- 1785
+:= -- 6092
+add.period$ -- 155
+call.type$ -- 77
+change.case$ -- 77
+chr.to.int$ -- 180
+cite$ -- 79
+duplicate$ -- 3280
+empty$ -- 3699
+format.name$ -- 435
+if$ -- 9221
 int.to.chr$ -- 0
-int.to.str$ -- 78
-missing$ -- 831
-newline$ -- 273
-num.names$ -- 78
-pop$ -- 2431
+int.to.str$ -- 77
+missing$ -- 820
+newline$ -- 270
+num.names$ -- 77
+pop$ -- 2406
 preamble$ -- 1
 purify$ -- 0
 quote$ -- 2
-skip$ -- 3170
+skip$ -- 3097
 stack$ -- 0
-substring$ -- 564
-swap$ -- 2220
-text.length$ -- 22
+substring$ -- 514
+swap$ -- 2165
+text.length$ -- 20
 text.prefix$ -- 0
 top$ -- 5
-type$ -- 78
+type$ -- 77
 warning$ -- 2
-while$ -- 107
-width$ -- 80
-write$ -- 638
+while$ -- 103
+width$ -- 79
+write$ -- 628
 (There were 3 warnings)

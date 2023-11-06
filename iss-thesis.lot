@@ -1,12 +1,11 @@
 \addvspace {10\p@ }
-\contentsline {table}{\numberline {1.1}{\ignorespaces Where to put the caption\relax }}{2}{table.caption.3}%
 \addvspace {10\p@ }
 \addvspace {10\p@ }
 \addvspace {10\p@ }
-\contentsline {table}{\numberline {4.1}{\ignorespaces Dataset Structure of BOP Format\relax }}{33}{table.caption.79}%
-\contentsline {table}{\numberline {4.2}{\ignorespaces Evaluation of the pretrained DINO model on ImageNet\relax }}{35}{table.caption.84}%
-\contentsline {table}{\numberline {4.3}{\ignorespaces Hyperparemeters of the pose hypotheses diffusion model\relax }}{39}{table.caption.93}%
 \addvspace {10\p@ }
+\contentsline {table}{\numberline {5.1}{\ignorespaces Dataset Structure of BOP Format\relax }}{37}{table.caption.50}%
+\contentsline {table}{\numberline {5.2}{\ignorespaces Evaluation of the pretrained DINO model on ImageNet\relax }}{38}{table.caption.51}%
+\contentsline {table}{\numberline {5.3}{\ignorespaces Hyperparemeters of the pose hypotheses diffusion model\relax }}{42}{table.caption.54}%
 \addvspace {10\p@ }
 \addvspace {10\p@ }
 \addvspace {10\p@ }
