@@ -28,43 +28,54 @@
 \contentsline {subsubsection}{\nonumberline Natural Language Processing}{16}{subsubsection*.34}%
 \contentsline {subsubsection}{\nonumberline Multi-Modal Learning}{16}{subsubsection*.36}%
 \contentsline {chapter}{\numberline {3}Related Works}{19}{chapter.3}%
-\contentsline {chapter}{\numberline {4}Methodology}{21}{chapter.4}%
-\contentsline {section}{\numberline {4.1}Introduction}{21}{section.4.1}%
-\contentsline {section}{\numberline {4.2}Framework}{21}{section.4.2}%
-\contentsline {subsection}{\numberline {4.2.1}Training Phase}{21}{subsection.4.2.1}%
-\contentsline {subsection}{\numberline {4.2.2}Sampling Phase}{22}{subsection.4.2.2}%
-\contentsline {subsection}{\numberline {4.2.3}Speed up Sampling with DDIM}{23}{subsection.4.2.3}%
-\contentsline {section}{\numberline {4.3}Models}{24}{section.4.3}%
-\contentsline {subsection}{\numberline {4.3.1}Denoiser Network}{24}{subsection.4.3.1}%
-\contentsline {subsection}{\numberline {4.3.2}Backbone}{24}{subsection.4.3.2}%
-\contentsline {subsection}{\numberline {4.3.3}Time Embedding and Postion Embedding}{26}{subsection.4.3.3}%
-\contentsline {subsection}{\numberline {4.3.4}2D Feature Extractor}{27}{subsection.4.3.4}%
-\contentsline {subsection}{\numberline {4.3.5}3D Feature Extractor}{29}{subsection.4.3.5}%
-\contentsline {subsection}{\numberline {4.3.6}Feature Fusion}{30}{subsection.4.3.6}%
-\contentsline {subsection}{\numberline {4.3.7}Multi-Hypotheses Inference}{31}{subsection.4.3.7}%
-\contentsline {subsection}{\numberline {4.3.8}Pose Refinement}{32}{subsection.4.3.8}%
-\contentsline {chapter}{\numberline {5}Experiments}{35}{chapter.5}%
-\contentsline {section}{\numberline {5.1}Datasets}{35}{section.5.1}%
-\contentsline {subsection}{\numberline {5.1.1}LINEMOD Dataset}{35}{subsection.5.1.1}%
-\contentsline {subsection}{\numberline {5.1.2}LINEMOD-O Dataset}{36}{subsection.5.1.2}%
-\contentsline {subsection}{\numberline {5.1.3}Data Format}{36}{subsection.5.1.3}%
-\contentsline {subsection}{\numberline {5.1.4}Data Augmentation}{37}{subsection.5.1.4}%
-\contentsline {section}{\numberline {5.2}2D Feature Extractor}{38}{section.5.2}%
-\contentsline {subsection}{\numberline {5.2.1}Pretrained Model}{38}{subsection.5.2.1}%
-\contentsline {subsection}{\numberline {5.2.2}Evaluation}{39}{subsection.5.2.2}%
-\contentsline {section}{\numberline {5.3}3D Feature Extractor}{39}{section.5.3}%
-\contentsline {subsection}{\numberline {5.3.1}Training}{39}{subsection.5.3.1}%
-\contentsline {subsection}{\numberline {5.3.2}Evaluation}{41}{subsection.5.3.2}%
-\contentsline {section}{\numberline {5.4}Training}{42}{section.5.4}%
-\contentsline {section}{\numberline {5.5}Evaluation}{43}{section.5.5}%
-\contentsline {subsection}{\numberline {5.5.1}Evaluation Metrics}{43}{subsection.5.5.1}%
-\contentsline {subsection}{\numberline {5.5.2}Baseline}{45}{subsection.5.5.2}%
-\contentsline {subsection}{\numberline {5.5.3}Pose Estimation Results}{45}{subsection.5.5.3}%
-\contentsline {section}{\numberline {5.6}Ablation Study}{45}{section.5.6}%
-\contentsline {chapter}{\numberline {6}Discussion}{47}{chapter.6}%
-\contentsline {chapter}{\numberline {7}Conclusion}{49}{chapter.7}%
-\contentsline {chapter}{\numberline {A}Additionally}{51}{appendix.A}%
-\contentsline {chapter}{\nonumberline List of Figures}{53}{chapter*.55}%
-\contentsline {chapter}{\nonumberline List of Tables}{55}{chapter*.56}%
-\contentsline {chapter}{\nonumberline Bibliography}{57}{chapter*.57}%
+\contentsline {section}{\numberline {3.1}6 DoF Pose Estimation}{19}{section.3.1}%
+\contentsline {subsection}{\numberline {3.1.1}Direct Regression Methods}{19}{subsection.3.1.1}%
+\contentsline {subsection}{\numberline {3.1.2}Keypoint-Based Methods}{19}{subsection.3.1.2}%
+\contentsline {section}{\numberline {3.2}Diffusion Models}{19}{section.3.2}%
+\contentsline {subsection}{\numberline {3.2.1}Foundations}{19}{subsection.3.2.1}%
+\contentsline {subsection}{\numberline {3.2.2}Improvement on Sampling}{20}{subsection.3.2.2}%
+\contentsline {subsubsection}{\nonumberline Learning-Free Sampling}{20}{subsubsection*.40}%
+\contentsline {subsubsection}{\nonumberline Learning-Based Sampling}{20}{subsubsection*.42}%
+\contentsline {subsection}{\numberline {3.2.3}Improvement on Likelihood}{21}{subsection.3.2.3}%
+\contentsline {subsection}{\numberline {3.2.4}Improvement on Diffusion Process}{21}{subsection.3.2.4}%
+\contentsline {chapter}{\numberline {4}Methodology}{23}{chapter.4}%
+\contentsline {section}{\numberline {4.1}Introduction}{23}{section.4.1}%
+\contentsline {section}{\numberline {4.2}Framework}{23}{section.4.2}%
+\contentsline {subsection}{\numberline {4.2.1}Training Phase}{23}{subsection.4.2.1}%
+\contentsline {subsection}{\numberline {4.2.2}Sampling Phase}{24}{subsection.4.2.2}%
+\contentsline {subsection}{\numberline {4.2.3}Speed up Sampling with DDIM}{25}{subsection.4.2.3}%
+\contentsline {section}{\numberline {4.3}Models}{26}{section.4.3}%
+\contentsline {subsection}{\numberline {4.3.1}Denoiser Network}{26}{subsection.4.3.1}%
+\contentsline {subsection}{\numberline {4.3.2}Backbone}{26}{subsection.4.3.2}%
+\contentsline {subsection}{\numberline {4.3.3}Time Embedding and Postion Embedding}{28}{subsection.4.3.3}%
+\contentsline {subsection}{\numberline {4.3.4}2D Feature Extractor}{29}{subsection.4.3.4}%
+\contentsline {subsection}{\numberline {4.3.5}3D Feature Extractor}{31}{subsection.4.3.5}%
+\contentsline {subsection}{\numberline {4.3.6}Feature Fusion}{32}{subsection.4.3.6}%
+\contentsline {subsection}{\numberline {4.3.7}Residual Translation}{33}{subsection.4.3.7}%
+\contentsline {subsection}{\numberline {4.3.8}Multi-Hypotheses Inference}{34}{subsection.4.3.8}%
+\contentsline {subsection}{\numberline {4.3.9}Pose Refinement}{35}{subsection.4.3.9}%
+\contentsline {chapter}{\numberline {5}Experiments}{37}{chapter.5}%
+\contentsline {section}{\numberline {5.1}Datasets}{37}{section.5.1}%
+\contentsline {subsection}{\numberline {5.1.1}LINEMOD Dataset}{37}{subsection.5.1.1}%
+\contentsline {subsection}{\numberline {5.1.2}LINEMOD-O Dataset}{38}{subsection.5.1.2}%
+\contentsline {subsection}{\numberline {5.1.3}Data Format}{38}{subsection.5.1.3}%
+\contentsline {subsection}{\numberline {5.1.4}Data Augmentation}{39}{subsection.5.1.4}%
+\contentsline {section}{\numberline {5.2}2D Feature Extractor}{40}{section.5.2}%
+\contentsline {subsection}{\numberline {5.2.1}Pretrained Model}{40}{subsection.5.2.1}%
+\contentsline {subsection}{\numberline {5.2.2}Evaluation}{41}{subsection.5.2.2}%
+\contentsline {section}{\numberline {5.3}3D Feature Extractor}{41}{section.5.3}%
+\contentsline {subsection}{\numberline {5.3.1}Training}{41}{subsection.5.3.1}%
+\contentsline {subsection}{\numberline {5.3.2}Evaluation}{43}{subsection.5.3.2}%
+\contentsline {section}{\numberline {5.4}Training}{45}{section.5.4}%
+\contentsline {section}{\numberline {5.5}Evaluation}{46}{section.5.5}%
+\contentsline {subsection}{\numberline {5.5.1}Evaluation Metrics}{46}{subsection.5.5.1}%
+\contentsline {subsection}{\numberline {5.5.2}Baseline}{48}{subsection.5.5.2}%
+\contentsline {subsection}{\numberline {5.5.3}Pose Estimation Results}{48}{subsection.5.5.3}%
+\contentsline {section}{\numberline {5.6}Ablation Study}{48}{section.5.6}%
+\contentsline {chapter}{\numberline {6}Discussion}{49}{chapter.6}%
+\contentsline {chapter}{\numberline {7}Conclusion}{51}{chapter.7}%
+\contentsline {chapter}{\numberline {A}Additionally}{53}{appendix.A}%
+\contentsline {chapter}{\nonumberline List of Figures}{55}{chapter*.63}%
+\contentsline {chapter}{\nonumberline List of Tables}{57}{chapter*.64}%
+\contentsline {chapter}{\nonumberline Bibliography}{59}{chapter*.65}%
 \providecommand \tocbasic@end@toc@file {}\tocbasic@end@toc@file 

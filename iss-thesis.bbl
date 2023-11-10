@@ -200,6 +200,36 @@ L.~Zhang, A.~Rao and M.~Agrawala, ``Adding conditional control to text-to-image 
 \bibitem{poole2022dreamfusion}
 B.~Poole, A.~Jain, J.~T. Barron and B.~Mildenhall, ``Dreamfusion: Text-to-3d using 2d diffusion,'' 2022.
 
+\bibitem{song2020improved}
+Y.~Song and S.~Ermon, ``Improved techniques for training score-based generative models,'' 2020.
+
+\bibitem{song2021maximum}
+Y.~Song, C.~Durkan, I.~Murray and S.~Ermon, ``Maximum likelihood training of score-based diffusion models,'' 2021.
+
+\bibitem{song2021scorebased}
+Y.~Song, J.~Sohl-Dickstein, D.~P. Kingma, A.~Kumar, S.~Ermon and B.~Poole, ``Score-based generative modeling through stochastic differential equations,'' 2021.
+
+\bibitem{10.5555/1046920.1088696}
+A.~Hyv\"{a}rinen, ``Estimation of non-normalized statistical models by score matching,'' \emph{J. Mach. Learn. Res.}, vol.~6, p. 695–709, dec 2005.
+
+\bibitem{6795935}
+P.~Vincent, ``A connection between score matching and denoising autoencoders,'' \emph{Neural Computation}, vol.~23, no.~7, pp. 1661--1674, 2011.
+
+\bibitem{jolicoeurmartineau2020adversarial}
+A.~Jolicoeur-Martineau, R.~Piché-Taillefer, R.~T. des Combes and I.~Mitliagkas, ``Adversarial score matching and improved sampling for image generation,'' 2020.
+
+\bibitem{dockhorn2022scorebased}
+T.~Dockhorn, A.~Vahdat and K.~Kreis, ``Score-based generative modeling with critically-damped langevin diffusion,'' 2022.
+
+\bibitem{jolicoeurmartineau2021gotta}
+A.~Jolicoeur-Martineau, K.~Li, R.~Piché-Taillefer, T.~Kachman and I.~Mitliagkas, ``Gotta go fast when generating data with score-based models,'' 2021.
+
+\bibitem{song2022denoising}
+J.~Song, C.~Meng and S.~Ermon, ``Denoising diffusion implicit models,'' 2022.
+
+\bibitem{lu2022dpmsolver}
+C.~Lu, Y.~Zhou, F.~Bao, J.~Chen, C.~Li and J.~Zhu, ``Dpm-solver: A fast ode solver for diffusion probabilistic model sampling in around 10 steps,'' 2022.
+
 \bibitem{ronneberger2015unet}
 O.~Ronneberger, P.~Fischer and T.~Brox, ``U-net: Convolutional networks for biomedical image segmentation,'' 2015.
 
@@ -211,9 +241,6 @@ Y.~Yang, C.~Feng, Y.~Shen and D.~Tian, ``Foldingnet: Point cloud auto-encoder vi
 
 \bibitem{121791}
 P.~Besl and N.~D. McKay, ``A method for registration of 3-d shapes,'' \emph{IEEE Transactions on Pattern Analysis and Machine Intelligence}, vol.~14, no.~2, pp. 239--256, 1992.
-
-\bibitem{song2022denoising}
-J.~Song, C.~Meng and S.~Ermon, ``Denoising diffusion implicit models,'' 2022.
 
 \bibitem{vaswani2023attention}
 A.~Vaswani, N.~Shazeer, N.~Parmar, J.~Uszkoreit, L.~Jones, A.~N. Gomez, L.~Kaiser and I.~Polosukhin, ``Attention is all you need,'' 2023.

@@ -130,6 +130,7 @@
 \usepackage{algpseudocode}              % for pseudocode
 \usepackage{subfig}
 \usepackage[export]{adjustbox}
+\usepackage{epsfig}
 
 %%%%% Tikz / PGF - drawing beautiful graphics and plots in Latex
 % \usepackage{tikz}
@@ -732,8 +733,48 @@ Text-to-3D generation and Image-to-3D are novel tasks in the field of multi-moda
 \end{figure}
 
 \chapter{Related Works}
+\section{6 DoF Pose Estimation}
 
+\subsection{Direct Regression Methods}
 
+\subsection{Keypoint-Based Methods} 
+
+\section{Diffusion Models}
+\subsection{Foundations}
+Beside the original DDPM \cite{sohldickstein2015deep,ho2020denoising} which is introduce in section \ref{sec:theory}, another two fundamental models of all works based on diffusion models are the score-based generative models (SGMs) \cite{song2020generative,song2020improved} and stochastic differential equations (SDEs) \cite{song2021maximum,song2021scorebased}.
+
+The concept of SGMs is to use the Stein-score function to optimize the estimated distribution. The score $\nabla_{\mathbf{x}}log p(\mathbf{x})$ is defined as the gradient of the log-density of the probability density function (PDF) $p(\mathbf{x})$. It represents a vector field that points in the direction of the steepest ascent of the PDF. The advantage of the score-based model is that we can parameterize the model without considering the normalization constant of the PDF by the operation of derivative. That means we don't need any special treatment to make the normalizing constant trackable compared with the likelihood-based models. The training of the score-based models is to minimize the Fisher divergence between the model and the data distribution, which is defined as:
+\begin{align}\label{eq:sgm}
+  D_{F} = \mathbb{E}_{p(\mathbf{x})}\left[\left\lVert\nabla_{\mathbf{x}}\log p(\mathbf{x}) - \mathbf{s}_{\theta}(\mathbf{x})\right\rVert^{2}\right]
+\end{align}
+where $\nabla_{\mathbf{x}}log p(\mathbf{x})$ is hard to track in practice, because we don't have the knowledge of the data distribution $p(\mathbf{x})$. However, we can utilize the method of score matching \cite{10.5555/1046920.1088696,6795935} to minimize the Fisher divergence without knowing the ground truth score of the data.
+
+The likelihood-based or score-based diffusion models can be further extended from the fixed step size to the continuous time domain using the stochastic differential equations (SDEs). Perturbing the data distribution with a continuously developing noise following the SDEs process, we have the following equation:
+\begin{align}
+  \text{d}\mathbf{x}=\mathbf{f}(\mathbf{x},t)dt + g(t)\text{d}\mathbf{w}
+\end{align}
+where $\mathbf{f}(\mathbf{x},t)$ is called drift term and $g(t)$ is the diffusion coefficient, $\mathbf{w}$ is a standard Wiener process (or Brownian motion). The forward processes of DDPMs and SDEs have the discrete version of the continuous-time SDEs. And the corresponding reverse SDE can be represented as:
+\begin{align}
+  \text{d}\mathbf{x}=\left[\mathbf{f}(\mathbf{x},t)-g^{2}(t)\nabla_{\mathbf{x}}log p_{t}(\mathbf{x})\right]\text{d}t + g(t)\text{d}\mathbf{w}
+\end{align}
+where $p_{t}(\mathbf{x})$ is the density of the data distribution at time $t$. After that the time-based training objective can be formulated with modification from equation \ref{eq:sgm} as:
+\begin{align}
+  D_{F} = \mathbb{E}_{t\in \mathcal{U}(0,T)} \mathbb{E}_{p_{t}(\mathbf{x})}\left[\lambda(t)\left\lVert\nabla_{\mathbf{x}}log p_{t}(\mathbf{x}) - \mathbf{s}_{\theta}(\mathbf{x},t)\right\rVert^{2}\right]
+\end{align}
+where $\mathcal{U}(0,T)$ is a uniform distribtion over the interval $[0,T]$ and $\lambda(t)$ is a weighting function that is used to balance the contribution of each timestep. The SDEs based diffusion models are more flexible and can be applied to the continuous-time domain, which is more fine-grained than the discrete-time models.
+\subsection{Improvement on Sampling}
+
+Sampling process of the original diffusion models takes a large amount of time because of it's iterative architecture during the reverse process. In order to improve the efficiency of the sampling process, some works have been done to accelerate the sampling process.
+\subsubsection{Learning-Free Sampling}
+The first group of methods can be catergorized as learning-free sampling. The main works of the advanced sampler focus on the efficient discretizing of the time-continous solver. The SDE-based sampler such as Consistent Annealed Sampling (CAS) \cite{jolicoeurmartineau2020adversarial} which is improved from Annealed Langevin dynamics (ALD) \cite{dockhorn2022scorebased} proposes an modified SDE with consistent scaling of the added noise and ensures the expected geometric progression of the noise and make the generated samples closer to the data distribution. Another work from Jolicoeur-Martineau et al. 2021 \cite{jolicoeurmartineau2021gotta} introduce an new SDE solver with adaptive step size controlled by comparing the high-order and low-order SDE solvers' outputs.
+
+There are also many methods rely on the ordinary differential equations (ODEs) solver. Song et al. 2021 \cite{song2021scorebased} states the probability flow ODE with the marginals same as the reverse-time SDE. The ODE solvers are deterministic, therefore the convergence is much faster than the stochastic solvers with the small tradeoff of the sample quality. DDIM \cite{song2022denoising} is the pioneer of the work in this field, which extent the DDPM to non-Markovian perturbation. EDM proposes a sampling process using Heun's $2^{\text{nd}}$ order method. DPM-Solver \cite{lu2022dpmsolver} is a fast dedicated high-order solver for diffusion ODEs with the convergence order guarantee. The advanced ODE solver let the sampling process much faster than DDIM and also improve the sample quality.
+
+\subsubsection{Learning-Based Sampling}
+Another sampling strategy is called learning-based sampling. By training the reverse process, the sampler is able to select the critical steps so that the training objective can be efficiently optimized. 
+\subsection{Improvement on Likelihood}
+
+\subsection{Improvement on Diffusion Process}
 
 \chapter{Methodology}
 
@@ -929,7 +970,17 @@ For the postion embedding $e_{p}$, we follow the pipeline of the Transformer tha
 \end{figure}
 
 
+\subsection{Residual Translation}
+Compared with the rolation estimation in the 6 DoF estimation task, translation is relatively easier to determine, at least in a rough range. Because we can use the position of the bounding box of the object in the camera coordinate combined with the camera parameter to calculate the coarse postion of the object in the 3D space. In another way, we can directly use the mean of the point cloud's position to roughly approximate the translation if the depth information is available. The error exists is mainly because the point cloud is sometimes not complete, so that the gravity center of the partial point cloud is not the real center of the object. That's also the reason for the error of the 2D only method that the occulusion cause a shift between the center of the visible part and the ground truth.
 
+With the help the deep learning method, we can minimize the error of the estimation when we use the gravity center of the reference point cloud as the initial translation. The model is trained to learn the residual translation from the gravity center to the ground truth center. First, we calculate the mean of the reference point cloud ($\overrightarrow{OQ}$ in figure \ref{img:res_t})which is the initial translation and move the point cloud to the origin. Then we let the network to minimize the residual error between the estimated translation and the shifted ground truth translation $\overrightarrow{OP^{'}}$. The estimated residual translation is added to the initial translation $\overrightarrow{OQ}$ to get the final translation estimation $\overrightarrow{OP} $. This process is basically enable the network to approximate the shift between the mean of the partial point cloud and it's original center, instead of the position of the object in the 3D space. This modification let the solving space significantly to be reduced compared with directly estimate the translation $\overrightarrow{OP} $ and make the trainging more efficient.
+
+\begin{figure}[h]
+	\centering
+	\includegraphics[scale=.22]{img/res_t.png}
+	\caption{Illustration of the residual translation estimation (projected in 2D space)}
+	\label{img:res_t}
+\end{figure}
 
 \subsection{Multi-Hypotheses Inference}
 One of the advantages of diffusion model is the high quality and diversity of the generated objects. Using the case of image synthesis as an example, we can derive dozen of high-resolution and meaningful images from the diffusion model with the same prompt. In our case, we want to explore the diversity of the pose hypotheses if there is ambiguity in the reference input. In another word, for a symmetrical object, we want to derive a distribution which fit the symmetry pattern of the object and for an object with uniquely determined pose, we want to use the multi-hypotheses inference to get a more precise estimation of the pose.
@@ -975,7 +1026,7 @@ Theoretically, the ICP algorithm can converge to the global optimal solution if 
 In this section, we first introduce the datasets we use in our experiments and then we show the details of the training and evaluation of the pose hypotheses diffusion model and its feature extractors on the datasets. We compare our model with other methods and show the ablation study of our model.
 \section{Datasets}
 \subsection{LINEMOD Dataset}
-The LINEMOD dataset \cite{hinterstoisser2012model} is a widely used dataset for the 6 DoF pose estimation. It contains 15 objects containing ape, bench vise, bowl, can, cat, driller, duck, glue, hole puncher, iron, lamp, phone, camera, and egg box. These objects are texture-less with discriminative color, shape and size and are placed in a cluttered scene. As the training dataset, it provide for each object 1312 RGB-D images from different view points annotated with the ground truth. These training data are based on the synthetic CAD Model without any occlusion and noise. There are also vividly rendered training data placed together in the scene to simulate the real scenario. The Benchmark for 6D Pose Estimation (BOP) \cite{hodan2018bop}introduced the training data generated from an open-source, light-weight, procedural and photorealistic (PBR) renderer BlenderProc\cite{denninger2019blenderproc}into the LINEMOD dataset.
+The LINEMOD dataset \cite{hinterstoisser2012model} is a widely used dataset for the 6 DoF pose estimation. It contains 15 objects containing ape, bench vise, bowl, camera, can, cat, cup, driller, duck, egg box, glue, hole puncher, iron, lamp and phone. These objects are texture-less with discriminative color, shape and size and are placed in a cluttered scene. As the training dataset, it provide for each object 1312 RGB-D images from different view points annotated with the ground truth. These training data are based on the synthetic CAD Model without any occlusion and noise. There are also vividly rendered training data placed together in the scene to simulate the real scenario. The Benchmark for 6D Pose Estimation (BOP) \cite{hodan2018bop}introduced the training data generated from an open-source, light-weight, procedural and photorealistic (PBR) renderer BlenderProc\cite{denninger2019blenderproc}into the LINEMOD dataset.
 This set of PBR-BlenderProc4BOP training images are sorted in 50 different scenes with 50000 images in total which are rendered with different lighting, occlusion. The test dataset are captured with the Kinect sensor. The following figures \ref{img:linemod} show the training data and test data of the LINEMOD dataset.
 \begin{figure}[h]
   \centering
@@ -1135,13 +1186,25 @@ Considering the tradeoff of the inference speed and performance, we use ViT-B/8 
 \subsection{Training} 
 The 3D feature extractor is trained using a point cloud completion task. The reference partial point cloud is fed to the FoldingNet and the output is aligned with the CAD model transformed with the ground truth pose as the previous figure \ref{img:fold} shows. The loss function is the bi-directional Chamfer distance between the output point cloud and the transformed CAD model (see equation \ref{eq:cd}).
 
-The model is trained on the single Nvidia Tesla V100-SXM2 video card with 16GB memory. We use the BlenderProc4BOP training dataset for LM which contains 50k images with 15 objects and we can further crop several objects from each image. To that end, we finally have more than 560k seperate partial point clouds for training. After the tuning of the hyperparemeters, we use the batch size of 32 and the Adam optimizer with the cosine annealing learning rate scheduler. The initial learning rate is $1e^{-4}$ and the end-up learning rate is $1e^{-6}$. The model specific hyperparemeter is the number of the folding MLP layers, which is by default set to 2 in our case. The number of $k$-nearest neighbor is set to 16 and the number of the graph-based local maxpooling layers is set to 2. The reconstructed point number is set to 2025, whose square root is an integer responding to the size of the 2D grid. The dimension of the latent feature is set to 512 for the downstream task. The model is trained for 200k iteration which is about 114 epochs.
+The model is trained on the single Nvidia Tesla V100-SXM2 video card with 16GB memory. We use the BlenderProc4BOP training dataset for LM which contains 50k images with 15 objects and we can further crop several objects from each image. To that end, we finally have more than 560k seperate partial point clouds for training. After the tuning of the hyperparemeters, we use the batch size of 32 and the Adam optimizer with the cosine annealing learning rate scheduler. The initial learning rate is $1e^{-4}$ and the end-up learning rate is $1e^{-6}$. The model specific hyperparemeter is the number of the folding MLP layers, which is by default set to 2 in our case. The number of $k$-nearest neighbor is set to 64 and the number of the graph-based local maxpooling layers is set to 2. The reconstructed point number is set to 2025, whose square root is an integer responding to the size of the 2D grid. The dimension of the latent feature is set to 512 for the downstream task. The model is trained for 200k iteration which is about 114 epochs.
 \subsection{Evaluation} 
-The evaluation metric of the point cloud completion task is the Chamfer distance (CD) between the output point cloud and the ground truth point cloud. The following graph shows the training, validation and test loss of the model during the whole training process. And the CD of each objects in the test dataset is shown in table 
+The evaluation metric of the point cloud completion task is the Chamfer distance (CD) between the output point cloud and the ground truth point cloud. The following graph \ref{img:fold_loss} shows the training and validation loss of the model during the whole training process. 
 
------------------------image-------------------------
+\begin{figure}[h]
+	\centering
+	\includegraphics[width=1.\textwidth]{img/fold_loss.eps}
+	\caption{Chamfer distance of the training and validation dataset during the point completion pretraining}
+	\label{img:fold_loss}
+\end{figure}
 
------------------------table-------------------------
+We stop the training after 200k iterations to prevent the overfitting problem, because the validation loss is not decreasing anymore. And the distribution of each catergory's CD in the test dataset are shown in figure \ref{img:cd_cate} 
+
+\begin{figure}[h]
+	\centering
+	\includegraphics[width=1.\textwidth]{img/cd_category.eps}
+	\caption{Categorical level Chamfer distance distribution of the test dataset}
+	\label{img:cd_cate}
+\end{figure}
 
 With the visualization of the reconstructed point cloud, we can valid that the model has the capability to localize the partial point cloud and complete the missing part of the object. The implicit expression of the 6 DoF pose as well as the object class is learned by the model without giving the class label, so that can use the feature to represent the pose and object class of the reference input in the diffusion model.
 
@@ -1157,6 +1220,21 @@ From the visualization we can find that the shape of the reconstructed point clo
 
 -----------------------image-------------------------
 
+To evaluate the influence of the number of $k$-nearest neighbor on the result, we train the model with different setups and the following table shows the corresponding CDs on the test dataset.
+\begin{table}[h]
+  \centering
+  \caption{CD with different number of $k$-nearest neighbor of the FoldingNet}
+  \label{tab:fold_knn}
+  \begin{tabular}{l c c c c}
+    \toprule
+    \#$k$-NN & 8 & 16 & 32 & 64\\
+    \midrule
+    CD & 0.215 & 0.206 & 0.208 & 0.193\\
+    \bottomrule
+  \end{tabular}
+\end{table}
+
+The number of the $k$-nearest neighbor determines the receptive field of the local graph-based maxpooling layer. The local feature can be more robust to the noise and outliers if the number of $k$-NN is larger. However, the model can not learn the global feature of the object if the number of $k$-NN is too large. In our experients of the following diffusion model, we choose the number of 64, which is proved to be optimal within the objects of our dataset.
 
 \section{Training} 
 The training of the diffusion network for the pose hypotheses estimation can be done after the 2D and 3D feature encoders are pretrained (for 2D feature extractor is the checkpoint of the pretrained model loaded from the public cloud storage). We load the checkpoint of the encoders and freeze the network of these two parts to avoid the parameters of pretrained model being updated during the training of the diffusion network. 
@@ -1176,8 +1254,8 @@ The training is also running on the single Nvidia Tesla V100-SXM2 16G video card
       Initial lr. & $1e^{-4}$ & Scheduler & Linear & Hidden dim. & 512\\
       End-up lr. & $1e^{-6}$ & $\Sigma_{\theta}$ & Learnable & FF dim. & 2048\\
       \#Iterations & 200k & Rotaion & 6D & TE dim. & 256\\
-       &  & Loss func. & MSE & PE dim. & 512\\
-       &  & & & 2D dim. & 768\\
+       &  & Translation & Residual & PE dim. & 512\\
+       &  & Loss func. & MSE & 2D dim. & 768\\
        &  & & & 3D dim. & 512\\
        &  & & & Feat. fusion & Add + adaLN\\
       \bottomrule
@@ -1192,6 +1270,7 @@ Clarification of some hyperparemeters in table \ref{tab:hyper}:
   \item Scheduler (Diffusion) - Variance scheduler of the forward diffusion process which represents the change of $\beta$ with the time step $t$.
   \item $\Sigma_{\theta}$ - Diagonal variance of the reverse process which is fixed in the orignial paper \cite{ho2020denoising} but can be optimized to be learnable \cite{nichol2021improved}.
   \item Rotation - Representation of the rotation matrix for 6 DoF pose. We use the 6D continuous representation in our case. Recall the section \ref{sec:representation}.
+  \item Translation - Instead of directly estimate the absolute translation, we let the network to learn the residual of the translation using the mean of the partial point cloud as the reference point.
   \item \#layers - Number of the multi-head attention layers.
   \item \#heads - Number of the attention heads.
   \item Hidden dim. - Dimension of the hidden layer in the Transformer encoder.
