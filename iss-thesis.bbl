@@ -230,6 +230,35 @@ J.~Song, C.~Meng and S.~Ermon, ``Denoising diffusion implicit models,'' 2022.
 \bibitem{lu2022dpmsolver}
 C.~Lu, Y.~Zhou, F.~Bao, J.~Chen, C.~Li and J.~Zhu, ``Dpm-solver: A fast ode solver for diffusion probabilistic model sampling in around 10 steps,'' 2022.
 
+\bibitem{watson2021learning}
+D.~Watson, J.~Ho, M.~Norouzi and W.~Chan, ``Learning to efficiently sample from diffusion probabilistic models,'' 2021.
+
+\bibitem{watson2022learning}
+D.~Watson, W.~Chan, J.~Ho and M.~Norouzi, ``Learning fast samplers for diffusion models by differentiating through sample quality,'' 2022.
+
+\bibitem{zheng2023truncated}
+H.~Zheng, P.~He, W.~Chen and M.~Zhou, ``Truncated diffusion probabilistic models and diffusion-based adversarial auto-encoders,'' 2023.
+
+\bibitem{salimans2022progressive}
+T.~Salimans and J.~Ho, ``Progressive distillation for fast sampling of diffusion models,'' 2022.
+
+\bibitem{meng2023distillation}
+C.~Meng, R.~Rombach, R.~Gao, D.~P. Kingma, S.~Ermon, J.~Ho and T.~Salimans, ``On distillation of guided diffusion models,'' 2023.
+
+\bibitem{kingma2023variational}
+D.~P. Kingma, T.~Salimans, B.~Poole and J.~Ho, ``Variational diffusion models,'' 2023.
+
+\bibitem{gu2022vector}
+S.~Gu, D.~Chen, J.~Bao, F.~Wen, B.~Zhang, D.~Chen, L.~Yuan and B.~Guo, ``Vector quantized diffusion model for text-to-image synthesis,'' 2022.
+
+\bibitem{oord2018neural}
+A.~van~den Oord, O.~Vinyals and K.~Kavukcuoglu, ``Neural discrete representation learning,'' 2018.
+
+\bibitem{liu2023learning}
+\BIBentryALTinterwordspacing
+X.~Liu, L.~Wu, M.~Ye and qiang liu, ``Learning diffusion bridges on constrained domains,'' in \emph{The Eleventh International Conference on Learning Representations}, 2023. [Online]. Available: \url{https://openreview.net/forum?id=WH1yCa0TbB}
+\BIBentrySTDinterwordspacing
+
 \bibitem{ronneberger2015unet}
 O.~Ronneberger, P.~Fischer and T.~Brox, ``U-net: Convolutional networks for biomedical image segmentation,'' 2015.
 

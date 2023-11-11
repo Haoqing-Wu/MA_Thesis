@@ -37,7 +37,9 @@
 \contentsline {subsubsection}{\nonumberline Learning-Free Sampling}{20}{subsubsection*.40}%
 \contentsline {subsubsection}{\nonumberline Learning-Based Sampling}{20}{subsubsection*.42}%
 \contentsline {subsection}{\numberline {3.2.3}Improvement on Likelihood}{21}{subsection.3.2.3}%
-\contentsline {subsection}{\numberline {3.2.4}Improvement on Diffusion Process}{21}{subsection.3.2.4}%
+\contentsline {subsection}{\numberline {3.2.4}Different Data Structures}{21}{subsection.3.2.4}%
+\contentsline {subsubsection}{\nonumberline Discrete Data}{21}{subsubsection*.44}%
+\contentsline {subsubsection}{\nonumberline Manifold}{22}{subsubsection*.46}%
 \contentsline {chapter}{\numberline {4}Methodology}{23}{chapter.4}%
 \contentsline {section}{\numberline {4.1}Introduction}{23}{section.4.1}%
 \contentsline {section}{\numberline {4.2}Framework}{23}{section.4.2}%
@@ -75,7 +77,7 @@
 \contentsline {chapter}{\numberline {6}Discussion}{49}{chapter.6}%
 \contentsline {chapter}{\numberline {7}Conclusion}{51}{chapter.7}%
 \contentsline {chapter}{\numberline {A}Additionally}{53}{appendix.A}%
-\contentsline {chapter}{\nonumberline List of Figures}{55}{chapter*.63}%
-\contentsline {chapter}{\nonumberline List of Tables}{57}{chapter*.64}%
-\contentsline {chapter}{\nonumberline Bibliography}{59}{chapter*.65}%
+\contentsline {chapter}{\nonumberline List of Figures}{55}{chapter*.67}%
+\contentsline {chapter}{\nonumberline List of Tables}{57}{chapter*.68}%
+\contentsline {chapter}{\nonumberline Bibliography}{59}{chapter*.69}%
 \providecommand \tocbasic@end@toc@file {}\tocbasic@end@toc@file 
