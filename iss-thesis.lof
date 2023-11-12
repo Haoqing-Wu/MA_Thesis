@@ -9,25 +9,25 @@
 \contentsline {figure}{\numberline {2.7}{\ignorespaces 3D model (NeRF) synthesis prompt using DreamFusion\relax }}{17}{figure.caption.38}%
 \addvspace {10\p@ }
 \addvspace {10\p@ }
-\contentsline {figure}{\numberline {4.1}{\ignorespaces Structure of the training phase of the pose hypotheses diffusion\relax }}{24}{figure.caption.47}%
-\contentsline {figure}{\numberline {4.2}{\ignorespaces Structure of the sampling phase of the pose hypotheses diffusion\relax }}{25}{figure.caption.48}%
-\contentsline {figure}{\numberline {4.3}{\ignorespaces Denoiser network with backbone and feature extractor\relax }}{27}{figure.caption.49}%
-\contentsline {figure}{\numberline {4.4}{\ignorespaces Multi-head self-attention and scaled dot-product attention\relax }}{28}{figure.caption.50}%
-\contentsline {figure}{\numberline {4.5}{\ignorespaces The 64-dimensional positional encoding for a sequence with length of 100\relax }}{29}{figure.caption.51}%
-\contentsline {figure}{\numberline {4.6}{\ignorespaces Self-supervised architecture of DINO\relax }}{30}{figure.caption.52}%
-\contentsline {figure}{\numberline {4.7}{\ignorespaces Sturcture of the ViT model\relax }}{30}{figure.caption.53}%
-\contentsline {figure}{\numberline {4.8}{\ignorespaces 3D feature extraction with FoldingNet based point cloud completion\relax }}{32}{figure.caption.54}%
-\contentsline {figure}{\numberline {4.9}{\ignorespaces Structure of the feature fusion process using (a): addition of the conditional features and embedding; (b): concatination of the conditional features and embedding\relax }}{33}{figure.caption.55}%
-\contentsline {subfigure}{\numberline {(a)}{\ignorespaces {}}}{33}{subfigure.9.1}%
-\contentsline {subfigure}{\numberline {(b)}{\ignorespaces {}}}{33}{subfigure.9.2}%
-\contentsline {figure}{\numberline {4.10}{\ignorespaces Illustration of the residual translation estimation (projected in 2D space)\relax }}{34}{figure.caption.56}%
+\contentsline {figure}{\numberline {4.1}{\ignorespaces Structure of the training phase of the pose hypotheses diffusion\relax }}{26}{figure.caption.47}%
+\contentsline {figure}{\numberline {4.2}{\ignorespaces Structure of the sampling phase of the pose hypotheses diffusion\relax }}{27}{figure.caption.48}%
+\contentsline {figure}{\numberline {4.3}{\ignorespaces Denoiser network with backbone and feature extractor\relax }}{29}{figure.caption.49}%
+\contentsline {figure}{\numberline {4.4}{\ignorespaces Multi-head self-attention and scaled dot-product attention\relax }}{30}{figure.caption.50}%
+\contentsline {figure}{\numberline {4.5}{\ignorespaces The 64-dimensional positional encoding for a sequence with length of 100\relax }}{31}{figure.caption.51}%
+\contentsline {figure}{\numberline {4.6}{\ignorespaces Self-supervised architecture of DINO\relax }}{32}{figure.caption.52}%
+\contentsline {figure}{\numberline {4.7}{\ignorespaces Sturcture of the ViT model\relax }}{32}{figure.caption.53}%
+\contentsline {figure}{\numberline {4.8}{\ignorespaces 3D feature extraction with FoldingNet based point cloud completion\relax }}{34}{figure.caption.54}%
+\contentsline {figure}{\numberline {4.9}{\ignorespaces Structure of the feature fusion process using (a): addition of the conditional features and embedding; (b): concatination of the conditional features and embedding\relax }}{35}{figure.caption.55}%
+\contentsline {subfigure}{\numberline {(a)}{\ignorespaces {}}}{35}{subfigure.9.1}%
+\contentsline {subfigure}{\numberline {(b)}{\ignorespaces {}}}{35}{subfigure.9.2}%
+\contentsline {figure}{\numberline {4.10}{\ignorespaces Illustration of the residual translation estimation (projected in 2D space)\relax }}{36}{figure.caption.56}%
 \addvspace {10\p@ }
-\contentsline {figure}{\numberline {5.1}{\ignorespaces LIMEMOD dataset. Left: training data with Synthetic CAD Model; Middle: training data rendered with PBR-BlenderProc4BOP; Right: test data captured with Kinect Sensor\relax }}{37}{figure.caption.57}%
-\contentsline {figure}{\numberline {5.2}{\ignorespaces Comparison of LINEMOD-O dataset with LINEMOD dataset. Left: low-level occluded scene; Right: high-level occluded scene\relax }}{38}{figure.caption.58}%
-\contentsline {figure}{\numberline {5.3}{\ignorespaces Visualization of the attention maps of the input image, where 12 heatmaps represent 12 attension heads output in transformer. Top: hole puncher; Middle: glue; Bottem: phone (occluded)\relax }}{42}{figure.caption.61}%
-\contentsline {figure}{\numberline {5.4}{\ignorespaces Attension maps of the different scale of ViTs and patch size. From left to right: ViT-S/16, ViT-S/8, ViT-B/16, ViT-B/8. Each column represents 3 random attention heads.\relax }}{43}{figure.caption.62}%
-\contentsline {figure}{\numberline {5.5}{\ignorespaces Chamfer distance of the training and validation dataset during the point completion pretraining\relax }}{44}{figure.caption.63}%
-\contentsline {figure}{\numberline {5.6}{\ignorespaces Categorical level Chamfer distance distribution of the test dataset\relax }}{44}{figure.caption.64}%
+\contentsline {figure}{\numberline {5.1}{\ignorespaces LIMEMOD dataset. Left: training data with Synthetic CAD Model; Middle: training data rendered with PBR-BlenderProc4BOP; Right: test data captured with Kinect Sensor\relax }}{39}{figure.caption.57}%
+\contentsline {figure}{\numberline {5.2}{\ignorespaces Comparison of LINEMOD-O dataset with LINEMOD dataset. Left: low-level occluded scene; Right: high-level occluded scene\relax }}{40}{figure.caption.58}%
+\contentsline {figure}{\numberline {5.3}{\ignorespaces Visualization of the attention maps of the input image, where 12 heatmaps represent 12 attension heads output in transformer. Top: hole puncher; Middle: glue; Bottem: phone (occluded)\relax }}{44}{figure.caption.61}%
+\contentsline {figure}{\numberline {5.4}{\ignorespaces Attension maps of the different scale of ViTs and patch size. From left to right: ViT-S/16, ViT-S/8, ViT-B/16, ViT-B/8. Each column represents 3 random attention heads.\relax }}{45}{figure.caption.62}%
+\contentsline {figure}{\numberline {5.5}{\ignorespaces Chamfer distance of the training and validation dataset during the point completion pretraining\relax }}{46}{figure.caption.63}%
+\contentsline {figure}{\numberline {5.6}{\ignorespaces Categorical level Chamfer distance distribution of the test dataset\relax }}{46}{figure.caption.64}%
 \addvspace {10\p@ }
 \addvspace {10\p@ }
 \addvspace {10\p@ }
