@@ -28,6 +28,7 @@
 \contentsline {figure}{\numberline {5.4}{\ignorespaces Attension maps of the different scale of ViTs and patch size. From left to right: ViT-S/16, ViT-S/8, ViT-B/16, ViT-B/8. Each column represents 3 random attention heads.\relax }}{45}{figure.caption.62}%
 \contentsline {figure}{\numberline {5.5}{\ignorespaces Chamfer distance of the training and validation dataset during the point completion pretraining\relax }}{46}{figure.caption.63}%
 \contentsline {figure}{\numberline {5.6}{\ignorespaces Categorical level Chamfer distance distribution of the test dataset\relax }}{46}{figure.caption.64}%
+\contentsline {figure}{\numberline {5.7}{\ignorespaces Comparision of the Chamfer distance distributions between the model trained with the whole data set and the overfitted model on single object (the first 7 objects of LM are shown)\relax }}{47}{figure.caption.65}%
 \addvspace {10\p@ }
 \addvspace {10\p@ }
 \addvspace {10\p@ }

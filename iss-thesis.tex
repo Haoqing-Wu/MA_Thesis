@@ -131,6 +131,7 @@
 \usepackage{subfig}
 \usepackage[export]{adjustbox}
 \usepackage{epsfig}
+\usepackage{array}
 
 %%%%% Tikz / PGF - drawing beautiful graphics and plots in Latex
 % \usepackage{tikz}
@@ -264,6 +265,7 @@
 % short command for \operatorname{}
 \newcommand{\op}[1]{\operatorname{#1}}
 
+\newcolumntype{C}[1]{>{\centering\arraybackslash}m{#1}}
 % unknown hyphenation rules
 \hyphenation{Im-puls-ant-wort Im-puls-ant-wort-ko-ef-fi-zien-ten
 Pro-gramm-aus-schnitt Mi-kro-fon-sig-nal}
@@ -734,10 +736,17 @@ Text-to-3D generation and Image-to-3D are novel tasks in the field of multi-moda
 
 \chapter{Related Works}
 \section{6 DoF Pose Estimation}
+\subsection{Traditional Methods}
+In the early stage of the 6 DoF pose estimation research, the methods are mainly based on the hand-crafted feature discriptors such as SIFT\cite{sift}, SURF\cite{surf} and ORB\cite{6126544}. The main idea of these methods is to extract the feature points from the image and find the 2D-3D correspondances. After that, the pose of the object can be estimated by solving the Perspective-n-Point (P\textit{n}P) problem. The P\textit{n}P problem is a classic problem in computer vision which is to estimate the pose of an object given a set of 3D points in the object coordinate system and the corresponding 2D projections in the image plane. The PnP problem can be solved by using the RANSAC\cite{10.1145/358669.358692} algorithm to find the inliers and then use the least square method to estimate the pose. The main drawback of these methods is that they are sensitive to the occlusion, texture-less object and the illumination change. 
+
+ICP \cite{Besl1992AMF} and its improved version such as GICP\cite{gicp} and NICP\cite{nicp} are also used to estimate the pose of the object when the depth information (point cloud) is available as reference. The task is also called point cloud registration where a partial point cloud is registered to a complete one or the alignment between two 3D scenes is estimated. However, the ICP is basically a time-consuming iterative method that is sensitive to the initial pose and the convergence is not guaranteed. Using ICP alone is not sufficient to achieve a robust pose estimation, but it can be used as a post-processing method to refine the pose estimation at coarse level. And the optional ICP module as learning-free algorithm can effectively reduce the residual error existing in the learning-based methods and improve the final accuracy. In our framework, we also adapt the ICP as our refinement to further boost the performance.
+\subsection{Template-Based Methods}
+
+\subsection{Keypoint-Based Methods} 
 
 \subsection{Direct Regression Methods}
 
-\subsection{Keypoint-Based Methods} 
+
 
 \section{Diffusion Models}
 \subsection{Foundations}
@@ -1154,7 +1163,7 @@ DINO, as our 2D feature encoder, provides many pretrained weight of the backbone
   \centering
   \caption{Evaluation of the pretrained DINO model on ImageNet}
   \label{tab:dino}
-  \begin{tabular}{l c c c c c c c}
+  \begin{tabular}{l | c c c c c c c}
       \toprule
       Backbone & \#Params. & Dim. & \#Layers & \#Heads & Patch Size & $k$-NN & Linear\\
       \midrule
@@ -1220,6 +1229,8 @@ We stop the training after 200k iterations to prevent the overfitting problem, b
 	\label{img:cd_cate}
 \end{figure}
 
+
+
 With the visualization of the reconstructed point cloud, we can valid that the model has the capability to localize the partial point cloud and complete the missing part of the object. The implicit expression of the 6 DoF pose as well as the object class is learned by the model without giving the class label, so that we can use the feature to represent the pose and object class of the reference input in the diffusion model.
 
 -----------------------image-------------------------
@@ -1228,9 +1239,36 @@ The following figure shows the development of the output from FoldingNet decoder
 
 -----------------------image-------------------------
 
-From the visualization we can find that the shape of the reconstructed point cloud is getting more and more similar to the ground truth, but the difference exists because of the capability of the backbone on data with heavy occlusion and noise. Figure shows the result of the point cloud completion task on the overfitting case compared with the generalized version on the whole dataset, which has a quite satisfied result. The visualization of the overfitting case on one objects is illustrated in figure.
+From the visualization we can find that the shape of the reconstructed point cloud is getting more and more similar to the ground truth, but the difference exists because of the capability of the backbone on data with heavy occlusion and noise. We further compare the training of point cloud completion task on all 15 categories with overfitted models on single object to validate the generalization of the network. From figure \ref{img:fold_overfit} we can find that the Chamfer distance of the overfitted the models has lower mean and variance than the model trained on all categories. Table \ref{tab:fold_overfit} shows the quantitative comparision. The visualization of the overfitting case on one objects is illustrated in figure.
+\begin{figure}[h]
+	\centering
+	\includegraphics[width=1.\textwidth]{img/fold_overfit.eps}
+	\caption{Comparision of the Chamfer distance distributions between the model trained with the whole data set and the overfitted model on single object (the first 7 objects of LM are shown)}
+	\label{img:fold_overfit}
+\end{figure}
 
------------------------image-------------------------
+\begin{table}[h]
+  \centering
+  \caption{Mean and standard deviation of the Chamfer distance with the model trained on the whole dataset and the overfitted model on single object (7 of 15 objects selected)}
+  \label{tab:fold_overfit}
+  \begin{tabular}{l | C{12mm} C{12mm} C{12mm} C{12mm} C{12mm} C{12mm} C{12mm} | C{12mm}}
+      \toprule
+      \multicolumn{9}{c}{Trained on the complete LM} \\
+      \midrule
+      Category & Ape & Vise & Bowl & Cam. & Can & Cat & Cup & Avg.\\
+      \midrule
+      Mean & 0.093 & 0.251 & 0.109 & 0.241 & 0.243 & 0.171 & 0.117 & 0.175\\
+      Std. & 0.042 & 0.079 & 0.050 & 0.103 & 0.073 & 0.071 & 0.066 & 0.069\\
+      \midrule[1pt]
+      \multicolumn{9}{c}{Overfitted on single object} \\
+      \midrule
+      Category & Ape & Vise & Bowl & Cam. & Can & Cat & Cup & Avg.\\
+      \midrule
+      Mean & 0.067 & 0.154 & 0.084 & 0.166 & 0.129 & 0.087 & 0.079 & 0.109\\
+      Std. & 0.036 & 0.061 & 0.031 & 0.062 & 0.076 & 0.047 & 0.044 & 0.051\\
+      \bottomrule
+  \end{tabular}
+\end{table}
 
 -----------------------image-------------------------
 
@@ -1239,7 +1277,7 @@ To evaluate the influence of the number of $k$-nearest neighbor on the result, w
   \centering
   \caption{CD with different number of $k$-nearest neighbor of the FoldingNet}
   \label{tab:fold_knn}
-  \begin{tabular}{l c c c c}
+  \begin{tabular}{l | c c c c}
     \toprule
     \#$k$-NN & 8 & 16 & 32 & 64\\
     \midrule

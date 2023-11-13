@@ -200,6 +200,26 @@ L.~Zhang, A.~Rao and M.~Agrawala, ``Adding conditional control to text-to-image 
 \bibitem{poole2022dreamfusion}
 B.~Poole, A.~Jain, J.~T. Barron and B.~Mildenhall, ``Dreamfusion: Text-to-3d using 2d diffusion,'' 2022.
 
+\bibitem{sift}
+D.~Lowe, ``Distinctive image features from scale-invariant keypoints,'' \emph{International Journal of Computer Vision}, vol.~60, pp. 91--, 11 2004.
+
+\bibitem{surf}
+H.~Bay, T.~Tuytelaars and L.~Van~Gool, ``Surf: Speeded up robust features,'' vol. 3951, 07 2006, pp. 404--417.
+
+\bibitem{6126544}
+E.~Rublee, V.~Rabaud, K.~Konolige and G.~Bradski, ``Orb: An efficient alternative to sift or surf,'' in \emph{2011 International Conference on Computer Vision}, 2011, pp. 2564--2571.
+
+\bibitem{10.1145/358669.358692}
+\BIBentryALTinterwordspacing
+M.~A. Fischler and R.~C. Bolles, ``Random sample consensus: A paradigm for model fitting with applications to image analysis and automated cartography,'' \emph{Commun. ACM}, vol.~24, no.~6, p. 381–395, jun 1981. [Online]. Available: \url{https://doi.org/10.1145/358669.358692}
+\BIBentrySTDinterwordspacing
+
+\bibitem{gicp}
+A.~Segal, D.~Hähnel and S.~Thrun, ``Generalized-icp,'' 06 2009.
+
+\bibitem{nicp}
+J.~Serafin and G.~Grisetti, ``Nicp: Dense normal based point cloud registration,'' in \emph{2015 IEEE/RSJ International Conference on Intelligent Robots and Systems (IROS)}, 2015, pp. 742--749.
+
 \bibitem{song2020improved}
 Y.~Song and S.~Ermon, ``Improved techniques for training score-based generative models,'' 2020.
 
@@ -339,11 +359,6 @@ H.~Thomas, C.~R. Qi, J.-E. Deschaud, B.~Marcotegui, F.~Goulette and L.~J. Guibas
 
 \bibitem{shen2018mining}
 Y.~Shen, C.~Feng, Y.~Yang and D.~Tian, ``Mining point cloud local structures by kernel correlation and graph pooling,'' 2018.
-
-\bibitem{10.1145/358669.358692}
-\BIBentryALTinterwordspacing
-M.~A. Fischler and R.~C. Bolles, ``Random sample consensus: A paradigm for model fitting with applications to image analysis and automated cartography,'' \emph{Commun. ACM}, vol.~24, no.~6, p. 381–395, jun 1981. [Online]. Available: \url{https://doi.org/10.1145/358669.358692}
-\BIBentrySTDinterwordspacing
 
 \bibitem{hinterstoisser2012model}
 S.~Hinterstoisser, V.~Lepetit, S.~Ilic, S.~Holzer, G.~Bradski, K.~Konolige and N.~Navab, ``Model based training, detection and pose estimation of texture-less 3d objects in heavily cluttered scenes,'' vol. 7724, 10 2012.
