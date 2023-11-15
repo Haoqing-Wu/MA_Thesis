@@ -220,6 +220,98 @@ A.~Segal, D.~Hähnel and S.~Thrun, ``Generalized-icp,'' 06 2009.
 \bibitem{nicp}
 J.~Serafin and G.~Grisetti, ``Nicp: Dense normal based point cloud registration,'' in \emph{2015 IEEE/RSJ International Conference on Intelligent Robots and Systems (IROS)}, 2015, pp. 742--749.
 
+\bibitem{gu2010discriminative}
+C.~Gu and X.~Ren, ``Discriminative mixture-of-templates for viewpoint classification,'' vol. 6315, 12 2010, pp. 408--421.
+
+\bibitem{hinterstoisser2012gradient}
+S.~Hinterstoisser, C.~Cagniart, S.~Ilic, P.~Sturm, N.~Navab, P.~Fua, V.~Lepetit and b.~Lepetit, ``Gradient response maps for real-time detection of texture-less objects,'' \emph{IEEE TRANSACTIONS ON PATTERN ANALYSIS AND MACHINE INTELLIGENCE}, vol.~1, 05 2012.
+
+\bibitem{Wohlhart_2015}
+\BIBentryALTinterwordspacing
+P.~Wohlhart and V.~Lepetit, ``Learning descriptors for object recognition and 3d pose estimation,'' in \emph{2015 {IEEE} Conference on Computer Vision and Pattern Recognition ({CVPR})}.\hskip 1em plus 0.5em minus 0.4em\relax {IEEE}, jun 2015. [Online]. Available: \url{https://doi.org/10.1109%2Fcvpr.2015.7298930}
+\BIBentrySTDinterwordspacing
+
+\bibitem{nguyen2022templates}
+V.~N. Nguyen, Y.~Hu, Y.~Xiao, M.~Salzmann and V.~Lepetit, ``Templates for 3d object pose estimation revisited: Generalization to new objects and robustness to occlusions,'' 2022.
+
+\bibitem{shugurov2022osop}
+I.~Shugurov, F.~Li, B.~Busam and S.~Ilic, ``Osop: A multi-stage one shot object pose estimation framework,'' 2022.
+
+\bibitem{kabsch1976solution}
+W.~Kabsch, ``A solution for the best rotation to relate two sets of vectors,'' \emph{Acta Crystallographica Section A: Crystal Physics, Diffraction, Theoretical and General Crystallography}, vol.~32, no.~5, pp. 922--923, 1976.
+
+\bibitem{rad2018bb8}
+M.~Rad and V.~Lepetit, ``Bb8: A scalable, accurate, robust to partial occlusion method for predicting the 3d poses of challenging objects without using depth,'' 2018.
+
+\bibitem{pmlr-v87-tremblay18a}
+\BIBentryALTinterwordspacing
+J.~Tremblay, T.~To, B.~Sundaralingam, Y.~Xiang, D.~Fox and S.~Birchfield, ``Deep object pose estimation for semantic robotic grasping of household objects,'' in \emph{Proceedings of The 2nd Conference on Robot Learning}, ser. Proceedings of Machine Learning Research, A.~Billard, A.~Dragan, J.~Peters and J.~Morimoto, Eds., vol.~87.\hskip 1em plus 0.5em minus 0.4em\relax PMLR, 29--31 Oct 2018, pp. 306--316. [Online]. Available: \url{https://proceedings.mlr.press/v87/tremblay18a.html}
+\BIBentrySTDinterwordspacing
+
+\bibitem{tekin2018realtime}
+B.~Tekin, S.~N. Sinha and P.~Fua, ``Real-time seamless single shot 6d object pose prediction,'' 2018.
+
+\bibitem{oberweger2018making}
+M.~Oberweger, M.~Rad and V.~Lepetit, ``Making deep heatmaps robust to partial occlusions for 3d object pose estimation,'' 2018.
+
+\bibitem{su2022zebrapose}
+Y.~Su, M.~Saleh, T.~Fetzer, J.~Rambach, N.~Navab, B.~Busam, D.~Stricker and F.~Tombari, ``Zebrapose: Coarse to fine surface encoding for 6dof object pose estimation,'' 2022.
+
+\bibitem{qi2017pointnet}
+C.~R. Qi, H.~Su, K.~Mo and L.~J. Guibas, ``Pointnet: Deep learning on point sets for 3d classification and segmentation,'' 2017.
+
+\bibitem{qi2017pointnet++}
+C.~R. Qi, L.~Yi, H.~Su and L.~J. Guibas, ``Pointnet++: Deep hierarchical feature learning on point sets in a metric space,'' 2017.
+
+\bibitem{bai2020d3feat}
+X.~Bai, Z.~Luo, L.~Zhou, H.~Fu, L.~Quan and C.-L. Tai, ``D3feat: Joint learning of dense detection and description of 3d local features,'' 2020.
+
+\bibitem{ao2021spinnet}
+S.~Ao, Q.~Hu, B.~Yang, A.~Markham and Y.~Guo, ``Spinnet: Learning a general surface descriptor for 3d point cloud registration,'' 2021.
+
+\bibitem{wang2022hypothesize}
+H.~Wang, Y.~Liu, Z.~Dong and W.~Wang, ``You only hypothesize once: Point cloud registration with rotation-equivariant descriptors,'' 2022.
+
+\bibitem{yu2023rotationinvariant}
+H.~Yu, Z.~Qin, J.~Hou, M.~Saleh, D.~Li, B.~Busam and S.~Ilic, ``Rotation-invariant transformer for point cloud matching,'' 2023.
+
+\bibitem{xiang2018posecnn}
+Y.~Xiang, T.~Schmidt, V.~Narayanan and D.~Fox, ``Posecnn: A convolutional neural network for 6d object pose estimation in cluttered scenes,'' 2018.
+
+\bibitem{Wu_2018}
+\BIBentryALTinterwordspacing
+J.~Wu, B.~Zhou, R.~Russell, V.~Kee, S.~Wagner, M.~Hebert, A.~Torralba and D.~M. Johnson, ``Real-time object pose estimation with pose interpreter networks,'' in \emph{2018 {IEEE}/{RSJ} International Conference on Intelligent Robots and Systems ({IROS})}.\hskip 1em plus 0.5em minus 0.4em\relax {IEEE}, oct 2018. [Online]. Available: \url{https://doi.org/10.1109%2Firos.2018.8593662}
+\BIBentrySTDinterwordspacing
+
+\bibitem{do2018deep6dpose}
+T.-T. Do, M.~Cai, T.~Pham and I.~Reid, ``Deep-6dpose: Recovering 6d object pose from a single rgb image,'' 2018.
+
+\bibitem{he2018mask}
+K.~He, G.~Gkioxari, P.~Dollár and R.~Girshick, ``Mask r-cnn,'' 2018.
+
+\bibitem{wang2021gdrnet}
+G.~Wang, F.~Manhardt, F.~Tombari and X.~Ji, ``Gdr-net: Geometry-guided direct regression network for monocular 6d object pose estimation,'' 2021.
+
+\bibitem{aoki2019pointnetlk}
+Y.~Aoki, H.~Goforth, R.~A. Srivatsan and S.~Lucey, ``Pointnetlk: Robust \& efficient point cloud registration using pointnet,'' 2019.
+
+\bibitem{Lucas1981AnII}
+\BIBentryALTinterwordspacing
+B.~D. Lucas and T.~Kanade, ``An iterative image registration technique with an application to stereo vision,'' in \emph{International Joint Conference on Artificial Intelligence}, 1981. [Online]. Available: \url{https://api.semanticscholar.org/CorpusID:2121536}
+\BIBentrySTDinterwordspacing
+
+\bibitem{huang2020featuremetric}
+X.~Huang, G.~Mei and J.~Zhang, ``Feature-metric registration: A fast semi-supervised approach for robust point cloud registration without correspondences,'' 2020.
+
+\bibitem{xu2021omnet}
+H.~Xu, S.~Liu, G.~Wang, G.~Liu and B.~Zeng, ``Omnet: Learning overlapping mask for partial-to-partial point cloud registration,'' 2021.
+
+\bibitem{kehl2016deep}
+W.~Kehl, F.~Milletari, F.~Tombari, S.~Ilic and N.~Navab, ``Deep learning of local rgb-d patches for 3d object detection and 6d pose estimation,'' 2016.
+
+\bibitem{wang2019densefusion}
+C.~Wang, D.~Xu, Y.~Zhu, R.~Martín-Martín, C.~Lu, L.~Fei-Fei and S.~Savarese, ``Densefusion: 6d object pose estimation by iterative dense fusion,'' 2019.
+
 \bibitem{song2020improved}
 Y.~Song and S.~Ermon, ``Improved techniques for training score-based generative models,'' 2020.
 
@@ -347,12 +439,6 @@ A.~Kazemnejad, ``Transformer architecture: The positional encoding,'' \emph{kaze
 
 \bibitem{5206848}
 J.~Deng, W.~Dong, R.~Socher, L.-J. Li, K.~Li and L.~Fei-Fei, ``Imagenet: A large-scale hierarchical image database,'' in \emph{2009 IEEE Conference on Computer Vision and Pattern Recognition}, 2009, pp. 248--255.
-
-\bibitem{qi2017pointnet}
-C.~R. Qi, H.~Su, K.~Mo and L.~J. Guibas, ``Pointnet: Deep learning on point sets for 3d classification and segmentation,'' 2017.
-
-\bibitem{qi2017pointnet++}
-C.~R. Qi, L.~Yi, H.~Su and L.~J. Guibas, ``Pointnet++: Deep hierarchical feature learning on point sets in a metric space,'' 2017.
 
 \bibitem{thomas2019kpconv}
 H.~Thomas, C.~R. Qi, J.-E. Deschaud, B.~Marcotegui, F.~Goulette and L.~J. Guibas, ``Kpconv: Flexible and deformable convolution for point clouds,'' 2019.
