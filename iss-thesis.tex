@@ -737,7 +737,7 @@ Text-to-3D generation and Image-to-3D are novel tasks in the field of multi-moda
 \chapter{Related Works}
 \section{6 DoF Pose Estimation}
 \subsection{Learning-Free Methods}
-In the early stage of the 6 DoF pose estimation research, the methods are mainly based on the hand-crafted feature discriptors such as SIFT\cite{sift}, SURF\cite{surf} and ORB\cite{6126544}. The main idea of these methods is to extract the feature points from the image and find the 2D-3D correspondances. After that, the pose of the object can be estimated by solving the Perspective-n-Point (P\textit{n}P) problem. The P\textit{n}P problem is a classic problem in computer vision which is to estimate the pose of an object given a set of 3D points in the object coordinate system and the corresponding 2D projections in the image plane. The PnP problem can be solved by using the RANSAC\cite{10.1145/358669.358692} algorithm to find the inliers and then use the least square method to estimate the pose. The main drawback of these methods is that they are sensitive to the occlusion, texture-less object and the illumination change. 
+In the early stage of the 6 DoF pose estimation research, the methods are mainly based on the hand-crafted feature descriptors such as SIFT\cite{sift}, SURF\cite{surf} and ORB\cite{6126544}. The main idea of these methods is to extract the feature points from the image and find the 2D-3D correspondances. After that, the pose of the object can be estimated by solving the Perspective-n-Point (P\textit{n}P) problem. The P\textit{n}P problem is a classic problem in computer vision which is to estimate the pose of an object given a set of 3D points in the object coordinate system and the corresponding 2D projections in the image plane. The PnP problem can be solved by using the RANSAC\cite{10.1145/358669.358692} algorithm to find the inliers and then use the least square method to estimate the pose. The main drawback of these methods is that they are sensitive to the occlusion, texture-less object and the illumination change. 
 
 ICP \cite{Besl1992AMF} and its improved version such as GICP\cite{gicp} and NICP\cite{nicp} are also used to estimate the pose of the object when the depth information (point cloud) is available as reference. The task is also called point cloud registration where a partial point cloud is registered to a complete one or the alignment between two 3D scenes is estimated. However, the ICP is basically a time-consuming iterative method that is sensitive to the initial pose and the convergence is not guaranteed. Using ICP alone is not sufficient to achieve a robust pose estimation, but it can be used as a post-processing method to refine the pose estimation at coarse level. And the optional ICP module as learning-free algorithm can effectively reduce the residual error existing in the learning-based methods and improve the final accuracy. In our framework, we also adapt the ICP as our refinement to further boost the performance.
 \subsection{Template-Based Methods}
@@ -761,9 +761,16 @@ PoseCNN\cite{xiang2018posecnn} is an early research that leverages the CNN on 2D
 %3D
 Direct regression of the transformation between two point clouds is more straightforward than correspondance-base method in the point cloud registration task. PointNetLK \cite{aoki2019pointnetlk} combines the PointNet in 3D domain with the Lucas \& Kanade (LK) algorithm \cite{Lucas1981AnII} for 2D image alignment together to regress the transformation between two frames. Huang et al. 2020 \cite{huang2020featuremetric} propose a method that optimize the registration by minimising a feature-metrix projection error without matching the correspondance. OMNet \cite{xu2021omnet} is another global feature-based iterative network for partial-to-partial registration. It utilizes overlapping masks to reject non-overlapping regions, transforming partial registration into same-shape registration.
 
-%RGB-D
+%RGB-D%Dense
 Thanks to the decreasing cost of RGB-D sensor in the recent years, RGB data with additional depth information enable us to more precisely handle texture-less objects in the poor illuminated scenario. Some RGB-D based dense methods are proposed to estimate the pose in a fine-grained way. Kehl et al. 2016 \cite{kehl2016deep} use regressed descriptors of locally-sampled patches with a convolutional auto-encoder and then cast 6D voting for each patch to estimate the pose. DenseFusion \cite{wang2019densefusion} is a typical method that pixel-wise votes the 6 DoF pose prediction. The network concatinates the 2D feature extracted from CNN and the 3D feature from PointNet together with the global feature through average pooling. The pixel-wise dense predictions are voted through the trainable confidence for each pixel. 
-%Dense
+
+Common structures of 6 DoF pose estimation methods are summarized in following figure \ref{img:pose_methods}.
+\begin{figure}[h]
+	\centering
+	\includegraphics[width=1.\textwidth]{img/pose_methods.pdf}
+	\caption{Structures of some common 6 DoF pose estimation methods,}
+	\label{img:pose_methods}
+\end{figure}
 
 \section{Diffusion Models}
 \subsection{Foundations}
@@ -815,8 +822,25 @@ Graph structure is also a common data structure that represents the relationship
 The majority of the raw data lie on the high-dimensional space but can be represented in the low-dimensional manifold using the network like autoencoder. And working on these latent space is more efficient and effective. Out of this reason, some recent works utilize the diffusion model on the manifold which is compressed from the original data space. The Latent Score-Based Generative Model (LSGM) \cite{vahdat2021scorebased} proposes a method to jointly train a score-based diffusion model and a variational autoencoder by optimizing the ELBO of the VAE together withe the training objective of the score matching model. Instead of the joint training, Latent Diffusion Model (LDM) \cite{rombach2022highresolution} used in the influential work of Stable Diffusion, addresses the training into two seperate phases. First, the autoencoder is pretrained to project the data into latent space. Then, the diffusion model is trained to directly sample the latent expression of the data.
 
 \section{Diffusion models in Pose Estimation}
-The objective in 6 DoF pose estimation lies on the $\mathbb{SE}(3)$ of Lie group, which is a differentiable manifold that is generalized from the Euclidean space. Recent works from Leach et al. 2022 \cite{leach2022denoising} first explores the usage of diffusion model to generate the probability density on $\mathbb{SO}(3)$. Jagvaral et al. 2023 \cite{jagvaral2023diffusion} further optimized the loss function from the Euclidean space to the manifold $\mathbb{SO}(3)$. Urain et al. 2023 \cite{urain2023se3diffusionfields} 
-propose smooth cost functions for joint grasp on $\mathbb{SE}(3)$ through diffusion. Yim et al. 2023 \cite{yim2023se3} introduce a framework called FrameDiff to learn the $\mathbb{SE}(3)$ equivariant score of the diffusion models over multiple frames in protein structure generation. Another work from Hsiao et al. 2023 \cite{hsiao2023confronting} focus on the advantages of diffusion models towards the pose ambiguity problem on $\mathbb{SE}(3)$ and convergence accelation improved by using surrogate Stein score. Wang et al. 2023 \cite{wang2023pd} propose a diffusion network for the camera pose estimation with a series of input images. The diffusion-aided bundle adjustment is achieved by optimizing the geometric consistency between poses via Sampson Epipolar Error during the reverse diffusion process.
+The objective in 6 DoF pose estimation lies on the $\mathbb{SE}(3)$ of Lie group, which is a differentiable manifold that is generalized from the Euclidean space. Recent works from Leach et al. 2022 \cite{leach2022denoising} first explores the usage of diffusion model to generate the probability density on $\mathbb{SO}(3)$. Jagvaral et al. 2023 \cite{jagvaral2023diffusion} further optimized the loss function from the Euclidean space to the manifold $\mathbb{SO}(3)$. Urain et al. 2023 \cite{urain2023se3diffusionfields} propose smooth cost functions for joint grasp on $\mathbb{SE}(3)$ through diffusion. Yim et al. 2023 \cite{yim2023se3} introduce a framework called FrameDiff to learn the $\mathbb{SE}(3)$ equivariant score of the diffusion models over multiple frames in protein structure generation. 
+
+Typical work from Hsiao et al. 2023 \cite{hsiao2023confronting} focus on the advantages of diffusion models towards the pose ambiguity problem on $\mathbb{SE}(3)$. The denoiser backbone is consist of several MLP blocks processing the 2D global feature extracted from a pretrained ResNet. Figure \ref{img:confront} shows the overview of the framework. The Authers use the surrogate Stein score calculation on $\mathbb{SE}(3)$ following the score-based diffusion architecture and Fourier-based conditioning mechanism to deal with the ambiguity problem caused by the symetrical object. Additionally, they also compare the advantage of $\mathbb{SE}(3)$ parametrization over previous works on $R^{3}\mathbb{SE}(3)$. This work is trained and evaluated on the synthetic dataset SYMSOL \cite{implicitpdf2021} with fice texture-less objects, namely tetrahedron, cube, icosahedron, cone, and cylinder. The real data captured by the camera is not considered in this work. In our proposed method, we focus on the pose estimation with diffusion models under the real-world scenario and even with occlusion, which is more general and challenging.
+\begin{figure}[h]
+	\centering
+	\includegraphics[scale=0.24]{img/confront.png}
+	\caption{Overview of the network from the work "Confronting Ambiguity in 6D Object Pose Estimation via Score-Based Diffusion on SE(3)", image adapted from the original paper \cite{hsiao2023confronting}}
+	\label{img:confront}
+\end{figure}
+
+Wang et al. 2023 \cite{wang2023pd} propose a diffusion-aided bundle adjustment network for the camera pose estimation with a series of input images. Similar to the previous work, the diffusion network is conditioned by the 2D feature downstream by a pretrained encoder. The highlight of this method is the geometry-guided sampling of the diffusion model with the Sampson epipolar error minimization, so that the image-to-image epipolar constraint can be satisfied in the sampling phase. Figure The model is evaluated on CO3Dv2 \cite{reizenstein2021common} containing turntable-like objects and RealEstate10K \cite{zhou2018stereo} which captures videos of the interior and exterior of real estate. Both datasets aim to estimate the camera poses with a series of input images relative to the object or the scene. Our work focus on the single-frame object pose estimation with the fixed camera parameters and process the data further with the depth information.
+
+\begin{figure}[h]
+	\centering
+	\includegraphics[scale=0.21]{img/pose_diff.png}
+	\caption{Overview of the network from PoseDiffusion, image adapted from the original paper \cite{wang2023pd}}
+	\label{img:pose_diff}
+\end{figure}
+
 \chapter{Methodology}
 \section{Introduction}
 In this chapter, we will introduce the detail of our proposed method, namely the pose hypotheses diffusion. The intuitive idea is to directly denoise the pose which consists of translation and rotation, $\mathbf{T} = (\mathbf{t}, \mathbf{r})^{T}$. As the diffusion model is basically one of the generative models, we use the diffusion pipeline to generate the possible pose hypotheses which is similar to the image synthesis but with different objective. So we call this kind of pose estimation method as pose hypotheses diffusion.
@@ -839,7 +863,7 @@ Additionally, we also need to provide the timestep $t$ and the guidance $\mathbf
 
 \begin{figure}[h]
 	\centering
-	\includegraphics[scale=.23]{img/train.png}
+	\includegraphics[scale=.235]{img/train.png}
 	\caption{Structure of the training phase of the pose hypotheses diffusion}
 	\label{img:train}
 \end{figure}
@@ -854,7 +878,7 @@ In the training phase, we feed the network with batch of data that is different 
 After the optional multi-hypotheses inference, we can further use some algorithms to refine the pose. In our model, we choose iterative closest point (ICP)\cite{121791} algorithm to refine the pose hypotheses and finally get the output transformation $\mathbf{T}_{r}$. The structure of the sampling process is shown in figure \ref{img:sample}. Details of each models in training phase and sampling phase will be introduced in next section.
 \begin{figure}[h]
 	\centering
-	\includegraphics[scale=.23]{img/sample.png}
+	\includegraphics[scale=.235]{img/sample.png}
 	\caption{Structure of the sampling phase of the pose hypotheses diffusion}
 	\label{img:sample}
 \end{figure}

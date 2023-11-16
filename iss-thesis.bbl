@@ -405,8 +405,17 @@ J.~Yim, B.~L. Trippe, V.~D. Bortoli, E.~Mathieu, A.~Doucet, R.~Barzilay and T.~J
 \bibitem{hsiao2023confronting}
 T.-C. Hsiao, H.-W. Chen, H.-K. Yang and C.-Y. Lee, ``Confronting ambiguity in 6d object pose estimation via score-based diffusion on se(3),'' 2023.
 
+\bibitem{implicitpdf2021}
+K.~A. Murphy, C.~Esteves, V.~Jampani, S.~Ramalingam and A.~Makadia, ``Implicit-pdf: Non-parametric representation of probability distributions on the rotation manifold,'' in \emph{Proceedings of the 38th International Conference on Machine Learning}, 2021, pp. 7882--7893.
+
 \bibitem{wang2023pd}
 J.~Wang, C.~Rupprecht and D.~Novotny, ``{PoseDiffusion}: Solving pose estimation via diffusion-aided bundle adjustment,'' 2023.
+
+\bibitem{reizenstein2021common}
+J.~Reizenstein, R.~Shapovalov, P.~Henzler, L.~Sbordone, P.~Labatut and D.~Novotny, ``Common objects in 3d: Large-scale learning and evaluation of real-life 3d category reconstruction,'' 2021.
+
+\bibitem{zhou2018stereo}
+T.~Zhou, R.~Tucker, J.~Flynn, G.~Fyffe and N.~Snavely, ``Stereo magnification: Learning view synthesis using multiplane images,'' 2018.
 
 \bibitem{ronneberger2015unet}
 O.~Ronneberger, P.~Fischer and T.~Brox, ``U-net: Convolutional networks for biomedical image segmentation,'' 2015.

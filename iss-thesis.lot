@@ -3,11 +3,11 @@
 \addvspace {10\p@ }
 \addvspace {10\p@ }
 \addvspace {10\p@ }
-\contentsline {table}{\numberline {5.1}{\ignorespaces Dataset Structure of BOP Format\relax }}{43}{table.caption.59}%
-\contentsline {table}{\numberline {5.2}{\ignorespaces Evaluation of the pretrained DINO model on ImageNet\relax }}{44}{table.caption.60}%
-\contentsline {table}{\numberline {5.3}{\ignorespaces Mean and standard deviation of the Chamfer distance with the model trained on the whole dataset and the overfitted model on single object (7 of 15 objects selected)\relax }}{50}{table.caption.66}%
-\contentsline {table}{\numberline {5.4}{\ignorespaces CD with different number of $k$-nearest neighbor of the FoldingNet\relax }}{50}{table.caption.67}%
-\contentsline {table}{\numberline {5.5}{\ignorespaces Hyperparemeters of the pose hypotheses diffusion model\relax }}{51}{table.caption.68}%
+\contentsline {table}{\numberline {5.1}{\ignorespaces Dataset Structure of BOP Format\relax }}{45}{table.caption.62}%
+\contentsline {table}{\numberline {5.2}{\ignorespaces Evaluation of the pretrained DINO model on ImageNet\relax }}{46}{table.caption.63}%
+\contentsline {table}{\numberline {5.3}{\ignorespaces Mean and standard deviation of the Chamfer distance with the model trained on the whole dataset and the overfitted model on single object (7 of 15 objects selected)\relax }}{52}{table.caption.69}%
+\contentsline {table}{\numberline {5.4}{\ignorespaces CD with different number of $k$-nearest neighbor of the FoldingNet\relax }}{52}{table.caption.70}%
+\contentsline {table}{\numberline {5.5}{\ignorespaces Hyperparemeters of the pose hypotheses diffusion model\relax }}{53}{table.caption.71}%
 \addvspace {10\p@ }
 \addvspace {10\p@ }
 \addvspace {10\p@ }
