@@ -339,6 +339,9 @@ A.~Jolicoeur-Martineau, K.~Li, R.~Piché-Taillefer, T.~Kachman and I.~Mitliagkas
 \bibitem{song2022denoising}
 J.~Song, C.~Meng and S.~Ermon, ``Denoising diffusion implicit models,'' 2022.
 
+\bibitem{karras2022elucidating}
+T.~Karras, M.~Aittala, T.~Aila and S.~Laine, ``Elucidating the design space of diffusion-based generative models,'' 2022.
+
 \bibitem{lu2022dpmsolver}
 C.~Lu, Y.~Zhou, F.~Bao, J.~Chen, C.~Li and J.~Zhu, ``Dpm-solver: A fast ode solver for diffusion probabilistic model sampling in around 10 steps,'' 2022.
 
