@@ -1,0 +1,96 @@
+
+\begin{thenomenclature} 
+\nomgroup{C}
+  \item [{$\alpha_{t},\beta_{t}$}]\begingroup Variance schedule of diffusion models\nomeqref {0.0}\nompageref{a}
+  \item [{$\bar{\alpha}_{t},\bar{\beta}_{t}$}]\begingroup Accumulated variance schedule of diffusion models\nomeqref {0.0}\nompageref{a}
+  \item [{$\eta$}]\begingroup Hyperparemeter that controls the sampling stochasticity\nomeqref {0.0}\nompageref{a}
+  \item [{$\tau$}]\begingroup Misalignment tolerence of VSD\nomeqref {0.0}\nompageref{a}
+  \item [{$\theta_{e}$}]\begingroup Threshold of the recall rate calculation\nomeqref {0.0}\nompageref{a}
+  \item [{$B,b$}]\begingroup Batch size\nomeqref {0.0}\nompageref{a}
+  \item [{$d$}]\begingroup Feature dimension\nomeqref {0.0}\nompageref{a}
+  \item [{$d_{k}$}]\begingroup Dimension of the key vector\nomeqref {0.0}\nompageref{a}
+  \item [{$I$}]\begingroup Identity matrix\nomeqref {0.0}\nompageref{a}
+  \item [{$n_{nb}$}]\begingroup Number of neighbors\nomeqref {0.0}\nompageref{a}
+  \item [{$T$}]\begingroup Diffusion steps\nomeqref {0.0}\nompageref{a}
+\nomgroup{D}
+  \item [{$\mathcal{N}(\mu,\sigma^{2})$}]\begingroup Normal distribution with mean $\mu$ and variance $\sigma^{2}$\nomeqref {0.0}\nompageref{a}
+  \item [{$\mathcal{U}(0,T)$}]\begingroup Uniform distribution between 0 and $T$\nomeqref {0.0}\nompageref{a}
+  \item [{$h(\mathbf{T}\vert y)$}]\begingroup Distribution of the transformation hypotheses conditioned with the input\nomeqref {0.0}\nompageref{a}
+  \item [{$p_{\theta}(\mathbf{x}_{t-1}\vert\mathbf{x}_{t})$}]\begingroup Estimated reverse diffusion process between each time step\nomeqref {0.0}\nompageref{a}
+  \item [{$q(\mathbf{x}_{t-1}\vert\mathbf{x}_{t})$}]\begingroup Reverse diffusion process between each time step\nomeqref {0.0}\nompageref{a}
+  \item [{$q(\mathbf{x}_{t}\vert\mathbf{x}_{t-1})$}]\begingroup Forward diffusion process between each time step\nomeqref {0.0}\nompageref{a}
+\nomgroup{F}
+  \item [{$\lambda(t)$}]\begingroup Weighting function of SDE\nomeqref {0.0}\nompageref{a}
+  \item [{$\mathbb{E}(\cdot)$}]\begingroup Expectation of a random variable\nomeqref {0.0}\nompageref{a}
+  \item [{$\mathbf{w}$}]\begingroup Brownian motion\nomeqref {0.0}\nompageref{a}
+  \item [{$\odot $}]\begingroup Element-wise multiplication\nomeqref {0.0}\nompageref{a}
+  \item [{$D_{F}$}]\begingroup Fisher divergence\nomeqref {0.0}\nompageref{a}
+  \item [{$f_{GS}$}]\begingroup Gram-Schmidt-like process\nomeqref {0.0}\nompageref{a}
+  \item [{$g_{GS}$}]\begingroup Reverse Gram-Schmidt-like process\nomeqref {0.0}\nompageref{a}
+  \item [{$H(a,b)$}]\begingroup Cross-entropy function\nomeqref {0.0}\nompageref{a}
+  \item [{$KL(P\parallel Q)$}]\begingroup Kullback-Leibler divergence\nomeqref {0.0}\nompageref{a}
+  \item [{$L$}]\begingroup Loss function\nomeqref {0.0}\nompageref{a}
+  \item [{$N(\cdot)$}]\begingroup Normalization function\nomeqref {0.0}\nompageref{a}
+  \item [{$V(D,G)$}]\begingroup Value function of GAN\nomeqref {0.0}\nompageref{a}
+\nomgroup{N}
+  \item [{$D$}]\begingroup Discriminator of GAN\nomeqref {0.0}\nompageref{a}
+  \item [{$G$}]\begingroup Generator of GAN\nomeqref {0.0}\nompageref{a}
+  \item [{$g_{\theta_{s}}$}]\begingroup Teacher network in knowledge distillation\nomeqref {0.0}\nompageref{a}
+  \item [{$g_{\theta_{t}}$}]\begingroup Teacher network in knowledge distillation\nomeqref {0.0}\nompageref{a}
+\nomgroup{S}
+  \item [{$\mathbb{R}$}]\begingroup Real number set\nomeqref {0.0}\nompageref{a}
+  \item [{$\mathbb{SE}(3)$}]\begingroup 3D special Euclidean group\nomeqref {0.0}\nompageref{a}
+  \item [{$\mathbb{SO}(3)$}]\begingroup 3D special orthogonal group\nomeqref {0.0}\nompageref{a}
+\nomgroup{V}
+  \item [{$\alpha_{1,2},\beta_{1,2},\gamma_{1,2}$}]\begingroup Learnable parameters of AdaLN\nomeqref {0.0}\nompageref{a}
+  \item [{$\epsilon$}]\begingroup Random noise with normal distribution\nomeqref {0.0}\nompageref{a}
+  \item [{$\epsilon_{\theta}$}]\begingroup Estimated noise\nomeqref {0.0}\nompageref{a}
+  \item [{$\epsilon_{t}$}]\begingroup Random noise with normal distribution at time step $t$\nomeqref {0.0}\nompageref{a}
+  \item [{$\hat{\mathbf{P}},\bar{\mathbf{P}}$}]\begingroup Estimated pose and ground truth pose\nomeqref {0.0}\nompageref{a}
+  \item [{$\hat{S}$}]\begingroup Reconstruct point cloud in completion task\nomeqref {0.0}\nompageref{a}
+  \item [{$\hat{S},\bar{S},S_{I}$}]\begingroup Estimated, ground truth and test image distance map\nomeqref {0.0}\nompageref{a}
+  \item [{$\mathbf{\mu}_{\theta}(\mathbf{x}_{t},t)$}]\begingroup Estimated mean at time step $t$ in tensor form\nomeqref {0.0}\nompageref{a}
+  \item [{$\mathbf{\Sigma}_{\theta}(\mathbf{x}_{t},t)$}]\begingroup Estimated variance at time step $t$ in tensor form\nomeqref {0.0}\nompageref{a}
+  \item [{$\mathbf{\tilde{\mu}}_{t}$}]\begingroup Trackable mean at time step $t$ in tensor form\nomeqref {0.0}\nompageref{a}
+  \item [{$\mathbf{f}(\mathbf{x},t)$}]\begingroup Drift term of SDE\nomeqref {0.0}\nompageref{a}
+  \item [{$\mathbf{h}_{i}$}]\begingroup Output matrix of a single head attention\nomeqref {0.0}\nompageref{a}
+  \item [{$\mathbf{q}$}]\begingroup Quaternion in vector form\nomeqref {0.0}\nompageref{a}
+  \item [{$\mathbf{q}_{i},\mathbf{k}_{i},\mathbf{v}_{i}$}]\begingroup Query, key and value vectors of the attention mechanism\nomeqref {0.0}\nompageref{a}
+  \item [{$\mathbf{R}$}]\begingroup 3D rotation matrix\nomeqref {0.0}\nompageref{a}
+  \item [{$\mathbf{r}$}]\begingroup Representation of 3D rotation in vector form\nomeqref {0.0}\nompageref{a}
+  \item [{$\mathbf{s}_{\theta}$}]\begingroup Estimated score of SGM\nomeqref {0.0}\nompageref{a}
+  \item [{$\mathbf{T}$}]\begingroup 3D transformation matrix\nomeqref {0.0}\nompageref{a}
+  \item [{$\mathbf{t}$}]\begingroup 3D translation vector\nomeqref {0.0}\nompageref{a}
+  \item [{$\mathbf{T}_{r}$}]\begingroup Refined transformation\nomeqref {0.0}\nompageref{a}
+  \item [{$\mathbf{T}_{t}$}]\begingroup Transformation at time step $t$\nomeqref {0.0}\nompageref{a}
+  \item [{$\mathbf{W}^{O}$}]\begingroup Output matrix of the attention mechanism\nomeqref {0.0}\nompageref{a}
+  \item [{$\mathbf{W}^{q,k,v}$}]\begingroup Query, key and value matrices of the attention mechanism\nomeqref {0.0}\nompageref{a}
+  \item [{$\mathbf{x}_{t}$}]\begingroup Data at time step $t$ of diffusion models\nomeqref {0.0}\nompageref{a}
+  \item [{$\mathbf{y}_{i}$}]\begingroup Output vector of the scaled dot-product attention\nomeqref {0.0}\nompageref{a}
+  \item [{$\mathcal{T}_{B}$}]\begingroup Subset of the whole timesteps with the batch size $B$\nomeqref {0.0}\nompageref{a}
+  \item [{$\Phi_{x,y,z}$}]\begingroup Euler angles in three orthogonal directions\nomeqref {0.0}\nompageref{a}
+  \item [{$\tau_{1,...,s}$}]\begingroup Subset of the complete diffusion steps in DDIM\nomeqref {0.0}\nompageref{a}
+  \item [{$\theta_{s}$}]\begingroup Student parameters in knowledge distillation\nomeqref {0.0}\nompageref{a}
+  \item [{$\tilde{\beta}_{t}$}]\begingroup Trackable variance at time step $t$\nomeqref {0.0}\nompageref{a}
+  \item [{$E$}]\begingroup Triangles of a 3D mesh\nomeqref {0.0}\nompageref{a}
+  \item [{$e$}]\begingroup One triangle of a 3D mesh\nomeqref {0.0}\nompageref{a}
+  \item [{$e_{metric}$}]\begingroup Error of the evaluation metric\nomeqref {0.0}\nompageref{a}
+  \item [{$e_{p}$}]\begingroup Position embedding\nomeqref {0.0}\nompageref{a}
+  \item [{$e_{t}$}]\begingroup Time embedding\nomeqref {0.0}\nompageref{a}
+  \item [{$f_{2D}$}]\begingroup 2D global feature\nomeqref {0.0}\nompageref{a}
+  \item [{$f_{3D}$}]\begingroup 3D global feature\nomeqref {0.0}\nompageref{a}
+  \item [{$g(t)$}]\begingroup Diffusion coefficient of SDE\nomeqref {0.0}\nompageref{a}
+  \item [{$M$}]\begingroup Mesh of an object\nomeqref {0.0}\nompageref{a}
+  \item [{$O$}]\begingroup Object set\nomeqref {0.0}\nompageref{a}
+  \item [{$q$}]\begingroup Quaternion\nomeqref {0.0}\nompageref{a}
+  \item [{$q_{w,x,y,z}$}]\begingroup Quaternion coefficients\nomeqref {0.0}\nompageref{a}
+  \item [{$r_{ij}$}]\begingroup Elements in 3D rotation matrix\nomeqref {0.0}\nompageref{a}
+  \item [{$S$}]\begingroup Reference point cloud in completion task\nomeqref {0.0}\nompageref{a}
+  \item [{$t$}]\begingroup Time step variable\nomeqref {0.0}\nompageref{a}
+  \item [{$t_{x,y,z}$}]\begingroup Translation scalars in three orthogonal directions\nomeqref {0.0}\nompageref{a}
+  \item [{$V$}]\begingroup Vertices of a 3D mesh\nomeqref {0.0}\nompageref{a}
+  \item [{$v$}]\begingroup One vertice of a 3D mesh\nomeqref {0.0}\nompageref{a}
+  \item [{$y$}]\begingroup Conditional input of conditional diffusion models\nomeqref {0.0}\nompageref{a}
+  \item [{$z$}]\begingroup Latent feature\nomeqref {0.0}\nompageref{a}
+
+\end{thenomenclature}

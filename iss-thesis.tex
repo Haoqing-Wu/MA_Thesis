@@ -87,14 +87,20 @@
 % Please fill in all items denoted by "to be defined (TBD)"
 \def \deworktitle{Schätzung der 6-DoF-Pose mit Diffusion Modelle aus einem einzelnen RGB-D-Bild}        % German title/translation
 \def \enworktitle{6 DoF Pose Estimation with Diffusion Models from a Single RGB-D Image}        % English title/translation
-\def \tutor{Supervisor's name TBD}
+\def \tutor{Junwen Huang}
 \def \student{Haoqing Wu}
-\def \worksubject{Masterarbeit Dxxxx TBD}  % type and number (S/Dxxxx) of your thesis
-\def \startdate{Date of work begin TBD}
-\def \submission{Date of submission TBD}
-\def \signagedate{TBD Date of sign.}   % Date of signature of declaration on last page
-\def \keywords{Keyword1, Keyword2 TBD}
-\def \abstract{Abstract TBD}
+\def \worksubject{Master's Thesis D1475}  % type and number (S/Dxxxx) of your thesis
+\def \startdate{01.06.2023}
+\def \submission{30.11.2023}
+\def \signagedate{30.11.2023}   % Date of signature of declaration on last page
+\def \keywords{Deep Learing, Computer Vision, 6 DoF Pose Estimation, Diffusion Models}
+\def \abstract{
+  6 DoF pose estimation, a crucial aspect in the realms of computer vision and robotics, has witnessed considerable attention, particularly with the advent of deep learning methodologies. Recent years have seen the emergence of diverse techniques, encompassing RGB-based methods, depth-focused approaches and RGB-D fusion, aimed at enhancing the accuracy of pose estimation. However, challenges persist in scenarios involving textureless objects, occlusion, and cluttered backgrounds.This thesis introduces a pioneering pose estimation method founded on diffusion models, which have demonstrated notable success in image synthesis tasks. The objective is to leverage the strengths of diffusion models, such as their scalability to large-scale data and the diversity of generation, to address the complexities inherent in 6 DoF pose estimation. A comprehensive diffusion framework is proposed, utilizing a single RGB-D image to generate multiple hypotheses for the 6 DoF pose of an object. The proposed method is rigorously evaluated on real-world datasets featuring noise and occlusion. Results indicate that our approach achieves comparable performance with state-of-the-art methods, highlighting its effectiveness in challenging scenarios. This study not only contributes a novel perspective to pose estimation but also underscores the potential of diffusion models in advancing the state of the art in this critical domain.
+  \newline
+  \newline
+  \newline
+  Schätzung der 6-DoF-Pose, ein entscheidender Aspekt in den Bereichen Computer Vision und Robotik, hat erhebliche Aufmerksamkeit erfahren, insbesondere mit dem Aufkommen von Deep Learning Methoden. In den letzten Jahren sind verschiedene Techniken aufgetaucht, darunter RGB-basierte Methoden, auf Tiefen fokussierte Ansätze und RGB-D Fusion, die darauf abzielen, die Genauigkeit der Schätzung zu verbessern. Herausforderungen bleiben jedoch in Szenarien mit strukturlosen Objekten, Okklusion und überladenem Hintergrund bestehen. Diese Arbrit stellt eine bahnbrechende Pose-Schätzungsmethode auf Grundlage von Diffusionsmodellen vor, die in Bildsyntheseaufgaben bemerkenswerte Erfolge gezeigt haben. Das Ziel besteht darin, die Stärken der Diffusionsmodelle, wie ihre Skalierbarkeit für große Datenmengen und die Vielfalt der Generierung, zu nutzen, um den in der 6-DoF-Pose-Schätzung inhärenten Komplexitäten zu begegnen. Es wird ein umfassender Diffusionsrahmen vorgeschlagen, der ein einzelnes RGB-D-Bild verwendet, um mehrere Hypothesen für die 6 DoF Pose eines Objekts zu generieren. Die vorgeschlagene Methode wird sorgfältig an realen Datensätzen mit Rauschen und Okklusion evaluiert. Die Ergebnisse zeigen, dass unser Ansatz vergleichbare Leistungen mit modernsten Methoden erreicht, was seine Effektivität in anspruchsvollen Szenarien unterstreicht. Diese Studie trägt nicht nur eine neue Perspektive zur Pose-Schätzung bei, sondern betont auch das Potenzial der Diffusionsmodelle zur Weiterentwicklung des State-of-the-Art in diesem kritischen Bereich.
+}
 
 % *****************************************************************
 %
@@ -128,11 +134,12 @@
 \usepackage{algorithm}                  % for pseudocode
 \usepackage{algorithmicx}                % for pseudocode
 \usepackage{algpseudocode}              % for pseudocode
-\usepackage{subfig}
 \usepackage[export]{adjustbox}
 \usepackage{epsfig}
 \usepackage{array}
 \usepackage[acronym,automake]{glossaries}
+\usepackage{nomencl}
+\usepackage{etoolbox}
 
 %%%%% Tikz / PGF - drawing beautiful graphics and plots in Latex
 % \usepackage{tikz}
@@ -233,6 +240,8 @@
 }
 \date{}
 \publishers{\normalsize
+  \newpage
+  \thispagestyle{empty}
   \begin{minipage}[t]{.9\textwidth}
     \abstract
   \end{minipage}
@@ -271,79 +280,24 @@
 \hyphenation{Im-puls-ant-wort Im-puls-ant-wort-ko-ef-fi-zien-ten
 Pro-gramm-aus-schnitt Mi-kro-fon-sig-nal}
 % *****************************************************************
-%
+\makenomenclature
+\input{symbols}
+\renewcommand{\nomname}{List of Symbols}
+\setlength{\nomlabelwidth}{2.5cm}
+\renewcommand\nomgroup[1]{%
+  \item[\bfseries
+  \ifstrequal{#1}{C}{Constants}{%
+  \ifstrequal{#1}{F}{Functions}{%
+  \ifstrequal{#1}{V}{Variables}{%
+  \ifstrequal{#1}{N}{Networks}{%
+  \ifstrequal{#1}{D}{Distributions}{%
+  \ifstrequal{#1}{S}{Fields}{}}}}}}%
+]}
+% *****************************************************************
 \renewcommand*{\glsdohyperlink}[2]{{\hypersetup{linkcolor=black}\hyperlink{#1}{#2}}}
 \glsenablehyper
 \makeglossaries
-\newacronym{6dof}{6 DoF}{six degrees of freedom}
-\newacronym{3d}{3D}{three-dimensional}
-\newacronym{2d}{2D}{two-dimensional}
-\newacronym{1d}{1D}{one-dimensional}
-\newacronym{rgb}{RGB}{red, green, blue}
-\newacronym{rgbd}{RGB-D}{red, green, blue, depth}
-\newacronym{ddpm}{DDPM}{Denoising Diffusion Probabilistic Models}
-\newacronym{ddim}{DDIM}{Denoising Diffusion Implicit Models}
-\newacronym{d3pm}{D3PM}{Discrete Denoising Diffusion Probabilistic Models}
-\newacronym{cad}{CAD}{Computer-Aided Design}
-\newacronym{mrp}{MRP}{Modified Rodrigues Parameters}
-\newacronym{icp}{ICP}{Iterative Closest Point}
-\newacronym{gicp}{GICP}{Generalized Iterative Closest Point}
-\newacronym{nicp}{NICP}{Normal Iterative Closest Point}
-\newacronym{pnp}{P$n$P}{Perspective-$n$-Point}
-\newacronym{ar}{AR$^*$}{Augmented Reality}
-\newacronym{avre}{AR}{Average Recall}
-\newacronym{lm}{LM}{LINEMOD}
-\newacronym{lmo}{LMO}{LINEMOD-Occlusion}
-\newacronym{gan}{GAN}{Generative Adversarial Network}
-\newacronym{vae}{VAE}{Variational Autoencoder}
-\newacronym{vqvae}{VQ-VAE}{Vector Quantized Variational Autoencoder}
-\newacronym{cv}{CV}{Computer Vision}
-\newacronym{sr3}{SR3}{Super-Resolution via Repeated Refinement}
-\newacronym{cdm}{CDM}{Cascaded Diffusion Models}
-\newacronym{idm}{IDM}{Implicit Diffusion Models}
-\newacronym{nerf}{NeRF}{Neural Radiance Fields}
-\newacronym{sift}{SIFT}{Scale-Invariant Feature Transform}
-\newacronym{surf}{SURF}{Speeded Up Robust Features}
-\newacronym{orb}{ORB}{Oriented FAST and Rotated BRIEF}
-\newacronym{ransac}{RANSAC}{Random Sample Consensus}
-\newacronym{cnn}{CNN}{Convolutional Neural Network}
-\newacronym{mlp}{MLP}{Multilayer Perceptron}
-\newacronym{rcnn}{R-CNN}{Region-based Convolutional Neural Network}
-\newacronym{sgm}{SGM}{Score-based Generative Model}
-\newacronym{sde}{SDE}{Stochastic Differential Equation}
-\newacronym{pdf}{PDF}{Probability Density Function}
-\newacronym{ode}{ODE}{Ordinary Differential Equation}
-\newacronym{nlp}{NLP}{Natural Language Processing}
-\newacronym{cas}{CAS}{Consistent Annealed Sampling}
-\newacronym{ald}{ALD}{Annealed Langevin Dynamics}
-\newacronym{ddss}{DDSS}{Differentiable Diffusion Sampler Search}
-\newacronym{elbo}{ELBO}{Evidence Lower Bound}
-\newacronym{vdm}{VDM}{Variational Diffusion Models}
-\newacronym{csm}{CSM}{Concrete Score Matching}
-\newacronym{rdm}{RDM}{Riemannian Diffusion Model}
-\newacronym{rsgm}{RSGM}{Riemmanian Score-based Generative Model}
-\newacronym{lsgm}{LSGM}{Latent Score-based Generative Model}
-\newacronym{ldm}{LDM}{Latent Diffusion Model}
-\newacronym{vit}{ViT}{Vision Transformer}
-\newacronym{ln}{LN}{Layer Normalization}
-\newacronym{adaln}{AdaLN}{Adaptive Layer Normalization}
-\newacronym{ema}{EMA}{Exponential Moving Average}
-\newacronym{sg}{SG}{Stop-Gradient}
-\newacronym{bop}{BOP}{Benchmark for 6D Object Pose Estimation}
-\newacronym{pbr}{PBR}{Physically Based Rendering}
-\newacronym{knn}{$k$-NN}{$k$-Nearest Neighbors}
-\newacronym{cd}{CD}{Chamfer Distance}
-\newacronym{mse}{MSE}{Mean Squared Error}
-\newacronym{vsd}{VSD}{Visible Surface Discrepancy}
-\newacronym{mssd}{MSSD}{Maximum Symmetry-Aware Surface Distance}
-\newacronym{mspd}{MSPD}{Maximum Symmetry-Aware Projection Distance}
-\newacronym{add}{ADD}{Average Distance}
-\newacronym{adds}{ADD-S}{Average Distance for Symmetrical Objects}
-\newacronym{ca}{CA}{Cosine Annealing}
-\newacronym{lr}{lr}{learning rate}
-\newacronym{adam}{Adam}{Adaptive Moment Estimation}
-
-
+\input{acronyms}
 
 \glsaddall
 \newglossarystyle{custom_acronyms}
@@ -372,13 +326,13 @@ Pro-gramm-aus-schnitt Mi-kro-fon-sig-nal}
 
 % *****************************************************************
 % -------------------> start writing here <------------------------
-\chapter*{List of symbols}
 
 
 
 \setlength\LTleft{-5pt}
 \printglossary[type=\acronymtype,title=List of Acronyms,nonumberlist,style=custom_acronyms]
 
+\printnomenclature
 
 \chapter{Introduction}
 \section{Motivation}
@@ -635,7 +589,7 @@ The great succuss of some architecture using the diffusion model such as GLIDE\c
 In this section, we will introduce the detail of the diffusion model, the mathematical background in the forward process and the sampling process, and the conditional diffusion model. The extended version of the classic \gls{ddpm} will also be briefly introduced.
 
 \subsubsection{Forward Process}
-Given an input data $\mathbf{x}_{0}$ from the target data distribution $q(\mathbf{x})$, we first define a forward process that gradually adds Gaussian noise to $\mathbf{x}_{0}$ with variance $\beta_{t}\in (0, 1)$ at each step $t$ and finally get a sequence of noised data $\mathbf{x}_{1},...,\mathbf{x}_{T}$. At each step $t$, we have the new data $x_{t}$ with the conditional distribution $q(x_{t}|x_{t-1})$ defined as:
+Given an input data $\mathbf{x}_{0}$ from the target data distribution $q(\mathbf{x})$, we first define a forward process that gradually adds Gaussian noise to $\mathbf{x}_{0}$ with variance $\beta_{t}\in (0, 1)$ at each step $t$ and finally get a sequence of noised data $\mathbf{x}_{1},...,\mathbf{x}_{T}$. At each step $t$, we have the new data $\mathbf{x}_{t}$ with the conditional distribution $q(\mathbf{x}_{t}|\mathbf{x}_{t-1})$ defined as:
 \begin{align}
   q(\mathbf{x}_{t}|\mathbf{x}_{t-1}) = \mathcal{N}(\mathbf{x}_{t}; \sqrt{1-\beta_{t}}\mathbf{x}_{t-1}, \beta_{t}\mathbf{I})
 \end{align}
@@ -939,18 +893,18 @@ In this chapter, we will introduce the detail of our proposed method, namely the
 
 Through the experiments using different representation of the rotation, we find that the 6D representation of the rotation introduced in \ref{eq:ortho6d} is the most efficient one. So we use this representation in the following chapters and the comparision with other forms of rotation will be discussed in the experiment section.
 
-Repeating the sampling process of the pose for one reference input $\mathbf{r}$, we can get a set of pose hypotheses $\mathbf{T}_{1},...,\mathbf{T}_{N}$, which compose a hypothesis distribution $h(\mathbf{T}|\mathbf{r})$ that can be used to estimate the pose $\mathbf{T}$ of the reference input $\mathbf{r}$. For a given object without any ambiguity, the distribution $h(\mathbf{T}|\mathbf{r})$ should be a delta distribution in ideal case, or in other words, squeezed to a single point in the spatial solving space. The pose hypotheses $\mathbf{T}_{1},...,\mathbf{T}_{N}$ should be close to each other and the variance of the distribution should be small. On the contrary, if the object is symmetrical, the distribution of the pose should fit the corresponding pattern of the symmetry in the solving space. 
+Repeating the sampling process of the pose for one reference input $y$, we can get a set of pose hypotheses $\mathbf{T}_{1},...,\mathbf{T}_{N}$, which compose a hypothesis distribution $h(\mathbf{T}|y)$ that can be used to estimate the pose $\mathbf{T}$ of the reference input $\mathbf{r}$. For a given object without any ambiguity, the distribution $h(\mathbf{T}|y)$ should be a delta distribution in ideal case, or in other words, squeezed to a single point in the spatial solving space. The pose hypotheses $\mathbf{T}_{1},...,\mathbf{T}_{N}$ should be close to each other and the variance of the distribution should be small. On the contrary, if the object is symmetrical, the distribution of the pose should fit the corresponding pattern of the symmetry in the solving space. 
 
 -----------------image here----------------
 
 \section{Framework}
 This section introduces the overall structure of the pose hypotheses diffusion, including the 2-phase architecture of the diffusion model and the other modules in the whole model.
 
-Similarly to the original diffusion pipeline, we first need to train a model to estimate the noise $\boldsymbol{\epsilon}_{\theta}$ conditioned with the input $\mathbf{x}_{t}$, the timestep $t$ as well as the guidance $\mathbf{y}$. Then we can go through the reverse process in which we generate the pose hypothesis $\mathbf{T}_{t-1}$ with conditional distribution $q(\mathbf{T}_{t-1}|\mathbf{T}_{t},\mathbf{y})$ step by step using the equations we derived in section \ref{sec:theory}.
+Similarly to the original diffusion pipeline, we first need to train a model to estimate the noise $\boldsymbol{\epsilon}_{\theta}$ conditioned with the input $\mathbf{x}_{t}$, the timestep $t$ as well as the guidance $y$. Then we can go through the reverse process in which we generate the pose hypothesis $\mathbf{T}_{t-1}$ with conditional distribution $q(\mathbf{T}_{t-1}|\mathbf{T}_{t},y)$ step by step using the equations we derived in section \ref{sec:theory}.
 \subsection{Training Phase}
 In the training phase of the pose hypotheses diffusion, we basically let the backbone network to predict the noise given by the noised pose $\mathbf{T}_{t}$, the noised pose can be derived from the reference pose $\mathbf{T}_{0}$ with the noise schedule $\beta_{t}$ which introduced before in the forward process. The most application using diffusion has a convolutional UNet-like backbone\cite{ronneberger2015unet}, which performs well in the \gls{2d} tasks. However, dealing with the pose estimation task, we have a different objective and convolutional neural network is no longer suitable. In our model, we utilize the transformer encoder as the backbone network, which has be proved to be effective and flexiable in not only the natual language processing but also the \gls{cv} tasks.
 
-Additionally, we also need to provide the timestep $t$ and the guidance $\mathbf{y}$ to the backbone. The guidance here is the feature of the reference \gls{rgb} or \gls{rgbd} image depending on the requirement of the task or the dataset. We use \gls{rgbd} image in our experiments which has both \gls{2d} and \gls{3d} features can be extracted and fused in to the model. As \gls{2d} feature extractor, a pretrained self-supervised Vision Transformer
+Additionally, we also need to provide the timestep $t$ and the guidance $y$ to the backbone. The guidance here is the feature of the reference \gls{rgb} or \gls{rgbd} image depending on the requirement of the task or the dataset. We use \gls{rgbd} image in our experiments which has both \gls{2d} and \gls{3d} features can be extracted and fused in to the model. As \gls{2d} feature extractor, a pretrained self-supervised Vision Transformer
  with DINO\cite{caron2021emerging} is used and the \gls{3d} feature is extracted from a pretrained FoldingNet encoder\cite{yang2018foldingnet}. The structure of the training process is shown in figure \ref{img:train}.
 
 \begin{figure}[h]
@@ -961,11 +915,11 @@ Additionally, we also need to provide the timestep $t$ and the guidance $\mathbf
 \end{figure}
 
 \subsection{Sampling Phase}
-Assuming that the denoiser is converged in the training phase, we can use the denoiser to iteratively generate the pose hypotheses with the randomly initialized the transformation $\mathbf{T}_{T}$. Same as the training phase, we need to provide the timestep $t$ and the guidance $\mathbf{y}$ to the backbone. Given a reference \gls{rgbd} image, we use the pretrained \gls{2d} and \gls{3d} encoder to extract the downstream features and concatinate them as the conditional embedding of the diffusion backbone. 
+Assuming that the denoiser is converged in the training phase, we can use the denoiser to iteratively generate the pose hypotheses with the randomly initialized the transformation $\mathbf{T}_{T}$. Same as the training phase, we need to provide the timestep $t$ and the guidance $y$ to the backbone. Given a reference \gls{rgbd} image, we use the pretrained \gls{2d} and \gls{3d} encoder to extract the downstream features and concatinate them as the conditional embedding of the diffusion backbone. 
 
 Since during the training phase, the network has learned the noise distribution conditioned each timestep embedding, so the denoiser has the capability to predict the noise $\boldsymbol{\epsilon}_{\theta}$ from $t=T$ to $t=0$. Then we can use the equation \ref{eq:reverse} to get the pose hypothesis $\mathbf{T}_{t-1}$ and repeat the process until we get the final pose hypothesis $\mathbf{T}_{0}$. 
 
-In the training phase, we feed the network with batch of data that is different in the timestep $t$ and the guidance $\mathbf{y}$ (different reference images). During the sampling phase, we can easily make the batch size to one and only infer one pose hypothesis $\mathbf{T}_{0}$ for one reference input. Another efficient way is to simultaneously sample multiple pose hypotheses by batchifying the randomly initialized transformation and conditioned with the same reference input. And the mean of the sampled pose hypotheses can be more precisely estimated as the final pose estimation if the pose of the object is uniquely determined in the space. This can be switched that the batch of the random Gaussian initialization is conditioned with different reference inputs, which can infer multiple pose for different frames or different objects.
+In the training phase, we feed the network with batch of data that is different in the timestep $t$ and the guidance $y$ (different reference images). During the sampling phase, we can easily make the batch size to one and only infer one pose hypothesis $\mathbf{T}_{0}$ for one reference input. Another efficient way is to simultaneously sample multiple pose hypotheses by batchifying the randomly initialized transformation and conditioned with the same reference input. And the mean of the sampled pose hypotheses can be more precisely estimated as the final pose estimation if the pose of the object is uniquely determined in the space. This can be switched that the batch of the random Gaussian initialization is conditioned with different reference inputs, which can infer multiple pose for different frames or different objects.
 
 After the optional multi-hypotheses inference, we can further use some algorithms to refine the pose. In our model, we choose \gls{icp}\cite{121791} algorithm to refine the pose hypotheses and finally get the output transformation $\mathbf{T}_{r}$. The structure of the sampling process is shown in figure \ref{img:sample}. Details of each models in training phase and sampling phase will be introduced in next section.
 \begin{figure}[h]
@@ -1467,9 +1421,9 @@ Clarification of some hyperparemeters in table \ref{tab:hyper}:
 \end{itemize}
 The loss function is defined by the \gls{mse} between the noise $\epsilon$ added at a particular time step $t$ and the estimated noise $\epsilon_{\theta}$. The loss function is formulated as:
 \begin{align}
-  \mathcal{L}_{\text{MSE}}=\frac{1}{B}\sum_{t\in \mathfrak{T}_{B} }\left\Vert \epsilon_{t}-\epsilon_{\theta}(\mathbf{x}_{0},\epsilon, t, y)\right\Vert^{2} \quad , \mathfrak{T}_{B}\subseteq \mathfrak{T}=\left\{1,\dots,T\right\}
+  \mathcal{L}_{\text{MSE}}=\frac{1}{B}\sum_{t\in \mathcal{T}_{B} }\left\Vert \epsilon_{t}-\epsilon_{\theta}(\mathbf{x}_{0},\epsilon, t, y)\right\Vert^{2} \quad , \mathcal{T}_{B}\subseteq \mathcal{T}=\left\{1,\dots,T\right\}
 \end{align}
-where $B$ is the batch size, $\mathfrak{T}_{B}$ is the subset of the whole time steps with the batch size and $\epsilon_{\theta}$ is the estimated noise depending on the input $\mathbf{x}_{0}$, the noise $\epsilon$, the time step $t$ and the condition $y$ (see section \ref{sec:cond}). The loss is calculated with the \gls{mse} of the randomly sampled subset controled by the batch size instead of the whole time steps, but it will cover each time step during the training process. Figure shows the loss of the model during the training process.
+where $B$ is the batch size, $\mathcal{T}_{B}$ is the subset of the whole time steps with the batch size and $\epsilon_{\theta}$ is the estimated noise depending on the input $\mathbf{x}_{0}$, the noise $\epsilon$, the time step $t$ and the condition $y$ (see section \ref{sec:cond}). The loss is calculated with the \gls{mse} of the randomly sampled subset controled by the batch size instead of the whole time steps, but it will cover each time step during the training process. Figure shows the loss of the model during the training process.
 
 -----------------------image-------------------------
 
@@ -1481,11 +1435,11 @@ No matter we use which form of the rotation representation during the training p
 \begin{align}
  e_{\text{VSD}}\left(\hat{D},\bar{D},\hat{V},\bar{V},\tau\right)=\text{avg}_{p\in \hat{V}\cup \bar{V}}
   \begin{cases}
-    0 & \text{if} \ p\in \hat{V}\cap  \bar{V} \land \left|\bar{D}(p)-\hat{D}(p)\right|<\tau\\
+    0 & \text{if} \ p\in \hat{V}\cap  \bar{V} \land \left|\bar{S}(p)-\hat{S}(p)\right|<\tau\\
     1 & \text{otherwise}
   \end{cases}
 \end{align}
-An object model is rendered in two poses: the estimated pose $\mathbf{\hat{P}}$ and the ground truth pose $\mathbf{\bar{P}}$. And the result of the rendering is two distance maps $\hat{S}$ and $\bar{S}$. The distance maps are compared with the distance map $S_I$ of the test image $I$ to calculate the visibility masks $\hat{V}$ and $\bar{V}$. The error is control by a misalignment tolerence $\tau$.
+An object model is rendered in two poses: the estimated pose $\mathbf{\hat{P}}$ and the ground truth pose $\mathbf{\bar{P}}$. And the result of the rendering is two distance maps $\hat{S}$ and $\bar{S}$. The distance maps are compared with the distance map $S_I$ of the test image to calculate the visibility masks $\hat{V}$ and $\bar{V}$. The error is control by a misalignment tolerence $\tau$.
 
 \gls{mssd}:
 \begin{align}
@@ -1497,7 +1451,7 @@ where $S_{M}$ is the set of all symmetry transformations of the object model and
 \begin{align}
   e_{\text{MSPD}}\left(\mathbf{\hat{P}},\mathbf{\bar{P}},S_{M},V_{M}\right)=\min_{\mathbf{S}\in S_{M}}\max_{\mathbf{x}\in V_{M}}\left\Vert \text{proj}\left(\hat{\mathbf{P}}\mathbf{x}\right)-\text{proj}\left(\bar{\mathbf{P}}\mathbf{Sx}\right)\right\Vert _{2} 
  \end{align}
-The proj() is the \gls{2d} projection which results in pixels and other variables are identical to the \gls{mssd}. The \gls{mspd} considers global object symmetries and replaces the average by the maximum distance to increase robustness against the sampling of the object model compared with the previous method \cite{7780735}.
+The proj$(\cdot)$ is the \gls{2d} projection which results in pixels and other variables are identical to the \gls{mssd}. The \gls{mspd} considers global object symmetries and replaces the average by the maximum distance to increase robustness against the sampling of the object model compared with the previous method \cite{7780735}.
 
 After the error functions are determined, we use the threshold of the error to define the correctness of the pose estimation. The pose is correctly estimated if the error $e<\theta_{e}$, where $e\in \left\{e_{\text{VSD}},e_{\text{MSSD}},e_{\text{MSPD}}\right\}$ and $\theta_{e}$ is the threshold of correctness.
 

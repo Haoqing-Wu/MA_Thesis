@@ -1,86 +1,86 @@
-\contentsline {chapter}{\numberline {1}Introduction}{5}{chapter.1}%
-\contentsline {section}{\numberline {1.1}Motivation}{5}{section.1.1}%
-\contentsline {section}{\numberline {1.2}Aims and Objectives}{6}{section.1.2}%
-\contentsline {section}{\numberline {1.3}Structure of the Thesis}{6}{section.1.3}%
-\contentsline {chapter}{\numberline {2}Background}{7}{chapter.2}%
-\contentsline {section}{\numberline {2.1}6 DoF Pose Estimation}{7}{section.2.1}%
-\contentsline {subsection}{\numberline {2.1.1}Definition}{7}{subsection.2.1.1}%
-\contentsline {subsection}{\numberline {2.1.2}Representing 6 DoF Pose}{8}{subsection.2.1.2}%
-\contentsline {subsection}{\numberline {2.1.3}Applications}{10}{subsection.2.1.3}%
-\contentsline {subsubsection}{\nonumberline Augmented Reality}{10}{subsubsection*.7}%
-\contentsline {subsubsection}{\nonumberline Robotics}{10}{subsubsection*.9}%
-\contentsline {subsubsection}{\nonumberline 3D Scene Understanding}{10}{subsubsection*.11}%
-\contentsline {subsubsection}{\nonumberline Autonomous Driving}{11}{subsubsection*.13}%
-\contentsline {subsection}{\numberline {2.1.4}Challenges}{11}{subsection.2.1.4}%
-\contentsline {section}{\numberline {2.2}Diffusion Models}{11}{section.2.2}%
-\contentsline {subsection}{\numberline {2.2.1}Generative Models}{11}{subsection.2.2.1}%
-\contentsline {subsubsection}{\nonumberline Generative Adversarial Networks}{12}{subsubsection*.15}%
-\contentsline {subsubsection}{\nonumberline Variational Autoencoders}{12}{subsubsection*.17}%
-\contentsline {subsubsection}{\nonumberline Normalizing Flows}{13}{subsubsection*.19}%
-\contentsline {subsubsection}{\nonumberline Diffusion Models}{14}{subsubsection*.21}%
-\contentsline {subsection}{\numberline {2.2.2}Theory and Fundamentals}{14}{subsection.2.2.2}%
-\contentsline {subsubsection}{\nonumberline Forward Process}{14}{subsubsection*.24}%
-\contentsline {subsubsection}{\nonumberline Reverse Process}{16}{subsubsection*.26}%
-\contentsline {subsubsection}{\nonumberline Conditional Diffusion Model}{17}{subsubsection*.29}%
-\contentsline {subsubsection}{\nonumberline Extensions}{19}{subsubsection*.31}%
-\contentsline {subsection}{\numberline {2.2.3}Applications}{19}{subsection.2.2.3}%
-\contentsline {subsubsection}{\nonumberline Computer Vision}{19}{subsubsection*.33}%
-\contentsline {subsubsection}{\nonumberline Natural Language Processing}{19}{subsubsection*.37}%
-\contentsline {subsubsection}{\nonumberline Multi-Modal Learning}{20}{subsubsection*.39}%
-\contentsline {chapter}{\numberline {3}Related Works}{23}{chapter.3}%
-\contentsline {section}{\numberline {3.1}6 DoF Pose Estimation}{23}{section.3.1}%
-\contentsline {subsection}{\numberline {3.1.1}Learning-Free Methods}{23}{subsection.3.1.1}%
-\contentsline {subsection}{\numberline {3.1.2}Template-Based Methods}{23}{subsection.3.1.2}%
-\contentsline {subsection}{\numberline {3.1.3}Keypoint-Based Methods}{24}{subsection.3.1.3}%
-\contentsline {subsection}{\numberline {3.1.4}Direct Regression Methods}{25}{subsection.3.1.4}%
-\contentsline {section}{\numberline {3.2}Diffusion Models}{26}{section.3.2}%
-\contentsline {subsection}{\numberline {3.2.1}Foundations}{26}{subsection.3.2.1}%
-\contentsline {subsection}{\numberline {3.2.2}Improvements on Sampling}{27}{subsection.3.2.2}%
-\contentsline {subsubsection}{\nonumberline Learning-Free Sampling}{27}{subsubsection*.44}%
-\contentsline {subsubsection}{\nonumberline Learning-Based Sampling}{28}{subsubsection*.46}%
-\contentsline {subsection}{\numberline {3.2.3}Improvements on Likelihood}{28}{subsection.3.2.3}%
-\contentsline {subsection}{\numberline {3.2.4}Extended Data Structures}{28}{subsection.3.2.4}%
-\contentsline {subsubsection}{\nonumberline Discrete Data}{28}{subsubsection*.48}%
-\contentsline {subsubsection}{\nonumberline Manifold}{29}{subsubsection*.50}%
-\contentsline {section}{\numberline {3.3}Diffusion models in Pose Estimation}{29}{section.3.3}%
-\contentsline {chapter}{\numberline {4}Methodology}{33}{chapter.4}%
-\contentsline {section}{\numberline {4.1}Introduction}{33}{section.4.1}%
-\contentsline {section}{\numberline {4.2}Framework}{33}{section.4.2}%
-\contentsline {subsection}{\numberline {4.2.1}Training Phase}{33}{subsection.4.2.1}%
-\contentsline {subsection}{\numberline {4.2.2}Sampling Phase}{34}{subsection.4.2.2}%
-\contentsline {subsection}{\numberline {4.2.3}Speed up Sampling with DDIM}{35}{subsection.4.2.3}%
-\contentsline {section}{\numberline {4.3}Models}{36}{section.4.3}%
-\contentsline {subsection}{\numberline {4.3.1}Denoiser Network}{36}{subsection.4.3.1}%
-\contentsline {subsection}{\numberline {4.3.2}Backbone}{36}{subsection.4.3.2}%
-\contentsline {subsection}{\numberline {4.3.3}Time Embedding and Postion Embedding}{38}{subsection.4.3.3}%
-\contentsline {subsection}{\numberline {4.3.4}2D Feature Extractor}{39}{subsection.4.3.4}%
-\contentsline {subsection}{\numberline {4.3.5}3D Feature Extractor}{41}{subsection.4.3.5}%
-\contentsline {subsection}{\numberline {4.3.6}Feature Fusion}{42}{subsection.4.3.6}%
-\contentsline {subsection}{\numberline {4.3.7}Residual Translation}{43}{subsection.4.3.7}%
-\contentsline {subsection}{\numberline {4.3.8}Multi-Hypotheses Inference}{44}{subsection.4.3.8}%
-\contentsline {subsection}{\numberline {4.3.9}Pose Refinement}{45}{subsection.4.3.9}%
-\contentsline {chapter}{\numberline {5}Experiments}{47}{chapter.5}%
-\contentsline {section}{\numberline {5.1}Datasets}{47}{section.5.1}%
-\contentsline {subsection}{\numberline {5.1.1}LINEMOD Dataset}{47}{subsection.5.1.1}%
-\contentsline {subsection}{\numberline {5.1.2}LINEMOD-O Dataset}{48}{subsection.5.1.2}%
-\contentsline {subsection}{\numberline {5.1.3}Data Format}{48}{subsection.5.1.3}%
-\contentsline {subsection}{\numberline {5.1.4}Data Augmentation}{49}{subsection.5.1.4}%
-\contentsline {section}{\numberline {5.2}2D Feature Extractor}{50}{section.5.2}%
-\contentsline {subsection}{\numberline {5.2.1}Pretrained Model}{50}{subsection.5.2.1}%
-\contentsline {subsection}{\numberline {5.2.2}Evaluation}{51}{subsection.5.2.2}%
-\contentsline {section}{\numberline {5.3}3D Feature Extractor}{51}{section.5.3}%
-\contentsline {subsection}{\numberline {5.3.1}Training}{51}{subsection.5.3.1}%
-\contentsline {subsection}{\numberline {5.3.2}Evaluation}{53}{subsection.5.3.2}%
-\contentsline {section}{\numberline {5.4}Training}{55}{section.5.4}%
-\contentsline {section}{\numberline {5.5}Evaluation}{57}{section.5.5}%
-\contentsline {subsection}{\numberline {5.5.1}Evaluation Metrics}{57}{subsection.5.5.1}%
-\contentsline {subsection}{\numberline {5.5.2}Baseline}{58}{subsection.5.5.2}%
-\contentsline {subsection}{\numberline {5.5.3}Pose Estimation Results}{58}{subsection.5.5.3}%
-\contentsline {section}{\numberline {5.6}Ablation Study}{58}{section.5.6}%
-\contentsline {chapter}{\numberline {6}Discussion}{59}{chapter.6}%
-\contentsline {chapter}{\numberline {7}Conclusion}{61}{chapter.7}%
-\contentsline {chapter}{\numberline {A}Additionally}{63}{appendix.A}%
-\contentsline {chapter}{\nonumberline List of Figures}{65}{chapter*.75}%
-\contentsline {chapter}{\nonumberline List of Tables}{67}{chapter*.76}%
-\contentsline {chapter}{\nonumberline Bibliography}{69}{chapter*.77}%
+\contentsline {chapter}{\numberline {1}Introduction}{7}{chapter.1}%
+\contentsline {section}{\numberline {1.1}Motivation}{7}{section.1.1}%
+\contentsline {section}{\numberline {1.2}Aims and Objectives}{8}{section.1.2}%
+\contentsline {section}{\numberline {1.3}Structure of the Thesis}{8}{section.1.3}%
+\contentsline {chapter}{\numberline {2}Background}{9}{chapter.2}%
+\contentsline {section}{\numberline {2.1}6 DoF Pose Estimation}{9}{section.2.1}%
+\contentsline {subsection}{\numberline {2.1.1}Definition}{9}{subsection.2.1.1}%
+\contentsline {subsection}{\numberline {2.1.2}Representing 6 DoF Pose}{10}{subsection.2.1.2}%
+\contentsline {subsection}{\numberline {2.1.3}Applications}{12}{subsection.2.1.3}%
+\contentsline {subsubsection}{\nonumberline Augmented Reality}{12}{subsubsection*.7}%
+\contentsline {subsubsection}{\nonumberline Robotics}{12}{subsubsection*.9}%
+\contentsline {subsubsection}{\nonumberline 3D Scene Understanding}{12}{subsubsection*.11}%
+\contentsline {subsubsection}{\nonumberline Autonomous Driving}{13}{subsubsection*.13}%
+\contentsline {subsection}{\numberline {2.1.4}Challenges}{13}{subsection.2.1.4}%
+\contentsline {section}{\numberline {2.2}Diffusion Models}{13}{section.2.2}%
+\contentsline {subsection}{\numberline {2.2.1}Generative Models}{13}{subsection.2.2.1}%
+\contentsline {subsubsection}{\nonumberline Generative Adversarial Networks}{14}{subsubsection*.15}%
+\contentsline {subsubsection}{\nonumberline Variational Autoencoders}{14}{subsubsection*.17}%
+\contentsline {subsubsection}{\nonumberline Normalizing Flows}{15}{subsubsection*.19}%
+\contentsline {subsubsection}{\nonumberline Diffusion Models}{16}{subsubsection*.21}%
+\contentsline {subsection}{\numberline {2.2.2}Theory and Fundamentals}{16}{subsection.2.2.2}%
+\contentsline {subsubsection}{\nonumberline Forward Process}{16}{subsubsection*.24}%
+\contentsline {subsubsection}{\nonumberline Reverse Process}{18}{subsubsection*.26}%
+\contentsline {subsubsection}{\nonumberline Conditional Diffusion Model}{19}{subsubsection*.29}%
+\contentsline {subsubsection}{\nonumberline Extensions}{21}{subsubsection*.31}%
+\contentsline {subsection}{\numberline {2.2.3}Applications}{21}{subsection.2.2.3}%
+\contentsline {subsubsection}{\nonumberline Computer Vision}{21}{subsubsection*.33}%
+\contentsline {subsubsection}{\nonumberline Natural Language Processing}{21}{subsubsection*.37}%
+\contentsline {subsubsection}{\nonumberline Multi-Modal Learning}{22}{subsubsection*.39}%
+\contentsline {chapter}{\numberline {3}Related Works}{25}{chapter.3}%
+\contentsline {section}{\numberline {3.1}6 DoF Pose Estimation}{25}{section.3.1}%
+\contentsline {subsection}{\numberline {3.1.1}Learning-Free Methods}{25}{subsection.3.1.1}%
+\contentsline {subsection}{\numberline {3.1.2}Template-Based Methods}{25}{subsection.3.1.2}%
+\contentsline {subsection}{\numberline {3.1.3}Keypoint-Based Methods}{26}{subsection.3.1.3}%
+\contentsline {subsection}{\numberline {3.1.4}Direct Regression Methods}{27}{subsection.3.1.4}%
+\contentsline {section}{\numberline {3.2}Diffusion Models}{28}{section.3.2}%
+\contentsline {subsection}{\numberline {3.2.1}Foundations}{28}{subsection.3.2.1}%
+\contentsline {subsection}{\numberline {3.2.2}Improvements on Sampling}{29}{subsection.3.2.2}%
+\contentsline {subsubsection}{\nonumberline Learning-Free Sampling}{29}{subsubsection*.44}%
+\contentsline {subsubsection}{\nonumberline Learning-Based Sampling}{30}{subsubsection*.46}%
+\contentsline {subsection}{\numberline {3.2.3}Improvements on Likelihood}{30}{subsection.3.2.3}%
+\contentsline {subsection}{\numberline {3.2.4}Extended Data Structures}{30}{subsection.3.2.4}%
+\contentsline {subsubsection}{\nonumberline Discrete Data}{30}{subsubsection*.48}%
+\contentsline {subsubsection}{\nonumberline Manifold}{31}{subsubsection*.50}%
+\contentsline {section}{\numberline {3.3}Diffusion models in Pose Estimation}{31}{section.3.3}%
+\contentsline {chapter}{\numberline {4}Methodology}{35}{chapter.4}%
+\contentsline {section}{\numberline {4.1}Introduction}{35}{section.4.1}%
+\contentsline {section}{\numberline {4.2}Framework}{35}{section.4.2}%
+\contentsline {subsection}{\numberline {4.2.1}Training Phase}{35}{subsection.4.2.1}%
+\contentsline {subsection}{\numberline {4.2.2}Sampling Phase}{36}{subsection.4.2.2}%
+\contentsline {subsection}{\numberline {4.2.3}Speed up Sampling with DDIM}{37}{subsection.4.2.3}%
+\contentsline {section}{\numberline {4.3}Models}{38}{section.4.3}%
+\contentsline {subsection}{\numberline {4.3.1}Denoiser Network}{38}{subsection.4.3.1}%
+\contentsline {subsection}{\numberline {4.3.2}Backbone}{38}{subsection.4.3.2}%
+\contentsline {subsection}{\numberline {4.3.3}Time Embedding and Postion Embedding}{40}{subsection.4.3.3}%
+\contentsline {subsection}{\numberline {4.3.4}2D Feature Extractor}{41}{subsection.4.3.4}%
+\contentsline {subsection}{\numberline {4.3.5}3D Feature Extractor}{43}{subsection.4.3.5}%
+\contentsline {subsection}{\numberline {4.3.6}Feature Fusion}{44}{subsection.4.3.6}%
+\contentsline {subsection}{\numberline {4.3.7}Residual Translation}{45}{subsection.4.3.7}%
+\contentsline {subsection}{\numberline {4.3.8}Multi-Hypotheses Inference}{46}{subsection.4.3.8}%
+\contentsline {subsection}{\numberline {4.3.9}Pose Refinement}{47}{subsection.4.3.9}%
+\contentsline {chapter}{\numberline {5}Experiments}{49}{chapter.5}%
+\contentsline {section}{\numberline {5.1}Datasets}{49}{section.5.1}%
+\contentsline {subsection}{\numberline {5.1.1}LINEMOD Dataset}{49}{subsection.5.1.1}%
+\contentsline {subsection}{\numberline {5.1.2}LINEMOD-O Dataset}{50}{subsection.5.1.2}%
+\contentsline {subsection}{\numberline {5.1.3}Data Format}{50}{subsection.5.1.3}%
+\contentsline {subsection}{\numberline {5.1.4}Data Augmentation}{51}{subsection.5.1.4}%
+\contentsline {section}{\numberline {5.2}2D Feature Extractor}{52}{section.5.2}%
+\contentsline {subsection}{\numberline {5.2.1}Pretrained Model}{52}{subsection.5.2.1}%
+\contentsline {subsection}{\numberline {5.2.2}Evaluation}{53}{subsection.5.2.2}%
+\contentsline {section}{\numberline {5.3}3D Feature Extractor}{53}{section.5.3}%
+\contentsline {subsection}{\numberline {5.3.1}Training}{53}{subsection.5.3.1}%
+\contentsline {subsection}{\numberline {5.3.2}Evaluation}{55}{subsection.5.3.2}%
+\contentsline {section}{\numberline {5.4}Training}{57}{section.5.4}%
+\contentsline {section}{\numberline {5.5}Evaluation}{59}{section.5.5}%
+\contentsline {subsection}{\numberline {5.5.1}Evaluation Metrics}{59}{subsection.5.5.1}%
+\contentsline {subsection}{\numberline {5.5.2}Baseline}{60}{subsection.5.5.2}%
+\contentsline {subsection}{\numberline {5.5.3}Pose Estimation Results}{60}{subsection.5.5.3}%
+\contentsline {section}{\numberline {5.6}Ablation Study}{60}{section.5.6}%
+\contentsline {chapter}{\numberline {6}Discussion}{61}{chapter.6}%
+\contentsline {chapter}{\numberline {7}Conclusion}{63}{chapter.7}%
+\contentsline {chapter}{\numberline {A}Additionally}{65}{appendix.A}%
+\contentsline {chapter}{\nonumberline List of Figures}{67}{chapter*.75}%
+\contentsline {chapter}{\nonumberline List of Tables}{69}{chapter*.76}%
+\contentsline {chapter}{\nonumberline Bibliography}{71}{chapter*.77}%
 \providecommand \tocbasic@end@toc@file {}\tocbasic@end@toc@file 
