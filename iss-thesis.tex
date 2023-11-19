@@ -140,6 +140,7 @@
 \usepackage[acronym,automake]{glossaries}
 \usepackage{nomencl}
 \usepackage{etoolbox}
+\usepackage{multirow}
 
 %%%%% Tikz / PGF - drawing beautiful graphics and plots in Latex
 % \usepackage{tikz}
@@ -1471,7 +1472,90 @@ where $V$ is the set of model vertices. It has some limitation that \gls{add}(-S
 \subsection{Pose Estimation Results}
 
 \section{Ablation Study}
+\begin{table}[h]
+  \centering
+  \caption{Comparison of the different feature fusion methods on LM dataset}
+  \label{tab:ab_fusion_lm}
+  \begin{tabular}{l | c | C{16mm} C{16mm} C{16mm}| C{16mm}| C{16mm}}
+      \toprule
+      Method & Refine & $\text{AR}_{\text{MSPD}}$ & $\text{AR}_{\text{MSSD}}$ & $\text{AR}_{\text{VSD}}$ & AR & ADD(-S) \\
+      \midrule
+      Add  & $-$ & 91.6 & 89.1 & 68.8 & $\mathbf{83.2}$ & $\mathbf{97.5}$ \\
+      Concat. & $-$ & 80.9 & 77.5 & 53.2 & 70.5 & 83.5 \\
+      Add  & $\surd $ & 98.5 & 98.7 & 85.7 & $\mathbf{94.0}$ & $\mathbf{98.5}$ \\
+      Concat. & $\surd $ & 94.8 & 93.7 & 80.4 & 89.7 & 94.0 \\
+      \bottomrule
+  \end{tabular}
+\end{table}
+\begin{table}[h]
+  \centering
+  \caption{Comparison of the different feature fusion methods on LMO dataset}
+  \label{tab:ab_fusion_lmo}
+  \begin{tabular}{l | c | C{16mm} C{16mm} C{16mm}| C{16mm}| C{16mm}}
+      \toprule
+      Method & Refine & $\text{AR}_{\text{MSPD}}$ & $\text{AR}_{\text{MSSD}}$ & $\text{AR}_{\text{VSD}}$ & AR & ADD(-S) \\
+      \midrule
+      Add  & $-$ & 56.8 & 51.1 & 37.4 & $\mathbf{48.5}$ & $\mathbf{86.5}$ \\
+      Concat. & $-$ & 47.0 & 38.2 & 27.3 & 37.5 & 40.5 \\
+      Add  & $\surd $ & 61.2 & 56.6 & 46.6 & $\mathbf{54.8}$ & $\mathbf{93.7}$ \\
+      Concat. & $\surd $ & 54.6 & 48.0 & 38.5 & 47.1 & 72.1 \\
+      \bottomrule
+  \end{tabular}
+\end{table}
 
+\begin{table}[h]
+  \centering
+  \caption{Comparison of the different domain of feature on LM dataset}
+  \label{tab:ab_feat_lm}
+  \begin{tabular}{l | c | C{16mm} C{16mm} C{16mm}| C{16mm}| C{16mm}}
+      \toprule
+      Method & Refine & $\text{AR}_{\text{MSPD}}$ & $\text{AR}_{\text{MSSD}}$ & $\text{AR}_{\text{VSD}}$ & AR & ADD(-S) \\
+      \midrule
+      2D  & $-$ & 77.3 & 73.2 & 47.6 & 66.0 & 76.0 \\
+      3D & $-$ & 88.9 & 87.0 & 68.3 & 81.4 & 93.5 \\
+      2D+3D  & $-$ & 91.6 & 89.1 & 68.8 & $\mathbf{83.2}$ & $\mathbf{97.5}$ \\
+      2D  & $\surd$ & 93.9 & 91.8 & 78.1 & 87.9 & 91.5 \\
+      3D & $\surd$ & 94.8 & 93.9 & 83.5 & 90.7 & 95.5 \\
+      2D+3D  & $\surd$ & 98.5 & 98.7 & 85.7 & $\mathbf{94.0}$ & $\mathbf{98.5}$ \\
+      \bottomrule
+  \end{tabular}
+\end{table}
+\begin{table}[h]
+  \centering
+  \caption{Comparison of the different domain of feature on LMO dataset}
+  \label{tab:ab_feat_lmo}
+  \begin{tabular}{l | c | C{16mm} C{16mm} C{16mm}| C{16mm}| C{16mm}}
+      \toprule
+      Method & Refine & $\text{AR}_{\text{MSPD}}$ & $\text{AR}_{\text{MSSD}}$ & $\text{AR}_{\text{VSD}}$ & AR & ADD(-S) \\
+      \midrule
+      2D  & $-$ & 34.7 & 34.4 & 25.5 & 34.6 & 28.8 \\
+      3D & $-$ & 54.4 & 49.4 & 33.1 & 45.6 & 78.4 \\
+      2D+3D  & $-$ & 56.8 & 51.1 & 37.4 & $\mathbf{48.5}$ & $\mathbf{86.5}$ \\
+      2D  & $\surd$ & 52.1 & 43.9 & 36.2 & 44.1 & 56.8 \\
+      3D & $\surd$ & 57.4 & 53.5 & 42.2 & 51.0 & 86.5 \\
+      2D+3D  & $\surd$ & 61.2 & 56.6 & 46.6 & $\mathbf{54.8}$ & $\mathbf{93.7}$ \\
+      \bottomrule
+  \end{tabular}
+\end{table}
+
+\begin{table}[h]
+  \centering
+  \caption{Effect of the number of diffusion steps on the estimation results}
+  \label{tab:ab_steps}
+  \begin{tabular}{l | c | C{12mm} C{12mm} C{12mm}| C{12mm} C{12mm} C{12mm}}
+      \toprule
+      \multicolumn{2}{c|}{Dataset} & \multicolumn{3}{c|}{LM} & \multicolumn{3}{c}{LMO} \\
+      \midrule
+      \multicolumn{2}{c|}{\#Steps} & 100 & 400 & 1000 & 100 & 400 & 1000 \\
+      \midrule
+      \multirow{2}{*}{AR} & w/o ICP & 84.0 & 83.2 & 82.8 & 48.3 & 48.5 & 48.5 \\
+      & w/ ICP & 94.7 & 94.0 & 93.8 & 54.3 & 54.8 & 54.3 \\
+      \midrule
+      \multirow{2}{*}{ADD} & w/o ICP & 98.5 & 97.5 & 98.5 & 89.2 & 86.5 & 85.6 \\
+      & w/ ICP & 99.0 & 98.5 & 99.0 & 92.8 & 93.7 & 92.8 \\
+      \bottomrule
+  \end{tabular}
+\end{table}
 \chapter{Discussion}
 
 \chapter{Conclusion}
