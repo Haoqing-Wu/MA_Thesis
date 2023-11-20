@@ -31,9 +31,12 @@
 \contentsline {figure}{\numberline {5.4}{\ignorespaces Attension maps of the different scale of \glspl {vit} and patch size. From left to right: \gls {vit}-S/16, \gls {vit}-S/8, \gls {vit}-B/16, \gls {vit}-B/8. Each column represents 3 random attention heads.\relax }}{55}{figure.caption.68}%
 \contentsline {figure}{\numberline {5.5}{\ignorespaces \gls {cd} of the training and validation dataset during the point completion pretraining\relax }}{55}{figure.caption.69}%
 \contentsline {figure}{\numberline {5.6}{\ignorespaces Categorical level \gls {cd} distance distribution of the test dataset\relax }}{56}{figure.caption.70}%
-\contentsline {figure}{\numberline {5.7}{\ignorespaces Comparision of the \gls {cd} distributions between the model trained with the whole data set and the overfitted model on single object (the first 7 objects of LM are shown)\relax }}{57}{figure.caption.71}%
+\contentsline {figure}{\numberline {5.7}{\ignorespaces Point cloud completion results of the FoldingNet. Top: cup; Bottom: phone. From left to right: estimation(viewpoint 1), ground truth(viewpoint 1), estimation(viewpoint 2), ground truth(viewpoint 2). Blue points are the input partial point cloud.\relax }}{57}{figure.caption.71}%
+\contentsline {figure}{\numberline {5.8}{\ignorespaces Comparision of the \gls {cd} distributions between the model trained with the whole data set and the overfitted model on single object (the first 7 objects of LM are shown)\relax }}{58}{figure.caption.72}%
 \addvspace {10\p@ }
 \addvspace {10\p@ }
+\addvspace {10\p@ }
+\contentsline {figure}{\numberline {A.1}{\ignorespaces Point cloud completion results of the FoldingNet. From top to bottom: cup, camera, phone, egg box, glue. From left to right: estimation(viewpoint 1), ground truth(viewpoint 1), estimation(viewpoint 2), ground truth(viewpoint 2). Blue points are the input partial point cloud.\relax }}{70}{figure.caption.81}%
 \addvspace {10\p@ }
 \addvspace {10\p@ }
 \providecommand \tocbasic@end@toc@file {}\tocbasic@end@toc@file 

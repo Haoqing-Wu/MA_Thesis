@@ -805,9 +805,9 @@ With the promising performance of the \gls{3d} networks \cite{qi2017pointnet,qi2
 \subsection{Direct Regression Methods}
 Another popular group of \gls{6dof} pose estimation methods follows an end-to-end pipeline which requires the estimation process to be differentiable.
 
-PoseCNN\cite{xiang2018posecnn} is an early research that leverages the \gls{cnn} on \gls{2d} image. It estimates the translation through the object center with the distance to the camera and regresses the quaternion representation of rotation. The symetrical object is also considered by introducing a novel loss function of the rotation. Similar work from Wu et al. 2018 \cite{Wu_2018} trains a \gls{cnn}-based model only on the synthetic data instead of expensively annotated object pose data. They overcome the domain gap between real and synthetic data by using object masks as intermediate representation. Deep-6DPose \cite{do2018deep6dpose} extends the instance segmentation network Mask \gls{rcnn} \cite{he2018mask} and decouples the translation and rotation to make the rotation be regressed in Lie algebra representation. GDR-Net \cite{wang2021gdrnet} is a novel method that directly regress the \gls{6dof} pose from the \gls{rgb} data in end-to-end manner. It takes the zoomed-in Region of Interest (RoI) as input and predicts hierarchical intermediate geometric features. Then the pose is regressed from the introduced tricks of Dense Correspondances and Surface Region Attention.
+PoseCNN\cite{xiang2018posecnn} is an early research that leverages the \gls{cnn} on \gls{2d} image. It estimates the translation through the object center with the distance to the camera and regresses the quaternion representation of rotation. The symetrical object is also considered by introducing a novel loss function of the rotation. Similar work from Wu et al. 2018 \cite{Wu_2018} trains a \gls{cnn}-based model only on the synthetic data instead of expensively annotated object pose data. They overcome the domain gap between real and synthetic data by using object masks as intermediate representation. Deep-6DPose \cite{do2018deep6dpose} extends the instance segmentation network Mask \gls{rcnn} \cite{he2018mask} and decouples the translation and rotation to make the rotation be regressed in Lie algebra representation. GDR-Net \cite{wang2021gdrnet} is a novel method that directly regress the \gls{6dof} pose from the \gls{rgb} data in end-to-end manner. It takes the zoomed-in \gls{roi} as input and predicts hierarchical intermediate geometric features. Then the pose is regressed from the introduced tricks of Dense Correspondances and Surface Region Attention.
 
-Direct regression of the transformation between two point clouds is more straightforward than correspondance-base method in the point cloud registration task. PointNetLK \cite{aoki2019pointnetlk} combines the PointNet in \gls{3d} domain with the Lucas \& Kanade (LK) algorithm \cite{Lucas1981AnII} for \gls{2d} image alignment together to regress the transformation between two frames. Huang et al. 2020 \cite{huang2020featuremetric} propose a method that optimize the registration by minimising a feature-metrix projection error without matching the correspondance. OMNet \cite{xu2021omnet} is another global feature-based iterative network for partial-to-partial registration. It utilizes overlapping masks to reject non-overlapping regions, transforming partial registration into same-shape registration.
+Direct regression of the transformation between two point clouds is more straightforward than correspondance-base method in the point cloud registration task. PointNetLK \cite{aoki2019pointnetlk} combines the PointNet in \gls{3d} domain with the Lucas \& Kanade algorithm \cite{Lucas1981AnII} for \gls{2d} image alignment together to regress the transformation between two frames. Huang et al. 2020 \cite{huang2020featuremetric} propose a method that optimize the registration by minimising a feature-metrix projection error without matching the correspondance. OMNet \cite{xu2021omnet} is another global feature-based iterative network for partial-to-partial registration. It utilizes overlapping masks to reject non-overlapping regions, transforming partial registration into same-shape registration.
 
 Thanks to the decreasing cost of \gls{rgbd} sensor in the recent years, \gls{rgb} data with additional depth information enable us to more precisely handle texture-less objects in the poor illuminated scenario. Some \gls{rgbd} based dense methods are proposed to estimate the pose in a fine-grained way. Kehl et al. 2016 \cite{kehl2016deep} use regressed descriptors of locally-sampled patches with a convolutional auto-encoder and then cast 6D voting for each patch to estimate the pose. DenseFusion \cite{wang2019densefusion} is a typical method that pixel-wise votes the \gls{6dof} pose prediction. The network concatinates the \gls{2d} feature extracted from \gls{cnn} and the \gls{3d} feature from PointNet together with the global feature through average pooling. The pixel-wise dense predictions are voted through the trainable confidence for each pixel. 
 
@@ -1320,7 +1320,14 @@ We stop the training after 200k iterations to prevent the overfitting problem, b
 
 With the visualization of the reconstructed point cloud, we can valid that the model has the capability to localize the partial point cloud and complete the missing part of the object. The implicit expression of the \gls{6dof} pose as well as the object class is learned by the model without giving the class label, so that we can use the feature to represent the pose and object class of the reference input in the diffusion model.
 
------------------------image-------------------------
+\begin{figure}[h]
+	\centering
+	\subfloat{\includegraphics[width=1.\textwidth]{img/comp_cup.pdf}}\\
+  \centering
+	\subfloat{\includegraphics[width=1.\textwidth]{img/comp_phone.pdf}}
+	\caption{Point cloud completion results of the FoldingNet. Top: cup; Bottom: phone. From left to right: estimation(viewpoint 1), ground truth(viewpoint 1), estimation(viewpoint 2), ground truth(viewpoint 2). Blue points are the input partial point cloud.}
+	\label{img:comp_all}
+\end{figure}
 
 The following figure shows the development of the output from FoldingNet decoder during the training process.
 
@@ -1461,51 +1468,24 @@ $\text{\gls{avre}}_{\text{VSD}}$ is the average recall rates calculated for the 
   \text{AR}=\left(\text{AR}_{\text{VSD}}+\text{AR}_{\text{MSSD}}+\text{AR}_{\text{MSPD}}\right)/3
 \end{align}
 
-The most popular metrics for pose estimation have been the \gls{add} and the \gls{adds} \cite{hinterstoisser2012model}. The \gls{add} is the average distance between the model vertices transformed with the estimated pose and the model vertices transformed with the ground truth pose and the \gls{adds} is the version considering the pose ambiguity of the rotationally symmetric object. The \gls{add} is defined as:
-\begin{align}
-  \text{ADD}=\frac{1}{\left|V\right|}\sum_{\mathbf{x}\in V}\left\Vert \hat{\mathbf{P}}\mathbf{x}-\bar{\mathbf{P}}\mathbf{x}\right\Vert _{2}
-\end{align}
+The most popular metrics for pose estimation have been the \gls{add} and the \gls{adds} \cite{hinterstoisser2012model}. The \gls{add} is the average distance between the model vertices transformed with the estimated pose and the model vertices transformed with the ground truth pose and the \gls{adds} is the version considering the pose ambiguity of the rotationally symmetric object. \gls{add} and \gls{adds} are defined as:
+\begin{gather}
+  \text{ADD}=\frac{1}{\left|V\right|}\sum_{\mathbf{x}\in V}\left\Vert \hat{\mathbf{P}}\mathbf{x}-\bar{\mathbf{P}}\mathbf{x}\right\Vert _{2}\\
+  \text{ADD-S}=\frac{1}{\left|V\right|}\sum_{\mathbf{x}_{1}\in V}\min_{\mathbf{x}_{2}\in V}\left\Vert \hat{\mathbf{P}}\mathbf{x}_{1}-\bar{\mathbf{P}}\mathbf{x}_{2}\right\Vert _{2}
+\end{gather}
 where $V$ is the set of model vertices. It has some limitation that \gls{add}(-S) comes from a high dependence on the geometry of the object model and the sampling density of its surface, i.e. the average distance is dominated by higher-frequency surface parts such as the thread of a fuse. The maximum distance used in \gls{mssd} and \gls{mspd} is less dependent on the geometry and sampling of the object model \cite{hodan2020bop}.
-
-\subsection{Baseline}
 
 \subsection{Pose Estimation Results}
 
 \section{Ablation Study}
-\begin{table}[h]
-  \centering
-  \caption{Comparison of the different feature fusion methods on LM dataset}
-  \label{tab:ab_fusion_lm}
-  \begin{tabular}{l | c | C{16mm} C{16mm} C{16mm}| C{16mm}| C{16mm}}
-      \toprule
-      Method & Refine & $\text{AR}_{\text{MSPD}}$ & $\text{AR}_{\text{MSSD}}$ & $\text{AR}_{\text{VSD}}$ & AR & ADD(-S) \\
-      \midrule
-      Add  & $-$ & 91.6 & 89.1 & 68.8 & $\mathbf{83.2}$ & $\mathbf{97.5}$ \\
-      Concat. & $-$ & 80.9 & 77.5 & 53.2 & 70.5 & 83.5 \\
-      Add  & $\surd $ & 98.5 & 98.7 & 85.7 & $\mathbf{94.0}$ & $\mathbf{98.5}$ \\
-      Concat. & $\surd $ & 94.8 & 93.7 & 80.4 & 89.7 & 94.0 \\
-      \bottomrule
-  \end{tabular}
-\end{table}
-\begin{table}[h]
-  \centering
-  \caption{Comparison of the different feature fusion methods on LMO dataset}
-  \label{tab:ab_fusion_lmo}
-  \begin{tabular}{l | c | C{16mm} C{16mm} C{16mm}| C{16mm}| C{16mm}}
-      \toprule
-      Method & Refine & $\text{AR}_{\text{MSPD}}$ & $\text{AR}_{\text{MSSD}}$ & $\text{AR}_{\text{VSD}}$ & AR & ADD(-S) \\
-      \midrule
-      Add  & $-$ & 56.8 & 51.1 & 37.4 & $\mathbf{48.5}$ & $\mathbf{86.5}$ \\
-      Concat. & $-$ & 47.0 & 38.2 & 27.3 & 37.5 & 40.5 \\
-      Add  & $\surd $ & 61.2 & 56.6 & 46.6 & $\mathbf{54.8}$ & $\mathbf{93.7}$ \\
-      Concat. & $\surd $ & 54.6 & 48.0 & 38.5 & 47.1 & 72.1 \\
-      \bottomrule
-  \end{tabular}
-\end{table}
+In this section, the ablation study of our method are propose with the model trained on the \gls{pbr} dataset of one object (cat) to accelerate the training process. We analize several aspects that have influence on the performance of the pose estimation. The comparisons are given on both \gls{lm} and \gls{lmo} dataset with and without refinement.
+\subsection{Feature Domain}
+Here we compare the quantitative results using \gls{2d}, \gls{3d}, and \gls{2d}+\gls{3d} feature given into the backbone, since sometimes the ideal \gls{rgbd} data is not available in the real world application. Table \ref{tab:ab_feat_lm} and \ref{tab:ab_feat_lmo} show the evaluation results in different cases. The model utilizing both \gls{2d} and \gls{3d} features achieves naturally the highest score followed by the model only uses \gls{3d} feature. \gls{2d}-only method has a relative wide gap with other two settings. This is probability because the 2D feature extractor is not trained on the target dataset but on the general image dataset, and the \gls{2d} network suffers from the texture-less object with only limited information available from the data.
 
+However, the addtional \gls{2d} information solidly increase the accuracy of the estimation with only \gls{3d} feature. It validates that our feature fusion mechanism doesn't compansate each other in a negative way, but rather complement the missing information in the other domain.
 \begin{table}[h]
   \centering
-  \caption{Comparison of the different domain of feature on LM dataset}
+  \caption{Comparison of the different domains of feature on LM dataset}
   \label{tab:ab_feat_lm}
   \begin{tabular}{l | c | C{16mm} C{16mm} C{16mm}| C{16mm}| C{16mm}}
       \toprule
@@ -1522,7 +1502,7 @@ where $V$ is the set of model vertices. It has some limitation that \gls{add}(-S
 \end{table}
 \begin{table}[h]
   \centering
-  \caption{Comparison of the different domain of feature on LMO dataset}
+  \caption{Comparison of the different domains of feature on LMO dataset}
   \label{tab:ab_feat_lmo}
   \begin{tabular}{l | c | C{16mm} C{16mm} C{16mm}| C{16mm}| C{16mm}}
       \toprule
@@ -1538,6 +1518,46 @@ where $V$ is the set of model vertices. It has some limitation that \gls{add}(-S
   \end{tabular}
 \end{table}
 
+\subsection{Feature Fusion}
+As we introduced in section \ref{sec:fusion}, we run the experiments with entity-wise addition and feature-wise concatination to evaluate the effect of the different feature fusion. From table \ref{tab:ab_fusion_lm} and \ref{tab:ab_fusion_lmo} we find that the addition of the features outperforms the concatination in both cases. Normally, the concatination of the features can preserve more information than the addition with the tradeoff of the larger dimension of the feature. But in our setting, we find that the addition converges fast and perform better than concatination in the module of feature fusion.
+\begin{table}[h]
+  \centering
+  \caption{Comparison of the different feature fusion methods on LM dataset}
+  \label{tab:ab_fusion_lm}
+  \begin{tabular}{l | c | C{16mm} C{16mm} C{16mm}| C{16mm}| C{16mm}}
+      \toprule
+      Method & Refine & $\text{AR}_{\text{MSPD}}$ & $\text{AR}_{\text{MSSD}}$ & $\text{AR}_{\text{VSD}}$ & AR & ADD(-S) \\
+      \midrule
+      Add  & $-$ & 91.6 & 89.1 & 68.8 & $\mathbf{83.2}$ & $\mathbf{97.5}$ \\
+      Concat. & $-$ & 80.9 & 77.5 & 53.2 & 70.5 & 83.5 \\
+      Add  & $\surd $ & 98.5 & 98.7 & 85.7 & $\mathbf{94.0}$ & $\mathbf{98.5}$ \\
+      Concat. & $\surd $ & 94.8 & 93.7 & 80.4 & 89.7 & 94.0 \\
+      \bottomrule
+  \end{tabular}
+\end{table}
+
+\begin{table}[h]
+  \centering
+  \caption{Comparison of the different feature fusion methods on LMO dataset}
+  \label{tab:ab_fusion_lmo}
+  \begin{tabular}{l | c | C{16mm} C{16mm} C{16mm}| C{16mm}| C{16mm}}
+      \toprule
+      Method & Refine & $\text{AR}_{\text{MSPD}}$ & $\text{AR}_{\text{MSSD}}$ & $\text{AR}_{\text{VSD}}$ & AR & ADD(-S) \\
+      \midrule
+      Add  & $-$ & 56.8 & 51.1 & 37.4 & $\mathbf{48.5}$ & $\mathbf{86.5}$ \\
+      Concat. & $-$ & 47.0 & 38.2 & 27.3 & 37.5 & 40.5 \\
+      Add  & $\surd $ & 61.2 & 56.6 & 46.6 & $\mathbf{54.8}$ & $\mathbf{93.7}$ \\
+      Concat. & $\surd $ & 54.6 & 48.0 & 38.5 & 47.1 & 72.1 \\
+      \bottomrule
+  \end{tabular}
+\end{table}
+
+\subsection{Transformation Representation}
+
+\subsection{Backbone Scaling}
+
+\subsection{Denoising Steps}
+In the orignial \gls{ddpm} setting of image synthesis task, the diffusion steps is configured as 1000 to make sure the vividness of the generated image.
 \begin{table}[h]
   \centering
   \caption{Effect of the number of diffusion steps on the estimation results}
@@ -1556,15 +1576,33 @@ where $V$ is the set of model vertices. It has some limitation that \gls{add}(-S
       \bottomrule
   \end{tabular}
 \end{table}
+
 \chapter{Discussion}
 
 \chapter{Conclusion}
+In this last chapter of our thesis, we summarize the work and highlight the contributions of our method in the field of \gls{6dof} pose estimation. Additionally, it gives an outlook on the future work.
+\section{Summary}
+
+\section{Outlook}
 
 \appendix
-\chapter{Additionally}
-You may do an appendix
+\chapter{Additionally: Visualization of Results}
+\begin{figure}[h]
+	\centering
+	\subfloat{\includegraphics[width=1.\textwidth]{img/comp_cup.pdf}}\\
+  \centering
+	\subfloat{\includegraphics[width=1.\textwidth]{img/comp_cam.pdf}}\\
+  \centering
+	\subfloat{\includegraphics[width=1.\textwidth]{img/comp_phone.pdf}}\\
+  \centering
+	\subfloat{\includegraphics[width=1.\textwidth]{img/comp_egg.pdf}}\\
+  \centering
+	\subfloat{\includegraphics[width=1.\textwidth]{img/comp_glue.pdf}}
+	\caption{Point cloud completion results of the FoldingNet. From top to bottom: cup, camera, phone, egg box, glue. From left to right: estimation(viewpoint 1), ground truth(viewpoint 1), estimation(viewpoint 2), ground truth(viewpoint 2). Blue points are the input partial point cloud.}
+	\label{img:app_comp}
+\end{figure}
 
-
+\chapter{Additionally: }
 
 % -------------------> end writing here <------------------------
 % *****************************************************************
