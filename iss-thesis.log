@@ -944,4 +944,494 @@ Underfull \hbox (badness 10000) in paragraph at lines 321--321
  []
 
 
-Underfull \hbox (badness 10000) in para
+Underfull \hbox (badness 10000) in paragraph at lines 321--321
+
+ []
+
+[2] (./iss-thesis.toc [1
+
+
+
+
+])
+\tf@toc=\write8
+\openout8 = `iss-thesis.toc'.
+
+ [2] (./iss-thesis.acr [1
+
+
+
+
+
+
+]) (./iss-thesis.nls [2] [3
+
+
+] [4] [5]) [6]
+chapter 1.
+
+Class scrreprt Warning: \float@addtolists detected!
+(scrreprt)              Implementation of \float@addtolist became
+(scrreprt)              deprecated in KOMA-Script v3.01 2008/11/14 and
+(scrreprt)              has been replaced by several more flexible
+(scrreprt)              features of package `tocbasic`.
+(scrreprt)              Since Version 3.12 support for deprecated
+(scrreprt)              \float@addtolist interface has been
+(scrreprt)              restricted to only some of the KOMA-Script
+(scrreprt)              features and been removed from others.
+(scrreprt)              Loading of package `scrhack' may help to
+(scrreprt)              avoid this warning, if you are using a
+(scrreprt)              a package that still implements the
+(scrreprt)              deprecated \float@addtolist interface.
+
+[7
+
+
+]
+LaTeX Font Info:    Trying to load font information for T1+txss on input line 352.
+ (/usr/local/texlive/2023/texmf-dist/tex/latex/txfonts/t1txss.fd
+File: t1txss.fd 2000/12/15 v3.1
+)
+LaTeX Font Info:    Font shape `T1/txss/m/n' will be
+(Font)              scaled to size 11.39996pt on input line 352.
+LaTeX Font Info:    Font shape `T1/txss/b/n' in size <12> not available
+(Font)              Font shape `T1/txss/bx/n' tried instead on input line 352.
+LaTeX Font Info:    Font shape `T1/txss/bx/n' will be
+(Font)              scaled to size 11.39996pt on input line 352.
+ [8]
+chapter 2.
+<img/6d.png, id=329, 2057.6875pt x 920.43875pt>
+File: img/6d.png Graphic file (type png)
+<use img/6d.png>
+Package pdftex.def Info: img/6d.png  used on input line 370.
+(pdftex.def)             Requested size: 411.53021pt x 184.08449pt.
+
+Underfull \vbox (badness 2142) has occurred while \output is active []
+
+ [9
+
+
+ <./img/6d.png>] [10] [11] [12] [13] [14] [15]
+<img/gen.png, id=512, 1237.62375pt x 1037.8775pt>
+File: img/gen.png Graphic file (type png)
+<use img/gen.png>
+Package pdftex.def Info: img/gen.png  used on input line 584.
+(pdftex.def)             Requested size: 371.29pt x 311.36566pt.
+
+
+LaTeX Warning: `h' float specifier changed to `ht'.
+
+[16] [17 <./img/gen.png>] [18]
+<img/diff_process.png, id=560, 2115.905pt x 762.85pt>
+File: img/diff_process.png Graphic file (type png)
+<use img/diff_process.png>
+Package pdftex.def Info: img/diff_process.png  used on input line 678.
+(pdftex.def)             Requested size: 423.17351pt x 152.56729pt.
+
+
+LaTeX Warning: `h' float specifier changed to `ht'.
+
+[19]
+Package hyperref Info: bookmark level for unknown algorithm defaults to 0 on input line 706.
+ [20 <./img/diff_process.png>]
+<img/cascade_fig.png, id=609, 4542.9725pt x 2248.4pt>
+File: img/cascade_fig.png Graphic file (type png)
+<use img/cascade_fig.png>
+Package pdftex.def Info: img/cascade_fig.png  used on input line 741.
+(pdftex.def)             Requested size: 363.44524pt x 179.87567pt.
+
+
+LaTeX Warning: `h' float specifier changed to `ht'.
+
+<img/teaser.png, id=617, 216.81pt x 71.5473pt>
+File: img/teaser.png Graphic file (type png)
+<use img/teaser.png>
+Package pdftex.def Info: img/teaser.png  used on input line 751.
+(pdftex.def)             Requested size: 390.25769pt x 128.785pt.
+
+LaTeX Warning: `h' float specifier changed to `ht'.
+
+[21]
+<img/sd.png, id=659, 2038.61626pt x 782.925pt>
+File: img/sd.png Graphic file (type png)
+<use img/sd.png>
+Package pdftex.def Info: img/sd.png  used on input line 770.
+(pdftex.def)             Requested size: 442.36894pt x 169.89058pt.
+ [22 <./img/cascade_fig.png> <./img/teaser.png>]
+<img/df.png, id=686, 1522.68875pt x 504.88625pt>
+File: img/df.png Graphic file (type png)
+<use img/df.png>
+Package pdftex.def Info: img/df.png  used on input line 781.
+(pdftex.def)             Requested size: 426.34995pt x 141.36717pt.
+ [23 <./img/sd.png> <./img/df.png>] [24
+
+
+]
+chapter 3.
+[25] [26]
+<img/pose_methods.pdf, id=844, 469.755pt x 339.2675pt>
+File: img/pose_methods.pdf Graphic file (type pdf)
+<use img/pose_methods.pdf>
+Package pdftex.def Info: img/pose_methods.pdf  used on input line 817.
+(pdftex.def)             Requested size: 442.64366pt x 319.688pt.
+
+
+LaTeX Warning: `h' float specifier changed to `ht'.
+
+
+Underfull \vbox (badness 5548) has occurred while \output is active []
+
+ [27] [28 <./img/pose_methods.pdf>] [29] [30] [31]
+<img/confront.png, id=1040, 1816.7875pt x 680.5425pt>
+File: img/confront.png Graphic file (type png)
+<use img/confront.png>
+Package pdftex.def Info: img/confront.png  used on input line 877.
+(pdftex.def)             Requested size: 436.03792pt x 163.33353pt.
+<img/pose_diff.png, id=1047, 2030.58624pt x 593.21625pt>
+File: img/pose_diff.png Graphic file (type png)
+<use img/pose_diff.png>
+Package pdftex.def Info: img/pose_diff.png  used on input line 886.
+(pdftex.def)             Requested size: 426.4357pt x 124.57909pt.
+
+
+LaTeX Warning: `h' float specifier changed to `ht'.
+
+[32 <./img/confront.png>] [33 <./img/pose_diff.png>] [34
+
+
+]
+chapter 4.
+[35]
+<img/train.png, id=1092, 1860.9525pt x 688.5725pt>
+File: img/train.png Graphic file (type png)
+<use img/train.png>
+Package pdftex.def Info: img/train.png  used on input line 913.
+(pdftex.def)             Requested size: 437.3239pt x 161.81454pt.
+ [36 <./img/train.png>]
+<img/sample.png, id=1109, 1860.9525pt x 743.77875pt>
+File: img/sample.png Graphic file (type png)
+<use img/sample.png>
+Package pdftex.def Info: img/sample.png  used on input line 928.
+(pdftex.def)             Requested size: 437.3239pt x 174.78802pt.
+ [37 <./img/sample.png>]
+<img/denoiser.png, id=1135, 1374.13374pt x 1136.245pt>
+File: img/denoiser.png Graphic file (type png)
+<use img/denoiser.png>
+Package pdftex.def Info: img/denoiser.png  used on input line 956.
+(pdftex.def)             Requested size: 412.2433pt x 340.87613pt.
+
+
+LaTeX Warning: `h' float specifier changed to `ht'.
+
+<img/mhsa.png, id=1142, 1005.7575pt x 580.1675pt>
+File: img/mhsa.png Graphic file (type png)
+<use img/mhsa.png>
+Package pdftex.def Info: img/mhsa.png  used on input line 967.
+(pdftex.def)             Requested size: 301.72958pt x 174.05157pt.
+
+LaTeX Warning: `h' float specifier changed to `ht'.
+
+[38] [39 <./img/denoiser.png>]
+LaTeX Font Info:    Trying to load font information for TS1+txr on input line 996.
+ (/usr/local/texlive/2023/texmf-dist/tex/latex/txfonts/ts1txr.fd
+File: ts1txr.fd 2000/12/15 v3.1
+)
+<img/pe.png, id=1170, 672.8337pt x 244.2726pt>
+File: img/pe.png Graphic file (type png)
+<use img/pe.png>
+Package pdftex.def Info: img/pe.png  used on input line 1008.
+(pdftex.def)             Requested size: 437.33672pt x 158.7753pt.
+ [40 <./img/mhsa.png>]
+
+Package amsmath Warning: Foreign command \atop;
+(amsmath)                \frac or \genfrac should be used instead
+(amsmath)                 on input line 1025.
+
+<img/dino.png, id=1187, 927.465pt x 268.00125pt>
+File: img/dino.png Graphic file (type png)
+<use img/dino.png>
+Package pdftex.def Info: img/dino.png  used on input line 1029.
+(pdftex.def)             Requested size: 352.44037pt x 101.84152pt.
+[41 <./img/pe.png>]
+<img/vit.png, id=1210, 1850.915pt x 941.5175pt>
+File: img/vit.png Graphic file (type png)
+<use img/vit.png>
+Package pdftex.def Info: img/vit.png  used on input line 1039.
+(pdftex.def)             Requested size: 425.70149pt x 216.54446pt.
+ [42 <./img/dino.png> <./img/vit.png>]
+<img/fold.png, id=1238, 2163.08125pt x 966.61125pt>
+File: img/fold.png Graphic file (type png)
+<use img/fold.png>
+Package pdftex.def Info: img/fold.png  used on input line 1054.
+(pdftex.def)             Requested size: 432.6086pt x 193.31882pt.
+
+
+LaTeX Warning: `h' float specifier changed to `ht'.
+
+[43]
+<img/fuse_add.png, id=1262, 1772.6225pt x 788.9475pt>
+File: img/fuse_add.png Graphic file (type png)
+<use img/fuse_add.png>
+Package pdftex.def Info: img/fuse_add.png  used on input line 1075.
+(pdftex.def)             Requested size: 407.69461pt x 181.4541pt.
+<img/fuse_cat.png, id=1263, 1772.6225pt x 788.9475pt>
+File: img/fuse_cat.png Graphic file (type png)
+<use img/fuse_cat.png>
+Package pdftex.def Info: img/fuse_cat.png  used on input line 1077.
+(pdftex.def)             Requested size: 407.69461pt x 181.4541pt.
+ [44 <./img/fold.png>] [45 <./img/fuse_add.png> <./img/fuse_cat.png>]
+<img/res_t.png, id=1286, 1927.2pt x 921.4425pt>
+File: img/res_t.png Graphic file (type png)
+<use img/res_t.png>
+Package pdftex.def Info: img/res_t.png  used on input line 1090.
+(pdftex.def)             Requested size: 423.98532pt x 202.71797pt.
+ [46 <./img/res_t.png>] [47] [48]
+chapter 5.
+<img/syn.png, id=1337, 236.739pt x 219.657pt>
+File: img/syn.png Graphic file (type png)
+<use img/syn.png>
+Package pdftex.def Info: img/syn.png  used on input line 1145.
+(pdftex.def)             Requested size: 139.20157pt x 129.15742pt.
+<img/pbr.png, id=1338, 241.90375pt x 218.8175pt>
+File: img/pbr.png Graphic file (type png)
+<use img/pbr.png>
+Package pdftex.def Info: img/pbr.png  used on input line 1150.
+(pdftex.def)             Requested size: 142.23842pt x 128.6638pt.
+<img/kine.png, id=1339, 242.9075pt x 218.8175pt>
+File: img/kine.png Graphic file (type png)
+<use img/kine.png>
+Package pdftex.def Info: img/kine.png  used on input line 1155.
+(pdftex.def)             Requested size: 142.82863pt x 128.6638pt.
+<img/nooclu.png, id=1347, 285.065pt x 200.75pt>
+File: img/nooclu.png Graphic file (type png)
+<use img/nooclu.png>
+Package pdftex.def Info: img/nooclu.png  used on input line 1168.
+(pdftex.def)             Requested size: 171.04031pt x 120.45091pt.
+<img/oclu.png, id=1348, 285.065pt x 200.75pt>
+File: img/oclu.png Graphic file (type png)
+<use img/oclu.png>
+Package pdftex.def Info: img/oclu.png  used on input line 1173.
+(pdftex.def)             Requested size: 171.04031pt x 120.45091pt.
+[49
+
+
+ <./img/syn.png> <./img/pbr.png> <./img/kine.png>] [50 <./img/nooclu.png> <./img/oclu.png>] [51] [52]
+<img/atten_cl.png, id=1418, 634.224pt x 174.543pt>
+File: img/atten_cl.png Graphic file (type png)
+<use img/atten_cl.png>
+Package pdftex.def Info: img/atten_cl.png  used on input line 1274.
+(pdftex.def)             Requested size: 431.26662pt x 118.68765pt.
+<img/atten_bo.png, id=1419, 635.319pt x 174.543pt>
+File: img/atten_bo.png Graphic file (type png)
+<use img/atten_bo.png>
+Package pdftex.def Info: img/atten_bo.png  used on input line 1276.
+(pdftex.def)             Requested size: 432.0112pt x 118.68765pt.
+<img/atten_ph.png, id=1420, 635.319pt x 174.543pt>
+File: img/atten_ph.png Graphic file (type png)
+<use img/atten_ph.png>
+Package pdftex.def Info: img/atten_ph.png  used on input line 1278.
+(pdftex.def)             Requested size: 432.0112pt x 118.68765pt.
+
+
+LaTeX Warning: `h' float specifier changed to `ht'.
+
+<img/atten_cat.png, id=1425, 657.438pt x 386.316pt>
+File: img/atten_cat.png Graphic file (type png)
+<use img/atten_cat.png>
+Package pdftex.def Info: img/atten_cat.png  used on input line 1286.
+(pdftex.def)             Requested size: 427.32964pt x 251.10242pt.
+
+LaTeX Warning: `h' float specifier changed to `ht'.
+
+[53]
+Underfull \vbox (badness 10000) has occurred while \output is active []
+
+ [54 <./img/atten_cl.png> <./img/atten_bo.png> <./img/atten_ph.png>]
+Package epstopdf Info: Source file: <img/fold_loss.eps>
+(epstopdf)                    date: 2023-11-08 14:51:20
+(epstopdf)                    size: 306158 bytes
+(epstopdf)             Output file: <img/fold_loss-eps-converted-to.pdf>
+(epstopdf)                    date: 2023-11-08 14:52:39
+(epstopdf)                    size: 114694 bytes
+(epstopdf)             Command: <repstopdf --outfile=img/fold_loss-eps-converted-to.pdf img/fold_loss.eps>
+(epstopdf)             \includegraphics on input line 1305.
+Package epstopdf Info: Output file is already uptodate.
+<img/fold_loss-eps-converted-to.pdf, id=1468, 578.16pt x 232.87pt>
+File: img/fold_loss-eps-converted-to.pdf Graphic file (type pdf)
+<use img/fold_loss-eps-converted-to.pdf>
+Package pdftex.def Info: img/fold_loss-eps-converted-to.pdf  used on input line 1305.
+(pdftex.def)             Requested size: 442.64366pt x 178.28708pt.
+Package epstopdf Info: Source file: <img/cd_category.eps>
+(epstopdf)                    date: 2023-11-13 16:36:41
+(epstopdf)                    size: 445248 bytes
+(epstopdf)             Output file: <img/cd_category-eps-converted-to.pdf>
+(epstopdf)                    date: 2023-11-13 16:37:01
+(epstopdf)                    size: 151626 bytes
+(epstopdf)             Command: <repstopdf --outfile=img/cd_category-eps-converted-to.pdf img/cd_category.eps>
+(epstopdf)             \includegraphics on input line 1314.
+Package epstopdf Info: Output file is already uptodate.
+<img/cd_category-eps-converted-to.pdf, id=1473, 593.21625pt x 248.93pt>
+File: img/cd_category-eps-converted-to.pdf Graphic file (type pdf)
+<use img/cd_category-eps-converted-to.pdf>
+Package pdftex.def Info: img/cd_category-eps-converted-to.pdf  used on input line 1314.
+(pdftex.def)             Requested size: 442.64366pt x 185.75124pt.
+
+
+LaTeX Warning: `h' float specifier changed to `ht'.
+
+[55 <./img/atten_cat.png> <./img/fold_loss-eps-converted-to.pdf>]
+<img/comp_cup.pdf, id=1498, 605.26125pt x 146.5475pt>
+File: img/comp_cup.pdf Graphic file (type pdf)
+<use img/comp_cup.pdf>
+Package pdftex.def Info: img/comp_cup.pdf  used on input line 1325.
+(pdftex.def)             Requested size: 442.64366pt x 107.17554pt.
+<img/comp_phone.pdf, id=1499, 595.22375pt x 161.60374pt>
+File: img/comp_phone.pdf Graphic file (type pdf)
+<use img/comp_phone.pdf>
+Package pdftex.def Info: img/comp_phone.pdf  used on input line 1327.
+(pdftex.def)             Requested size: 442.64366pt x 120.1767pt.
+
+
+LaTeX Warning: `h' float specifier changed to `ht'.
+
+Package epstopdf Info: Source file: <img/fold_overfit.eps>
+(epstopdf)                    date: 2023-11-13 14:54:11
+(epstopdf)                    size: 579252 bytes
+(epstopdf)             Output file: <img/fold_overfit-eps-converted-to.pdf>
+(epstopdf)                    date: 2023-11-13 15:01:52
+(epstopdf)                    size: 173359 bytes
+(epstopdf)             Command: <repstopdf --outfile=img/fold_overfit-eps-converted-to.pdf img/fold_overfit.eps>
+(epstopdf)             \includegraphics on input line 1339.
+Package epstopdf Info: Output file is already uptodate.
+<img/fold_overfit-eps-converted-to.pdf, id=1503, 594.22pt x 257.96375pt>
+File: img/fold_overfit-eps-converted-to.pdf Graphic file (type pdf)
+<use img/fold_overfit-eps-converted-to.pdf>
+Package pdftex.def Info: img/fold_overfit-eps-converted-to.pdf  used on input line 1339.
+(pdftex.def)             Requested size: 442.64366pt x 192.16943pt.
+
+LaTeX Warning: `h' float specifier changed to `ht'.
+
+
+LaTeX Warning: `h' float specifier changed to `ht'.
+
+
+LaTeX Warning: `h' float specifier changed to `ht'.
+
+
+Underfull \vbox (badness 10000) has occurred while \output is active []
+
+ [56 <./img/cd_category-eps-converted-to.pdf>]
+
+LaTeX Warning: `h' float specifier changed to `ht'.
+
+[57 <./img/comp_cup.pdf> <./img/comp_phone.pdf>] [58 <./img/fold_overfit-eps-converted-to.pdf>] [59] [60]
+
+LaTeX Warning: `h' float specifier changed to `ht'.
+
+
+LaTeX Warning: `h' float specifier changed to `ht'.
+
+[61]
+
+LaTeX Warning: `h' float specifier changed to `ht'.
+
+
+LaTeX Warning: `h' float specifier changed to `ht'.
+
+[62] [63] [64
+
+
+]
+chapter 6.
+[65] [66
+
+
+]
+chapter 7.
+[67] [68
+
+
+]
+chapter A.
+File: img/comp_cup.pdf Graphic file (type pdf)
+<use img/comp_cup.pdf>
+Package pdftex.def Info: img/comp_cup.pdf  used on input line 1592.
+(pdftex.def)             Requested size: 442.64366pt x 107.17554pt.
+<img/comp_cam.pdf, id=1721, 595.22375pt x 139.52126pt>
+File: img/comp_cam.pdf Graphic file (type pdf)
+<use img/comp_cam.pdf>
+Package pdftex.def Info: img/comp_cam.pdf  used on input line 1594.
+(pdftex.def)             Requested size: 442.64366pt x 103.75504pt.
+File: img/comp_phone.pdf Graphic file (type pdf)
+<use img/comp_phone.pdf>
+Package pdftex.def Info: img/comp_phone.pdf  used on input line 1596.
+(pdftex.def)             Requested size: 442.64366pt x 120.1767pt.
+<img/comp_egg.pdf, id=1722, 597.23125pt x 151.56625pt>
+File: img/comp_egg.pdf Graphic file (type pdf)
+<use img/comp_egg.pdf>
+Package pdftex.def Info: img/comp_egg.pdf  used on input line 1598.
+(pdftex.def)             Requested size: 442.64366pt x 112.33534pt.
+<img/comp_glue.pdf, id=1723, 601.24625pt x 155.58125pt>
+File: img/comp_glue.pdf Graphic file (type pdf)
+<use img/comp_glue.pdf>
+Package pdftex.def Info: img/comp_glue.pdf  used on input line 1600.
+(pdftex.def)             Requested size: 442.64366pt x 114.54431pt.
+
+LaTeX Warning: `h' float specifier changed to `ht'.
+
+[69] [70 <./img/comp_cam.pdf> <./img/comp_egg.pdf> <./img/comp_glue.pdf>]
+chapter B.
+[71
+
+
+] [72
+
+
+] (./iss-thesis.lof [73])
+\tf@lof=\write9
+\openout9 = `iss-thesis.lof'.
+
+ [74] (./iss-thesis.lot)
+\tf@lot=\write10
+\openout10 = `iss-thesis.lot'.
+
+ (./iss-thesis.bbl [75
+
+
+] [76
+
+
+]
+chapter without number
+** WARNING: IEEEtran.bst: No hyphenation pattern has been
+** loaded for the language `en'. Using the pattern for
+** the default language instead.
+** WARNING: IEEEtran.bst: No hyphenation pattern has been
+** loaded for the language `en'. Using the pattern for
+** the default language instead.
+[77] [78] [79] [80] [81] [82] [83] [84]) [85] [86
+
+
+]
+LaTeX Font Info:    Font shape `T1/txr/b/n' in size <20.74> not available
+(Font)              Font shape `T1/txr/bx/n' tried instead on input line 1624.
+ [87] (./iss-thesis.aux)
+Package rerunfilecheck Info: File `iss-thesis.out' has not changed.
+(rerunfilecheck)             Checksum: D41D8CD98F00B204E9800998ECF8427E;0.
+ ) 
+Here is how much of TeX's memory you used:
+ 26478 strings out of 476025
+ 478242 string characters out of 5790017
+ 1895388 words of memory out of 5000000
+ 45891 multiletter control sequences out of 15000+600000
+ 605214 words of font info for 205 fonts, out of 8000000 for 9000
+ 1145 hyphenation exceptions out of 8191
+ 108i,20n,106p,10680b,747s stack positions out of 10000i,1000n,20000p,200000b,200000s
+</usr/local/texlive/2023/texmf-dist/fonts/type1/public/txfonts/rtcxr.pfb></usr/local/texlive/2023/texmf-dist/fonts/type1/public/txfonts/rtxb.pfb></usr/local/texlive/2023/texmf-dist/fonts/type1/public/txfonts/rtxbmi.pfb></usr/local/texlive/2023/texmf-dist/fonts/type1/public/txfonts/rtxi.pfb></usr/local/texlive/2023/texmf-dist/fonts/type1/public/txfonts/rtxmi.pfb></usr/local/texlive/2023/texmf-dist/fonts/type1/public/txfonts/rtxr.pfb></usr/local/texlive/2023/texmf-dist/fonts/type1/public/txfonts/rtxr.pfb></usr/local/texlive/2023/texmf-dist/fonts/type1/public/txfonts/t1xtt.pfb></usr/local/texlive/2023/texmf-dist/fonts/type1/public/txfonts/txex.pfb></usr/local/texlive/2023/texmf-dist/fonts/type1/public/txfonts/txexa.pfb></usr/local/texlive/2023/texmf-dist/fonts/type1/public/txfonts/txsy.pfb></usr/local/texlive/2023/texmf-dist/fonts/type1/public/txfonts/txsyb.pfb></usr/local/texlive/2023/texmf-dist/fonts/type1/public/txfonts/txsyc.pfb></usr/local/texlive/2023/texmf-dist/fonts/type1/urw/helvetic/uhvb8a.pfb></usr/local/texlive/2023/texmf-dist/fonts/type1/urw/times/utmb8a.pfb></usr/local/texlive/2023/texmf-dist/fonts/type1/urw/times/utmr8a.pfb></usr/local/texlive/2023/texmf-dist/fonts/type1/urw/times/utmr8a.pfb></usr/local/texlive/2023/texmf-dist/fonts/type1/urw/times/utmri8a.pfb>
+Output written on iss-thesis.pdf (91 pages, 20131686 bytes).
+PDF statistics:
+ 2368 PDF objects out of 2487 (max. 8388607)
+ 2044 compressed objects within 21 object streams
+ 533 named destinations out of 1000 (max. 500000)
+ 785 words of extra memory for PDF output out of 10000 (max. 10000000)
+
