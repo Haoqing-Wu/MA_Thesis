@@ -76,18 +76,18 @@
 \contentsline {subsection}{\numberline {5.5.1}Evaluation Metrics}{59}{subsection.5.5.1}%
 \contentsline {subsection}{\numberline {5.5.2}Pose Estimation Results}{61}{subsection.5.5.2}%
 \contentsline {section}{\numberline {5.6}Ablation Study}{61}{section.5.6}%
-\contentsline {subsection}{\numberline {5.6.1}Feature Domain}{61}{subsection.5.6.1}%
-\contentsline {subsection}{\numberline {5.6.2}Feature Fusion}{61}{subsection.5.6.2}%
-\contentsline {subsection}{\numberline {5.6.3}Transformation Representation}{62}{subsection.5.6.3}%
-\contentsline {subsection}{\numberline {5.6.4}Backbone Scaling}{62}{subsection.5.6.4}%
-\contentsline {subsection}{\numberline {5.6.5}Denoising Steps}{62}{subsection.5.6.5}%
+\contentsline {subsection}{\numberline {5.6.1}Feature Domain}{62}{subsection.5.6.1}%
+\contentsline {subsection}{\numberline {5.6.2}Feature Fusion}{62}{subsection.5.6.2}%
+\contentsline {subsection}{\numberline {5.6.3}Transformation Representation}{63}{subsection.5.6.3}%
+\contentsline {subsection}{\numberline {5.6.4}Backbone Scaling}{63}{subsection.5.6.4}%
+\contentsline {subsection}{\numberline {5.6.5}Denoising Steps}{63}{subsection.5.6.5}%
 \contentsline {chapter}{\numberline {6}Discussion}{65}{chapter.6}%
 \contentsline {chapter}{\numberline {7}Conclusion}{67}{chapter.7}%
 \contentsline {section}{\numberline {7.1}Summary}{67}{section.7.1}%
 \contentsline {section}{\numberline {7.2}Outlook}{67}{section.7.2}%
 \contentsline {chapter}{\numberline {A}Additionally: Visualization of Results}{69}{appendix.A}%
 \contentsline {chapter}{\numberline {B}Additionally:}{71}{appendix.B}%
-\contentsline {chapter}{\nonumberline List of Figures}{73}{chapter*.82}%
-\contentsline {chapter}{\nonumberline List of Tables}{75}{chapter*.83}%
-\contentsline {chapter}{\nonumberline Bibliography}{77}{chapter*.84}%
+\contentsline {chapter}{\nonumberline List of Figures}{73}{chapter*.84}%
+\contentsline {chapter}{\nonumberline List of Tables}{75}{chapter*.85}%
+\contentsline {chapter}{\nonumberline Bibliography}{77}{chapter*.86}%
 \providecommand \tocbasic@end@toc@file {}\tocbasic@end@toc@file 

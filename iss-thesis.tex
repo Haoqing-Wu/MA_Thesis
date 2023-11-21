@@ -141,6 +141,7 @@
 \usepackage{nomencl}
 \usepackage{etoolbox}
 \usepackage{multirow}
+\usepackage{anyfontsize}
 
 %%%%% Tikz / PGF - drawing beautiful graphics and plots in Latex
 % \usepackage{tikz}
@@ -1431,9 +1432,14 @@ The loss function is defined by the \gls{mse} between the noise $\epsilon$ added
 \begin{align}
   \mathcal{L}_{\text{MSE}}=\frac{1}{B}\sum_{t\in \mathcal{T}_{B} }\left\Vert \epsilon_{t}-\epsilon_{\theta}(\mathbf{x}_{0},\epsilon, t, y)\right\Vert^{2} \quad , \mathcal{T}_{B}\subseteq \mathcal{T}=\left\{1,\dots,T\right\}
 \end{align}
-where $B$ is the batch size, $\mathcal{T}_{B}$ is the subset of the whole time steps with the batch size and $\epsilon_{\theta}$ is the estimated noise depending on the input $\mathbf{x}_{0}$, the noise $\epsilon$, the time step $t$ and the condition $y$ (see section \ref{sec:cond}). The loss is calculated with the \gls{mse} of the randomly sampled subset controled by the batch size instead of the whole time steps, but it will cover each time step during the training process. Figure shows the loss of the model during the training process.
+where $B$ is the batch size, $\mathcal{T}_{B}$ is the subset of the whole time steps with the batch size and $\epsilon_{\theta}$ is the estimated noise depending on the input $\mathbf{x}_{0}$, the noise $\epsilon$, the time step $t$ and the condition $y$ (see section \ref{sec:cond}). The loss is calculated with the \gls{mse} of the randomly sampled subset controled by the batch size instead of the whole time steps, but it will cover each time step during the training process. Figure \ref{img:diff_loss} shows the loss of the model during the training process.
 
------------------------image-------------------------
+\begin{figure}[h]
+	\centering
+	\includegraphics[width=1.\textwidth]{img/diff_loss.eps}
+	\caption{L2 loss of the training phase of the diffusion model. Original data (gray) is downsampled and smoothed with a $2^{nd}$ order filter (orange) for visualization. }
+	\label{img:diff_loss}
+\end{figure}
 
 \section{Evaluation}
 \subsection{Evaluation Metrics}
@@ -1476,6 +1482,39 @@ The most popular metrics for pose estimation have been the \gls{add} and the \gl
 where $V$ is the set of model vertices. It has some limitation that \gls{add}(-S) comes from a high dependence on the geometry of the object model and the sampling density of its surface, i.e. the average distance is dominated by higher-frequency surface parts such as the thread of a fuse. The maximum distance used in \gls{mssd} and \gls{mspd} is less dependent on the geometry and sampling of the object model \cite{hodan2020bop}.
 
 \subsection{Pose Estimation Results}
+We evaluate our model on the test dataset of \gls{bop} challenge \cite{hodan2018bop} with overall 3000 images and use the segmentation result from the ground truth as our mask to filter out the background, since we only focus on the pose estimation with object already detected. The evaluation results of all categories are shown in table.
+
+\begin{table}[h]
+  \centering
+  \caption{Comparison of the different domains of feature on LM dataset}
+  \label{tab:eval_categories}
+  \fontsize{9pt}{9pt}\selectfont
+  \begin{tabular}{l | C{8mm} C{8mm} C{8mm} C{8mm} C{8mm} C{8mm}| C{8mm} C{8mm}| C{8mm} C{8mm}}
+      \toprule
+      Method & \multicolumn{2}{c}{$\text{AR}_{\text{MSPD}}$}  & \multicolumn{2}{c}{$\text{AR}_{\text{MSSD}}$} & \multicolumn{2}{c|}{$\text{AR}_{\text{VSD}}$} & \multicolumn{2}{c|}{AR} & \multicolumn{2}{c}{ADD(-S)} \\
+      \midrule
+      Refinement & $-$ & $\surd$ & $-$ & $\surd$ & $-$ & $\surd$ & $-$ & $\surd$ & $-$ & $\surd$ \\
+      \midrule
+      Ape        & 85.6 & 93.9 & 73.9 & 87.6 & 58.7 & 80.4 & 72.7 & 87.3 & 73.5 & 92.0 \\
+      Bench vi.  & 78.8 & 87.3 & 85.2 & 89.8 & 61.3 & 74.7 & 75.1 & 83.9 & 93.0 & 93.0 \\
+      Bowl       & 80.3 & 83.6 & 77.6 & 82.7 & 42.9 & 60.6 & 66.9 & 75.7 & 99.0 & 99.5 \\
+      Camera     & 73.7 & 82.8 & 73.0 & 82.3 & 57.7 & 73.2 & 68.1 & 79.4 & 70.0 & 81.0 \\
+      Can        & 73.8 & 83.1 & 76.2 & 84.6 & 54.5 & 71.5 & 68.1 & 79.8 & 82.0 & 86.5 \\
+      Cat        & 88.2 & 97.2 & 86.1 & 95.9 & 60.3 & 83.4 & 78.2 & 92.2 & 96.0 & 97.0 \\
+      Cup        & 53.7 & 59.5 & 46.9 & 53.8 & 30.0 & 51.2 & 43.5 & 54.8 & 31.5 & 51.5 \\
+      Drill      & 78.2 & 85.6 & 87.0 & 92.3 & 60.4 & 77.3 & 75.2 & 85.1 & 95.5 & 95.0 \\
+      Duck       & 77.5 & 85.4 & 67.0 & 78.2 & 53.5 & 71.7 & 66.0 & 78.4 & 66.5 & 81.0 \\
+      Egg box    & 65.9 & 72.0 & 64.2 & 70.3 & 59.0 & 68.4 & 63.0 & 70.2 & 99.0 & 99.0 \\
+      Glue       & 72.6 & 79.8 & 70.1 & 77.6 & 46.0 & 62.3 & 62.9 & 73.2 & 92.0 & 93.0 \\
+      Hole pu.   & 68.4 & 73.9 & 62.8 & 69.3 & 38.7 & 49.9 & 56.6 & 64.3 & 53.5 & 67.0 \\
+      Iron       & 79.5 & 84.4 & 88.3 & 91.9 & 67.9 & 77.2 & 78.6 & 84.5 & 93.5 & 95.0 \\
+      Lamp       & 74.9 & 83.6 & 86.1 & 90.5 & 59.7 & 71.9 & 73.6 & 82.0 & 91.0 & 91.5 \\
+      Phone      & 83.7 & 89.2 & 87.0 & 92.3 & 61.5 & 74.7 & 77.4 & 85.4 & 95.0 & 96.0 \\
+      \midrule
+      Mean       & 75.6 & 82.8 & 75.4 & 82.6 & 54.1 & 69.9 & 68.4 & 78.4 & 82.1 & 87.9 \\
+      \bottomrule
+  \end{tabular}
+\end{table}
 
 \section{Ablation Study}
 In this section, the ablation study of our method are propose with the model trained on the \gls{pbr} dataset of one object (cat) to accelerate the training process. We analize several aspects that have influence on the performance of the pose estimation. The comparisons are given on both \gls{lm} and \gls{lmo} dataset with and without refinement.

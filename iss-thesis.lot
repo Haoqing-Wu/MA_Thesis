@@ -8,11 +8,12 @@
 \contentsline {table}{\numberline {5.3}{\ignorespaces Mean and standard deviation of the \gls {cd} with the model trained on the whole dataset and the overfitted model on single object (7 of 15 objects selected)\relax }}{58}{table.caption.73}%
 \contentsline {table}{\numberline {5.4}{\ignorespaces \gls {cd} with different number of \gls {knn} of the FoldingNet\relax }}{59}{table.caption.74}%
 \contentsline {table}{\numberline {5.5}{\ignorespaces Hyperparemeters of the pose hypotheses diffusion model\relax }}{59}{table.caption.75}%
-\contentsline {table}{\numberline {5.6}{\ignorespaces Comparison of the different domains of feature on LM dataset\relax }}{62}{table.caption.76}%
-\contentsline {table}{\numberline {5.7}{\ignorespaces Comparison of the different domains of feature on LMO dataset\relax }}{62}{table.caption.77}%
-\contentsline {table}{\numberline {5.8}{\ignorespaces Comparison of the different feature fusion methods on LM dataset\relax }}{62}{table.caption.78}%
-\contentsline {table}{\numberline {5.9}{\ignorespaces Comparison of the different feature fusion methods on LMO dataset\relax }}{63}{table.caption.79}%
-\contentsline {table}{\numberline {5.10}{\ignorespaces Effect of the number of diffusion steps on the estimation results\relax }}{63}{table.caption.80}%
+\contentsline {table}{\numberline {5.6}{\ignorespaces Comparison of the different domains of feature on LM dataset\relax }}{62}{table.caption.77}%
+\contentsline {table}{\numberline {5.7}{\ignorespaces Comparison of the different domains of feature on LM dataset\relax }}{62}{table.caption.78}%
+\contentsline {table}{\numberline {5.8}{\ignorespaces Comparison of the different domains of feature on LMO dataset\relax }}{63}{table.caption.79}%
+\contentsline {table}{\numberline {5.9}{\ignorespaces Comparison of the different feature fusion methods on LM dataset\relax }}{63}{table.caption.80}%
+\contentsline {table}{\numberline {5.10}{\ignorespaces Comparison of the different feature fusion methods on LMO dataset\relax }}{63}{table.caption.81}%
+\contentsline {table}{\numberline {5.11}{\ignorespaces Effect of the number of diffusion steps on the estimation results\relax }}{64}{table.caption.82}%
 \addvspace {10\p@ }
 \addvspace {10\p@ }
 \addvspace {10\p@ }
