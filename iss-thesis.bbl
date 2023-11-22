@@ -26,11 +26,6 @@ J.~Sohl-Dickstein, E.~A. Weiss, N.~Maheswaranathan and S.~Ganguli, ``Deep unsupe
 \bibitem{ho2020denoising}
 J.~Ho, A.~Jain and P.~Abbeel, ``Denoising diffusion probabilistic models,'' 2020.
 
-\bibitem{peng_pvnet_2019}
-\BIBentryALTinterwordspacing
-S.~Peng, Y.~Liu, Q.~Huang, X.~Zhou and H.~Bao, ``\BIBforeignlanguage{en}{{PVNet}: {Pixel}-{Wise} {Voting} {Network} for {6DoF} {Pose} {Estimation}},'' in \emph{\BIBforeignlanguage{en}{2019 {IEEE}/{CVF} {Conference} on {Computer} {Vision} and {Pattern} {Recognition} ({CVPR})}}.\hskip 1em plus 0.5em minus 0.4em\relax Long Beach, CA, USA: IEEE, Jun. 2019, pp. 4556--4565. [Online]. Available: \url{https://ieeexplore.ieee.org/document/8954204/}
-\BIBentrySTDinterwordspacing
-
 \bibitem{Fabian_2021}
 F.~Manhardt, ``Towards monocular 6d object pose estimation,'' Ph.D. dissertation, Technische Universität München, 2021.
 
@@ -472,5 +467,24 @@ T.~Hodan, M.~Sundermeyer, B.~Drost, Y.~Labbe, E.~Brachmann, F.~Michel, C.~Rother
 
 \bibitem{7780735}
 E.~Brachmann, F.~Michel, A.~Krull, M.~Y. Yang, S.~Gumhold and C.~Rother, ``Uncertainty-driven 6d pose estimation of objects and scenes from a single rgb image,'' in \emph{2016 IEEE Conference on Computer Vision and Pattern Recognition (CVPR)}, 2016, pp. 3364--3372.
+
+\bibitem{Park_2019}
+\BIBentryALTinterwordspacing
+K.~Park, T.~Patten and M.~Vincze, ``Pix2pose: Pixel-wise coordinate regression of objects for 6d pose estimation,'' in \emph{2019 IEEE/CVF International Conference on Computer Vision (ICCV)}.\hskip 1em plus 0.5em minus 0.4em\relax IEEE, Oct. 2019. [Online]. Available: \url{http://dx.doi.org/10.1109/ICCV.2019.00776}
+\BIBentrySTDinterwordspacing
+
+\bibitem{peng_pvnet_2019}
+\BIBentryALTinterwordspacing
+S.~Peng, Y.~Liu, Q.~Huang, X.~Zhou and H.~Bao, ``\BIBforeignlanguage{en}{{PVNet}: {Pixel}-{Wise} {Voting} {Network} for {6DoF} {Pose} {Estimation}},'' in \emph{\BIBforeignlanguage{en}{2019 {IEEE}/{CVF} {Conference} on {Computer} {Vision} and {Pattern} {Recognition} ({CVPR})}}.\hskip 1em plus 0.5em minus 0.4em\relax Long Beach, CA, USA: IEEE, Jun. 2019, pp. 4556--4565. [Online]. Available: \url{https://ieeexplore.ieee.org/document/8954204/}
+\BIBentrySTDinterwordspacing
+
+\bibitem{song2020hybridpose}
+C.~Song, J.~Song and Q.~Huang, ``Hybridpose: 6d object pose estimation under hybrid representations,'' 2020.
+
+\bibitem{zakharov2019dpod}
+S.~Zakharov, I.~Shugurov and S.~Ilic, ``Dpod: 6d pose object detector and refiner,'' 2019.
+
+\bibitem{he2021ffb6d}
+Y.~He, H.~Huang, H.~Fan, Q.~Chen and J.~Sun, ``Ffb6d: A full flow bidirectional fusion network for 6d pose estimation,'' 2021.
 
 \end{thebibliography}

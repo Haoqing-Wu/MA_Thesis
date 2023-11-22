@@ -7,7 +7,7 @@ Reallocated singl_function (elt_size=4) to 100 items from 50.
 Reallocated singl_function (elt_size=4) to 100 items from 50.
 Reallocated wiz_functions (elt_size=4) to 6000 items from 3000.
 Reallocated singl_function (elt_size=4) to 100 items from 50.
-Reallocated field_info (elt_size=4) to 11345 items from 5000.
+Reallocated field_info (elt_size=4) to 11525 items from 5000.
 Database file #1: refs.bib
 Warning--entry type for "dataV4MUMX2020" isn't style-file defined
 --line 136 of file refs.bib
@@ -22,45 +22,45 @@ Warning--empty booktitle in wang2023pd
 Warning--empty booktitle in hinterstoisser2012model
 
 Done.
-You've used 141 entries,
+You've used 145 entries,
             4186 wiz_defined-function locations,
-            1386 strings with 32859 characters,
-and the built_in function-call counts, 75497 in all, are:
-= -- 5114
-> -- 2819
+            1401 strings with 33494 characters,
+and the built_in function-call counts, 77336 in all, are:
+= -- 5236
+> -- 2879
 < -- 168
-+ -- 1386
-- -- 640
-* -- 3269
-:= -- 11148
-add.period$ -- 286
-call.type$ -- 141
-change.case$ -- 143
++ -- 1414
+- -- 654
+* -- 3348
+:= -- 11432
+add.period$ -- 295
+call.type$ -- 145
+change.case$ -- 147
 chr.to.int$ -- 384
-cite$ -- 147
-duplicate$ -- 6038
-empty$ -- 6888
-format.name$ -- 771
-if$ -- 17042
+cite$ -- 151
+duplicate$ -- 6195
+empty$ -- 7075
+format.name$ -- 789
+if$ -- 17452
 int.to.chr$ -- 0
-int.to.str$ -- 141
-missing$ -- 1495
-newline$ -- 476
-num.names$ -- 143
-pop$ -- 4393
+int.to.str$ -- 145
+missing$ -- 1535
+newline$ -- 490
+num.names$ -- 147
+pop$ -- 4514
 preamble$ -- 1
 purify$ -- 0
 quote$ -- 2
-skip$ -- 5729
+skip$ -- 5866
 stack$ -- 0
-substring$ -- 1074
-swap$ -- 3991
+substring$ -- 1078
+swap$ -- 4082
 text.length$ -- 40
 text.prefix$ -- 0
 top$ -- 5
-type$ -- 141
+type$ -- 145
 warning$ -- 6
-while$ -- 199
-width$ -- 144
-write$ -- 1133
+while$ -- 203
+width$ -- 148
+write$ -- 1165
 (There were 7 warnings)

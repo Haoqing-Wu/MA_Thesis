@@ -34,10 +34,12 @@
 \contentsline {figure}{\numberline {5.7}{\ignorespaces Point cloud completion results of the FoldingNet. Top: cup; Bottom: phone. From left to right: estimation(viewpoint 1), ground truth(viewpoint 1), estimation(viewpoint 2), ground truth(viewpoint 2). Blue points are the input partial point cloud.\relax }}{57}{figure.caption.71}%
 \contentsline {figure}{\numberline {5.8}{\ignorespaces Comparision of the \gls {cd} distributions between the model trained with the whole data set and the overfitted model on single object (the first 7 objects of LM are shown)\relax }}{58}{figure.caption.72}%
 \contentsline {figure}{\numberline {5.9}{\ignorespaces L2 loss of the training phase of the diffusion model. Original data (gray) is downsampled and smoothed with a $2^{nd}$ order filter (orange) for visualization. \relax }}{60}{figure.caption.76}%
+\contentsline {figure}{\numberline {5.10}{\ignorespaces Categorical MSPD and MSSD recall rates with different thresholds on LM dataset (without refinement)\relax }}{63}{figure.caption.81}%
+\contentsline {figure}{\numberline {5.11}{\ignorespaces Rotation error under different representations of rotation during training phase (without refinement).\relax }}{67}{figure.caption.93}%
 \addvspace {10\p@ }
 \addvspace {10\p@ }
 \addvspace {10\p@ }
-\contentsline {figure}{\numberline {A.1}{\ignorespaces Point cloud completion results of the FoldingNet. From top to bottom: cup, camera, phone, egg box, glue. From left to right: estimation(viewpoint 1), ground truth(viewpoint 1), estimation(viewpoint 2), ground truth(viewpoint 2). Blue points are the input partial point cloud.\relax }}{70}{figure.caption.83}%
+\contentsline {figure}{\numberline {A.1}{\ignorespaces Point cloud completion results of the FoldingNet. From top to bottom: cup, camera, phone, egg box, glue. From left to right: estimation(viewpoint 1), ground truth(viewpoint 1), estimation(viewpoint 2), ground truth(viewpoint 2). Blue points are the input partial point cloud.\relax }}{74}{figure.caption.95}%
 \addvspace {10\p@ }
 \addvspace {10\p@ }
 \providecommand \tocbasic@end@toc@file {}\tocbasic@end@toc@file 
