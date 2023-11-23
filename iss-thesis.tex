@@ -843,7 +843,7 @@ where $p_{t}(\mathbf{x})$ is the density of the data distribution at time $t$. A
   D_{F} = \mathbb{E}_{t\in \mathcal{U}(0,T)} \mathbb{E}_{p_{t}(\mathbf{x})}\left[\lambda(t)\left\lVert\nabla_{\mathbf{x}}log p_{t}(\mathbf{x}) - \mathbf{s}_{\theta}(\mathbf{x},t)\right\rVert^{2}\right]
 \end{align}
 where $\mathcal{U}(0,T)$ is a uniform distribtion over the interval $[0,T]$ and $\lambda(t)$ is a weighting function that is used to balance the contribution of each timestep. The \glspl{sde} based diffusion models are more flexible and can be applied to the continuous-time domain, which is more fine-grained than the discrete-time models.
-\subsection{Improvements on Sampling}
+\subsection{Improvements on Sampling}\label{sec:impr_sample}
 
 Sampling process of the original diffusion models takes a large amount of time because of it's iterative architecture during the reverse process. In order to improve the efficiency of the sampling process, some works have been done to accelerate the sampling process.
 \subsubsection{Learning-Free Sampling}
@@ -1330,11 +1330,16 @@ With the visualization of the reconstructed point cloud, we can valid that the m
 	\label{img:comp_all}
 \end{figure}
 
-The following figure shows the development of the output from FoldingNet decoder during the training process.
+The following figure \ref{img:fold_dev} shows the development of the output from FoldingNet decoder during the training process.
 
------------------------image-------------------------
+\begin{figure}[h]
+	\centering
+	\includegraphics[width=1.\textwidth]{img/fold_dev.pdf}
+	\caption{Development of the reconstructed point cloud during the training process.}
+	\label{img:fold_dev}
+\end{figure}
 
-From the visualization we can find that the shape of the reconstructed point cloud is getting more and more similar to the ground truth, but the difference exists because of the capability of the backbone on data with heavy occlusion and noise. We further compare the training of point cloud completion task on all 15 categories with overfitted models on single object to validate the generalization of the network. From figure \ref{img:fold_overfit} we can find that the \gls{cd} of the overfitted the models has lower mean and variance than the model trained on all categories. Table \ref{tab:fold_overfit} shows the quantitative comparision. The visualization of the overfitting case on one objects is illustrated in figure.
+From the visualization we can find that the shape of the reconstructed point cloud is getting more and more similar to the ground truth, but the difference exists because of the capability of the backbone on data with heavy occlusion and noise. We further compare the training of point cloud completion task on all 15 categories with overfitted models on single object to validate the generalization of the network. From figure \ref{img:fold_overfit} we can find that the \gls{cd} of the overfitted the models has lower mean and variance than the model trained on all categories. Table \ref{tab:fold_overfit} shows the quantitative comparision.
 \begin{figure}[h]
 	\centering
 	\includegraphics[width=1.\textwidth]{img/fold_overfit.eps}
@@ -1365,7 +1370,6 @@ From the visualization we can find that the shape of the reconstructed point clo
   \end{tabular}
 \end{table}
 
------------------------image-------------------------
 
 To evaluate the influence of the number of \gls{knn} on the result, we train the model with different setups and the following table shows the corresponding \glspl{cd} on the test dataset.
 \begin{table}[h]
@@ -1552,7 +1556,7 @@ Following the metrics that we introduced in previous section, we propose compreh
 	\label{img:eval_threshold}
 \end{figure}
 
-Comparing with other \gls{6dof} pose estimation methods in the recent years (table \ref{tab:eval_compare_lm}, \ref{tab:eval_compare_lmo}) including \gls{rgb}-only and \gls{rgbd} approaches, our model owns comparable performance especially on \gls{lmo} dataset. It is easy to notice the significant \gls{avre} drop between the result on \gls{lm} and \gls{lmo} of some methods, which is even more than $40\%$. Our method however has an acceptable score with and without refinement.
+Comparing with other \gls{6dof} pose estimation methods in the recent years (table \ref{tab:eval_compare_lm}, \ref{tab:eval_compare_lmo}) including \gls{rgb}-only and \gls{rgbd} approaches, our model owns comparable performance especially on \gls{lmo} dataset. It is easy to notice the significant \gls{avre} drop between the result on \gls{lm} and \gls{lmo} of some methods, which is even more than $40\%$. Our method however has an acceptable score with and without refinement. Why we only use \gls{add}(-S) as the evaluation metric in this part of comparsion, is because the majority of pose estimation methods only provide \gls{add}(-S) in publications and the result of \gls{bop} metrics are not always available. Our ablation study based on all the metrics of \gls{bop} is shown in the next section.
 
 \begin{table}[h]
   \centering
@@ -1630,7 +1634,21 @@ It is worth to mention that our model is not trained on each objects seperately,
   \end{tabular}
 \end{table}
 \subsubsection{Qualitative Evaluation}
+Here we also demonstrate the qualitative result of our model on the pose estimation task. Figure \ref{img:eval_vis_img} shows some objects rendered with the estimated pose on the input image. First row is the objects without occlusion and second row is the objects with occlusion. We can find that the \gls{2d}-projection of the estimated pose has a very high persentage of overlap with the ground truth pose if there is no occlusion. The accuracy drops a little bit when the visible part of the object is occluded by other objects.
+\begin{figure}[h]
+	\centering
+	\includegraphics[width=1.\textwidth]{img/eval_vis.pdf}
+	\caption{Visualization of some objects highlighted at estimated pose. First row: objects without occlusion; Second row: objects with occlussion}
+	\label{img:eval_vis_img}
+\end{figure}
 
+Additionally, we can have a closer look at the development of the pose hypotheses through the whole denoising process (figure \ref{img:eval_vis_denoise}). We select the cat object in \gls{lm} dataset as an example. The multi-hypotheses (set to 16 in our experiment) of estimated pose localize randomly in the early stage of the denoising process and finally overlap together on the ground truth (purple).   
+\begin{figure}[h]
+	\centering
+	\includegraphics[width=1.\textwidth]{img/vis_denoise.pdf}
+	\caption{Visualization of the 6 DoF pose denoising process}
+	\label{img:eval_vis_denoise}
+\end{figure}
 
 \section{Ablation Study}
 In this section, the ablation study of our method are propose with the model trained on the \gls{pbr} dataset of one object (cat) to accelerate the training process. We analize several aspects that have influence on the performance of the pose estimation. The comparisons are given on both \gls{lm} and \gls{lmo} dataset with and without refinement.
@@ -1774,7 +1792,11 @@ In the orignial \gls{ddpm} setting of image synthesis task, the diffusion steps 
 \end{table}
 
 \chapter{Discussion}
+In this chapter, we will discuss our methodology, results from the experiments as well as the advantages and also the drawbacks of our method.
 
+\textbf{Framework} \quad Our framework towards \gls{6dof} pose estimation is based on the diffusion pipeline and give this task a new way of solution besides direct regression and correspondance matching. We can share the advantages from the generative models especially the high diversity of the generation from the diffusion models. However this kind of framework also increase the complexity of training and real-world application. We need to seperate the training phase and inference phase in the level of network structure and the inference is straightforward because the generation is actually iterative and muss go through plenty of steps. Although we have many optimization on sampling phase that introduce previously in section \ref{sec:impr_sample}, the inference time is still markable compared with many swift methods. The encoder networks which provide the diffusion backbone features from the input data are trained seperately besides diffuion networks
+
+\textbf{\gls{2d} Feature Extractor} \quad 
 \chapter{Conclusion}
 In this last chapter of our thesis, we summarize the work and highlight the contributions of our method in the field of \gls{6dof} pose estimation. Additionally, it gives an outlook on the future work.
 \section{Summary}
