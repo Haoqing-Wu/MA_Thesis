@@ -10,19 +10,18 @@
 \contentsline {table}{\numberline {5.5}{\ignorespaces Hyperparemeters of the pose hypotheses diffusion model\relax }}{59}{table.caption.76}%
 \contentsline {table}{\numberline {5.6}{\ignorespaces Quantitative Evaluation on LM dataset(symetrical objects annotated with $^{*}$)\relax }}{62}{table.caption.80}%
 \contentsline {table}{\numberline {5.7}{\ignorespaces Quantitative Evaluation on LMO dataset(symetrical objects annotated with $^{*}$)\relax }}{62}{table.caption.81}%
-\contentsline {table}{\numberline {5.8}{\ignorespaces Comparison of ADD(-S) scores with other methods on LM dataset (symetrical objects annotated with $^{*}$)\relax }}{64}{table.caption.83}%
-\contentsline {table}{\numberline {5.9}{\ignorespaces Comparison of ADD(-S) scores with other methods on LMO dataset (symetrical objects annotated with $^{*}$)\relax }}{65}{table.caption.84}%
-\contentsline {table}{\numberline {5.10}{\ignorespaces AR drop between generalized model and overfitted one on LMO dataset\relax }}{65}{table.caption.85}%
-\contentsline {table}{\numberline {5.11}{\ignorespaces Comparison of the different domains of feature on LM dataset\relax }}{65}{table.caption.90}%
-\contentsline {table}{\numberline {5.12}{\ignorespaces Comparison of the different domains of feature on LMO dataset\relax }}{66}{table.caption.91}%
-\contentsline {table}{\numberline {5.13}{\ignorespaces Comparison of the different feature fusion methods on LM dataset\relax }}{66}{table.caption.92}%
-\contentsline {table}{\numberline {5.14}{\ignorespaces Comparison of the different feature fusion methods on LMO dataset\relax }}{68}{table.caption.93}%
-\contentsline {table}{\numberline {5.15}{\ignorespaces Comparison of the different rotation representations on LM dataset\relax }}{68}{table.caption.94}%
-\contentsline {table}{\numberline {5.16}{\ignorespaces Comparison of the different rotation representations on LMO dataset\relax }}{68}{table.caption.95}%
-\contentsline {table}{\numberline {5.17}{\ignorespaces Effect of the number of denoising steps on the estimation results\relax }}{69}{table.caption.97}%
+\contentsline {table}{\numberline {5.8}{\ignorespaces Comparison of ADD(-S) scores with other methods on LM dataset (symetrical objects annotated with $^{*}$)\relax }}{63}{table.caption.82}%
+\contentsline {table}{\numberline {5.9}{\ignorespaces Comparison of ADD(-S) scores with other methods on LMO dataset (symetrical objects annotated with $^{*}$)\relax }}{63}{table.caption.83}%
+\contentsline {table}{\numberline {5.10}{\ignorespaces AR drop between generalized model and overfitted one on LMO dataset\relax }}{64}{table.caption.84}%
+\contentsline {table}{\numberline {5.11}{\ignorespaces Comparison of the different domains of feature on LMO dataset\relax }}{66}{table.caption.89}%
+\contentsline {table}{\numberline {5.12}{\ignorespaces Comparison of the different feature fusion methods on LMO dataset\relax }}{66}{table.caption.90}%
+\contentsline {table}{\numberline {5.13}{\ignorespaces Comparison of the different rotation representations on LMO dataset\relax }}{67}{table.caption.91}%
+\contentsline {table}{\numberline {5.14}{\ignorespaces Effect of the number of denoising steps on the estimation results\relax }}{67}{table.caption.92}%
 \addvspace {10\p@ }
 \addvspace {10\p@ }
 \addvspace {10\p@ }
-\addvspace {10\p@ }
+\contentsline {table}{\numberline {A.1}{\ignorespaces Comparison of the different domains of feature on LM dataset\relax }}{74}{table.caption.95}%
+\contentsline {table}{\numberline {A.2}{\ignorespaces Comparison of the different feature fusion methods on LM dataset\relax }}{74}{table.caption.96}%
+\contentsline {table}{\numberline {A.3}{\ignorespaces Comparison of the different rotation representations on LM dataset\relax }}{74}{table.caption.97}%
 \addvspace {10\p@ }
 \providecommand \tocbasic@end@toc@file {}\tocbasic@end@toc@file 

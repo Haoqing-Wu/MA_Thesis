@@ -1081,7 +1081,7 @@ For the postion embedding $e_{p}$, we follow the pipeline of the Transformer tha
 \end{figure}
 
 
-\subsection{Residual Translation}
+\subsection{Residual Translation}\label{sec:res_t}
 Compared with the rolation estimation in the \gls{6dof} estimation task, translation is relatively easier to determine, at least in a rough range. Because we can use the position of the bounding box of the object in the camera coordinate combined with the camera parameter to calculate the coarse postion of the object in the \gls{3d} space. In another way, we can directly use the mean of the point cloud's position to roughly approximate the translation if the depth information is available. The error exists is mainly because the point cloud is sometimes not complete, so that the gravity center of the partial point cloud is not the real center of the object. That's also the reason for the error of the \gls{2d} only method that the occulusion cause a shift between the center of the visible part and the ground truth.
 
 With the help the deep learning method, we can minimize the error of the estimation when we use the gravity center of the reference point cloud as the initial translation. The model is trained to learn the residual translation from the gravity center to the ground truth center. First, we calculate the mean of the reference point cloud ($\overrightarrow{OQ}$ in figure \ref{img:res_t})which is the initial translation and move the point cloud to the origin. Then we let the network to minimize the residual error between the estimated translation and the shifted ground truth translation $\overrightarrow{OP^{'}}$. The estimated residual translation is added to the initial translation $\overrightarrow{OQ}$ to get the final translation estimation $\overrightarrow{OP} $. This process is basically enable the network to approximate the shift between the mean of the partial point cloud and it's original center, instead of the position of the object in the \gls{3d} space. This modification let the solving space significantly to be reduced compared with directly estimate the translation $\overrightarrow{OP} $ and make the trainging more efficient.
@@ -1547,14 +1547,7 @@ Following the metrics that we introduced in previous section, we propose compreh
   \end{tabular}
 \end{table}
 
-\begin{figure}[h]
-	\centering
-	\subfloat{\includegraphics[width=1.\textwidth]{img/mspd_thres.eps}}\\
-  \centering
-	\subfloat{\includegraphics[width=1.\textwidth]{img/mssd_thres.eps}}
-	\caption{Categorical MSPD and MSSD recall rates with different thresholds on LM dataset (without refinement)}
-	\label{img:eval_threshold}
-\end{figure}
+
 
 Comparing with other \gls{6dof} pose estimation methods in the recent years (table \ref{tab:eval_compare_lm}, \ref{tab:eval_compare_lmo}) including \gls{rgb}-only and \gls{rgbd} approaches, our model owns comparable performance especially on \gls{lmo} dataset. It is easy to notice the significant \gls{avre} drop between the result on \gls{lm} and \gls{lmo} of some methods, which is even more than $40\%$. Our method however has an acceptable score with and without refinement. Why we only use \gls{add}(-S) as the evaluation metric in this part of comparsion, is because the majority of pose estimation methods only provide \gls{add}(-S) in publications and the result of \gls{bop} metrics are not always available. Our ablation study based on all the metrics of \gls{bop} is shown in the next section.
 
@@ -1634,7 +1627,7 @@ It is worth to mention that our model is not trained on each objects seperately,
   \end{tabular}
 \end{table}
 \subsubsection{Qualitative Evaluation}
-Here we also demonstrate the qualitative result of our model on the pose estimation task. Figure \ref{img:eval_vis_img} shows some objects rendered with the estimated pose on the input image. First row is the objects without occlusion and second row is the objects with occlusion. We can find that the \gls{2d}-projection of the estimated pose has a very high persentage of overlap with the ground truth pose if there is no occlusion. The accuracy drops a little bit when the visible part of the object is occluded by other objects.
+Here we also demonstrate the qualitative result of our model on the pose estimation task by using the visualisation toolkit from BOP \cite{hodan2018bop} challenge. Figure \ref{img:eval_vis_img} and \ref{img:vis_all} show some objects from \gls{lm} and \gls{lmo} dataset rendered with the estimated pose on the input image. First row is the objects without occlusion and second row is the objects with occlusion. We can observe that the \gls{2d}-projection of the estimated pose has a very high percentage of overlap with the ground truth pose if there is no occlusion. The highlighted estimation and object in the background is shifted a little bit when the visible part of the object is occluded by other objects.
 \begin{figure}[h]
 	\centering
 	\includegraphics[width=1.\textwidth]{img/eval_vis.pdf}
@@ -1642,7 +1635,7 @@ Here we also demonstrate the qualitative result of our model on the pose estimat
 	\label{img:eval_vis_img}
 \end{figure}
 
-Additionally, we can have a closer look at the development of the pose hypotheses through the whole denoising process (figure \ref{img:eval_vis_denoise}). We select the cat object in \gls{lm} dataset as an example. The multi-hypotheses (set to 16 in our experiment) of estimated pose localize randomly in the early stage of the denoising process and finally overlap together on the ground truth (purple).   
+Additionally, we can have a closer look at the development of the pose hypotheses through the whole denoising process (figure \ref{img:eval_vis_denoise}). We select the cat object in \gls{lm} dataset as an example and render the visualization with Blender. The multi-hypotheses (set to 16 in our experiment) of estimated pose, which is colorized with transparent gray, localize randomly in the space at the early stage of the denoising process and finally overlap together on the ground truth (purple).   
 \begin{figure}[h]
 	\centering
 	\includegraphics[width=1.\textwidth]{img/vis_denoise.pdf}
@@ -1652,27 +1645,11 @@ Additionally, we can have a closer look at the development of the pose hypothese
 
 \section{Ablation Study}
 In this section, the ablation study of our method are propose with the model trained on the \gls{pbr} dataset of one object (cat) to accelerate the training process. We analize several aspects that have influence on the performance of the pose estimation. The comparisons are given on both \gls{lm} and \gls{lmo} dataset with and without refinement.
-\subsection{Feature Domain}
+\subsection{Feature Domain}\label{sec:ab_feat}
 Here we compare the quantitative results using \gls{2d}, \gls{3d}, and \gls{2d}+\gls{3d} feature given into the backbone, since sometimes the ideal \gls{rgbd} data is not available in the real world application. Table \ref{tab:ab_feat_lm} and \ref{tab:ab_feat_lmo} show the evaluation results in different cases. The model utilizing both \gls{2d} and \gls{3d} features achieves naturally the highest score followed by the model only uses \gls{3d} feature. \gls{2d}-only method has a relative wide gap with other two settings. This is probability because the 2D feature extractor is not trained on the target dataset but on the general image dataset, and the \gls{2d} network suffers from the texture-less object with only limited information available from the data.
 
 However, the addtional \gls{2d} information solidly increase the accuracy of the estimation with only \gls{3d} feature. It validates that our feature fusion mechanism doesn't compansate each other in a negative way, but rather complement the missing information in the other domain.
-\begin{table}[h]
-  \centering
-  \caption{Comparison of the different domains of feature on LM dataset}
-  \label{tab:ab_feat_lm}
-  \begin{tabular}{l | c | C{16mm} C{16mm} C{16mm}| C{16mm}| C{16mm}}
-      \toprule
-      Method & Refine & $\text{AR}_{\text{MSPD}}$ & $\text{AR}_{\text{MSSD}}$ & $\text{AR}_{\text{VSD}}$ & AR & ADD(-S) \\
-      \midrule
-      2D  & $-$ & 77.3 & 73.2 & 47.6 & 66.0 & 76.0 \\
-      3D & $-$ & 88.9 & 87.0 & 68.3 & 81.4 & 93.5 \\
-      2D+3D  & $-$ & 91.6 & 89.1 & 68.8 & $\mathbf{83.2}$ & $\mathbf{97.5}$ \\
-      2D  & $\surd$ & 93.9 & 91.8 & 78.1 & 87.9 & 91.5 \\
-      3D & $\surd$ & 94.8 & 93.9 & 83.5 & 90.7 & 95.5 \\
-      2D+3D  & $\surd$ & 98.5 & 98.7 & 85.7 & $\mathbf{94.0}$ & $\mathbf{98.5}$ \\
-      \bottomrule
-  \end{tabular}
-\end{table}
+
 \begin{table}[h]
   \centering
   \caption{Comparison of the different domains of feature on LMO dataset}
@@ -1691,23 +1668,8 @@ However, the addtional \gls{2d} information solidly increase the accuracy of the
   \end{tabular}
 \end{table}
 
-\subsection{Feature Fusion}
+\subsection{Feature Fusion}\label{sec:ab_fusion}
 As we introduced in section \ref{sec:fusion}, we run the experiments with entity-wise addition and feature-wise concatination to evaluate the effect of the different feature fusion. From table \ref{tab:ab_fusion_lm} and \ref{tab:ab_fusion_lmo} we find that the addition of the features outperforms the concatination in both cases. Normally, the concatination of the features can preserve more information than the addition with the tradeoff of the larger dimension of the feature. But in our setting, we find that the addition converges fast and perform better than concatination in the module of feature fusion.
-\begin{table}[h]
-  \centering
-  \caption{Comparison of the different feature fusion methods on LM dataset}
-  \label{tab:ab_fusion_lm}
-  \begin{tabular}{l | c | C{16mm} C{16mm} C{16mm}| C{16mm}| C{16mm}}
-      \toprule
-      Method & Refine & $\text{AR}_{\text{MSPD}}$ & $\text{AR}_{\text{MSSD}}$ & $\text{AR}_{\text{VSD}}$ & AR & ADD(-S) \\
-      \midrule
-      Add  & $-$ & 91.6 & 89.1 & 68.8 & $\mathbf{83.2}$ & $\mathbf{97.5}$ \\
-      Concat. & $-$ & 80.9 & 77.5 & 53.2 & 70.5 & 83.5 \\
-      Add  & $\surd $ & 98.5 & 98.7 & 85.7 & $\mathbf{94.0}$ & $\mathbf{98.5}$ \\
-      Concat. & $\surd $ & 94.8 & 93.7 & 80.4 & 89.7 & 94.0 \\
-      \bottomrule
-  \end{tabular}
-\end{table}
 
 \begin{table}[h]
   \centering
@@ -1726,23 +1688,7 @@ As we introduced in section \ref{sec:fusion}, we run the experiments with entity
 \end{table}
 
 \subsection{Transformation Representation}
-\begin{table}[h]
-  \centering
-  \caption{Comparison of the different rotation representations on LM dataset}
-  \label{tab:ab_rot_lm}
-  \begin{tabular}{l | c | C{16mm} C{16mm} C{16mm}| C{16mm}| C{16mm}}
-      \toprule
-      Method & Refine & $\text{AR}_{\text{MSPD}}$ & $\text{AR}_{\text{MSSD}}$ & $\text{AR}_{\text{VSD}}$ & AR & ADD(-S) \\
-      \midrule
-      MRP   & $-$     & 89.4 & 87.0 & 65.2 & 80.5 & 96.0 \\
-      Quat. & $-$     & 91.6 & 89.4 & 68.5 & $\mathbf{83.2}$ & $\mathbf{99.0}$ \\
-      6D    & $-$     & 91.6 & 89.1 & 68.8 & $\mathbf{83.2}$ & 97.5 \\
-      MRP   & $\surd$ & 97.4 & 96.3 & 84.2 & 92.6 & 97.5 \\
-      Quat. & $\surd$ & 99.0 & 98.3 & 86.1 & $\mathbf{94.5}$ & $\mathbf{99.0}$ \\
-      6D    & $\surd$ & 98.5 & 98.7 & 85.7 & 94.0 & 98.5 \\
-      \bottomrule
-  \end{tabular}
-\end{table}
+Recall the discussion in section \ref{sec:representation} and \ref{sec:res_t}, we compare the different representation of rotation including quaternion, \gls{mrp} and 6D representation \cite{Zhou_2019_CVPR}. From table \ref{tab:ab_rot_lm} and \ref{tab:ab_rot_lmo} we can find that the 6D representation and quaternion have equally best performance on \gls{lm} dataset, and 6D achieves better result on the \gls{lmo} without refinement. Figure \ref{img:ab_rot} shows the convergance of the rotation error with three different forms. We can also see the difference between each representation.
 
 \begin{table}[h]
   \centering
@@ -1761,16 +1707,11 @@ As we introduced in section \ref{sec:fusion}, we run the experiments with entity
       \bottomrule
   \end{tabular}
 \end{table}
-\begin{figure}[h]
-	\centering
-	\includegraphics[width=1.\textwidth]{img/ab_rot.eps}
-	\caption{Rotation error under different representations of rotation during training phase (without refinement).}
-	\label{img:ab_rot}
-\end{figure}
+
 
 \subsection{Backbone Scaling}
 
-\subsection{Denoising Steps}
+\subsection{Denoising Steps}\label{sec:ab_steps}
 In the orignial \gls{ddpm} setting of image synthesis task, the diffusion steps is configured as 1000 to make sure the vividness of the generated image. In our pose estimation task, we compare the effects caused by the number of denoising steps on the final result in table \ref{tab:ab_steps}. The result shows that large number of steps doesn't necessarily lead to better performance. 
 \begin{table}[h]
   \centering
@@ -1794,17 +1735,117 @@ In the orignial \gls{ddpm} setting of image synthesis task, the diffusion steps 
 \chapter{Discussion}
 In this chapter, we will discuss our methodology, results from the experiments as well as the advantages and also the drawbacks of our method.
 
-\textbf{Framework} \quad Our framework towards \gls{6dof} pose estimation is based on the diffusion pipeline and give this task a new way of solution besides direct regression and correspondance matching. We can share the advantages from the generative models especially the high diversity of the generation from the diffusion models. However this kind of framework also increase the complexity of training and real-world application. We need to seperate the training phase and inference phase in the level of network structure and the inference is straightforward because the generation is actually iterative and muss go through plenty of steps. Although we have many optimization on sampling phase that introduce previously in section \ref{sec:impr_sample}, the inference time is still markable compared with many swift methods. The encoder networks which provide the diffusion backbone features from the input data are trained seperately besides diffuion networks
+\textbf{Framework} \quad Our framework towards \gls{6dof} pose estimation is based on the diffusion pipeline and give this task a new way besides previous methods like direct regression and correspondance matching. We can share the advantages from the generative models especially the high diversity of the generation from the diffusion models. However this kind of framework also increase the complexity of training and real-world applications. We need to seperate the training phase and inference phase in the level of network structure and the inference is straightforward because the generation is actually iterative and muss go through a large number of steps. Although we have many optimization techniques on sampling that are introduced previously in section \ref{sec:impr_sample}, the inference time is still markable compared with many swift methods. The encoder networks which provide the diffusion backbone features from the input data are trained seperately besides diffuion networks. That means it is not an end-to-end model and we need some subtasks to pretrain the feature extractors or use the general pretrained models.
 
-\textbf{\gls{2d} Feature Extractor} \quad 
+\textbf{Featue Fusion} \quad In our method, we utilize both \gls{2d} and \gls{3d} features from the input data to squeeze the information as much as possible. However the topic of how to fuse the feature in different domain is non-trival in the field of deep learning. Here we tried the most intuitive ways like addition and concatenation, but these kind of operations are not the most efficient and effective ones. From the ablation study (section \ref{sec:ab_fusion}) on this part, we can find that the way of feature fusion has a significant influence on the final result. 
+
+Furthermore, we extract both the global features from the \gls{2d} and \gls{3d} domain to represent the object in a specific pose. The fusion of global feature is relative straightforward because we only need to match the feature dimension by using some projection layers. However, if we want to extract the local feature using patchified sampling or dense feature from keypoints, we need to further align the local feature from different domains which is also a non-trival task.
+
+\textbf{2D Featue Extractor} \quad We use a self-supervised \gls{2d} network pretrained on general image dataset to extract the \gls{2d} feature instead of training on the target dataset. The reason is that we only need to encode the image with latent expression and a general pretrained model has the capability on the unseen \gls{rgb} data in the downstream task. From section \ref{sec:ab_feat} we may notice the poor performance when we only use \gls{2d} feature, especially under occlusion situations. Obviously, we can further improve the performance by training the \gls{2d} network using supervised learning on the pose estimation task to make the feature distribution more suitable in the corresponding manifold. But that not the purpose of our work that we want to show the effectiveness of the diffusion framework itself on processing fuzzy input features. Using a general network pretrained on a large number of images is a more flexible way to develop the diffusion models in different applications with different data, since we don't need to train the network every time from scratch.
+
+\textbf{3D Featue Extractor} \quad In contrary to the \gls{2d} one, there is almost no general \gls{3d} feature extraction network that can handle unseen data with high accuracy for the downstream task. That is because the \gls{3d} data is much more sparse and the point cloud has the property of permutation invariance and only has geometrical information which causes more uncertainty in the feature extraction. To that end, we train our \gls{3d} network on the target dataset to extract the feature from a point cloud completion task. From section \ref{sec:ab_feat} we can validate our setting that \gls{3d} network itself can perform a quiet satisfied result. It is worth to mention that the network we use performs well on the single object but still have room for better generalization on multiple objects. If the occluded part exceed certain percentage of the whole object, it is hard for the network to complete the correct shape of the object without any prior knowledge.
+
+\textbf{Diffusion Model} \quad We use the architecture of the \gls{ddpm} as our diffusion model and techniques from \gls{ddim} to accelerate the inference phase. From the visualization \ref{img:eval_vis_denoise}, we notice that no matter how we initialize the pose at first step, the pose hypotheses will converge to the ground truth pose after a certain number of denoising steps. The number of the denoising steps may have an effect of the quality of the generated sample in image synthesis task, but as in section \ref{sec:ab_steps} shows, it doesn't compose a markable difference in our pose estimation task. The reason may be that the denoising objective (transformation) is a low-dimensional representation of an \gls{3d} object compared with point cloud. \gls{2d} image it self is a high-dimensional matrix with more entities (pixels) and channels. We need more denoising steps to ensure the meaningful representaion and quality at pixel level and also image level of the generated sample. In our case, the transformation vector has less difficulty to converge to the ground truth pose and need less denoising steps.
+
+Different from the orignial \gls{ddpm}, we use the Transformer encoder as our backbone to fit the form of input data instead of \gls{cnn} based network. Another advantage is we can make use of the self-attention mechanism to capture the weighted relationship between the input tokens. If we extend our work into pose estimation of the sequence input like video, or in other words, object tracking, the self-attention mechanism is able to understand the temporal relationship between the frames and make the estimation more robust, since the transformer encoder is originally designed for the sequence input.
+
+In our experiment, we let the final output of generated pose to be the mean of multi-hypotheses, in order to further minimize the error with the ground truth and speed up the convergance of the model to some degree.  In the case of symetrical objects or the ambiguity caused by occlusion, the distribution of the pose hypotheses is no longer a single peak but a multi-modal distribution. When we estimate the pose of object with ambiguity, it is better to sample more hypotheses and analize the distribution of the pose, which is quiet useful in the application like robot grasping to find the best pose to grasp the object.
+
 \chapter{Conclusion}
 In this last chapter of our thesis, we summarize the work and highlight the contributions of our method in the field of \gls{6dof} pose estimation. Additionally, it gives an outlook on the future work.
 \section{Summary}
+In this thesis, we present a novel framework and also the evaluation for \gls{6dof} pose estimation. \gls{6dof} pose estimation as an important task in the field of computer vision has been widly used in many applications like robotics and augmented reality. The common methods such as template-base, keypoint-based and direct regression have their own advantages and constrains in different scenarios. In our work, we propose the diffusion-based framework for \gls{6dof} pose estimation. 
+
+Diffusion models are a class of generative models that can generate high-quality samples from a randomly initialized noise. We first review the classical diffusion models with some related improvement works. Then we design our diffusion model which is compatible with the pose estimation task. We use the Transformer encoder as our backbone to estimate the noise added at each time step of the training phase with the noisy pose and conditional guidance from the input data. In the reference phase, the pose is gradually denoised from the initial random noise to the final estimation by iteratively passing through the denoiser which is the transformer encoder. An optional multi-hypotheses and \gls{icp} refinement is applied to further improve the accuracy of the estimation.
+
+To extract the feature from the input \gls{rgbd} data. A self-supervised \gls{vit} called DINO \cite{caron2021emerging} is utilized for downstreaming \gls{2d} feature and a point cloud completion task using FoldingNet \cite{yang2018foldingnet} is designed for \gls{3d} feature. After that, we fuse the feature from both domain to become the conditional embedding form the diffusion model.
+
+To validate the performance of our method, we evaluate our method on \gls{lm} \cite{hinterstoisser2012model} dataset and the occlusion version \gls{lmo} \cite{dataV4MUMX2020} dataset with the comparison of other state-of-the-art methods. The result shows that our method achieves the comparable result with other methods even facing the objects with occlusion. Our attempts on the real-world dataset also shows the capability of diffusion-based framework on the pose estimation task. A well-rounded ablation study is also given to analyze the effect of different components in our method.
+
+Our method as a pioneer work on the diffusion-based \gls{6dof} pose estiamtion task on the real-world dataset, shows a new approach to this task and also the potential of the diffusion models outside the field of image synthesis.
 
 \section{Outlook}
+There are still many aspects that can be further improved in the future research. In our thesis, we use the architecture of \gls{ddpm} as our diffusion model. The alternative model like \gls{sgm} \cite{song2020generative,song2020improved} can be also applied to our task to avoid the consideration of nomalizing constant in likelihood-based models. The sampling techniques like \gls{cas} \cite{jolicoeurmartineau2020adversarial}, \gls{ald} \cite{dockhorn2022scorebased} and \gls{ddss} \cite{watson2022learning} can be an alternative to the \gls{ddim} to accelerate the inference phase.
+
+On the other hand, we can also invest on the feature extraction part. Besides using the general pretrained \gls{2d} network, we can train the network supervised with the target dataset to further improve the performance. For the \gls{3d} feature, technique like contrastive learning may be new direction to explore. The generalization of the \gls{3d} downstream network is the bottleneck of the flexiable usage of our method. If we can find a way to extract the \gls{3d} feature from the unseen data using a general model, our method can be applied to many other applications rapidly. The way of feature fusion is also a non-trival task. Besides the addition and concatination, we can also try the more advanced method like cross-attention to capture the relationship between the features from different domains.
+
+Our method can be also extended to the task of object tracking. The transformer encoder as our diffusion backbone can be used to understand the relationship not only between the rotation and translation inside a single frame, but should also be able to learn the temporal relationship between the frames. And we can use the multi-hypotheses of diffusion models to generate the distribution of the pose instead of a single possible solution. It allow us to understand the ambiguity of the symetrical objects and find the best pose to track the object. 
+
+
 
 \appendix
-\chapter{Additionally: Visualization of Results}
+\chapter{Additionally: Evaluation Results}
+\section{Quantitative Evaluation}
+\begin{figure}[h]
+	\centering
+	\subfloat{\includegraphics[width=1.\textwidth]{img/mspd_thres.eps}}\\
+  \centering
+	\subfloat{\includegraphics[width=1.\textwidth]{img/mssd_thres.eps}}
+	\caption{Categorical MSPD and MSSD recall rates with different thresholds on LM dataset (without refinement)}
+	\label{img:eval_threshold}
+\end{figure}
+
+\begin{figure}[h]
+	\centering
+	\includegraphics[width=1.\textwidth]{img/ab_rot.eps}
+	\caption{Rotation error under different representations of rotation during training phase (without refinement).}
+	\label{img:ab_rot}
+\end{figure}
+
+\begin{table}[h]
+  \centering
+  \caption{Comparison of the different domains of feature on LM dataset}
+  \label{tab:ab_feat_lm}
+  \begin{tabular}{l | c | C{16mm} C{16mm} C{16mm}| C{16mm}| C{16mm}}
+      \toprule
+      Method & Refine & $\text{AR}_{\text{MSPD}}$ & $\text{AR}_{\text{MSSD}}$ & $\text{AR}_{\text{VSD}}$ & AR & ADD(-S) \\
+      \midrule
+      2D  & $-$ & 77.3 & 73.2 & 47.6 & 66.0 & 76.0 \\
+      3D & $-$ & 88.9 & 87.0 & 68.3 & 81.4 & 93.5 \\
+      2D+3D  & $-$ & 91.6 & 89.1 & 68.8 & $\mathbf{83.2}$ & $\mathbf{97.5}$ \\
+      2D  & $\surd$ & 93.9 & 91.8 & 78.1 & 87.9 & 91.5 \\
+      3D & $\surd$ & 94.8 & 93.9 & 83.5 & 90.7 & 95.5 \\
+      2D+3D  & $\surd$ & 98.5 & 98.7 & 85.7 & $\mathbf{94.0}$ & $\mathbf{98.5}$ \\
+      \bottomrule
+  \end{tabular}
+\end{table}
+
+\begin{table}[h]
+  \centering
+  \caption{Comparison of the different feature fusion methods on LM dataset}
+  \label{tab:ab_fusion_lm}
+  \begin{tabular}{l | c | C{16mm} C{16mm} C{16mm}| C{16mm}| C{16mm}}
+      \toprule
+      Method & Refine & $\text{AR}_{\text{MSPD}}$ & $\text{AR}_{\text{MSSD}}$ & $\text{AR}_{\text{VSD}}$ & AR & ADD(-S) \\
+      \midrule
+      Add  & $-$ & 91.6 & 89.1 & 68.8 & $\mathbf{83.2}$ & $\mathbf{97.5}$ \\
+      Concat. & $-$ & 80.9 & 77.5 & 53.2 & 70.5 & 83.5 \\
+      Add  & $\surd $ & 98.5 & 98.7 & 85.7 & $\mathbf{94.0}$ & $\mathbf{98.5}$ \\
+      Concat. & $\surd $ & 94.8 & 93.7 & 80.4 & 89.7 & 94.0 \\
+      \bottomrule
+  \end{tabular}
+\end{table}
+
+\begin{table}[h]
+  \centering
+  \caption{Comparison of the different rotation representations on LM dataset}
+  \label{tab:ab_rot_lm}
+  \begin{tabular}{l | c | C{16mm} C{16mm} C{16mm}| C{16mm}| C{16mm}}
+      \toprule
+      Method & Refine & $\text{AR}_{\text{MSPD}}$ & $\text{AR}_{\text{MSSD}}$ & $\text{AR}_{\text{VSD}}$ & AR & ADD(-S) \\
+      \midrule
+      MRP   & $-$     & 89.4 & 87.0 & 65.2 & 80.5 & 96.0 \\
+      Quat. & $-$     & 91.6 & 89.4 & 68.5 & $\mathbf{83.2}$ & $\mathbf{99.0}$ \\
+      6D    & $-$     & 91.6 & 89.1 & 68.8 & $\mathbf{83.2}$ & 97.5 \\
+      MRP   & $\surd$ & 97.4 & 96.3 & 84.2 & 92.6 & 97.5 \\
+      Quat. & $\surd$ & 99.0 & 98.3 & 86.1 & $\mathbf{94.5}$ & $\mathbf{99.0}$ \\
+      6D    & $\surd$ & 98.5 & 98.7 & 85.7 & 94.0 & 98.5 \\
+      \bottomrule
+  \end{tabular}
+\end{table}
+
+
+\section{Qualitative Evaluation}
 \begin{figure}[h]
 	\centering
 	\subfloat{\includegraphics[width=1.\textwidth]{img/comp_cup.pdf}}\\
@@ -1820,7 +1861,12 @@ In this last chapter of our thesis, we summarize the work and highlight the cont
 	\label{img:app_comp}
 \end{figure}
 
-\chapter{Additionally: }
+\begin{figure}[h]
+	\centering
+	\includegraphics[width=1.\textwidth]{img/vis_all.pdf}
+	\caption{Visualization of some objects highlighted at estimated pose. Row 1-2: objects without occlusion; Row 3-4: objects with occlussion; Row 5: objects with occlussion shown in one scene}
+	\label{img:vis_all}
+\end{figure}
 
 % -------------------> end writing here <------------------------
 % *****************************************************************

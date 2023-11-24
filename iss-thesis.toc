@@ -76,20 +76,21 @@
 \contentsline {subsection}{\numberline {5.5.1}Evaluation Metrics}{60}{subsection.5.5.1}%
 \contentsline {subsection}{\numberline {5.5.2}Pose Estimation Results}{61}{subsection.5.5.2}%
 \contentsline {subsubsection}{\nonumberline Quantitative Evaluation}{62}{subsubsection*.79}%
-\contentsline {subsubsection}{\nonumberline Qualitative Evaluation}{63}{subsubsection*.87}%
-\contentsline {section}{\numberline {5.6}Ablation Study}{64}{section.5.6}%
-\contentsline {subsection}{\numberline {5.6.1}Feature Domain}{64}{subsection.5.6.1}%
-\contentsline {subsection}{\numberline {5.6.2}Feature Fusion}{65}{subsection.5.6.2}%
-\contentsline {subsection}{\numberline {5.6.3}Transformation Representation}{67}{subsection.5.6.3}%
-\contentsline {subsection}{\numberline {5.6.4}Backbone Scaling}{67}{subsection.5.6.4}%
-\contentsline {subsection}{\numberline {5.6.5}Denoising Steps}{67}{subsection.5.6.5}%
-\contentsline {chapter}{\numberline {6}Discussion}{71}{chapter.6}%
-\contentsline {chapter}{\numberline {7}Conclusion}{73}{chapter.7}%
-\contentsline {section}{\numberline {7.1}Summary}{73}{section.7.1}%
-\contentsline {section}{\numberline {7.2}Outlook}{73}{section.7.2}%
-\contentsline {chapter}{\numberline {A}Additionally: Visualization of Results}{75}{appendix.A}%
-\contentsline {chapter}{\numberline {B}Additionally:}{77}{appendix.B}%
-\contentsline {chapter}{\nonumberline List of Figures}{79}{chapter*.99}%
-\contentsline {chapter}{\nonumberline List of Tables}{81}{chapter*.100}%
-\contentsline {chapter}{\nonumberline Bibliography}{83}{chapter*.101}%
+\contentsline {subsubsection}{\nonumberline Qualitative Evaluation}{64}{subsubsection*.86}%
+\contentsline {section}{\numberline {5.6}Ablation Study}{65}{section.5.6}%
+\contentsline {subsection}{\numberline {5.6.1}Feature Domain}{65}{subsection.5.6.1}%
+\contentsline {subsection}{\numberline {5.6.2}Feature Fusion}{66}{subsection.5.6.2}%
+\contentsline {subsection}{\numberline {5.6.3}Transformation Representation}{66}{subsection.5.6.3}%
+\contentsline {subsection}{\numberline {5.6.4}Backbone Scaling}{66}{subsection.5.6.4}%
+\contentsline {subsection}{\numberline {5.6.5}Denoising Steps}{66}{subsection.5.6.5}%
+\contentsline {chapter}{\numberline {6}Discussion}{69}{chapter.6}%
+\contentsline {chapter}{\numberline {7}Conclusion}{71}{chapter.7}%
+\contentsline {section}{\numberline {7.1}Summary}{71}{section.7.1}%
+\contentsline {section}{\numberline {7.2}Outlook}{72}{section.7.2}%
+\contentsline {chapter}{\numberline {A}Additionally: Evaluation Results}{73}{appendix.A}%
+\contentsline {section}{\numberline {A.1}Quantitative Evaluation}{73}{section.A.1}%
+\contentsline {section}{\numberline {A.2}Qualitative Evaluation}{73}{section.A.2}%
+\contentsline {chapter}{\nonumberline List of Figures}{77}{chapter*.100}%
+\contentsline {chapter}{\nonumberline List of Tables}{79}{chapter*.101}%
+\contentsline {chapter}{\nonumberline Bibliography}{81}{chapter*.102}%
 \providecommand \tocbasic@end@toc@file {}\tocbasic@end@toc@file 
