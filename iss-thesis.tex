@@ -368,8 +368,8 @@ Following figure \ref{img:6d} shows a general structure of the learning-based \g
 
 \begin{figure}[h]
 	\centering
-	\includegraphics[scale=.2]{img/6d.png}
-	\caption{Overview of the \gls{6dof} pose estimation}
+	\includegraphics[width=1.\textwidth]{img/6d.pdf}
+	\caption{Overview of the general proposal towards 6 DoF pose estimation}
 	\label{img:6d}
 \end{figure}
 
@@ -525,8 +525,6 @@ Another difficulty is the domain gap between the training and testing data. Norm
 
 If facing the multi-object scenario, which is common in the application like robotics and autonomous driving, the unknown number and type of objects will increase the difficulty of pose estimation for each object in the scene.
 
------------------image here----------------
-
 \section{Diffusion Models}
 \subsection{Generative Models}
 One of the most fascinating and distinctive feature of human brain is the ability to create or imagine objects that do not immediately exist in reality. Humans can spontaneouesly learn the underlying properties of the world and generate the hypotheses of the future. This procedure is similiar to supervised learning and reinforcement learning with little mount of labeled data, but generalizes very well to many unseen scenarios and has a high level of robustness\cite{lamb2021brief}.
@@ -574,7 +572,7 @@ Normalizating flows provide a flexible framework for modeling complex distributi
 \subsubsection{Diffusion Models}
 Diffusion models are a new class of state-of-the-art generative models that can synthesize high-quality images in recent years. The representative one, which is the \gls{ddpm} was initialized by Sohl-Dickstein et al\cite{sohldickstein2015deep} and proposed recently by Ho. et al\cite{ho2020denoising}. 
 
-A diffusion probabilistic model(diffusion model), inspired by the nonequilibrium thermodynamics, is a parameterized Markov chain trained using variational inference to produce samples from a given target distribution after finite steps. The basic idea behind diffusion models is trivial. Given an input data $x_{0}$, we first gradually add Gaussian noise to it and finally get a sequence of noised data $x_{1},...,x_{T}$, which we call it forward process. Afterward, a neural network is trained to recover the original data by estimating the noise and reversing the forward precess, which we call it sampling process or reverse process.
+A diffusion probabilistic model (diffusion model), inspired by the nonequilibrium thermodynamics, is a parameterized Markov chain trained using variational inference to produce samples from a given target distribution after finite steps. The basic idea behind diffusion models is trivial. Given an input data $x_{0}$, we first gradually add Gaussian noise to it and finally get a sequence of noised data $x_{1},...,x_{T}$, which we call it forward process. Afterward, a neural network is trained to recover the original data by estimating the noise and reversing the forward precess, which we call it sampling process or reverse process.
 
 Figure \ref{img:gen} shows an overview of four different types of generative models that we mentioned in this section. Unlike \gls{vae} and flow-based model, diffusion model is based on the Markov chain and the latent variable has high dimensionality which has the same size of the input data. We recover the original data by estimating the noise and reversing the forward process iteratively, which ensures the high quality of the generated data.
 
@@ -582,7 +580,7 @@ The great succuss of some architecture using the diffusion model such as GLIDE\c
 
 \begin{figure}[h]
 	\centering
-	\includegraphics[scale=.3]{img/gen.png}
+	\includegraphics[width=0.9\textwidth]{img/gen.pdf}
 	\caption{Overwiew of different types of generative models}
 	\label{img:gen}
 \end{figure}
@@ -676,8 +674,8 @@ where C is a constant term which not related to $\theta$ and can be ignored duri
 An overview of the forward and reverse process using a cat image as example is shown in figure \ref{img:diff_process}.
 \begin{figure}[h]
 	\centering
-	\includegraphics[scale=.2]{img/diff_process.png}
-	\caption{Forward and reverse process of diffusion model using \gls{2d} image as example}
+	\includegraphics[width=1.0\textwidth]{img/diff_process.pdf}
+	\caption{Forward and reverse process of diffusion model using 2D image as example, cat images are adapted from \cite{xiao2022DDGAN}}
 	\label{img:diff_process}
 \end{figure}
 
@@ -727,8 +725,7 @@ The training and sampling algorithm of the conditional denoising diffusion proba
     \State \Return $\mathbf{x}_{0}$
   \end{algorithmic}
 \end{algorithm}
-\subsubsection{Extensions}
----------------Add if needed----------------
+
 \subsection{Applications}
 
 \subsubsection{Computer Vision}
@@ -768,7 +765,7 @@ Text-to-Image generation is a typical task in this field. A common pipeline is t
 
 \begin{figure}[h]
 	\centering
-	\includegraphics[scale=0.217]{img/sd.png}
+	\includegraphics[width=1.0\textwidth]{img/sd.pdf}
 	\caption{Image synthesis with text prompt in different styles using Stable Diffusion}
 	\label{img:sd}
 \end{figure}
@@ -779,8 +776,8 @@ Text-to-\gls{3d} generation and Image-to-\gls{3d} are novel tasks in the field o
 
 \begin{figure}[h]
 	\centering
-	\includegraphics[scale=0.28]{img/df.png}
-	\caption{\gls{3d} model (\gls{nerf}) synthesis prompt using DreamFusion}
+	\includegraphics[width=1.0\textwidth]{img/df.png}
+	\caption{3D model NeRF synthesis prompt using DreamFusion}
 	\label{img:df}
 \end{figure}
 
@@ -797,10 +794,9 @@ Gu et al. 2010 \cite{gu2010discriminative} propose to use a mixture of holistic 
 \subsection{Keypoint-Based Methods} 
 Instead of directly estimate the pose from the reference input, keypoint-based methods first detect the keypoints or superpoints in the reference image and then solve the correspondance matching problem between the \gls{rgb} image and the \gls{3d} model by \gls{pnp}. In the case of point cloud registration, the task becomes to find the correspondances between the partial point cloud and the \gls{3d} model.
 
-\gls{rgb}-only keypoint matching is the most common method, because the \gls{2d} data is more accessable than the data with additional depth information and the networks dealing with \gls{2d} image are more mature as well. Besides the hand-crafted feature discriptor that we introduced before, methods like \cite{pavlakos20176dof, rad2018bb8, pmlr-v87-tremblay18a,tekin2018realtime} use the \gls{cnn}-based architecture to extract the \gls{2d} semantic keypoints and estimate the pose by \gls{pnp} algorithm. Especially, Oberweger et al. 2018 \cite{oberweger2018making} propose a \gls{rgb}-only method that can estimate the pose under large occlussion. Their solution is to predict heatmaps from multiple patches independently and calculate the accumulated score to ensure the robust estimation. ZebraPose \cite{su2022zebrapose} assigns a hierarchical binary grouping to encode the object surface. It replaces the sparse correspondance matching with dense maps learning to handle the occluded object and make the learning of \gls{2d}-\gls{3d} correspondances more efficient.
+\gls{rgb}-only keypoint matching is the most common method, because the \gls{2d} data is more accessable than the data with additional depth information and the networks dealing with \gls{2d} image are more mature as well. Besides the hand-crafted feature discriptor that we introduced before, methods like \cite{pavlakos20176dof, rad2018bb8, pmlr-v87-tremblay18a,tekin2018realtime, zakharov2019dpod} use the \gls{cnn}-based architecture to extract the \gls{2d} semantic keypoints and estimate the pose by \gls{pnp} algorithm. Especially, Oberweger et al. 2018 \cite{oberweger2018making} propose a \gls{rgb}-only method that can estimate the pose under large occlussion. Their solution is to predict heatmaps from multiple patches independently and calculate the accumulated score to ensure the robust estimation. ZebraPose \cite{su2022zebrapose} assigns a hierarchical binary grouping to encode the object surface. It replaces the sparse correspondance matching with dense maps learning to handle the occluded object and make the learning of \gls{2d}-\gls{3d} correspondances more efficient.
 
 With the promising performance of the \gls{3d} networks \cite{qi2017pointnet,qi2017pointnet++} in recent years, some methods are proposed to directly tackle the \gls{3d} keypoints in the pose estimation task. D3Feat \cite{bai2020d3feat} leverage a \gls{3d} \gls{cnn}-based architecture to jointly learn the detection and description of \gls{3d} local features. SpinNet \cite{ao2021spinnet} aims to learn efficient descriptors which are rotationally invariant. The backbone Spatial Point Transformer is introduced to map the local surface into a cylindrical space for end-to-end optimization with $\mathbb{SO}(2)$ equivariant representation. YOHO \cite{wang2022hypothesize} is another work that ensure the rotation invariance with the help of group equivariant feature learning. The novel descriptors make the correspondance matching more accurate and less \gls{pnp} iterations are needed. GeoTransformer \cite{qin2022geometric} leverage the efficient local feature extraction by using the geometrical embedding and follows the coarse-to-fine pipeline to achieve \gls{ransac}-free pose estimation. The enhanced version of this work called RolTr \cite{yu2023rotationinvariant} further improved the performance by utilizing the local-to-global attension-based rotation-invariant feature learning. And it outperforms the state-of-the-art methods in the low-overlapping scenarios.
-%surfemb
 
 
 \subsection{Direct Regression Methods}
@@ -810,13 +806,13 @@ PoseCNN\cite{xiang2018posecnn} is an early research that leverages the \gls{cnn}
 
 Direct regression of the transformation between two point clouds is more straightforward than correspondance-base method in the point cloud registration task. PointNetLK \cite{aoki2019pointnetlk} combines the PointNet in \gls{3d} domain with the Lucas \& Kanade algorithm \cite{Lucas1981AnII} for \gls{2d} image alignment together to regress the transformation between two frames. Huang et al. 2020 \cite{huang2020featuremetric} propose a method that optimize the registration by minimising a feature-metrix projection error without matching the correspondance. OMNet \cite{xu2021omnet} is another global feature-based iterative network for partial-to-partial registration. It utilizes overlapping masks to reject non-overlapping regions, transforming partial registration into same-shape registration.
 
-Thanks to the decreasing cost of \gls{rgbd} sensor in the recent years, \gls{rgb} data with additional depth information enable us to more precisely handle texture-less objects in the poor illuminated scenario. Some \gls{rgbd} based dense methods are proposed to estimate the pose in a fine-grained way. Kehl et al. 2016 \cite{kehl2016deep} use regressed descriptors of locally-sampled patches with a convolutional auto-encoder and then cast 6D voting for each patch to estimate the pose. DenseFusion \cite{wang2019densefusion} is a typical method that pixel-wise votes the \gls{6dof} pose prediction. The network concatinates the \gls{2d} feature extracted from \gls{cnn} and the \gls{3d} feature from PointNet together with the global feature through average pooling. The pixel-wise dense predictions are voted through the trainable confidence for each pixel. 
+Thanks to the decreasing cost of \gls{rgbd} sensor in the recent years, \gls{rgb} data with additional depth information enable us to more precisely handle texture-less objects in the poor illuminated scenario. Some \gls{rgbd} based dense methods are proposed to estimate the pose in a fine-grained way. Kehl et al. 2016 \cite{kehl2016deep} use regressed descriptors of locally-sampled patches with a convolutional auto-encoder and then cast 6D voting for each patch to estimate the pose. Pix2Pose \cite{Park_2019}, PVNet \cite{peng_pvnet_2019} and \gls{df} \cite{wang2019densefusion} are typical pixelwise regression methods, where gls{df} is a representative method that pixel-wise votes the \gls{6dof} pose prediction. The network concatinates the \gls{2d} feature extracted from \gls{cnn} and the \gls{3d} feature from PointNet together with the global feature through average pooling. The pixel-wise dense predictions are voted through the trainable confidence for each pixel. And FFB6D \cite{he2021ffb6d} as its successor, builds a bidirectional network to enhance the feature fusion from both domains. HybridPose \cite{song2020hybridpose} utilize more information from the image like keypoints, edge vectors and symmetry correspondances to achieved more diverse feature representation for regression.
 
 Common structures of \gls{6dof} pose estimation methods are summarized in following figure \ref{img:pose_methods}.
 \begin{figure}[h]
 	\centering
 	\includegraphics[width=1.\textwidth]{img/pose_methods.pdf}
-	\caption{Structures of some common \gls{6dof} pose estimation methods,}
+	\caption{Structures of some common 6 DoF pose estimation methods,}
 	\label{img:pose_methods}
 \end{figure}
 
@@ -872,21 +868,35 @@ The majority of the raw data lie on the high-dimensional space but can be repres
 \section{Diffusion models in Pose Estimation}
 The objective in \gls{6dof} pose estimation lies on the $\mathbb{SE}(3)$ of Lie group, which is a differentiable manifold that is generalized from the Euclidean space. Recent works from Leach et al. 2022 \cite{leach2022denoising} first explores the usage of diffusion model to generate the probability density on $\mathbb{SO}(3)$. Jagvaral et al. 2023 \cite{jagvaral2023diffusion} further optimized the loss function from the Euclidean space to the manifold $\mathbb{SO}(3)$. Urain et al. 2023 \cite{urain2023se3diffusionfields} propose smooth cost functions for joint grasp on $\mathbb{SE}(3)$ through diffusion. Yim et al. 2023 \cite{yim2023se3} introduce a framework called FrameDiff to learn the $\mathbb{SE}(3)$ equivariant score of the diffusion models over multiple frames in protein structure generation. 
 
-Typical work from Hsiao et al. 2023 \cite{hsiao2023confronting} focus on the advantages of diffusion models towards the pose ambiguity problem on $\mathbb{SE}(3)$. The denoiser backbone is consist of several \gls{mlp} blocks processing the \gls{2d} global feature extracted from a pretrained ResNet. Figure \ref{img:confront} shows the overview of the framework. The Authers use the surrogate Stein score calculation on $\mathbb{SE}(3)$ following the score-based diffusion architecture and Fourier-based conditioning mechanism to deal with the ambiguity problem caused by the symetrical object. Additionally, they also compare the advantage of $\mathbb{SE}(3)$ parametrization over previous works on $R^{3}\mathbb{SE}(3)$. This work is trained and evaluated on the synthetic dataset SYMSOL \cite{implicitpdf2021} with fice texture-less objects, namely tetrahedron, cube, icosahedron, cone, and cylinder. The real data captured by the camera is not considered in this work. In our proposed method, we focus on the pose estimation with diffusion models under the real-world scenario and even with occlusion, which is more general and challenging.
+Typical work from Hsiao et al. 2023 \cite{hsiao2023confronting} focus on the advantages of diffusion models towards the pose ambiguity problem on $\mathbb{SE}(3)$. The denoiser backbone is consist of several \gls{mlp} blocks processing the \gls{2d} global feature extracted from a pretrained ResNet. Figure \ref{img:confront} shows the overview of the framework. The Authers use the surrogate Stein score calculation on $\mathbb{SE}(3)$ following the score-based diffusion architecture and Fourier-based conditioning mechanism to deal with the ambiguity problem caused by the symetrical object. Additionally, they also compare the advantage of $\mathbb{SE}(3)$ parametrization over previous works on $R^{3}\mathbb{SE}(3)$. This work is trained and evaluated on the synthetic dataset SYMSOL \cite{implicitpdf2021} with fice texture-less objects, namely tetrahedron, cube, icosahedron, cone, and cylinder. The denoising process is shown in figure \ref{img:confront_cube}. The real data captured by the camera is not considered in this work. In our proposed method, we focus on the pose estimation with diffusion models under the real-world scenario and even with occlusion, which is more general and challenging.
 \begin{figure}[h]
 	\centering
-	\includegraphics[scale=0.24]{img/confront.png}
+	\includegraphics[width=1.\textwidth]{img/confront.png}
 	\caption{Overview of the network from the work "Confronting Ambiguity in 6D Object Pose Estimation via Score-Based Diffusion on SE(3)", image adapted from the original paper \cite{hsiao2023confronting}}
 	\label{img:confront}
 \end{figure}
 
-Wang et al. 2023 \cite{wang2023pd} propose a diffusion-aided bundle adjustment network for the camera pose estimation with a series of input images. Similar to the previous work, the diffusion network is conditioned by the \gls{2d} feature downstream by a pretrained encoder. The highlight of this method is the geometry-guided sampling of the diffusion model with the Sampson epipolar error minimization, so that the image-to-image epipolar constraint can be satisfied in the sampling phase. Figure The model is evaluated on CO3Dv2 \cite{reizenstein2021common} containing turntable-like objects and RealEstate10K \cite{zhou2018stereo} which captures videos of the interior and exterior of real estate. Both datasets aim to estimate the camera poses with a series of input images relative to the object or the scene. Our work focus on the single-frame object pose estimation with the fixed camera parameters and process the data further with the depth information.
+\begin{figure}[h]
+	\centering
+	\includegraphics[width=1.\textwidth]{img/confront_cube.png}
+	\caption{Visualisation of the denoising process from the work "Confronting Ambiguity in 6D Object Pose Estimation via Score-Based Diffusion on SE(3)", image adapted from the original paper \cite{hsiao2023confronting}}
+	\label{img:confront_cube}
+\end{figure}
+
+Wang et al. 2023 \cite{wang2023pd} propose a diffusion-aided bundle adjustment network for the camera pose estimation with a series of input images. Similar to the previous work, the diffusion network is conditioned by the \gls{2d} feature downstream by a pretrained encoder. The highlight of this method is the geometry-guided sampling of the diffusion model with the Sampson epipolar error minimization, so that the image-to-image epipolar constraint can be satisfied in the sampling phase. Figure \ref{img:pose_diff} and \ref{img:pose_diff_vis} illustrate the overview of the framework and the denoising process of the bundle adjustment. The model is evaluated on CO3Dv2 \cite{reizenstein2021common} containing turntable-like objects and RealEstate10K \cite{zhou2018stereo} which captures videos of the interior and exterior of real estate. Both datasets aim to estimate the camera poses with a series of input images relative to the object or the scene. Our work focus on the single-frame object pose estimation with the fixed camera parameters and process the data further with the depth information.
 
 \begin{figure}[h]
 	\centering
-	\includegraphics[scale=0.21]{img/pose_diff.png}
+	\includegraphics[width=1.\textwidth]{img/pose_diff.png}
 	\caption{Overview of the network from PoseDiffusion, image adapted from the original paper \cite{wang2023pd}}
 	\label{img:pose_diff}
+\end{figure}
+
+\begin{figure}[h]
+	\centering
+	\includegraphics[width=1.\textwidth]{img/pose_diff_vis.pdf}
+	\caption{Visualisation of the denoising process from PoseDiffusion, image adapted from the original paper \cite{wang2023pd}}
+	\label{img:pose_diff_vis}
 \end{figure}
 
 \chapter{Methodology}
@@ -895,9 +905,7 @@ In this chapter, we will introduce the detail of our proposed method, namely the
 
 Through the experiments using different representation of the rotation, we find that the 6D representation of the rotation introduced in \ref{eq:ortho6d} is the most efficient one. So we use this representation in the following chapters and the comparision with other forms of rotation will be discussed in the experiment section.
 
-Repeating the sampling process of the pose for one reference input $y$, we can get a set of pose hypotheses $\mathbf{T}_{1},...,\mathbf{T}_{N}$, which compose a hypothesis distribution $h(\mathbf{T}|y)$ that can be used to estimate the pose $\mathbf{T}$ of the reference input $\mathbf{r}$. For a given object without any ambiguity, the distribution $h(\mathbf{T}|y)$ should be a delta distribution in ideal case, or in other words, squeezed to a single point in the spatial solving space. The pose hypotheses $\mathbf{T}_{1},...,\mathbf{T}_{N}$ should be close to each other and the variance of the distribution should be small. On the contrary, if the object is symmetrical, the distribution of the pose should fit the corresponding pattern of the symmetry in the solving space. 
-
------------------image here----------------
+By generating multiply samples for one reference input $y$, we can get a set of pose hypotheses $\mathbf{T}_{1},...,\mathbf{T}_{N}$, which compose a hypothesis distribution $h(\mathbf{T}|y)$ that can be used to estimate the pose $\mathbf{T}$ of the reference input $\mathbf{r}$. For a given object without any ambiguity, the distribution $h(\mathbf{T}|y)$ should be a delta distribution in ideal case, or in other words, squeezed to a single point in the spatial solving space. The pose hypotheses $\mathbf{T}_{1},...,\mathbf{T}_{N}$ should be close to each other and the variance of the distribution should be small. On the contrary, if the object is symmetrical, the distribution of the pose should fit the corresponding pattern of the symmetry in the solving space. In our work, we focus on the first case that we don't propose any post-processing method to analyize the distribution of the symetrical object, which can be a future work.
 
 \section{Framework}
 This section introduces the overall structure of the pose hypotheses diffusion, including the 2-phase architecture of the diffusion model and the other modules in the whole model.
@@ -911,7 +919,7 @@ Additionally, we also need to provide the timestep $t$ and the guidance $y$ to t
 
 \begin{figure}[h]
 	\centering
-	\includegraphics[scale=.235]{img/train.png}
+	\includegraphics[width=1.0\textwidth]{img/train.pdf}
 	\caption{Structure of the training phase of the pose hypotheses diffusion}
 	\label{img:train}
 \end{figure}
@@ -926,7 +934,7 @@ In the training phase, we feed the network with batch of data that is different 
 After the optional multi-hypotheses inference, we can further use some algorithms to refine the pose. In our model, we choose \gls{icp}\cite{121791} algorithm to refine the pose hypotheses and finally get the output transformation $\mathbf{T}_{r}$. The structure of the sampling process is shown in figure \ref{img:sample}. Details of each models in training phase and sampling phase will be introduced in next section.
 \begin{figure}[h]
 	\centering
-	\includegraphics[scale=.235]{img/sample.png}
+	\includegraphics[width=1.0\textwidth]{img/sample.pdf}
 	\caption{Structure of the sampling phase of the pose hypotheses diffusion}
 	\label{img:sample}
 \end{figure}
@@ -954,7 +962,7 @@ The following figure \ref{img:denoiser} illustrates the structure of our main ne
 It is worth mentioning that the fusion of \gls{2d} and \gls{3d} feature is not pointwise aligned, which means we don't extract the pointwise feature from the \gls{2d} and \gls{3d} domain and feed to the network. Instead of doing that, we seperately extract the global features and concatinate them together in order to reduce the difficulty of the convergence of the backbone with the tradeoff of the robustness and generalization of the model. This part of optimization will be discussed later.
 \begin{figure}[h]
 	\centering
-	\includegraphics[scale=.30]{img/denoiser.png}
+	\includegraphics[width=1.0\textwidth]{img/denoiser.pdf}
 	\caption{Denoiser network with backbone and feature extractor}
 	\label{img:denoiser}
 \end{figure}
@@ -965,7 +973,7 @@ A modified transformer encoder is utilized as the backbone of our diffusion mode
 Similar to the vanilla transformer, our model consists of N stacked transformer encoder blocks. As shown in the left part of figure \ref{img:denoiser}, each block is made up of two sub-layers. The first is a multi-head self-attention mechanism, and the second is a simple, position-wise fully connected feed-forward network. We use residual connections around each of the two sub-layers and the \gls{ln} is applied before each sub-layer, which follows the design of \gls{vit} \cite{dosovitskiy2021image}.
 \begin{figure}[h]
 	\centering
-	\includegraphics[scale=.30]{img/mhsa.png}
+	\includegraphics[width=0.7\textwidth]{img/mhsa.pdf}
 	\caption{Multi-head self-attention and scaled dot-product attention}
 	\label{img:mhsa}
 \end{figure}
@@ -987,8 +995,6 @@ To effectively process the conditional input, we use modified \gls{adaln} to rep
 \end{align}
 where $\mathbf{y}$ is the output of the block, $\mathbf{y}^{'}$ is the intermediate expression after the first sub-layer,  $\mathbf{c}$ is the conditional input, $\alpha_{1}(\mathbf{c})$, $\alpha_{2}(\mathbf{c})$, $\beta_{1}(\mathbf{c})$, $\beta_{2}(\mathbf{c})$, $\gamma_{1}(\mathbf{c})$ and $\gamma_{1}(\mathbf{c})$ are the learnable parameters and $N$ is the layer normalization. The $\odot$ denotes the element-wise multiplication.
 
------------------Reason for using transformer----------------
-
 \subsection{Time Embedding and Postion Embedding}
 Why we need time embedding and position embedding in our case? As the architecture of diffusion model determines that we need to let the network learn the influence of timestep on the noise estimation. So we have to encode the timestep information into the network. For the same reason, the sequence of the transformer input which is the transformation vector is also relevant and should be encoded, because the each bit of the vector represents the different meaning and can not be shuffled.
 
@@ -1006,7 +1012,7 @@ The most common positional encoding is the sine and cosine positional encoding\c
 where $pos$ is the position, $i$ is the dimension and $d_{model}$ is the dimension of the input vector. And we add a fully connected layer to the positional encoding to make it trainable. Figure \ref{img:pe} shows the 64-dimensional positional encoding for a sequence with length of 100 using the sine and cosine positional encoding.
 \begin{figure}[h]
 	\centering
-	\includegraphics[scale=.65]{img/pe.png}
+	\includegraphics[width=1.0\textwidth]{img/pe.png}
 	\caption{The 64-dimensional positional encoding for a sequence with length of 100}
 	\label{img:pe}
 \end{figure}
@@ -1027,7 +1033,7 @@ where $H(a,b)=-a \log b$ is the cross-entropy loss. And this optimizatiin proble
 The structure of the self-supervised architecture is shown in figure \ref{img:dino}. The model passes two different random transformations of the input image to both networks with same stucture but different parameters. The output of the teacher network is centered and a \gls{sg} is applied on the teacher to let the gradients only propagate through the student network. The teacher parameters are updated with an \gls{ema}.
 \begin{figure}[h]
 	\centering
-	\includegraphics[scale=.38]{img/dino.png}
+	\includegraphics[width=0.85\textwidth]{img/dino.pdf}
 	\caption{Self-supervised architecture of DINO}
 	\label{img:dino}
 \end{figure}
@@ -1037,8 +1043,8 @@ The backbone of the DINO is \gls{vit}\cite{dosovitskiy2021image}, which proved t
 Similar to the vanilla transformer for \gls{nlp} tasks, the patches need to be embedded with the positional encoding. A standard learnable \gls{1d} postion embedding is used in the original paper. In order to solve the classification task with \gls{vit}, an extra token is add to the sequence of patches, which is called class token. An additional \gls{mlp} layer is used for the classification. But for the downstream tasks like ours, we only need the latent feature from the transformer encoder output. The overview of the \gls{vit} model is shown in figure \ref{img:vit}, using the illustration in the original publication.
 \begin{figure}[h]
 	\centering
-	\includegraphics[scale=.23]{img/vit.png}
-	\caption{Sturcture of the \gls{vit} model}
+	\includegraphics[width=1.0\textwidth]{img/vit.png}
+	\caption{Sturcture of the ViT model, image adapted from the original paper \cite{dosovitskiy2021image}}
 	\label{img:vit}
 \end{figure}
 
@@ -1052,8 +1058,8 @@ Due to the permutation invariance and transformation invariance of the point clo
 In our case, we use an encoder-decorder architecture to first build up a point cloud completion task of the target dataset and utilize the latent feature from the encoder output as the \gls{3d} global feature of the reference \gls{rgbd} image. The reason of using the point cloud completion task rather than classification or semantic segmentation task is because we need the network to learn the geometrical feature such as shape, position and orientation of the object. And the point cloud completion is more suitable than seperately reconstruct the \gls{cad} model and reference partial point cloud, because the network can learn the relationship between the two point clouds and the latent feature is more robust and generalizable.
 \begin{figure}[h]
 	\centering
-	\includegraphics[scale=.2]{img/fold.png}
-	\caption{\gls{3d} feature extraction with FoldingNet based point cloud completion}
+	\includegraphics[width=1.0\textwidth]{img/fold.pdf}
+	\caption{3D feature extraction with FoldingNet based point cloud completion}
 	\label{img:fold}
 \end{figure}
 
@@ -1073,9 +1079,9 @@ The way of fusing the features and embedding from different domains determines t
 For the postion embedding $e_{p}$, we follow the pipeline of the Transformer that $e_{p}$ is directly added to the input vector $x_{t}$ which is first replicated to the dimension of the hidden dimension of the network. For the conditional guidance of the diffusion model $f_{2D}$, $f_{3D}$ and $e_{p}$, we have two ways introduced in our setup to merge these features into the backbone. First method is that these features are projected separetely to the hidden dimension of the network with fully connected layers and then add together. Another way is to directly concatinate these features along the feature dimension and then project to the hidden dimension. After that the merged feature vector is fed to the Transformer encoder with \gls{adaln} after each attension layer and feed forward layer. Figure illustrate the detail of the feature fusion process using both methods.
 \begin{figure}[h]
   \centering
-  \subfloat[]{\includegraphics[scale=0.23]{img/fuse_add.png} } \\
+  \subfloat[]{\includegraphics[width=0.95\textwidth]{img/fuse_add.pdf} } \\
   \centering
-  \subfloat[]{\includegraphics[scale=0.23]{img/fuse_cat.png} } 
+  \subfloat[]{\includegraphics[width=0.95\textwidth]{img/fuse_cat.pdf} } 
   \caption{Structure of the feature fusion process using (a): addition of the conditional features and embedding; (b): concatination of the conditional features and embedding}
   \label{img:fuse}
 \end{figure}
@@ -1088,14 +1094,13 @@ With the help the deep learning method, we can minimize the error of the estimat
 
 \begin{figure}[h]
 	\centering
-	\includegraphics[scale=.22]{img/res_t.png}
-	\caption{Illustration of the residual translation estimation (projected in \gls{2d} space)}
+	\includegraphics[width=0.8\textwidth]{img/res_t.pdf}
+	\caption{Illustration of the residual translation estimation (projected in 2D space)}
 	\label{img:res_t}
 \end{figure}
 
 \subsection{Multi-Hypotheses Inference}
-One of the advantages of diffusion model is the high quality and diversity of the generated objects. Using the case of image synthesis as an example, we can derive dozen of high-resolution and meaningful images from the diffusion model with the same prompt. In our case, we want to explore the diversity of the pose hypotheses if there is ambiguity in the reference input. In another word, for a symmetrical object, we want to derive a distribution which fit the symmetry pattern of the object and for an object with uniquely determined pose, we want to use the multi-hypotheses inference to get a more precise estimation of the pose.
--------------------------To be determined-------------------------
+One of the advantages of diffusion model is the high quality and diversity of the generated objects. Using the case of image synthesis as an example, we can derive dozen of high-resolution and meaningful images from the diffusion model with the same prompt. In our case, we want to first use the multi-hypotheses module to reduce the variance of the generated poses by taking the mean of all hypotheses as the final estimation and make the final result more robust. In the feature work, we may sample more hypotheses to analyize the pose distribution of symetrical objects in order to explore more possibility when we dealing with the ambiguity of the pose estimation.
 
 \subsection{Pose Refinement}
 To further refine the \gls{6dof} pose of the reference input, we can use the coarse pose estimation from the diffusion model as the initial pose and use some algorithms to refine the pose. Iterative and not learning-based method like \gls{ransac} \cite{10.1145/358669.358692} and \gls{icp}\cite{121791} are popular in the field of pose estimation. \gls{ransac}, for example, uses repeated random sub-sampling to iteratively estimate the optimal result in the set of data containing outliers. The goal of \gls{ransac} is to find a global optimal solution which excludes the outliers and contains the inliers as much as possible. This technique is widely used in the correspondance based point cloud registration. Our pose hypotheses diffusion model samples directly the estimated \gls{6dof} pose of the reference input and we utilize \gls{icp} to the point cloud transformed via the coarse pose estimation. 
@@ -1141,22 +1146,8 @@ The \gls{lm} dataset \cite{hinterstoisser2012model} is a widely used dataset for
 This set of \gls{pbr}-BlenderProc4BOP training images are sorted in 50 different scenes with 50000 images in total which are rendered with different lighting, occlusion. The test dataset are captured with the Kinect sensor. The following figures \ref{img:linemod} show the training data and test data of the \gls{lm} dataset.
 \begin{figure}[h]
   \centering
-  \begin{minipage}{.33\textwidth}
-    \centering
-    \includegraphics[scale=.588]{img/syn.png}
-    \label{img:linemod_syn}
-  \end{minipage}%
-  \begin{minipage}{.33\textwidth}
-    \centering
-    \includegraphics[scale=.588]{img/pbr.png}
-    \label{img:linemod_pbr}
-  \end{minipage}%
-  \begin{minipage}{.33\textwidth}
-    \centering
-    \includegraphics[scale=.588]{img/kine.png}
-    \label{img:linemod_kine}
-  \end{minipage}
-  \caption{LIMEMOD dataset. Left: training data with Synthetic \gls{cad} Model; Middle: training data rendered with \gls{pbr}-BlenderProc4BOP; Right: test data captured with Kinect Sensor}
+  \includegraphics[width=1.0\textwidth]{img/lm.pdf}
+  \caption{LIMEMOD dataset. Left: training data with Synthetic CAD Model; Middle: training data rendered with PBR-BlenderProc4BOP; Right: test data captured with Kinect Sensor}
   \label{img:linemod}
 \end{figure}
 
@@ -1164,24 +1155,15 @@ This set of \gls{pbr}-BlenderProc4BOP training images are sorted in 50 different
 To evaluate the model on the occluded scene, Brachmann et al. \cite{dataV4MUMX2020} refined the benchvise partion of the \gls{lm} dataset with occluded objects and annotated ground truth pose under different light conditions to make the pose estimation more challenging. The meaning of the high-level occulusion data is to simulate the real scenario where the object is partially occluded by other objects, so that the model can learn the robustness of the pose estimation and generalize better to the real world data. The following figure \ref{img:linemod_o} shows the low-level occluded scene and high-level occluded scene.
 \begin{figure}[h]
   \centering
-  \begin{minipage}{.5\textwidth}
-    \centering
-    \includegraphics[scale=.6]{img/nooclu.png}
-    \label{img:nooclu}
-  \end{minipage}%
-  \begin{minipage}{.5\textwidth}
-    \centering
-    \includegraphics[scale=.6]{img/oclu.png}
-    \label{img:oclu}
-  \end{minipage}
-  \caption{Comparison of \gls{lmo} dataset with \gls{lm} dataset. Left: low-level occluded scene; Right: high-level occluded scene}
+  \includegraphics[width=0.9\textwidth]{img/lmo.pdf}
+  \caption{Comparison of LMO dataset with LM dataset. Left: low-level occluded scene; Right: high-level occluded scene}
   \label{img:linemod_o}
 \end{figure}
 \subsection{Data Format}
 In order to unify the data format of the different dataset for \gls{6dof} pose estimation task. We follow the data format of the \gls{bop} dataset. The structure of the dataset is shown in the following table \ref{tab:dataset}.
 \begin{table}[ht]
   \centering
-  \caption{Dataset Structure of \gls{bop} Format}
+  \caption{Dataset Structure of BOP Format}
   \label{tab:dataset}
   \begin{tabular}{l l}
       \toprule
@@ -1272,11 +1254,11 @@ Since we use the \gls{2d} feature not for the classification or segmentation tas
 
 \begin{figure}[h]
   \centering
-  \subfloat{\includegraphics[scale=0.68]{img/atten_cl.png} } \\
+  \subfloat{\includegraphics[width=0.98\textwidth]{img/atten_cl.png} } \\
   \centering
-  \subfloat{\includegraphics[scale=0.68]{img/atten_bo.png} } \\
+  \subfloat{\includegraphics[width=0.98\textwidth]{img/atten_bo.png} } \\
   \centering
-  \subfloat{\includegraphics[scale=0.68]{img/atten_ph.png} } 
+  \subfloat{\includegraphics[width=0.98\textwidth]{img/atten_ph.png} } 
   \caption{Visualization of the attention maps of the input image, where 12 heatmaps represent 12 attension heads output in transformer. Top: hole puncher; Middle: glue; Bottem: phone (occluded)}
   \label{img:atten}
 \end{figure}
@@ -1284,8 +1266,8 @@ Since we use the \gls{2d} feature not for the classification or segmentation tas
 By Comparing the outputs from different scale of \gls{vit} models and patch size, we can find that the patch size significantly determine the attention map. Because the object we dealing with has relative simple geometry and some times textureless, the transformer can not encode the image in a very accurate way for the pose difference if the patch size is too big. The following figure \ref{img:atten_patch} shows the attention maps of the same image fed to the \gls{vit} with different patch size and scale of \glspl{vit}. 
 \begin{figure}[h]
 	\centering
-	\includegraphics[scale=.65]{img/atten_cat.png}
-	\caption{Attension maps of the different scale of \glspl{vit} and patch size. From left to right: \gls{vit}-S/16, \gls{vit}-S/8, \gls{vit}-B/16, \gls{vit}-B/8. Each column represents 3 random attention heads.}
+	\includegraphics[width=1.\textwidth]{img/atten_cat.png}
+	\caption{Attension maps of the different scale of ViTs and patch size. From left to right: ViT-S/16, ViT-S/8, ViT-B/16, ViT-B/8. Each column represents 3 random attention heads.}
 	\label{img:atten_patch}
 \end{figure}
 
@@ -1304,7 +1286,7 @@ The evaluation metric of the point cloud completion task is the \gls{cd} between
 \begin{figure}[h]
 	\centering
 	\includegraphics[width=1.\textwidth]{img/fold_loss.eps}
-	\caption{\gls{cd} of the training and validation dataset during the point completion pretraining}
+	\caption{CD of the training and validation dataset during the point completion pretraining}
 	\label{img:fold_loss}
 \end{figure}
 
@@ -1313,7 +1295,7 @@ We stop the training after 200k iterations to prevent the overfitting problem, b
 \begin{figure}[h]
 	\centering
 	\includegraphics[width=1.\textwidth]{img/cd_category.eps}
-	\caption{Categorical level \gls{cd} distance distribution of the test dataset}
+	\caption{Categorical level CD distance distribution of the test dataset}
 	\label{img:cd_cate}
 \end{figure}
 
@@ -1343,13 +1325,13 @@ From the visualization we can find that the shape of the reconstructed point clo
 \begin{figure}[h]
 	\centering
 	\includegraphics[width=1.\textwidth]{img/fold_overfit.eps}
-	\caption{Comparision of the \gls{cd} distributions between the model trained with the whole data set and the overfitted model on single object (the first 7 objects of LM are shown)}
+	\caption{Comparision of the CD distributions between the model trained with the whole data set and the overfitted model on single object (the first 7 objects of LM are shown)}
 	\label{img:fold_overfit}
 \end{figure}
 
 \begin{table}[h]
   \centering
-  \caption{Mean and standard deviation of the \gls{cd} with the model trained on the whole dataset and the overfitted model on single object (7 of 15 objects selected)}
+  \caption{Mean and standard deviation of the CD with the model trained on the whole dataset and the overfitted model on single object (7 of 15 objects selected)}
   \label{tab:fold_overfit}
   \begin{tabular}{l | C{12mm} C{12mm} C{12mm} C{12mm} C{12mm} C{12mm} C{12mm} | C{12mm}}
       \toprule
@@ -1374,7 +1356,7 @@ From the visualization we can find that the shape of the reconstructed point clo
 To evaluate the influence of the number of \gls{knn} on the result, we train the model with different setups and the following table shows the corresponding \glspl{cd} on the test dataset.
 \begin{table}[h]
   \centering
-  \caption{\gls{cd} with different number of \gls{knn} of the FoldingNet}
+  \caption{CD with different number of $k$-NN of the FoldingNet}
   \label{tab:fold_knn}
   \begin{tabular}{l | c c c c}
     \toprule
@@ -1635,7 +1617,7 @@ Here we also demonstrate the qualitative result of our model on the pose estimat
 	\label{img:eval_vis_img}
 \end{figure}
 
-Additionally, we can have a closer look at the development of the pose hypotheses through the whole denoising process (figure \ref{img:eval_vis_denoise}). We select the cat object in \gls{lm} dataset as an example and render the visualization with Blender. The multi-hypotheses (set to 16 in our experiment) of estimated pose, which is colorized with transparent gray, localize randomly in the space at the early stage of the denoising process and finally overlap together on the ground truth (purple).   
+Additionally, we can have a closer look at the development of the pose hypotheses through the whole denoising process (figure \ref{img:eval_vis_denoise}). We select the cat object in \gls{lm} dataset as an example and render the visualization with Blender. The multi-hypotheses (set to 16 in our experiment) of estimated pose, which is colorized with transparent gray, localize randomly in the space at the early stage of the denoising process and finally overlap together on the ground truth (purple). More examples of the visualization can be found in the appendix \ref{img:vis_cat}, \ref{img:vis_bench}.  
 \begin{figure}[h]
 	\centering
 	\includegraphics[width=1.\textwidth]{img/vis_denoise.pdf}
@@ -1708,8 +1690,26 @@ Recall the discussion in section \ref{sec:representation} and \ref{sec:res_t}, w
   \end{tabular}
 \end{table}
 
+Table \ref{tab:ab_trans_lm} and \ref{tab:ab_trans_lmo} show the results of the model trained with and without residual translation. The advantage of learning the residual error is clear that the \glspl{ar} are improved in both datasets. We can benefit from this trick with respect to the convergance speed shown in figure \ref{img:ab_trans}. The residual translation is also a good way to avoid the model to be trapped in the local minimum.
+\begin{table}[h]
+  \centering
+  \caption{Comparison of model trained with and without residual translation on LMO dataset}
+  \label{tab:ab_trans_lmo}
+  \begin{tabular}{l | c | C{16mm} C{16mm} C{16mm}| C{16mm}| C{16mm}}
+      \toprule
+      Method & Refine & $\text{AR}_{\text{MSPD}}$ & $\text{AR}_{\text{MSSD}}$ & $\text{AR}_{\text{VSD}}$ & AR & ADD(-S) \\
+      \midrule
+      w/o res. & $-$     & 57.1 & 50.5 & 28.2 & 45.3 & 69.4 \\
+      w/ res.  & $-$     & 56.8 & 51.1 & 37.4 & $\mathbf{48.5}$ & $\mathbf{86.5}$ \\
+      w/o res. & $\surd$ & 60.9 & 56.4 & 44.3 & 53.9 & 91.9 \\
+      w/ res.  & $\surd$ & 61.2 & 56.6 & 46.6 & $\mathbf{54.8}$ & $\mathbf{93.7}$ \\
+      \bottomrule
+  \end{tabular}
+\end{table}
+
 
 \subsection{Backbone Scaling}
+(wait for the result or can be removed)
 
 \subsection{Denoising Steps}\label{sec:ab_steps}
 In the orignial \gls{ddpm} setting of image synthesis task, the diffusion steps is configured as 1000 to make sure the vividness of the generated image. In our pose estimation task, we compare the effects caused by the number of denoising steps on the final result in table \ref{tab:ab_steps}. The result shows that large number of steps doesn't necessarily lead to better performance. 
@@ -1776,7 +1776,7 @@ Our method can be also extended to the task of object tracking. The transformer 
 \appendix
 \chapter{Additionally: Evaluation Results}
 \section{Quantitative Evaluation}
-\begin{figure}[h]
+\begin{figure}[H]
 	\centering
 	\subfloat{\includegraphics[width=1.\textwidth]{img/mspd_thres.eps}}\\
   \centering
@@ -1785,14 +1785,21 @@ Our method can be also extended to the task of object tracking. The transformer 
 	\label{img:eval_threshold}
 \end{figure}
 
-\begin{figure}[h]
+\begin{figure}[H]
 	\centering
 	\includegraphics[width=1.\textwidth]{img/ab_rot.eps}
 	\caption{Rotation error under different representations of rotation during training phase (without refinement).}
 	\label{img:ab_rot}
 \end{figure}
 
-\begin{table}[h]
+\begin{figure}[H]
+	\centering
+	\includegraphics[width=1.\textwidth]{img/ab_trans.eps}
+	\caption{Translation error with and without using residual translation during training phase (without refinement).}
+	\label{img:ab_trans}
+\end{figure}
+
+\begin{table}[H]
   \centering
   \caption{Comparison of the different domains of feature on LM dataset}
   \label{tab:ab_feat_lm}
@@ -1810,7 +1817,7 @@ Our method can be also extended to the task of object tracking. The transformer 
   \end{tabular}
 \end{table}
 
-\begin{table}[h]
+\begin{table}[H]
   \centering
   \caption{Comparison of the different feature fusion methods on LM dataset}
   \label{tab:ab_fusion_lm}
@@ -1826,7 +1833,7 @@ Our method can be also extended to the task of object tracking. The transformer 
   \end{tabular}
 \end{table}
 
-\begin{table}[h]
+\begin{table}[H]
   \centering
   \caption{Comparison of the different rotation representations on LM dataset}
   \label{tab:ab_rot_lm}
@@ -1844,9 +1851,25 @@ Our method can be also extended to the task of object tracking. The transformer 
   \end{tabular}
 \end{table}
 
+\begin{table}[H]
+  \centering
+  \caption{Comparison of model trained with and without residual translation on LM dataset}
+  \label{tab:ab_trans_lm}
+  \begin{tabular}{l | c | C{16mm} C{16mm} C{16mm}| C{16mm}| C{16mm}}
+      \toprule
+      Method & Refine & $\text{AR}_{\text{MSPD}}$ & $\text{AR}_{\text{MSSD}}$ & $\text{AR}_{\text{VSD}}$ & AR & ADD(-S) \\
+      \midrule
+      w/o res. & $-$     & 92.0 & 88.3 & 59.3 & 79.9 & 93.5 \\
+      w/ res.  & $-$     & 91.6 & 89.1 & 68.8 & $\mathbf{83.2}$ & $\mathbf{97.5}$ \\
+      w/o res. & $\surd$ & 98.3 & 97.3 & 84.5 & 93.4 & $\mathbf{99.0}$ \\
+      w/ res.  & $\surd$ & 98.5 & 98.7 & 85.7 & $\mathbf{94.0}$ & 98.5 \\
+      \bottomrule
+  \end{tabular}
+\end{table}
 
+\newpage
 \section{Qualitative Evaluation}
-\begin{figure}[h]
+\begin{figure}[H]
 	\centering
 	\subfloat{\includegraphics[width=1.\textwidth]{img/comp_cup.pdf}}\\
   \centering
@@ -1861,11 +1884,25 @@ Our method can be also extended to the task of object tracking. The transformer 
 	\label{img:app_comp}
 \end{figure}
 
-\begin{figure}[h]
+\begin{figure}[H]
 	\centering
 	\includegraphics[width=1.\textwidth]{img/vis_all.pdf}
 	\caption{Visualization of some objects highlighted at estimated pose. Row 1-2: objects without occlusion; Row 3-4: objects with occlussion; Row 5: objects with occlussion shown in one scene}
 	\label{img:vis_all}
+\end{figure}
+
+\begin{figure}[H]
+	\centering
+	\includegraphics[width=1.\textwidth]{img/vis_cat.pdf}
+	\caption{Visualization of the denoising process of the pose estimation of cat object (Sequence: top to bottom, left to right)}
+	\label{img:vis_cat}
+\end{figure}
+
+\begin{figure}[H]
+	\centering
+	\includegraphics[width=1.\textwidth]{img/vis_bench.pdf}
+	\caption{Visualization of the denoising process of the pose estimation of bench object (Sequence: top to bottom, left to right)}
+	\label{img:vis_bench}
 \end{figure}
 
 % -------------------> end writing here <------------------------
