@@ -1,4 +1,4 @@
-This is pdfTeX, Version 3.141592653-2.6-1.40.25 (TeX Live 2023) (preloaded format=pdflatex 2023.10.5)  25 NOV 2023 18:29
+This is pdfTeX, Version 3.141592653-2.6-1.40.25 (TeX Live 2023) (preloaded format=pdflatex 2023.10.5)  26 NOV 2023 18:25
 entering extended mode
  restricted \write18 enabled.
  file:line:error style messages enabled.
@@ -855,11 +855,6 @@ Package: ltcaption 2021/01/08 v1.4c longtable captions (AR)
 Package caption Info: supertabular package is loaded.
 Package caption Info: wrapfig package is loaded.
 Package caption Info: End \AtBeginDocument code.
- (./iss-thesis.glsdefs
-
-Package glossaries Warning: entry `6dof' has already been defined in the preamble (if you have moved the definition there from the document environment, delete iss-thesis.glsdefs) on input line 27.
-
-)
 Package hyperref Info: Link coloring ON on input line 317.
  (./iss-thesis.out) (./iss-thesis.out)
 \@outlinefile=\write7
@@ -1002,65 +997,62 @@ LaTeX Font Info:    Font shape `T1/txss/bx/n' will be
 (Font)              scaled to size 11.39996pt on input line 353.
  [8]
 chapter 2.
-<img/6d.pdf, id=331, 536.0025pt x 229.85875pt>
+<img/6d.pdf, id=333, 536.0025pt x 229.85875pt>
 File: img/6d.pdf Graphic file (type pdf)
 <use img/6d.pdf>
-Package pdftex.def Info: img/6d.pdf  used on input line 371.
+Package pdftex.def Info: img/6d.pdf  used on input line 370.
 (pdftex.def)             Requested size: 442.64366pt x 189.82167pt.
-
-Underfull \vbox (badness 1540) has occurred while \output is active []
-
- [9
+[9
 
 
  <./img/6d.pdf>] [10] [11] [12] [13] [14] [15]
-<img/gen.pdf, id=533, 333.245pt x 260.975pt>
+<img/gen.pdf, id=535, 333.245pt x 260.975pt>
 File: img/gen.pdf Graphic file (type pdf)
 <use img/gen.pdf>
-Package pdftex.def Info: img/gen.pdf  used on input line 583.
+Package pdftex.def Info: img/gen.pdf  used on input line 582.
 (pdftex.def)             Requested size: 398.37659pt x 312.00166pt.
 
 
 LaTeX Warning: `h' float specifier changed to `ht'.
 
 [16] [17 <./img/gen.pdf>] [18]
-<img/diff_process.pdf, id=611, 624.3325pt x 217.81375pt>
+<img/diff_process.pdf, id=613, 624.3325pt x 217.81375pt>
 File: img/diff_process.pdf Graphic file (type pdf)
 <use img/diff_process.pdf>
-Package pdftex.def Info: img/diff_process.pdf  used on input line 677.
+Package pdftex.def Info: img/diff_process.pdf  used on input line 676.
 (pdftex.def)             Requested size: 442.64366pt x 154.42947pt.
 
 
 LaTeX Warning: `h' float specifier changed to `ht'.
 
 [19]
-Package hyperref Info: bookmark level for unknown algorithm defaults to 0 on input line 705.
+Package hyperref Info: bookmark level for unknown algorithm defaults to 0 on input line 704.
  [20 <./img/diff_process.pdf>]
-<img/cascade_fig.png, id=676, 4542.9725pt x 2248.4pt>
+<img/cascade_fig.png, id=678, 4542.9725pt x 2248.4pt>
 File: img/cascade_fig.png Graphic file (type png)
 <use img/cascade_fig.png>
-Package pdftex.def Info: img/cascade_fig.png  used on input line 739.
+Package pdftex.def Info: img/cascade_fig.png  used on input line 738.
 (pdftex.def)             Requested size: 363.44524pt x 179.87567pt.
  [21 <./img/cascade_fig.png>]
-<img/teaser.png, id=704, 216.81pt x 71.5473pt>
+<img/teaser.png, id=706, 216.81pt x 71.5473pt>
 File: img/teaser.png Graphic file (type png)
 <use img/teaser.png>
-Package pdftex.def Info: img/teaser.png  used on input line 749.
+Package pdftex.def Info: img/teaser.png  used on input line 748.
 (pdftex.def)             Requested size: 390.25769pt x 128.785pt.
-<img/sd.pdf, id=718, 565.11125pt x 217.81375pt>
+<img/sd.pdf, id=722, 565.11125pt x 217.81375pt>
 File: img/sd.pdf Graphic file (type pdf)
 <use img/sd.pdf>
-Package pdftex.def Info: img/sd.pdf  used on input line 768.
+Package pdftex.def Info: img/sd.pdf  used on input line 767.
 (pdftex.def)             Requested size: 442.64366pt x 170.61523pt.
 
 
 LaTeX Warning: `h' float specifier changed to `ht'.
 
 [22 <./img/teaser.png>]
-<img/df.png, id=754, 1522.68875pt x 504.88625pt>
+<img/df.png, id=760, 1522.68875pt x 504.88625pt>
 File: img/df.png Graphic file (type png)
 <use img/df.png>
-Package pdftex.def Info: img/df.png  used on input line 779.
+Package pdftex.def Info: img/df.png  used on input line 778.
 (pdftex.def)             Requested size: 442.64366pt x 146.76764pt.
  [23 <./img/sd.pdf> <./img/df.png>] [24
 
@@ -1068,36 +1060,36 @@ Package pdftex.def Info: img/df.png  used on input line 779.
 ]
 chapter 3.
 [25] [26]
-<img/pose_methods.pdf, id=924, 469.755pt x 339.2675pt>
+<img/pose_methods.pdf, id=931, 469.755pt x 339.2675pt>
 File: img/pose_methods.pdf Graphic file (type pdf)
 <use img/pose_methods.pdf>
-Package pdftex.def Info: img/pose_methods.pdf  used on input line 814.
+Package pdftex.def Info: img/pose_methods.pdf  used on input line 813.
 (pdftex.def)             Requested size: 442.64366pt x 319.688pt.
 
 
 LaTeX Warning: `h' float specifier changed to `ht'.
 
 [27] [28 <./img/pose_methods.pdf>] [29] [30] [31]
-<img/confront.png, id=1124, 1816.7875pt x 680.5425pt>
+<img/confront.png, id=1133, 1816.7875pt x 680.5425pt>
 File: img/confront.png Graphic file (type png)
 <use img/confront.png>
-Package pdftex.def Info: img/confront.png  used on input line 874.
+Package pdftex.def Info: img/confront.png  used on input line 873.
 (pdftex.def)             Requested size: 442.64366pt x 165.80498pt.
-<img/confront_cube.png, id=1127, 1844.8925pt x 488.82625pt>
+<img/confront_cube.png, id=1136, 1844.8925pt x 488.82625pt>
 File: img/confront_cube.png Graphic file (type png)
 <use img/confront_cube.png>
-Package pdftex.def Info: img/confront_cube.png  used on input line 881.
+Package pdftex.def Info: img/confront_cube.png  used on input line 880.
 (pdftex.def)             Requested size: 442.64366pt x 117.28339pt.
  [32 <./img/confront.png> <./img/confront_cube.png>]
-<img/pose_diff.png, id=1147, 2030.58624pt x 593.21625pt>
+<img/pose_diff.png, id=1156, 2030.58624pt x 593.21625pt>
 File: img/pose_diff.png Graphic file (type png)
 <use img/pose_diff.png>
-Package pdftex.def Info: img/pose_diff.png  used on input line 890.
+Package pdftex.def Info: img/pose_diff.png  used on input line 889.
 (pdftex.def)             Requested size: 442.64366pt x 129.31314pt.
-<img/pose_diff_vis.pdf, id=1150, 615.29875pt x 110.4125pt>
+<img/pose_diff_vis.pdf, id=1159, 615.29875pt x 110.4125pt>
 File: img/pose_diff_vis.pdf Graphic file (type pdf)
 <use img/pose_diff_vis.pdf>
-Package pdftex.def Info: img/pose_diff_vis.pdf  used on input line 897.
+Package pdftex.def Info: img/pose_diff_vis.pdf  used on input line 896.
 (pdftex.def)             Requested size: 442.64366pt x 79.43121pt.
  [33 <./img/pose_diff.png> <./img/pose_diff_vis.pdf>] [34
 
@@ -1105,139 +1097,142 @@ Package pdftex.def Info: img/pose_diff_vis.pdf  used on input line 897.
 ]
 chapter 4.
 [35]
-<img/train.pdf, id=1190, 542.025pt x 204.765pt>
+<img/train.pdf, id=1199, 542.025pt x 204.765pt>
 File: img/train.pdf Graphic file (type pdf)
 <use img/train.pdf>
-Package pdftex.def Info: img/train.pdf  used on input line 922.
+Package pdftex.def Info: img/train.pdf  used on input line 921.
 (pdftex.def)             Requested size: 442.64366pt x 167.22723pt.
  [36 <./img/train.pdf>]
-<img/sample.pdf, id=1242, 550.055pt x 216.81pt>
+<img/sample.pdf, id=1251, 550.055pt x 216.81pt>
 File: img/sample.pdf Graphic file (type pdf)
 <use img/sample.pdf>
-Package pdftex.def Info: img/sample.pdf  used on input line 937.
+Package pdftex.def Info: img/sample.pdf  used on input line 936.
 (pdftex.def)             Requested size: 442.64366pt x 174.4771pt.
  [37 <./img/sample.pdf>]
-<img/denoiser.pdf, id=1309, 539.01375pt x 465.74pt>
+<img/denoiser.pdf, id=1318, 539.01375pt x 465.74pt>
 File: img/denoiser.pdf Graphic file (type pdf)
 <use img/denoiser.pdf>
-Package pdftex.def Info: img/denoiser.pdf  used on input line 965.
+Package pdftex.def Info: img/denoiser.pdf  used on input line 964.
 (pdftex.def)             Requested size: 442.64366pt x 382.4778pt.
 
 
 LaTeX Warning: `h' float specifier changed to `ht'.
 
-<img/mhsa.pdf, id=1316, 330.23375pt x 195.73125pt>
+<img/mhsa.pdf, id=1325, 330.23375pt x 195.73125pt>
 File: img/mhsa.pdf Graphic file (type pdf)
 <use img/mhsa.pdf>
-Package pdftex.def Info: img/mhsa.pdf  used on input line 976.
+Package pdftex.def Info: img/mhsa.pdf  used on input line 975.
 (pdftex.def)             Requested size: 309.8492pt x 183.65587pt.
 
 LaTeX Warning: `h' float specifier changed to `ht'.
 
 [38] [39 <./img/denoiser.pdf>]
-LaTeX Font Info:    Trying to load font information for TS1+txr on input line 1003.
+LaTeX Font Info:    Trying to load font information for TS1+txr on input line 1002.
  (/usr/local/texlive/2023/texmf-dist/tex/latex/txfonts/ts1txr.fd
 File: ts1txr.fd 2000/12/15 v3.1
 ) [40 <./img/mhsa.pdf>]
-<img/pe.png, id=1403, 672.8337pt x 244.2726pt>
+<img/pe.png, id=1412, 672.8337pt x 244.2726pt>
 File: img/pe.png Graphic file (type png)
 <use img/pe.png>
-Package pdftex.def Info: img/pe.png  used on input line 1015.
+Package pdftex.def Info: img/pe.png  used on input line 1014.
 (pdftex.def)             Requested size: 442.64366pt x 160.70604pt.
 
 
 Package amsmath Warning: Foreign command \atop;
 (amsmath)                \frac or \genfrac should be used instead
-(amsmath)                 on input line 1032.
+(amsmath)                 on input line 1031.
 
 [41 <./img/pe.png>]
-<img/dino.pdf, id=1418, 441.65pt x 111.41624pt>
+<img/dino.pdf, id=1427, 441.65pt x 111.41624pt>
 File: img/dino.pdf Graphic file (type pdf)
 <use img/dino.pdf>
-Package pdftex.def Info: img/dino.pdf  used on input line 1036.
+Package pdftex.def Info: img/dino.pdf  used on input line 1035.
 (pdftex.def)             Requested size: 376.2498pt x 94.92186pt.
-<img/vit.png, id=1430, 1850.915pt x 941.5175pt>
+<img/vit.png, id=1439, 1850.915pt x 941.5175pt>
 File: img/vit.png Graphic file (type png)
 <use img/vit.png>
-Package pdftex.def Info: img/vit.png  used on input line 1046.
+Package pdftex.def Info: img/vit.png  used on input line 1045.
 (pdftex.def)             Requested size: 442.64366pt x 225.14993pt.
 
 
 LaTeX Warning: `h' float specifier changed to `ht'.
 
 [42 <./img/dino.pdf>]
-<img/fold.pdf, id=1490, 519.9425pt x 226.8475pt>
+<img/fold.pdf, id=1500, 519.9425pt x 226.8475pt>
 File: img/fold.pdf Graphic file (type pdf)
 <use img/fold.pdf>
-Package pdftex.def Info: img/fold.pdf  used on input line 1061.
+Package pdftex.def Info: img/fold.pdf  used on input line 1060.
 (pdftex.def)             Requested size: 442.64366pt x 193.12242pt.
 
 
 LaTeX Warning: `h' float specifier changed to `ht'.
 
-[43 <./img/vit.png>]
-<img/fuse_add.pdf, id=1513, 435.6275pt x 186.6975pt>
+[43 <./img/vit.png>] [44 <./img/fold.pdf>]
+<img/fuse_add.pdf, id=1564, 435.6275pt x 186.6975pt>
 File: img/fuse_add.pdf Graphic file (type pdf)
 <use img/fuse_add.pdf>
-Package pdftex.def Info: img/fuse_add.pdf  used on input line 1082.
+Package pdftex.def Info: img/fuse_add.pdf  used on input line 1081.
 (pdftex.def)             Requested size: 420.51012pt x 180.21892pt.
-<img/fuse_cat.pdf, id=1514, 431.6125pt x 186.6975pt>
+<img/fuse_cat.pdf, id=1565, 431.6125pt x 186.6975pt>
 File: img/fuse_cat.pdf Graphic file (type pdf)
 <use img/fuse_cat.pdf>
-Package pdftex.def Info: img/fuse_cat.pdf  used on input line 1084.
+Package pdftex.def Info: img/fuse_cat.pdf  used on input line 1083.
 (pdftex.def)             Requested size: 420.51012pt x 181.8997pt.
- [44 <./img/fold.pdf>]
-Underfull \vbox (badness 10000) has occurred while \output is active []
-
  [45 <./img/fuse_add.pdf> <./img/fuse_cat.pdf>]
-<img/res_t.pdf, id=1628, 520.94624pt x 251.94125pt>
+<img/res_t.pdf, id=1639, 520.94624pt x 251.94125pt>
 File: img/res_t.pdf Graphic file (type pdf)
 <use img/res_t.pdf>
-Package pdftex.def Info: img/res_t.pdf  used on input line 1097.
+Package pdftex.def Info: img/res_t.pdf  used on input line 1096.
 (pdftex.def)             Requested size: 354.11627pt x 171.26012pt.
  [46 <./img/res_t.pdf>]
+<img/spacer.pdf, id=1682, 293.095pt x 300.12125pt>
+File: img/spacer.pdf Graphic file (type pdf)
+<use img/spacer.pdf>
+Package pdftex.def Info: img/spacer.pdf  used on input line 1140.
+(pdftex.def)             Requested size: 398.37659pt x 407.92595pt.
+
 
 LaTeX Warning: `h' float specifier changed to `ht'.
 
-[47] [48]
+[47] [48 <./img/spacer.pdf>]
 chapter 5.
-<img/lm.pdf, id=1698, 729.72626pt x 219.82124pt>
+<img/lm.pdf, id=1716, 729.72626pt x 219.82124pt>
 File: img/lm.pdf Graphic file (type pdf)
 <use img/lm.pdf>
-Package pdftex.def Info: img/lm.pdf  used on input line 1149.
+Package pdftex.def Info: img/lm.pdf  used on input line 1154.
 (pdftex.def)             Requested size: 442.64366pt x 133.33942pt.
-<img/lmo.pdf, id=1702, 640.3925pt x 200.75pt>
+<img/lmo.pdf, id=1720, 640.3925pt x 200.75pt>
 File: img/lmo.pdf Graphic file (type pdf)
 <use img/lmo.pdf>
-Package pdftex.def Info: img/lmo.pdf  used on input line 1158.
+Package pdftex.def Info: img/lmo.pdf  used on input line 1163.
 (pdftex.def)             Requested size: 398.37659pt x 124.88336pt.
 [49
 
 
  <./img/lm.pdf>] [50 <./img/lmo.pdf>] [51] [52]
-<img/atten_cl.png, id=1774, 634.224pt x 174.543pt>
+<img/atten_cl.png, id=1791, 634.224pt x 174.543pt>
 File: img/atten_cl.png Graphic file (type png)
 <use img/atten_cl.png>
-Package pdftex.def Info: img/atten_cl.png  used on input line 1257.
+Package pdftex.def Info: img/atten_cl.png  used on input line 1262.
 (pdftex.def)             Requested size: 433.7889pt x 119.38011pt.
-<img/atten_bo.png, id=1775, 635.319pt x 174.543pt>
+<img/atten_bo.png, id=1792, 635.319pt x 174.543pt>
 File: img/atten_bo.png Graphic file (type png)
 <use img/atten_bo.png>
-Package pdftex.def Info: img/atten_bo.png  used on input line 1259.
+Package pdftex.def Info: img/atten_bo.png  used on input line 1264.
 (pdftex.def)             Requested size: 433.7889pt x 119.17503pt.
-<img/atten_ph.png, id=1776, 635.319pt x 174.543pt>
+<img/atten_ph.png, id=1793, 635.319pt x 174.543pt>
 File: img/atten_ph.png Graphic file (type png)
 <use img/atten_ph.png>
-Package pdftex.def Info: img/atten_ph.png  used on input line 1261.
+Package pdftex.def Info: img/atten_ph.png  used on input line 1266.
 (pdftex.def)             Requested size: 433.7889pt x 119.17503pt.
 
 
 LaTeX Warning: `h' float specifier changed to `ht'.
 
-<img/atten_cat.png, id=1781, 657.438pt x 386.316pt>
+<img/atten_cat.png, id=1798, 657.438pt x 386.316pt>
 File: img/atten_cat.png Graphic file (type png)
 <use img/atten_cat.png>
-Package pdftex.def Info: img/atten_cat.png  used on input line 1269.
+Package pdftex.def Info: img/atten_cat.png  used on input line 1274.
 (pdftex.def)             Requested size: 442.64366pt x 260.10951pt.
 
 LaTeX Warning: `h' float specifier changed to `ht'.
@@ -1253,12 +1248,12 @@ Package epstopdf Info: Source file: <img/fold_loss.eps>
 (epstopdf)                    date: 2023-11-25 18:09:10
 (epstopdf)                    size: 43529 bytes
 (epstopdf)             Command: <repstopdf --outfile=img/fold_loss-eps-converted-to.pdf img/fold_loss.eps>
-(epstopdf)             \includegraphics on input line 1288.
+(epstopdf)             \includegraphics on input line 1293.
 Package epstopdf Info: Output file is already uptodate.
-<img/fold_loss-eps-converted-to.pdf, id=1814, 579.16376pt x 232.87pt>
+<img/fold_loss-eps-converted-to.pdf, id=1831, 579.16376pt x 232.87pt>
 File: img/fold_loss-eps-converted-to.pdf Graphic file (type pdf)
 <use img/fold_loss-eps-converted-to.pdf>
-Package pdftex.def Info: img/fold_loss-eps-converted-to.pdf  used on input line 1288.
+Package pdftex.def Info: img/fold_loss-eps-converted-to.pdf  used on input line 1293.
 (pdftex.def)             Requested size: 442.64366pt x 177.97795pt.
 
 
@@ -1271,33 +1266,33 @@ Package epstopdf Info: Source file: <img/cd_category.eps>
 (epstopdf)                    date: 2023-11-13 16:37:01
 (epstopdf)                    size: 151626 bytes
 (epstopdf)             Command: <repstopdf --outfile=img/cd_category-eps-converted-to.pdf img/cd_category.eps>
-(epstopdf)             \includegraphics on input line 1297.
+(epstopdf)             \includegraphics on input line 1302.
 Package epstopdf Info: Output file is already uptodate.
-<img/cd_category-eps-converted-to.pdf, id=1817, 593.21625pt x 248.93pt>
+<img/cd_category-eps-converted-to.pdf, id=1834, 593.21625pt x 248.93pt>
 File: img/cd_category-eps-converted-to.pdf Graphic file (type pdf)
 <use img/cd_category-eps-converted-to.pdf>
-Package pdftex.def Info: img/cd_category-eps-converted-to.pdf  used on input line 1297.
+Package pdftex.def Info: img/cd_category-eps-converted-to.pdf  used on input line 1302.
 (pdftex.def)             Requested size: 442.64366pt x 185.75124pt.
 
 LaTeX Warning: `h' float specifier changed to `ht'.
 
-<img/comp_cup.pdf, id=1819, 605.26125pt x 146.5475pt>
+<img/comp_cup.pdf, id=1836, 605.26125pt x 146.5475pt>
 File: img/comp_cup.pdf Graphic file (type pdf)
 <use img/comp_cup.pdf>
-Package pdftex.def Info: img/comp_cup.pdf  used on input line 1308.
+Package pdftex.def Info: img/comp_cup.pdf  used on input line 1313.
 (pdftex.def)             Requested size: 442.64366pt x 107.17554pt.
-<img/comp_phone.pdf, id=1820, 595.22375pt x 161.60374pt>
+<img/comp_phone.pdf, id=1837, 595.22375pt x 161.60374pt>
 File: img/comp_phone.pdf Graphic file (type pdf)
 <use img/comp_phone.pdf>
-Package pdftex.def Info: img/comp_phone.pdf  used on input line 1310.
+Package pdftex.def Info: img/comp_phone.pdf  used on input line 1315.
 (pdftex.def)             Requested size: 442.64366pt x 120.1767pt.
 
 LaTeX Warning: `h' float specifier changed to `ht'.
 
-<img/fold_dev.pdf, id=1822, 608.2725pt x 139.52126pt>
+<img/fold_dev.pdf, id=1839, 608.2725pt x 139.52126pt>
 File: img/fold_dev.pdf Graphic file (type pdf)
 <use img/fold_dev.pdf>
-Package pdftex.def Info: img/fold_dev.pdf  used on input line 1319.
+Package pdftex.def Info: img/fold_dev.pdf  used on input line 1324.
 (pdftex.def)             Requested size: 442.64366pt x 101.53244pt.
 
 LaTeX Warning: `h' float specifier changed to `ht'.
@@ -1309,12 +1304,12 @@ Package epstopdf Info: Source file: <img/fold_overfit.eps>
 (epstopdf)                    date: 2023-11-13 15:01:52
 (epstopdf)                    size: 173359 bytes
 (epstopdf)             Command: <repstopdf --outfile=img/fold_overfit-eps-converted-to.pdf img/fold_overfit.eps>
-(epstopdf)             \includegraphics on input line 1327.
+(epstopdf)             \includegraphics on input line 1332.
 Package epstopdf Info: Output file is already uptodate.
-<img/fold_overfit-eps-converted-to.pdf, id=1826, 594.22pt x 257.96375pt>
+<img/fold_overfit-eps-converted-to.pdf, id=1843, 594.22pt x 257.96375pt>
 File: img/fold_overfit-eps-converted-to.pdf Graphic file (type pdf)
 <use img/fold_overfit-eps-converted-to.pdf>
-Package pdftex.def Info: img/fold_overfit-eps-converted-to.pdf  used on input line 1327.
+Package pdftex.def Info: img/fold_overfit-eps-converted-to.pdf  used on input line 1332.
 (pdftex.def)             Requested size: 442.64366pt x 192.16943pt.
 
 LaTeX Warning: `h' float specifier changed to `ht'.
@@ -1338,12 +1333,12 @@ Package epstopdf Info: Source file: <img/diff_loss.eps>
 (epstopdf)                    date: 2023-11-25 15:33:57
 (epstopdf)                    size: 240588 bytes
 (epstopdf)             Command: <repstopdf --outfile=img/diff_loss-eps-converted-to.pdf img/diff_loss.eps>
-(epstopdf)             \includegraphics on input line 1425.
+(epstopdf)             \includegraphics on input line 1430.
 Package epstopdf Info: Output file is already uptodate.
-<img/diff_loss-eps-converted-to.pdf, id=1956, 578.16pt x 230.8625pt>
+<img/diff_loss-eps-converted-to.pdf, id=1973, 578.16pt x 230.8625pt>
 File: img/diff_loss-eps-converted-to.pdf Graphic file (type pdf)
 <use img/diff_loss-eps-converted-to.pdf>
-Package pdftex.def Info: img/diff_loss-eps-converted-to.pdf  used on input line 1425.
+Package pdftex.def Info: img/diff_loss-eps-converted-to.pdf  used on input line 1430.
 (pdftex.def)             Requested size: 442.64366pt x 176.75012pt.
 
 
@@ -1353,31 +1348,28 @@ LaTeX Warning: `h' float specifier changed to `ht'.
 Underfull \vbox (badness 4279) has occurred while \output is active []
 
  [59] [60 <./img/diff_loss-eps-converted-to.pdf>]
-LaTeX Font Info:    Calculating math sizes for size <11> on input line 1480.
+LaTeX Font Info:    Calculating math sizes for size <11> on input line 1485.
  [61] [62]
 
 LaTeX Warning: `h' float specifier changed to `ht'.
 
-<img/eval_vis.pdf, id=2084, 582.175pt x 227.85126pt>
+<img/eval_vis.pdf, id=2101, 582.175pt x 227.85126pt>
 File: img/eval_vis.pdf Graphic file (type pdf)
 <use img/eval_vis.pdf>
-Package pdftex.def Info: img/eval_vis.pdf  used on input line 1615.
+Package pdftex.def Info: img/eval_vis.pdf  used on input line 1620.
 (pdftex.def)             Requested size: 442.64366pt x 173.24524pt.
-
-Underfull \vbox (badness 1831) has occurred while \output is active []
-
- [63]
-<img/vis_denoise.pdf, id=2095, 329.23pt x 233.87375pt>
+[63]
+<img/vis_denoise.pdf, id=2113, 329.23pt x 233.87375pt>
 File: img/vis_denoise.pdf Graphic file (type pdf)
 <use img/vis_denoise.pdf>
-Package pdftex.def Info: img/vis_denoise.pdf  used on input line 1623.
+Package pdftex.def Info: img/vis_denoise.pdf  used on input line 1628.
 (pdftex.def)             Requested size: 442.64366pt x 314.44548pt.
 
 
 LaTeX Warning: `h' float specifier changed to `ht'.
 
 
-Underfull \vbox (badness 5817) has occurred while \output is active []
+Underfull \vbox (badness 10000) has occurred while \output is active []
 
  [64 <./img/eval_vis.pdf>]
 
@@ -1395,12 +1387,12 @@ LaTeX Warning: `h' float specifier changed to `ht'.
 
 ]
 chapter 6.
-[69] [70]
+[69] [70] [71] [72
+
+
+]
 chapter 7.
-[71
-
-
-] [72]
+[73] [74]
 chapter A.
 Package epstopdf Info: Source file: <img/mspd_thres.eps>
 (epstopdf)                    date: 2023-11-22 17:17:02
@@ -1409,12 +1401,12 @@ Package epstopdf Info: Source file: <img/mspd_thres.eps>
 (epstopdf)                    date: 2023-11-22 17:20:37
 (epstopdf)                    size: 47775 bytes
 (epstopdf)             Command: <repstopdf --outfile=img/mspd_thres-eps-converted-to.pdf img/mspd_thres.eps>
-(epstopdf)             \includegraphics on input line 1781.
+(epstopdf)             \includegraphics on input line 1792.
 Package epstopdf Info: Output file is already uptodate.
-<img/mspd_thres-eps-converted-to.pdf, id=2273, 581.17125pt x 234.8775pt>
+<img/mspd_thres-eps-converted-to.pdf, id=2299, 581.17125pt x 234.8775pt>
 File: img/mspd_thres-eps-converted-to.pdf Graphic file (type pdf)
 <use img/mspd_thres-eps-converted-to.pdf>
-Package pdftex.def Info: img/mspd_thres-eps-converted-to.pdf  used on input line 1781.
+Package pdftex.def Info: img/mspd_thres-eps-converted-to.pdf  used on input line 1792.
 (pdftex.def)             Requested size: 442.64366pt x 178.89581pt.
 Package epstopdf Info: Source file: <img/mssd_thres.eps>
 (epstopdf)                    date: 2023-11-22 17:23:20
@@ -1423,12 +1415,12 @@ Package epstopdf Info: Source file: <img/mssd_thres.eps>
 (epstopdf)                    date: 2023-11-22 17:23:37
 (epstopdf)                    size: 48275 bytes
 (epstopdf)             Command: <repstopdf --outfile=img/mssd_thres-eps-converted-to.pdf img/mssd_thres.eps>
-(epstopdf)             \includegraphics on input line 1783.
+(epstopdf)             \includegraphics on input line 1794.
 Package epstopdf Info: Output file is already uptodate.
-<img/mssd_thres-eps-converted-to.pdf, id=2274, 581.17125pt x 231.86626pt>
+<img/mssd_thres-eps-converted-to.pdf, id=2300, 581.17125pt x 231.86626pt>
 File: img/mssd_thres-eps-converted-to.pdf Graphic file (type pdf)
 <use img/mssd_thres-eps-converted-to.pdf>
-Package pdftex.def Info: img/mssd_thres-eps-converted-to.pdf  used on input line 1783.
+Package pdftex.def Info: img/mssd_thres-eps-converted-to.pdf  used on input line 1794.
 (pdftex.def)             Requested size: 442.64366pt x 176.60228pt.
 Package epstopdf Info: Source file: <img/ab_rot.eps>
 (epstopdf)                    date: 2023-11-25 18:19:12
@@ -1437,17 +1429,17 @@ Package epstopdf Info: Source file: <img/ab_rot.eps>
 (epstopdf)                    date: 2023-11-25 18:19:22
 (epstopdf)                    size: 42351 bytes
 (epstopdf)             Command: <repstopdf --outfile=img/ab_rot-eps-converted-to.pdf img/ab_rot.eps>
-(epstopdf)             \includegraphics on input line 1790.
+(epstopdf)             \includegraphics on input line 1801.
 Package epstopdf Info: Output file is already uptodate.
-<img/ab_rot-eps-converted-to.pdf, id=2275, 575.14874pt x 232.87pt>
+<img/ab_rot-eps-converted-to.pdf, id=2301, 575.14874pt x 232.87pt>
 File: img/ab_rot-eps-converted-to.pdf Graphic file (type pdf)
 <use img/ab_rot-eps-converted-to.pdf>
-Package pdftex.def Info: img/ab_rot-eps-converted-to.pdf  used on input line 1790.
+Package pdftex.def Info: img/ab_rot-eps-converted-to.pdf  used on input line 1801.
 (pdftex.def)             Requested size: 442.64366pt x 179.22516pt.
 
 Underfull \vbox (badness 10000) has occurred while \output is active []
 
- [73
+ [75
 
 
  <./img/mspd_thres-eps-converted-to.pdf> <./img/mssd_thres-eps-converted-to.pdf>]
@@ -1458,121 +1450,121 @@ Package epstopdf Info: Source file: <img/ab_trans.eps>
 (epstopdf)                    date: 2023-11-25 13:24:07
 (epstopdf)                    size: 43901 bytes
 (epstopdf)             Command: <repstopdf --outfile=img/ab_trans-eps-converted-to.pdf img/ab_trans.eps>
-(epstopdf)             \includegraphics on input line 1797.
+(epstopdf)             \includegraphics on input line 1808.
 Package epstopdf Info: Output file is already uptodate.
-<img/ab_trans-eps-converted-to.pdf, id=2308, 584.1825pt x 230.8625pt>
+<img/ab_trans-eps-converted-to.pdf, id=2335, 584.1825pt x 230.8625pt>
 File: img/ab_trans-eps-converted-to.pdf Graphic file (type pdf)
 <use img/ab_trans-eps-converted-to.pdf>
-Package pdftex.def Info: img/ab_trans-eps-converted-to.pdf  used on input line 1797.
+Package pdftex.def Info: img/ab_trans-eps-converted-to.pdf  used on input line 1808.
 (pdftex.def)             Requested size: 442.64366pt x 174.93243pt.
 
 Underfull \vbox (badness 2556) has occurred while \output is active []
 
- [74 <./img/ab_rot-eps-converted-to.pdf> <./img/ab_trans-eps-converted-to.pdf>] [75]
+ [76 <./img/ab_rot-eps-converted-to.pdf> <./img/ab_trans-eps-converted-to.pdf>] [77]
 File: img/comp_cup.pdf Graphic file (type pdf)
 <use img/comp_cup.pdf>
-Package pdftex.def Info: img/comp_cup.pdf  used on input line 1874.
+Package pdftex.def Info: img/comp_cup.pdf  used on input line 1885.
 (pdftex.def)             Requested size: 442.64366pt x 107.17554pt.
-<img/comp_cam.pdf, id=2347, 595.22375pt x 139.52126pt>
+<img/comp_cam.pdf, id=2374, 595.22375pt x 139.52126pt>
 File: img/comp_cam.pdf Graphic file (type pdf)
 <use img/comp_cam.pdf>
-Package pdftex.def Info: img/comp_cam.pdf  used on input line 1876.
+Package pdftex.def Info: img/comp_cam.pdf  used on input line 1887.
 (pdftex.def)             Requested size: 442.64366pt x 103.75504pt.
 File: img/comp_phone.pdf Graphic file (type pdf)
 <use img/comp_phone.pdf>
-Package pdftex.def Info: img/comp_phone.pdf  used on input line 1878.
+Package pdftex.def Info: img/comp_phone.pdf  used on input line 1889.
 (pdftex.def)             Requested size: 442.64366pt x 120.1767pt.
-<img/comp_egg.pdf, id=2348, 597.23125pt x 151.56625pt>
+<img/comp_egg.pdf, id=2375, 597.23125pt x 151.56625pt>
 File: img/comp_egg.pdf Graphic file (type pdf)
 <use img/comp_egg.pdf>
-Package pdftex.def Info: img/comp_egg.pdf  used on input line 1880.
+Package pdftex.def Info: img/comp_egg.pdf  used on input line 1891.
 (pdftex.def)             Requested size: 442.64366pt x 112.33534pt.
-<img/comp_glue.pdf, id=2349, 601.24625pt x 155.58125pt>
+<img/comp_glue.pdf, id=2376, 601.24625pt x 155.58125pt>
 File: img/comp_glue.pdf Graphic file (type pdf)
 <use img/comp_glue.pdf>
-Package pdftex.def Info: img/comp_glue.pdf  used on input line 1882.
+Package pdftex.def Info: img/comp_glue.pdf  used on input line 1893.
 (pdftex.def)             Requested size: 442.64366pt x 114.54431pt.
 
 Underfull \vbox (badness 10000) has occurred while \output is active []
 
- [76]
+ [78]
 Overfull \vbox (30.25175pt too high) has occurred while \output is active []
 
- [77 <./img/comp_cam.pdf> <./img/comp_egg.pdf> <./img/comp_glue.pdf>]
-<img/vis_all.pdf, id=2398, 465.74pt x 584.1825pt>
+ [79 <./img/comp_cam.pdf> <./img/comp_egg.pdf> <./img/comp_glue.pdf>]
+<img/vis_all.pdf, id=2424, 465.74pt x 584.1825pt>
 File: img/vis_all.pdf Graphic file (type pdf)
 <use img/vis_all.pdf>
-Package pdftex.def Info: img/vis_all.pdf  used on input line 1889.
+Package pdftex.def Info: img/vis_all.pdf  used on input line 1900.
 (pdftex.def)             Requested size: 442.64366pt x 555.22871pt.
-<img/vis_cat.pdf, id=2399, 337.26pt x 494.84875pt>
+<img/vis_cat.pdf, id=2425, 337.26pt x 494.84875pt>
 File: img/vis_cat.pdf Graphic file (type pdf)
 <use img/vis_cat.pdf>
-Package pdftex.def Info: img/vis_cat.pdf  used on input line 1896.
+Package pdftex.def Info: img/vis_cat.pdf  used on input line 1907.
 (pdftex.def)             Requested size: 442.64366pt x 649.4874pt.
 
 Underfull \vbox (badness 10000) has occurred while \output is active []
 
- [78 <./img/vis_all.pdf>]
+ [80 <./img/vis_all.pdf>]
 Overfull \vbox (10.30826pt too high) has occurred while \output is active []
 
- [79 <./img/vis_cat.pdf>]
-<img/vis_bench.pdf, id=2454, 327.2225pt x 491.8375pt>
+ [81 <./img/vis_cat.pdf>]
+<img/vis_bench.pdf, id=2481, 327.2225pt x 491.8375pt>
 File: img/vis_bench.pdf Graphic file (type pdf)
 <use img/vis_bench.pdf>
-Package pdftex.def Info: img/vis_bench.pdf  used on input line 1903.
+Package pdftex.def Info: img/vis_bench.pdf  used on input line 1914.
 (pdftex.def)             Requested size: 442.64366pt x 665.32535pt.
 
 Overfull \vbox (26.14621pt too high) has occurred while \output is active []
 
- [80 <./img/vis_bench.pdf>] (./iss-thesis.lof [81
+ [82 <./img/vis_bench.pdf>] (./iss-thesis.lof [83
 
 
 ])
 \tf@lof=\write9
 \openout9 = `iss-thesis.lof'.
 
- [82] (./iss-thesis.lot)
+ [84] (./iss-thesis.lot)
 \tf@lot=\write10
 \openout10 = `iss-thesis.lot'.
 
- (./iss-thesis.bbl [83
+ (./iss-thesis.bbl [85
 
 
-] [84
+] [86
 
 
 ]
 chapter without number
-[85] [86] [87] [88] [89]
+[87] [88] [89] [90] [91]
 ** WARNING: IEEEtran.bst: No hyphenation pattern has been
 ** loaded for the language `en'. Using the pattern for
 ** the default language instead.
 ** WARNING: IEEEtran.bst: No hyphenation pattern has been
 ** loaded for the language `en'. Using the pattern for
 ** the default language instead.
-[90] [91] [92]) [93] [94
+[92] [93] [94]) [95] [96
 
 
 ]
 LaTeX Font Info:    Font shape `T1/txr/b/n' in size <20.74> not available
-(Font)              Font shape `T1/txr/bx/n' tried instead on input line 1925.
- [95] (./iss-thesis.aux)
+(Font)              Font shape `T1/txr/bx/n' tried instead on input line 1936.
+ [97] (./iss-thesis.aux)
 Package rerunfilecheck Info: File `iss-thesis.out' has not changed.
 (rerunfilecheck)             Checksum: D41D8CD98F00B204E9800998ECF8427E;0.
  ) 
 Here is how much of TeX's memory you used:
- 26724 strings out of 476025
- 483841 string characters out of 5790017
+ 26733 strings out of 476025
+ 483996 string characters out of 5790017
  1918388 words of memory out of 5000000
- 46079 multiletter control sequences out of 15000+600000
+ 46086 multiletter control sequences out of 15000+600000
  629581 words of font info for 258 fonts, out of 8000000 for 9000
  1145 hyphenation exceptions out of 8191
  108i,20n,106p,10680b,747s stack positions out of 10000i,1000n,20000p,200000b,200000s
 </usr/local/texlive/2023/texmf-dist/fonts/type1/public/txfonts/rtcxr.pfb></usr/local/texlive/2023/texmf-dist/fonts/type1/public/txfonts/rtxb.pfb></usr/local/texlive/2023/texmf-dist/fonts/type1/public/txfonts/rtxbmi.pfb></usr/local/texlive/2023/texmf-dist/fonts/type1/public/txfonts/rtxi.pfb></usr/local/texlive/2023/texmf-dist/fonts/type1/public/txfonts/rtxmi.pfb></usr/local/texlive/2023/texmf-dist/fonts/type1/public/txfonts/rtxr.pfb></usr/local/texlive/2023/texmf-dist/fonts/type1/public/txfonts/rtxr.pfb></usr/local/texlive/2023/texmf-dist/fonts/type1/public/txfonts/t1xtt.pfb></usr/local/texlive/2023/texmf-dist/fonts/type1/public/txfonts/txex.pfb></usr/local/texlive/2023/texmf-dist/fonts/type1/public/txfonts/txexa.pfb></usr/local/texlive/2023/texmf-dist/fonts/type1/public/txfonts/txsy.pfb></usr/local/texlive/2023/texmf-dist/fonts/type1/public/txfonts/txsyb.pfb></usr/local/texlive/2023/texmf-dist/fonts/type1/public/txfonts/txsyc.pfb></usr/local/texlive/2023/texmf-dist/fonts/type1/urw/helvetic/uhvb8a.pfb></usr/local/texlive/2023/texmf-dist/fonts/type1/urw/times/utmb8a.pfb></usr/local/texlive/2023/texmf-dist/fonts/type1/urw/times/utmr8a.pfb></usr/local/texlive/2023/texmf-dist/fonts/type1/urw/times/utmr8a.pfb></usr/local/texlive/2023/texmf-dist/fonts/type1/urw/times/utmri8a.pfb>
-Output written on iss-thesis.pdf (99 pages, 21965687 bytes).
+Output written on iss-thesis.pdf (101 pages, 21971517 bytes).
 PDF statistics:
- 3101 PDF objects out of 3580 (max. 8388607)
- 2476 compressed objects within 25 object streams
- 573 named destinations out of 1000 (max. 500000)
- 843 words of extra memory for PDF output out of 10000 (max. 10000000)
+ 3130 PDF objects out of 3580 (max. 8388607)
+ 2498 compressed objects within 25 object streams
+ 576 named destinations out of 1000 (max. 500000)
+ 848 words of extra memory for PDF output out of 10000 (max. 10000000)
 

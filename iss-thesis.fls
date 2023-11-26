@@ -1298,10 +1298,6 @@ INPUT /usr/local/texlive/2023/texmf-dist/tex/latex/caption/ltcaption.sty
 INPUT /usr/local/texlive/2023/texmf-dist/tex/latex/caption/ltcaption.sty
 INPUT /usr/local/texlive/2023/texmf-dist/tex/latex/caption/ltcaption.sty
 INPUT /usr/local/texlive/2023/texmf-dist/tex/latex/caption/ltcaption.sty
-INPUT ./iss-thesis.glsdefs
-INPUT iss-thesis.glsdefs
-INPUT ./iss-thesis.glsdefs
-INPUT iss-thesis.glsdefs
 INPUT /usr/local/texlive/2023/texmf-dist/tex/latex/graphics/color.sty
 INPUT ./iss-thesis.out
 INPUT iss-thesis.out
@@ -1682,6 +1678,11 @@ INPUT ./img/res_t.pdf
 INPUT img/res_t.pdf
 INPUT ./img/res_t.pdf
 INPUT ./img/res_t.pdf
+INPUT ./img/spacer.pdf
+INPUT ./img/spacer.pdf
+INPUT img/spacer.pdf
+INPUT ./img/spacer.pdf
+INPUT ./img/spacer.pdf
 INPUT ./img/lm.pdf
 INPUT ./img/lm.pdf
 INPUT img/lm.pdf

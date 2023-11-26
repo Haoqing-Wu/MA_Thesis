@@ -3,10 +3,10 @@
 \contentsline {figure}{\numberline {2.1}{\ignorespaces Overview of the general proposal towards 6 DoF pose estimation\relax }}{9}{figure.caption.5}%
 \contentsline {figure}{\numberline {2.2}{\ignorespaces Overwiew of different types of generative models\relax }}{17}{figure.caption.22}%
 \contentsline {figure}{\numberline {2.3}{\ignorespaces Forward and reverse process of diffusion model using 2D image as example, cat images are adapted from \cite {xiao2022DDGAN}\relax }}{20}{figure.caption.27}%
-\contentsline {figure}{\numberline {2.4}{\ignorespaces Super resolution using diffusion model, image taken from the project page of SR3\cite {saharia2021image}\relax }}{21}{figure.caption.32}%
-\contentsline {figure}{\numberline {2.5}{\ignorespaces Point cloud generation using diffusion model\relax }}{22}{figure.caption.33}%
-\contentsline {figure}{\numberline {2.6}{\ignorespaces Image synthesis with text prompt in different styles using Stable Diffusion\relax }}{23}{figure.caption.38}%
-\contentsline {figure}{\numberline {2.7}{\ignorespaces 3D model NeRF synthesis prompt using DreamFusion\relax }}{23}{figure.caption.39}%
+\contentsline {figure}{\numberline {2.4}{\ignorespaces Super resolution using diffusion model, image taken from the project page of SR3 \cite {saharia2021image}\relax }}{21}{figure.caption.32}%
+\contentsline {figure}{\numberline {2.5}{\ignorespaces Point cloud generation using diffusion model, image taken from \cite {lyu2022conditional}\relax }}{22}{figure.caption.33}%
+\contentsline {figure}{\numberline {2.6}{\ignorespaces Image synthesis with text prompt in different styles using Stable Diffusion \cite {rombach2022highresolution}\relax }}{23}{figure.caption.38}%
+\contentsline {figure}{\numberline {2.7}{\ignorespaces 3D model NeRF synthesis prompt using DreamFusion, image taken from \cite {poole2022dreamfusion}\relax }}{23}{figure.caption.39}%
 \addvspace {10\p@ }
 \contentsline {figure}{\numberline {3.1}{\ignorespaces Structures of some common 6 DoF pose estimation methods,\relax }}{28}{figure.caption.40}%
 \contentsline {figure}{\numberline {3.2}{\ignorespaces Overview of the network from the work "Confronting Ambiguity in 6D Object Pose Estimation via Score-Based Diffusion on SE(3)", image adapted from the original paper \cite {hsiao2023confronting}\relax }}{32}{figure.caption.49}%
@@ -18,36 +18,36 @@
 \contentsline {figure}{\numberline {4.2}{\ignorespaces Structure of the sampling phase of the pose hypotheses diffusion\relax }}{37}{figure.caption.54}%
 \contentsline {figure}{\numberline {4.3}{\ignorespaces Denoiser network with backbone and feature extractor\relax }}{39}{figure.caption.55}%
 \contentsline {figure}{\numberline {4.4}{\ignorespaces Multi-head self-attention and scaled dot-product attention\relax }}{40}{figure.caption.56}%
-\contentsline {figure}{\numberline {4.5}{\ignorespaces The 64-dimensional positional encoding for a sequence with length of 100\relax }}{41}{figure.caption.57}%
+\contentsline {figure}{\numberline {4.5}{\ignorespaces The 64-dimensional positional encoding for a sequence with a length of 100\relax }}{41}{figure.caption.57}%
 \contentsline {figure}{\numberline {4.6}{\ignorespaces Self-supervised architecture of DINO\relax }}{42}{figure.caption.58}%
 \contentsline {figure}{\numberline {4.7}{\ignorespaces Sturcture of the ViT model, image adapted from the original paper \cite {dosovitskiy2021image}\relax }}{43}{figure.caption.59}%
-\contentsline {figure}{\numberline {4.8}{\ignorespaces 3D feature extraction with FoldingNet based point cloud completion\relax }}{44}{figure.caption.60}%
-\contentsline {figure}{\numberline {4.9}{\ignorespaces Structure of the feature fusion process using (a): addition of the conditional features and embedding; (b): concatination of the conditional features and embedding\relax }}{45}{figure.caption.61}%
+\contentsline {figure}{\numberline {4.8}{\ignorespaces 3D feature extraction with FoldingNet-based point cloud completion\relax }}{44}{figure.caption.60}%
+\contentsline {figure}{\numberline {4.9}{\ignorespaces Structure of the feature fusion process using (a): addition of the conditional features and embedding; (b): concatenation of the conditional features and embedding\relax }}{45}{figure.caption.61}%
 \contentsline {subfigure}{\numberline {(a)}{\ignorespaces {}}}{45}{subfigure.9.1}%
 \contentsline {subfigure}{\numberline {(b)}{\ignorespaces {}}}{45}{subfigure.9.2}%
 \contentsline {figure}{\numberline {4.10}{\ignorespaces Illustration of the residual translation estimation (projected in 2D space)\relax }}{46}{figure.caption.62}%
 \addvspace {10\p@ }
-\contentsline {figure}{\numberline {5.1}{\ignorespaces LIMEMOD dataset. Left: training data with Synthetic CAD Model; Middle: training data rendered with PBR-BlenderProc4BOP; Right: test data captured with Kinect Sensor\relax }}{49}{figure.caption.63}%
-\contentsline {figure}{\numberline {5.2}{\ignorespaces Comparison of LMO dataset with LM dataset. Left: low-level occluded scene; Right: high-level occluded scene\relax }}{50}{figure.caption.64}%
-\contentsline {figure}{\numberline {5.3}{\ignorespaces Visualization of the attention maps of the input image, where 12 heatmaps represent 12 attension heads output in transformer. Top: hole puncher; Middle: glue; Bottem: phone (occluded)\relax }}{54}{figure.caption.67}%
-\contentsline {figure}{\numberline {5.4}{\ignorespaces Attension maps of the different scale of ViTs and patch size. From left to right: ViT-S/16, ViT-S/8, ViT-B/16, ViT-B/8. Each column represents 3 random attention heads.\relax }}{55}{figure.caption.68}%
-\contentsline {figure}{\numberline {5.5}{\ignorespaces CD of the training and validation dataset during the point completion pretraining\relax }}{56}{figure.caption.69}%
-\contentsline {figure}{\numberline {5.6}{\ignorespaces Categorical level CD distance distribution of the test dataset\relax }}{56}{figure.caption.70}%
-\contentsline {figure}{\numberline {5.7}{\ignorespaces Point cloud completion results of the FoldingNet. Top: cup; Bottom: phone. From left to right: estimation(viewpoint 1), ground truth(viewpoint 1), estimation(viewpoint 2), ground truth(viewpoint 2). Blue points are the input partial point cloud.\relax }}{57}{figure.caption.71}%
-\contentsline {figure}{\numberline {5.8}{\ignorespaces Development of the reconstructed point cloud during the training process.\relax }}{57}{figure.caption.72}%
-\contentsline {figure}{\numberline {5.9}{\ignorespaces Comparision of the CD distributions between the model trained with the whole data set and the overfitted model on single object (the first 7 objects of LM are shown)\relax }}{58}{figure.caption.73}%
-\contentsline {figure}{\numberline {5.10}{\ignorespaces L2 loss of the training phase of the diffusion model. Original data (gray) is downsampled and smoothed with a $2^{nd}$ order filter (orange) for visualization. \relax }}{60}{figure.caption.77}%
-\contentsline {figure}{\numberline {5.11}{\ignorespaces Visualization of some objects highlighted at estimated pose. First row: objects without occlusion; Second row: objects with occlussion\relax }}{64}{figure.caption.87}%
-\contentsline {figure}{\numberline {5.12}{\ignorespaces Visualization of the 6 DoF pose denoising process\relax }}{65}{figure.caption.88}%
+\contentsline {figure}{\numberline {5.1}{\ignorespaces LIMEMOD dataset. Left: training data with Synthetic CAD Model; Middle: training data rendered with PBR-BlenderProc4BOP; Right: test data captured with Kinect Sensor\relax }}{49}{figure.caption.64}%
+\contentsline {figure}{\numberline {5.2}{\ignorespaces Comparison of LMO dataset with LM dataset. Left: low-level occluded scene; Right: high-level occluded scene\relax }}{50}{figure.caption.65}%
+\contentsline {figure}{\numberline {5.3}{\ignorespaces Visualization of the attention maps of the input image, where 12 heatmaps represent 12 attention heads output in the Transformer. Top: hole puncher; Middle: glue; Bottom: phone (occluded)\relax }}{54}{figure.caption.68}%
+\contentsline {figure}{\numberline {5.4}{\ignorespaces Attension maps of the different scales of ViTs and patch size. From left to right: ViT-S/16, ViT-S/8, ViT-B/16, ViT-B/8. Each column represents 3 random attention heads.\relax }}{55}{figure.caption.69}%
+\contentsline {figure}{\numberline {5.5}{\ignorespaces CD of the training and validation dataset during the point completion pretraining\relax }}{56}{figure.caption.70}%
+\contentsline {figure}{\numberline {5.6}{\ignorespaces Categorical level CD distance distribution of the test dataset\relax }}{56}{figure.caption.71}%
+\contentsline {figure}{\numberline {5.7}{\ignorespaces Point cloud completion results of the FoldingNet. Top: cup; Bottom: phone. From left to right: estimation(viewpoint 1), ground truth(viewpoint 1), estimation(viewpoint 2), ground truth(viewpoint 2). Blue points are the input partial point cloud.\relax }}{57}{figure.caption.72}%
+\contentsline {figure}{\numberline {5.8}{\ignorespaces Development of the reconstructed point cloud during the training process.\relax }}{57}{figure.caption.73}%
+\contentsline {figure}{\numberline {5.9}{\ignorespaces Comparision of the CD distributions between the model trained with the whole data set and the overfitted model on a single object (the first 7 objects of LM are shown)\relax }}{58}{figure.caption.74}%
+\contentsline {figure}{\numberline {5.10}{\ignorespaces L2 loss of the training phase of the diffusion model. Original data (gray) is downsampled and smoothed with a $2^{nd}$ order filter (orange) for visualization. \relax }}{60}{figure.caption.78}%
+\contentsline {figure}{\numberline {5.11}{\ignorespaces Visualization of some objects highlighted at estimated pose. First row: objects without occlusion; Second row: objects with occlussion\relax }}{64}{figure.caption.88}%
+\contentsline {figure}{\numberline {5.12}{\ignorespaces Visualization of the 6 DoF pose denoising process\relax }}{65}{figure.caption.89}%
 \addvspace {10\p@ }
 \addvspace {10\p@ }
 \addvspace {10\p@ }
-\contentsline {figure}{\numberline {A.1}{\ignorespaces Categorical MSPD and MSSD recall rates with different thresholds on LM dataset (without refinement)\relax }}{73}{figure.caption.94}%
-\contentsline {figure}{\numberline {A.2}{\ignorespaces Rotation error under different representations of rotation during training phase (without refinement).\relax }}{74}{figure.caption.95}%
-\contentsline {figure}{\numberline {A.3}{\ignorespaces Translation error with and without using residual translation during training phase (without refinement).\relax }}{74}{figure.caption.96}%
-\contentsline {figure}{\numberline {A.4}{\ignorespaces Point cloud completion results of the FoldingNet. From top to bottom: cup, camera, phone, egg box, glue. From left to right: estimation(viewpoint 1), ground truth(viewpoint 1), estimation(viewpoint 2), ground truth(viewpoint 2). Blue points are the input partial point cloud.\relax }}{77}{figure.caption.101}%
-\contentsline {figure}{\numberline {A.5}{\ignorespaces Visualization of some objects highlighted at estimated pose. Row 1-2: objects without occlusion; Row 3-4: objects with occlussion; Row 5: objects with occlussion shown in one scene\relax }}{78}{figure.caption.102}%
-\contentsline {figure}{\numberline {A.6}{\ignorespaces Visualization of the denoising process of the pose estimation of cat object (Sequence: top to bottom, left to right)\relax }}{79}{figure.caption.103}%
-\contentsline {figure}{\numberline {A.7}{\ignorespaces Visualization of the denoising process of the pose estimation of bench object (Sequence: top to bottom, left to right)\relax }}{80}{figure.caption.104}%
+\contentsline {figure}{\numberline {A.1}{\ignorespaces Categorical MSPD and MSSD recall rates with different thresholds on LM dataset (without refinement)\relax }}{75}{figure.caption.95}%
+\contentsline {figure}{\numberline {A.2}{\ignorespaces Rotation error under different representations of rotation during the training phase (without refinement).\relax }}{76}{figure.caption.96}%
+\contentsline {figure}{\numberline {A.3}{\ignorespaces Translation error with and without using residual translation during the training phase (without refinement).\relax }}{76}{figure.caption.97}%
+\contentsline {figure}{\numberline {A.4}{\ignorespaces Point cloud completion results of the FoldingNet. From top to bottom: cup, camera, phone, egg box, glue. From left to right: estimation(viewpoint 1), ground truth(viewpoint 1), estimation(viewpoint 2), ground truth(viewpoint 2). Blue points are the input partial point cloud.\relax }}{79}{figure.caption.102}%
+\contentsline {figure}{\numberline {A.5}{\ignorespaces Visualization of some objects highlighted at estimated pose. Row 1-2: objects without occlusion; Row 3-4: objects with occlussion; Row 5: objects with occlusion shown in one scene\relax }}{80}{figure.caption.103}%
+\contentsline {figure}{\numberline {A.6}{\ignorespaces Visualization of the denoising process of the pose estimation of cat object (Sequence: top to bottom, left to right)\relax }}{81}{figure.caption.104}%
+\contentsline {figure}{\numberline {A.7}{\ignorespaces Visualization of the denoising process of the pose estimation of bench object (Sequence: top to bottom, left to right)\relax }}{82}{figure.caption.105}%
 \addvspace {10\p@ }
 \providecommand \tocbasic@end@toc@file {}\tocbasic@end@toc@file 

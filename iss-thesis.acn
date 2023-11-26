@@ -65,8 +65,8 @@
 \glossaryentry{CA?\glossentry{ca}|setentrycounter[]{page}"\glsnumberformat}{a}
 \glossaryentry{lr?\glossentry{lr}|setentrycounter[]{page}"\glsnumberformat}{a}
 \glossaryentry{Adam?\glossentry{adam}|setentrycounter[]{page}"\glsnumberformat}{a}
-\glossaryentry{RoI?\glossentry{roi}|setentrycounter[]{page}"\glsnumberformat}{a}
 \glossaryentry{DF?\glossentry{df}|setentrycounter[]{page}"\glsnumberformat}{a}
+\glossaryentry{SVD?\glossentry{svd}|setentrycounter[]{page}"\glsnumberformat}{a}
 \glossaryentry{CV?\glossentry{cv}|setentrycounter[]{page}"\glsnumberformat}{7}
 \glossaryentry{3D?\glossentry{3d}|setentrycounter[]{page}"\glsnumberformat}{7}
 \glossaryentry{6 DoF?\glossentry{6dof}|setentrycounter[]{page}"\glsnumberformat}{7}
@@ -76,8 +76,10 @@
 \glossaryentry{3D?\glossentry{3d}|setentrycounter[]{page}"\glsnumberformat}{7}
 \glossaryentry{CV?\glossentry{cv}|setentrycounter[]{page}"\glsnumberformat}{7}
 \glossaryentry{6 DoF?\glossentry{6dof}|setentrycounter[]{page}"\glsnumberformat}{7}
+\glossaryentry{6 DoF?\glossentry{6dof}|setentrycounter[]{page}"\glsnumberformat}{7}
 \glossaryentry{RGB-D?\glossentry{rgbd}|setentrycounter[]{page}"\glsnumberformat}{7}
 \glossaryentry{RGB-D?\glossentry{rgbd}|setentrycounter[]{page}"\glsnumberformat}{7}
+\glossaryentry{RGB?\glossentry{rgb}|setentrycounter[]{page}"\glsnumberformat}{7}
 \glossaryentry{RGB?\glossentry{rgb}|setentrycounter[]{page}"\glsnumberformat}{7}
 \glossaryentry{RGB-D?\glossentry{rgbd}|setentrycounter[]{page}"\glsnumberformat}{7}
 \glossaryentry{2D?\glossentry{2d}|setentrycounter[]{page}"\glsnumberformat}{8}
@@ -228,7 +230,6 @@
 \glossaryentry{R-CNN?\glossentry{rcnn}|setentrycounter[]{page}"\glsnumberformat}{27}
 \glossaryentry{6 DoF?\glossentry{6dof}|setentrycounter[]{page}"\glsnumberformat}{27}
 \glossaryentry{RGB?\glossentry{rgb}|setentrycounter[]{page}"\glsnumberformat}{27}
-\glossaryentry{RoI?\glossentry{roi}|setentrycounter[]{page}"\glsnumberformat}{27}
 \glossaryentry{3D?\glossentry{3d}|setentrycounter[]{page}"\glsnumberformat}{27}
 \glossaryentry{2D?\glossentry{2d}|setentrycounter[]{page}"\glsnumberformat}{27}
 \glossaryentry{RGB-D?\glossentry{rgbd}|setentrycounter[]{page}"\glsnumberformat}{27}
@@ -347,7 +348,7 @@
 \glossaryentry{RGB-D?\glossentry{rgbd}|setentrycounter[]{page}"\glsnumberformat}{43}
 \glossaryentry{CAD?\glossentry{cad}|setentrycounter[]{page}"\glsnumberformat}{43}
 \glossaryentry{MLP?\glossentry{mlp}|setentrycounter[]{page}"\glsnumberformat}{43}
-\glossaryentry{MLP?\glossentry{mlp}|setentrycounter[]{page}"\glsnumberformat}{43}
+\glossaryentry{MLP?\glossentry{mlp}|setentrycounter[]{page}"\glsnumberformat}{44}
 \glossaryentry{MLP?\glossentry{mlp}|setentrycounter[]{page}"\glsnumberformat}{44}
 \glossaryentry{2D?\glossentry{2d}|setentrycounter[]{page}"\glsnumberformat}{44}
 \glossaryentry{2D?\glossentry{2d}|setentrycounter[]{page}"\glsnumberformat}{44}
@@ -371,6 +372,7 @@
 \glossaryentry{ICP?\glossentry{icp}|setentrycounter[]{page}"\glsnumberformat}{47}
 \glossaryentry{ICP?\glossentry{icp}|setentrycounter[]{page}"\glsnumberformat}{47}
 \glossaryentry{ICP?\glossentry{icp}|setentrycounter[]{page}"\glsnumberformat}{47}
+\glossaryentry{SVD?\glossentry{svd}|setentrycounter[]{page}"\glsnumberformat}{47}
 \glossaryentry{ICP?\glossentry{icp}|setentrycounter[]{page}"\glsnumberformat}{47}
 \glossaryentry{ICP?\glossentry{icp}|setentrycounter[]{page}"\glsnumberformat}{47}
 \glossaryentry{ICP?\glossentry{icp}|setentrycounter[]{page}"\glsnumberformat}{47}
@@ -485,7 +487,7 @@
 \glossaryentry{LMO?\glossentry{lmo}|setentrycounter[]{page}"\glsnumberformat}{62}
 \glossaryentry{AR?\glossentry{avre}|setentrycounter[]{page}"\glsnumberformat}{62}
 \glossaryentry{LM?\glossentry{lm}|setentrycounter[]{page}"\glsnumberformat}{62}
-\glossaryentry{LMO?\glossentry{lmo}|setentrycounter[]{page}"\glsnumberformat}{62}
+\glossaryentry{LMO?\glossentry{lmo}|setentrycounter[]{page}"\glsnumberformat}{63}
 \glossaryentry{ADD?\glossentry{add}|setentrycounter[]{page}"\glsnumberformat}{63}
 \glossaryentry{ADD?\glossentry{add}|setentrycounter[]{page}"\glsnumberformat}{63}
 \glossaryentry{BOP?\glossentry{bop}|setentrycounter[]{page}"\glsnumberformat}{63}
@@ -525,8 +527,9 @@
 \glossaryentry{2D?\glossentry{2d}|setentrycounter[]{page}"\glsnumberformat}{69}
 \glossaryentry{RGB?\glossentry{rgb}|setentrycounter[]{page}"\glsnumberformat}{69}
 \glossaryentry{2D?\glossentry{2d}|setentrycounter[]{page}"\glsnumberformat}{69}
-\glossaryentry{2D?\glossentry{2d}|setentrycounter[]{page}"\glsnumberformat}{69}
 \glossaryentry{2D?\glossentry{2d}|setentrycounter[]{page}"\glsnumberformat}{70}
+\glossaryentry{2D?\glossentry{2d}|setentrycounter[]{page}"\glsnumberformat}{70}
+\glossaryentry{3D?\glossentry{3d}|setentrycounter[]{page}"\glsnumberformat}{70}
 \glossaryentry{3D?\glossentry{3d}|setentrycounter[]{page}"\glsnumberformat}{70}
 \glossaryentry{3D?\glossentry{3d}|setentrycounter[]{page}"\glsnumberformat}{70}
 \glossaryentry{3D?\glossentry{3d}|setentrycounter[]{page}"\glsnumberformat}{70}
@@ -537,25 +540,25 @@
 \glossaryentry{2D?\glossentry{2d}|setentrycounter[]{page}"\glsnumberformat}{70}
 \glossaryentry{DDPM?\glossentry{ddpm}|setentrycounter[]{page}"\glsnumberformat}{70}
 \glossaryentry{CNN?\glossentry{cnn}|setentrycounter[]{page}"\glsnumberformat}{70}
-\glossaryentry{6 DoF?\glossentry{6dof}|setentrycounter[]{page}"\glsnumberformat}{71}
-\glossaryentry{6 DoF?\glossentry{6dof}|setentrycounter[]{page}"\glsnumberformat}{71}
-\glossaryentry{6 DoF?\glossentry{6dof}|setentrycounter[]{page}"\glsnumberformat}{71}
-\glossaryentry{6 DoF?\glossentry{6dof}|setentrycounter[]{page}"\glsnumberformat}{71}
-\glossaryentry{ICP?\glossentry{icp}|setentrycounter[]{page}"\glsnumberformat}{71}
-\glossaryentry{RGB-D?\glossentry{rgbd}|setentrycounter[]{page}"\glsnumberformat}{71}
-\glossaryentry{ViT?\glossentry{vit}|setentrycounter[]{page}"\glsnumberformat}{71}
-\glossaryentry{2D?\glossentry{2d}|setentrycounter[]{page}"\glsnumberformat}{71}
-\glossaryentry{3D?\glossentry{3d}|setentrycounter[]{page}"\glsnumberformat}{71}
-\glossaryentry{LM?\glossentry{lm}|setentrycounter[]{page}"\glsnumberformat}{71}
-\glossaryentry{LMO?\glossentry{lmo}|setentrycounter[]{page}"\glsnumberformat}{71}
-\glossaryentry{6 DoF?\glossentry{6dof}|setentrycounter[]{page}"\glsnumberformat}{71}
-\glossaryentry{DDPM?\glossentry{ddpm}|setentrycounter[]{page}"\glsnumberformat}{72}
-\glossaryentry{SGM?\glossentry{sgm}|setentrycounter[]{page}"\glsnumberformat}{72}
-\glossaryentry{CAS?\glossentry{cas}|setentrycounter[]{page}"\glsnumberformat}{72}
-\glossaryentry{ALD?\glossentry{ald}|setentrycounter[]{page}"\glsnumberformat}{72}
-\glossaryentry{DDSS?\glossentry{ddss}|setentrycounter[]{page}"\glsnumberformat}{72}
-\glossaryentry{DDIM?\glossentry{ddim}|setentrycounter[]{page}"\glsnumberformat}{72}
-\glossaryentry{2D?\glossentry{2d}|setentrycounter[]{page}"\glsnumberformat}{72}
-\glossaryentry{3D?\glossentry{3d}|setentrycounter[]{page}"\glsnumberformat}{72}
-\glossaryentry{3D?\glossentry{3d}|setentrycounter[]{page}"\glsnumberformat}{72}
-\glossaryentry{3D?\glossentry{3d}|setentrycounter[]{page}"\glsnumberformat}{72}
+\glossaryentry{6 DoF?\glossentry{6dof}|setentrycounter[]{page}"\glsnumberformat}{73}
+\glossaryentry{6 DoF?\glossentry{6dof}|setentrycounter[]{page}"\glsnumberformat}{73}
+\glossaryentry{6 DoF?\glossentry{6dof}|setentrycounter[]{page}"\glsnumberformat}{73}
+\glossaryentry{ICP?\glossentry{icp}|setentrycounter[]{page}"\glsnumberformat}{73}
+\glossaryentry{RGB-D?\glossentry{rgbd}|setentrycounter[]{page}"\glsnumberformat}{73}
+\glossaryentry{ViT?\glossentry{vit}|setentrycounter[]{page}"\glsnumberformat}{73}
+\glossaryentry{2D?\glossentry{2d}|setentrycounter[]{page}"\glsnumberformat}{73}
+\glossaryentry{3D?\glossentry{3d}|setentrycounter[]{page}"\glsnumberformat}{73}
+\glossaryentry{LM?\glossentry{lm}|setentrycounter[]{page}"\glsnumberformat}{73}
+\glossaryentry{LMO?\glossentry{lmo}|setentrycounter[]{page}"\glsnumberformat}{73}
+\glossaryentry{6 DoF?\glossentry{6dof}|setentrycounter[]{page}"\glsnumberformat}{73}
+\glossaryentry{6 DoF?\glossentry{6dof}|setentrycounter[]{page}"\glsnumberformat}{73}
+\glossaryentry{DDPM?\glossentry{ddpm}|setentrycounter[]{page}"\glsnumberformat}{74}
+\glossaryentry{SGM?\glossentry{sgm}|setentrycounter[]{page}"\glsnumberformat}{74}
+\glossaryentry{CAS?\glossentry{cas}|setentrycounter[]{page}"\glsnumberformat}{74}
+\glossaryentry{ALD?\glossentry{ald}|setentrycounter[]{page}"\glsnumberformat}{74}
+\glossaryentry{DDSS?\glossentry{ddss}|setentrycounter[]{page}"\glsnumberformat}{74}
+\glossaryentry{DDIM?\glossentry{ddim}|setentrycounter[]{page}"\glsnumberformat}{74}
+\glossaryentry{2D?\glossentry{2d}|setentrycounter[]{page}"\glsnumberformat}{74}
+\glossaryentry{3D?\glossentry{3d}|setentrycounter[]{page}"\glsnumberformat}{74}
+\glossaryentry{3D?\glossentry{3d}|setentrycounter[]{page}"\glsnumberformat}{74}
+\glossaryentry{3D?\glossentry{3d}|setentrycounter[]{page}"\glsnumberformat}{74}
