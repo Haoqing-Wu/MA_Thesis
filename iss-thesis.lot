@@ -3,27 +3,27 @@
 \addvspace {10\p@ }
 \addvspace {10\p@ }
 \addvspace {10\p@ }
-\contentsline {table}{\numberline {5.1}{\ignorespaces Dataset Structure of BOP Format\relax }}{51}{table.caption.66}%
-\contentsline {table}{\numberline {5.2}{\ignorespaces Evaluation of the pre-trained DINO model on ImageNet\relax }}{52}{table.caption.67}%
-\contentsline {table}{\numberline {5.3}{\ignorespaces Mean and standard deviation of the CD with the model trained on the whole dataset and the overfitted model on a single object (7 of 15 objects selected)\relax }}{58}{table.caption.75}%
-\contentsline {table}{\numberline {5.4}{\ignorespaces CD with different number of $k$-NN of the FoldingNet\relax }}{59}{table.caption.76}%
-\contentsline {table}{\numberline {5.5}{\ignorespaces Hyperparemeters of the pose hypotheses diffusion model\relax }}{59}{table.caption.77}%
-\contentsline {table}{\numberline {5.6}{\ignorespaces Quantitative Evaluation on LM dataset(symmetrical objects annotated with $^{*}$)\relax }}{62}{table.caption.81}%
-\contentsline {table}{\numberline {5.7}{\ignorespaces Quantitative Evaluation on LMO dataset(symmetrical objects annotated with $^{*}$)\relax }}{62}{table.caption.82}%
-\contentsline {table}{\numberline {5.8}{\ignorespaces Comparison of ADD(-S) scores with other methods on LM dataset (symmetrical objects annotated with $^{*}$)\relax }}{63}{table.caption.83}%
-\contentsline {table}{\numberline {5.9}{\ignorespaces Comparison of ADD(-S) scores with other methods on LMO dataset (symmetrical objects annotated with $^{*}$)\relax }}{63}{table.caption.84}%
-\contentsline {table}{\numberline {5.10}{\ignorespaces AR drop between generalized model and overfitted one on LMO dataset\relax }}{64}{table.caption.85}%
-\contentsline {table}{\numberline {5.11}{\ignorespaces Comparison of the different domains of feature on LMO dataset\relax }}{66}{table.caption.90}%
-\contentsline {table}{\numberline {5.12}{\ignorespaces Comparison of the different feature fusion methods on LMO dataset\relax }}{66}{table.caption.91}%
-\contentsline {table}{\numberline {5.13}{\ignorespaces Comparison of the different rotation representations on LMO dataset\relax }}{67}{table.caption.92}%
-\contentsline {table}{\numberline {5.14}{\ignorespaces Comparison of model trained with and without residual translation on LMO dataset\relax }}{67}{table.caption.93}%
-\contentsline {table}{\numberline {5.15}{\ignorespaces Effect of the number of denoising steps on the estimation results\relax }}{67}{table.caption.94}%
+\contentsline {table}{\numberline {5.1}{\ignorespaces Dataset Structure of BOP Format.\relax }}{51}{table.caption.66}%
+\contentsline {table}{\numberline {5.2}{\ignorespaces Evaluation of the pre-trained DINO model on ImageNet.\relax }}{52}{table.caption.67}%
+\contentsline {table}{\numberline {5.3}{\ignorespaces Mean and standard deviation of the CD with the model trained on the whole dataset and the overfitted model on a single object (7 of 15 objects selected).\relax }}{58}{table.caption.75}%
+\contentsline {table}{\numberline {5.4}{\ignorespaces CD with different number of $k$-NN of the FoldingNet.\relax }}{59}{table.caption.76}%
+\contentsline {table}{\numberline {5.5}{\ignorespaces Hyperparemeters of the pose hypotheses diffusion model.\relax }}{59}{table.caption.77}%
+\contentsline {table}{\numberline {5.6}{\ignorespaces Quantitative Evaluation on LM dataset(symmetrical objects annotated with $^{*}$).\relax }}{62}{table.caption.81}%
+\contentsline {table}{\numberline {5.7}{\ignorespaces Quantitative Evaluation on LMO dataset(symmetrical objects annotated with $^{*}$).\relax }}{62}{table.caption.82}%
+\contentsline {table}{\numberline {5.8}{\ignorespaces Comparison of ADD(-S) scores with other methods on LM dataset (symmetrical objects annotated with $^{*}$).\relax }}{63}{table.caption.83}%
+\contentsline {table}{\numberline {5.9}{\ignorespaces Comparison of ADD(-S) scores with other methods on LMO dataset (symmetrical objects annotated with $^{*}$).\relax }}{63}{table.caption.84}%
+\contentsline {table}{\numberline {5.10}{\ignorespaces AR drop between generalized model and overfitted one on LMO dataset.\relax }}{64}{table.caption.85}%
+\contentsline {table}{\numberline {5.11}{\ignorespaces Comparison of the different domains of feature on LMO dataset.\relax }}{66}{table.caption.90}%
+\contentsline {table}{\numberline {5.12}{\ignorespaces Comparison of the different feature fusion methods on LMO dataset.\relax }}{66}{table.caption.91}%
+\contentsline {table}{\numberline {5.13}{\ignorespaces Comparison of the different rotation representations on LMO dataset.\relax }}{67}{table.caption.92}%
+\contentsline {table}{\numberline {5.14}{\ignorespaces Comparison of model trained with and without residual translation on LMO dataset.\relax }}{67}{table.caption.93}%
+\contentsline {table}{\numberline {5.15}{\ignorespaces Effect of the number of denoising steps on the estimation results.\relax }}{67}{table.caption.94}%
 \addvspace {10\p@ }
 \addvspace {10\p@ }
 \addvspace {10\p@ }
-\contentsline {table}{\numberline {A.1}{\ignorespaces Comparison of the different domains of the feature on LM dataset\relax }}{76}{table.caption.98}%
-\contentsline {table}{\numberline {A.2}{\ignorespaces Comparison of the different feature fusion methods on LM dataset\relax }}{77}{table.caption.99}%
-\contentsline {table}{\numberline {A.3}{\ignorespaces Comparison of the different rotation representations on LM dataset\relax }}{77}{table.caption.100}%
-\contentsline {table}{\numberline {A.4}{\ignorespaces Comparison of the model trained with and without residual translation on LM dataset\relax }}{77}{table.caption.101}%
+\contentsline {table}{\numberline {A.1}{\ignorespaces Comparison of the different domains of the feature on LM dataset.\relax }}{76}{table.caption.98}%
+\contentsline {table}{\numberline {A.2}{\ignorespaces Comparison of the different feature fusion methods on LM dataset.\relax }}{77}{table.caption.99}%
+\contentsline {table}{\numberline {A.3}{\ignorespaces Comparison of the different rotation representations on LM dataset.\relax }}{77}{table.caption.100}%
+\contentsline {table}{\numberline {A.4}{\ignorespaces Comparison of the model trained with and without residual translation on LM dataset.\relax }}{77}{table.caption.101}%
 \addvspace {10\p@ }
 \providecommand \tocbasic@end@toc@file {}\tocbasic@end@toc@file 
