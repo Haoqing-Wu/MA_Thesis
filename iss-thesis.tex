@@ -342,7 +342,7 @@ In recent years, the field of \gls{cv} has undergone a significant transformatio
 
 \gls{6dof} pose estimation necessitates the integration of techniques from various fields. Learning-based methods are employed to extract features from input data and estimate poses, while non-learning-based algorithms process and refine these estimations. To accommodate diverse data inputs and enhance accuracy and reliability, the task involves processing data from both \gls{2d} and \gls{3d} domains. Scaling to multi-object or multi-view scenarios, commonplace in robotics and autonomous driving, and considering time-series data introduce additional challenges and opportunities. Pose estimation can extend beyond its core function to object tracking in videos or even predicting future object poses. The complexity of these tasks intensifies the challenge of pose estimation in real-world applications, injecting vitality into ongoing research in this field.
 
-Diffusion models, initially introduced by Sohl-Dickstein et al. \cite{sohldickstein2015deep} and recently refined by Ho et al. \cite{ho2020denoising}, belong to a class of generative models renowned for their capacity to generate high-quality data from random noise. Demonstrating notable success in various image synthesis tasks, diffusion models have outperformed previous methods, extending their influence beyond \gls{cv} to fields such as natural language processing, temporal data modeling, and multi-model learning. Despite this success, the integration of diffusion models into \gls{6dof} pose estimation is at an early stage, with limited existing works. The untapped potential of these models in the realm of \gls{6dof} pose estimation underscores a promising avenue for exploration and advancement in the field.
+Diffusion models, initially introduced by Sohl-Dickstein et al. 2015 \cite{sohldickstein2015deep} and recently refined by Ho et al. 2020 \cite{ho2020denoising}, belong to a class of generative models renowned for their capacity to generate high-quality data from random noise. Demonstrating notable success in various image synthesis tasks, diffusion models have outperformed previous methods, extending their influence beyond \gls{cv} to fields such as natural language processing, temporal data modeling, and multi-model learning. Despite this success, the integration of diffusion models into \gls{6dof} pose estimation is at an early stage, with limited existing works. The untapped potential of these models in the realm of \gls{6dof} pose estimation underscores a promising avenue for exploration and advancement in the field.
 
 The widespread use of \glsunset{rgbd}\gls{rgbd} images in computer vision tasks stems from the increased prevalence of \gls{rgbd} sensors and the invaluable depth information they provide. Research consistently indicates that leveraging depth information alongside \glsunset{rgb}\gls{rgb} data leads to improvements in network performance, surpassing the capabilities of methods reliant solely on \gls{rgb} data. Given this, it is of great significance to evaluate the effectiveness of diffusion models when applied to \gls{rgbd} data within the context of our pose estimation task. This evaluation will shed light on the model's capability to harness the additional depth information for enhanced pose estimation accuracy and robustness.
 \section{Aims and Objectives}
@@ -444,7 +444,7 @@ Another representation that can be considered is called \glspl{mrp} which is a 3
 \end{align}
 where $\mathbf{q}$ is the quaternion representation of the rotation. The \gls{mrp} vector $\mathbf{r}$ is also a unit vector, the advantage of using \gls{mrp} is that a random assignment of the vecter within the unit sphere will always result in a valid rotation. That property makes this representation more robust in the forward and reverse process of the diffusion pipeline.
 
-Zhou et al. \cite{Zhou_2019_CVPR} proposed a novel representation of rotation called 6D continuous rotation representation. The mapping from the rotation matrix to the 6D representation with generally $n$ dimensional rotation is defined as:
+Zhou et al. 2019 \cite{Zhou_2019_CVPR} proposed a novel representation of rotation called 6D continuous rotation representation. The mapping from the rotation matrix to the 6D representation with generally $n$ dimensional rotation is defined as:
 \begin{align}
   g_{GS}\left( \
     \begin{bmatrix}
@@ -569,7 +569,7 @@ The path of the transformation can be seen as a flow of the probability density 
 Normalizing flows provides a flexible framework for modeling complex distributions, which is difficult to achieve with previous generative models. However, the samples that are generated through flow-based models are not as realistic as the samples from \glspl{gan} or \glspl{vae}, and the data will be projected into also high dimensional space, which is hard to interpret.
 
 \subsubsection{Diffusion Models}
-Diffusion models are a new class of state-of-the-art generative models that can synthesize high-quality images in recent years. The representative one, which is the \gls{ddpm} was initialized by Sohl-Dickstein et al \cite{sohldickstein2015deep} and proposed recently by Ho. et al \cite{ho2020denoising}. 
+Diffusion models are a new class of state-of-the-art generative models that can synthesize high-quality images in recent years. The representative one, which is the \gls{ddpm} was initialized by Sohl-Dickstein et al 2015 \cite{sohldickstein2015deep} and proposed recently by Ho. et al 2020 \cite{ho2020denoising}. 
 
 A diffusion probabilistic model (diffusion model), inspired by the nonequilibrium thermodynamics, is a parameterized Markov chain trained using variational inference to produce samples from a given target distribution after finite steps. The basic idea behind diffusion models is trivial. Given an input data $x_{0}$, we first gradually add Gaussian noise to it and finally get a sequence of noised data $x_{1},...,x_{T}$, which we call it forward process. Afterward, a neural network is trained to recover the original data by estimating the noise and reversing the forward process, which we call it sampling process or reverse process.
 
@@ -1231,8 +1231,10 @@ To remove the noise and outliers in the point cloud. We use the statistical outl
 After that, the point cloud is then downsampled to 1000 points to reduce the computational cost but still maintain the geometry information of the object. The whole original training dataset is divided into the training part (90\%) and validation part (10\%) randomly and together with the separate test dataset we get the dataset we preprocessed for the training and evaluation of our models.
 
 As the \gls{2d} image is combined with \gls{3d} point cloud in the pose estimation task and we don't need to train the \gls{2d} feature extractor, we only use the data augmentation of the random rotation during the training of the \gls{3d} feature extractor. Because the \gls{2d} image with \gls{3d} depth uniquely defines uniquely the \gls{6dof} pose of the object. So during the training of the pose estimation task we don't let orginal point cloud rotate, but still add noise and consider the symmetry of the object.
-\section{2D Feature Extractor}
-\subsection{Pretrained Model} 
+\section{Implementation Details}
+In this section, we first present the implementation of the \gls{2d} and \gls{3d} feature extractors and the corresponding evaluations on the module level. Then we demonstrate the training details of our diffusion model.
+\subsection{2D Feature Extractor}
+\subsubsection{Pretrained Model} 
 DINO, as our \gls{2d} feature encoder, provides many pre-trained weights of the backbone with different numbers of parameters and backbone architecture which are pre-trained on ImageNet for general image downstream tasks. The evaluation of the self-supervised architecture uses the linear and \gls{knn} classifier on the feature extracted from the model. The following table \ref{tab:dino} shows the evaluation results of the different pre-trained backbones on the ImageNet dataset according to the original paper \cite{caron2021emerging}.
 \begin{table}[ht]
   \centering
@@ -1254,7 +1256,7 @@ After we register the pre-trained \gls{2d} backbone to our model, we need to fee
 
 The \gls{2d} encoder needs to be lightweight since it is just a downstream task for our diffusion model, so in our setup we don't use the backbone with a very deep network and a large number of parameters, e.g.,\gls{vit}-L or \gls{vit}-G. It needs also to be well generalized because the image in our case is not seen during the training of the \gls{2d} encoder. ImageNet used in DINO contains more than 1.4 million annotated images from different categories, which has the capability to let the network learn the latent feature expression from the majority of real-life objects. 
 
-\subsection{Evaluation}
+\subsubsection{Evaluation}
 Since we use the \gls{2d} feature not for the classification or segmentation tasks, but as the input for the pose estimation where the feature is the latent expression of pose that is hard to quantitatively evaluate, we evaluate the influence of the \gls{2d} feature extractor together with the pose estimation diffusion model later. Instead, the attention map of the input image can be visualized to indirectly evaluate the network and validate whether the Transformer can grasp the important part of the image. The attention map is the output of the last attention layer in the Transformer encoder. Figure \ref{img:atten} shows the attention maps of 3 objects as examples fed to the \gls{vit}.
 
 \begin{figure}[h]
@@ -1280,12 +1282,12 @@ From the figure \ref{img:atten_patch} we can see that the key points of the cat 
 
 Considering the tradeoff of the inference speed and performance, we use \gls{vit}-B/8 in our experiments which has a quite satisfied performance and a relatively acceptable number of parameters. The ablation study of different setups will be shown later in this experiments section.
 
-\section{3D Feature Extractor}
-\subsection{Training} 
+\subsection{3D Feature Extractor}
+\subsubsection{Training} 
 The \gls{3d} feature extractor is trained using a point cloud completion task. The reference partial point cloud is fed to the FoldingNet and the output is aligned with the \gls{cad} model transformed with the ground truth pose as the previous figure \ref{img:fold} shows. The loss function is the bi-directional \gls{cd} between the output point cloud and the transformed \gls{cad} model (see equation \ref{eq:cd}).
 
 The model is trained on a single Nvidia Tesla V100-SXM2 video card with 16GB memory. We use the BlenderProc4BOP training dataset for LM which contains 50k images with 15 objects and we can further crop several objects from each image. To that end, we finally have more than 560k separate partial point clouds for training. After the tuning of the hyperparameters, we use the batch size of 32 and the \gls{adam} optimizer with the cosine annealing learning rate scheduler. The initial learning rate is $1e^{-4}$ and the end-up \gls{lr} is $1e^{-6}$. The model-specific hyperparameter is the number of the folding \gls{mlp} layers, which is by default set to 2 in our case. The number of \gls{knn} is set to 64 and the number of the graph-based local maxpooling layers is set to 2. The reconstructed point number is set to 2025, whose square root is an integer responding to the size of the \gls{2d} grid. The dimension of the latent feature is set to 512 for the downstream task. The model is trained for 200k iteration which is about 114 epochs.
-\subsection{Evaluation} 
+\subsubsection{Evaluation} 
 The evaluation metric of the point cloud completion task is the \gls{cd} between the output point cloud and the ground truth point cloud. The following graph \ref{img:fold_loss} shows the training and validation loss of the model during the whole training process. 
 
 \begin{figure}[h]
@@ -1295,7 +1297,7 @@ The evaluation metric of the point cloud completion task is the \gls{cd} between
 	\label{img:fold_loss}
 \end{figure}
 
-We stop the training after 200k iterations to prevent the overfitting problem, because the validation loss is not decreasing anymore. And the distribution of each category's \gls{cd} in the test dataset is shown in figure \ref{img:cd_cate} 
+We stop the training after 200k iterations to prevent the overfitting problem, because the validation loss is not decreasing anymore. And the distribution of each category's \gls{cd} in the test dataset is shown in figure \ref{img:cd_cate}.
 
 \begin{figure}[h]
 	\centering
@@ -1306,7 +1308,7 @@ We stop the training after 200k iterations to prevent the overfitting problem, b
 
 
 
-With the visualization of the reconstructed point cloud, we can validate that the model has the capability to localize the partial point cloud and complete the missing part of the object. The implicit expression of the \gls{6dof} poses as well as the object class is learned by the model without giving the class label so that we can use the feature to represent the pose and object class of the reference input in the diffusion model.
+With the visualization of the reconstructed point cloud (figure \ref{img:comp_all}), we can validate that the model has the capability to localize the partial point cloud and complete the missing part of the object. The implicit expression of the \gls{6dof} poses as well as the object class is learned by the model without giving the class label so that we can use the feature to represent the pose and object class of the reference input in the diffusion model.
 
 \begin{figure}[h]
 	\centering
@@ -1358,7 +1360,7 @@ From the visualization, we can find that the shape of the reconstructed point cl
 \end{table}
 
 
-To evaluate the influence of the number of \gls{knn} on the result, we train the model with different setups and the following table shows the corresponding \glspl{cd} on the test dataset.
+To evaluate the influence of the number of \gls{knn} on the result, we train the model with different setups and the following table \ref{tab:fold_knn} shows the corresponding \glspl{cd} on the test dataset.
 \begin{table}[h]
   \centering
   \caption{CD with different number of $k$-NN of the FoldingNet.}
@@ -1374,7 +1376,7 @@ To evaluate the influence of the number of \gls{knn} on the result, we train the
 
 The number of the \gls{knn} determines the receptive field of the local graph-based max-pooling layer. The local feature can be more robust to the noise and outliers if the number of \gls{knn} is larger. However, the model can not learn the global feature of the object if the number of \gls{knn} is too large. In our experiments of the following diffusion model, we set the number to 64, which is proven to be optimal within the objects of our dataset.
 
-\section{Training} 
+\subsection{Diffusion Models} 
 The training of the diffusion network for the pose hypotheses estimation can be done after the \gls{2d} and \gls{3d} feature encoders are pre-trained (for \gls{2d} feature extractor is the checkpoint of the pre-trained model loaded from the public cloud storage). We load the checkpoint of the encoders and freeze the network of these two parts to avoid the parameters of the pre-trained model being updated during the training of the diffusion network. 
 
 The training is also running on the single Nvidia Tesla V100-SXM2 16G video card. Like the setup of the \gls{3d} encoder, we use the BlenderProc4BOP training dataset and divide the original data into $90\%/10\%$ partitions for training and validation. After tuning the hyperparameters from the experiments, we use the following setup (table \ref{tab:hyper}) to represent the pose hypotheses diffusion model.
@@ -1639,7 +1641,7 @@ However, the additional \gls{2d} information solidly increases the accuracy of t
 
 \begin{table}[h]
   \centering
-  \caption{Comparison of the different domains of feature on LMO dataset.}
+  \caption{Comparison of the different domains of the feature on LMO dataset.}
   \label{tab:ab_feat_lmo}
   \begin{tabular}{l | c | C{16mm} C{16mm} C{16mm}| C{16mm}| C{16mm}}
       \toprule
@@ -1698,7 +1700,7 @@ Recall the discussion in section \ref{sec:representation} and \ref{sec:res_t}, w
 Table \ref{tab:ab_trans_lm} and \ref{tab:ab_trans_lmo} show the results of the model trained with and without residual translation. The advantage of learning the residual error is clear that the \glspl{ar} are improved in both datasets. We can benefit from this trick with respect to the convergence speed shown in figure \ref{img:ab_trans}. The residual translation is also a good way to prevent the model from being trapped in the local minimum.
 \begin{table}[h]
   \centering
-  \caption{Comparison of model trained with and without residual translation on LMO dataset.}
+  \caption{Comparison of the model trained with and without residual translation on LMO dataset.}
   \label{tab:ab_trans_lmo}
   \begin{tabular}{l | c | C{16mm} C{16mm} C{16mm}| C{16mm}| C{16mm}}
       \toprule
@@ -1713,8 +1715,27 @@ Table \ref{tab:ab_trans_lm} and \ref{tab:ab_trans_lmo} show the results of the m
 \end{table}
 
 
-%\subsection{Backbone Scaling}
-%(wait for the result or can be removed)
+\subsection{Backbone Scaling}
+To test the scaling of our backbone, we compare the results of three different settings of our transformer encoder: Small-L4H2-D128, Base-L8H4-D256 and  Large-L12H6-D768 (L, H and D represent the number of layers, heads and hidden dimensions respectively). The results are shown in table \ref{tab:ab_scale}. With a larger and deeper network, the performance of the diffusion model is improved. The Large setting achieves $1~2\%$ higher \gls{avre} than the Base setting with a tradeoff of additional $20\%$ training time.
+
+\begin{table}[h] 
+  \centering
+  \caption{Effect of the number of denoising steps on the estimation results.}
+  \label{tab:ab_scale}
+  \begin{tabular}{l | c | C{12mm} C{12mm} C{12mm}| C{12mm} C{12mm} C{12mm}}
+      \toprule
+      \multicolumn{2}{c|}{Dataset} & \multicolumn{3}{c|}{LM} & \multicolumn{3}{c}{LMO} \\
+      \midrule
+      \multicolumn{2}{c|}{\#Steps} & Small & Base & Large & Small & Base & Large \\
+      \midrule
+      \multirow{2}{*}{AR} & w/o ICP & 66.7 & 68.4 & 69.2 & 44.1 & 45.5 & 47.6 \\
+      & w/ ICP & 77.0 & 78.4 & 79.2 & 52.2 & 52.9 & 55.0 \\
+      \midrule
+      \multirow{2}{*}{ADD(-S)} & w/o ICP & 77.8 & 82.1 & 80.9 & 57.3 & 63.9 & 64.8 \\
+      & w/ ICP & 85.9 & 87.9 & 87.8 & 69.4 & 72.7 & 74.2 \\
+      \bottomrule
+  \end{tabular}
+\end{table}
 
 \subsection{Denoising Steps}\label{sec:ab_steps}
 In the original \gls{ddpm} setting of the image synthesis task, the diffusion steps are configured as 1000 to ensure the vividness of the generated image. In our pose estimation task, we compare the effects caused by the number of denoising steps on the final result in table \ref{tab:ab_steps}. The result shows that a large number of steps doesn't necessarily lead to better performance. 

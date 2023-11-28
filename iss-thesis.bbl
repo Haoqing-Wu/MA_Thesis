@@ -21,150 +21,144 @@
 \BIBdecl
 
 \bibitem{sohldickstein2015deep}
-J.~Sohl-Dickstein, E.~A. Weiss, N.~Maheswaranathan and S.~Ganguli, ``Deep unsupervised learning using nonequilibrium thermodynamics,'' 2015.
+J.~Sohl-Dickstein, E.~A. Weiss, N.~Maheswaranathan and S.~Ganguli, ``Deep unsupervised learning using nonequilibrium thermodynamics,'' in \emph{ICML}, 2015.
 
 \bibitem{ho2020denoising}
-J.~Ho, A.~Jain and P.~Abbeel, ``Denoising diffusion probabilistic models,'' 2020.
+J.~Ho, A.~Jain and P.~Abbeel, ``Denoising diffusion probabilistic models,'' in \emph{NIPS}, 2020.
 
 \bibitem{Fabian_2021}
 F.~Manhardt, ``Towards monocular 6d object pose estimation,'' Ph.D. dissertation, Technische Universität München, 2021.
 
 \bibitem{DBLP:journals/corr/abs-1711-00199}
-\BIBentryALTinterwordspacing
-Y.~Xiang, T.~Schmidt, V.~Narayanan and D.~Fox, ``Posecnn: {A} convolutional neural network for 6d object pose estimation in cluttered scenes,'' \emph{CoRR}, vol. abs/1711.00199, 2017. [Online]. Available: \url{http://arxiv.org/abs/1711.00199}
-\BIBentrySTDinterwordspacing
+Y.~Xiang, T.~Schmidt, V.~Narayanan and D.~Fox, ``Posecnn: A convolutional neural network for 6d object pose estimation in cluttered scenes,'' in \emph{CoRR}, 2017.
 
 \bibitem{hashim2019special}
-H.~A. Hashim, ``Special orthogonal group so(3), euler angles, angle-axis, rodriguez vector and unit-quaternion: Overview, mapping and challenges,'' \emph{ArXiv preprint ArXiv:1909.06669}, 2019.
+H.~A. Hashim, ``Special orthogonal group so(3), euler angles, angle-axis, rodriguez vector and unit-quaternion: Overview, mapping and challenges,'' in \emph{ArXiv preprint ArXiv:1909.06669}, 2019.
 
 \bibitem{9231126}
-V.~Mansur, S.~Reddy, S.~R and R.~Sujatha, ``Deploying complementary filter to avert gimbal lock in drones using quaternion angles,'' in \emph{2020 IEEE International Conference on Computing, Power and Communication Technologies (GUCON)}, 2020, pp. 751--756.
+V.~Mansur, S.~Reddy, S.~R and R.~Sujatha, ``Deploying complementary filter to avert gimbal lock in drones using quaternion angles,'' in \emph{GUCON}, 2020, pp. 751--756.
 
 \bibitem{rodrigues}
-G.~Terzakis, M.~Lourakis and D.~Ait-Boudaoud, ``Modified rodrigues parameters: An efficient representation of orientation in 3d vision and graphics,'' \emph{Journal of Mathematical Imaging and Vision}, vol.~60, 03 2018.
+G.~Terzakis, M.~Lourakis and D.~Ait-Boudaoud, ``Modified rodrigues parameters: An efficient representation of orientation in 3d vision and graphics,'' in \emph{Journal of Mathematical Imaging and Vision}, 2018.
 
 \bibitem{Zhou_2019_CVPR}
-Y.~Zhou, C.~Barnes, L.~Jingwan, Y.~Jimei and L.~Hao, ``On the continuity of rotation representations in neural networks,'' in \emph{The IEEE Conference on Computer Vision and Pattern Recognition (CVPR)}, June 2019.
+Y.~Zhou, C.~Barnes, L.~Jingwan, Y.~Jimei and L.~Hao, ``On the continuity of rotation representations in neural networks,'' in \emph{CVPR}, 2019.
 
 \bibitem{9836663}
-Y.~Zhu, M.~Li, W.~Yao and C.~Chen, ``A review of 6d object pose estimation,'' in \emph{2022 IEEE 10th Joint International Information Technology and Artificial Intelligence Conference (ITAIC)}, vol.~10, 2022, pp. 1647--1655.
+Y.~Zhu, M.~Li, W.~Yao and C.~Chen, ``A review of 6d object pose estimation,'' in \emph{ITAIC}, 2022.
 
 \bibitem{cao20236impose}
-H.~Cao, L.~Dirnberger, D.~Bernardini, C.~Piazza and M.~Caccamo, ``6impose: Bridging the reality gap in 6d pose estimation for robotic grasping,'' 2023.
+H.~Cao, L.~Dirnberger, D.~Bernardini, C.~Piazza and M.~Caccamo, ``6impose: Bridging the reality gap in 6d pose estimation for robotic grasping,'' in \emph{Frontiers in Robotics and AI}, 2023.
 
 \bibitem{qin2022geometric}
-Z.~Qin, H.~Yu, C.~Wang, Y.~Guo, Y.~Peng and K.~Xu, ``Geometric transformer for fast and robust point cloud registration,'' 2022.
+Z.~Qin, H.~Yu, C.~Wang, Y.~Guo, Y.~Peng and K.~Xu, ``Geometric transformer for fast and robust point cloud registration,'' in \emph{CVPR}, 2022.
 
 \bibitem{fu2021robust}
-K.~Fu, S.~Liu, X.~Luo and M.~Wang, ``Robust point cloud registration framework based on deep graph matching,'' 2021.
+K.~Fu, S.~Liu, X.~Luo and M.~Wang, ``Robust point cloud registration framework based on deep graph matching,'' in \emph{CVPR}, 2021.
 
 \bibitem{Besl1992AMF}
-\BIBentryALTinterwordspacing
-P.~J. Besl and N.~D. McKay, ``A method for registration of 3-d shapes,'' \emph{IEEE Trans. Pattern Anal. Mach. Intell.}, vol.~14, pp. 239--256, 1992. [Online]. Available: \url{https://api.semanticscholar.org/CorpusID:21874346}
-\BIBentrySTDinterwordspacing
+P.~J. Besl and N.~D. McKay, ``A method for registration of 3-d shapes,'' in \emph{PAMI}, 1992.
 
 \bibitem{auto}
-R.~A. Rill and K.~Faragó, ``Collision avoidance using deep learning-based monocular vision,'' \emph{SN Computer Science}, vol.~2, 09 2021.
+R.~A. Rill and K.~Faragó, ``Collision avoidance using deep learning-based monocular vision,'' in \emph{SN Computer Science}, 2021.
 
 \bibitem{maru2022}
-G.~Marullo, L.~Tanzi, P.~Piazzolla and E.~Vezzetti, ``6d object position estimation from 2d images: a literature review,'' \emph{Multimedia Tools and Applications}, vol.~82, pp. 1--39, 11 2022.
+G.~Marullo, L.~Tanzi, P.~Piazzolla and E.~Vezzetti, ``6d object position estimation from 2d images: a literature review,'' in \emph{Multimedia Tools and Applications}, 2022.
 
 \bibitem{dataV4MUMX2020}
-\BIBentryALTinterwordspacing
-E.~Brachmann, ``{6D Object Pose Estimation using 3D Object Coordinates [Data]},'' 2020. [Online]. Available: \url{https://doi.org/10.11588/data/V4MUMX}
-\BIBentrySTDinterwordspacing
+E.~Brachmann, A.~Krull, F.~Michel, S.~Gumhold, J.~Shotton and C.~Rother, ``{Lerning 6D Object Pose Estimation using 3D Object Coordinates},'' in \emph{ECCV}, 2014.
 
 \bibitem{hodan2017tless}
-T.~Hoda{\v{n}}, P.~Haluza, {\v{S}}.~Obdr{\v{z}}{\'a}lek, J.~Matas, M.~Lourakis and X.~Zabulis, ``{T-LESS}: An {RGB-D} dataset for {6D} pose estimation of texture-less objects,'' \emph{IEEE Winter Conference on Applications of Computer Vision (WACV)}, 2017.
+T.~Hoda{\v{n}}, P.~Haluza, {\v{S}}.~Obdr{\v{z}}{\'a}lek, J.~Matas, M.~Lourakis and X.~Zabulis, ``T-less: An rgb-d dataset for 6d pose estimation of texture-less objects,'' in \emph{WACV}, 2017.
 
 \bibitem{kendall2016posenet}
-A.~Kendall, M.~Grimes and R.~Cipolla, ``Posenet: A convolutional network for real-time 6-dof camera relocalization,'' 2016.
+A.~Kendall, M.~Grimes and R.~Cipolla, ``Posenet: A convolutional network for real-time 6-dof camera relocalization,'' in \emph{ICCV}, 2016.
 
 \bibitem{pavlakos20176dof}
-G.~Pavlakos, X.~Zhou, A.~Chan, K.~G. Derpanis and K.~Daniilidis, ``6-dof object pose from semantic keypoints,'' 2017.
+G.~Pavlakos, X.~Zhou, A.~Chan, K.~G. Derpanis and K.~Daniilidis, ``6-dof object pose from semantic keypoints,'' in \emph{ICRA}, 2017.
 
 \bibitem{hodan2019photorealistic}
-T.~Hodan, V.~Vineet, R.~Gal, E.~Shalev, J.~Hanzelka, T.~Connell, P.~Urbina, S.~N. Sinha and B.~Guenter, ``Photorealistic image synthesis for object instance detection,'' 2019.
+T.~Hodan, V.~Vineet, R.~Gal, E.~Shalev, J.~Hanzelka, T.~Connell, P.~Urbina, S.~N. Sinha and B.~Guenter, ``Photorealistic image synthesis for object instance detection,'' in \emph{ICIP}, 2019.
 
 \bibitem{lamb2021brief}
-A.~Lamb, ``A brief introduction to generative models,'' 2021.
+A.~Lamb, ``A brief introduction to generative models,'' in \emph{arXiv:2103.00265}, 2021.
 
 \bibitem{goodfellow2014generative}
-I.~J. Goodfellow, J.~Pouget-Abadie, M.~Mirza, B.~Xu, D.~Warde-Farley, S.~Ozair, A.~Courville and Y.~Bengio, ``Generative adversarial networks,'' 2014.
+I.~J. Goodfellow, J.~Pouget-Abadie, M.~Mirza, B.~Xu, D.~Warde-Farley, S.~Ozair, A.~Courville and Y.~Bengio, ``Generative adversarial networks,'' in \emph{NIPS}, 2014.
 
 \bibitem{borji2018pros}
-A.~Borji, ``Pros and cons of gan evaluation measures,'' 2018.
+A.~Borji, ``Pros and cons of gan evaluation measures,'' in \emph{Computer Vision and Image Understanding}, 2018.
 
 \bibitem{arjovsky2017wasserstein}
-M.~Arjovsky, S.~Chintala and L.~Bottou, ``Wasserstein gan,'' 2017.
+M.~Arjovsky, S.~Chintala and L.~Bottou, ``Wasserstein gan,'' in \emph{PMLR}, 2017.
 
 \bibitem{miyato2018spectral}
-T.~Miyato, T.~Kataoka, M.~Koyama and Y.~Yoshida, ``Spectral normalization for generative adversarial networks,'' 2018.
+T.~Miyato, T.~Kataoka, M.~Koyama and Y.~Yoshida, ``Spectral normalization for generative adversarial networks,'' in \emph{ICLR}, 2018.
 
 \bibitem{kingma2022autoencoding}
-D.~P. Kingma and M.~Welling, ``Auto-encoding variational bayes,'' 2022.
+D.~P. Kingma and M.~Welling, ``Auto-encoding variational bayes,'' in \emph{ICLR}, 2022.
 
 \bibitem{kingma2015variational}
-D.~P. Kingma, T.~Salimans and M.~Welling, ``Variational dropout and the local reparameterization trick,'' 2015.
+D.~P. Kingma, T.~Salimans and M.~Welling, ``Variational dropout and the local reparameterization trick,'' in \emph{NIPS}, 2015.
 
 \bibitem{rezende2016variational}
-D.~J. Rezende and S.~Mohamed, ``Variational inference with normalizing flows,'' 2016.
+D.~J. Rezende and S.~Mohamed, ``Variational inference with normalizing flows,'' in \emph{ICML}, 2016.
 
 \bibitem{nichol2022glide}
-A.~Nichol, P.~Dhariwal, A.~Ramesh, P.~Shyam, P.~Mishkin, B.~McGrew, I.~Sutskever and M.~Chen, ``Glide: Towards photorealistic image generation and editing with text-guided diffusion models,'' 2022.
+A.~Nichol, P.~Dhariwal, A.~Ramesh, P.~Shyam, P.~Mishkin, B.~McGrew, I.~Sutskever and M.~Chen, ``Glide: Towards photorealistic image generation and editing with text-guided diffusion models,'' in \emph{arXiv:2112.10741}, 2022.
 
 \bibitem{ramesh2022hierarchical}
-A.~Ramesh, P.~Dhariwal, A.~Nichol, C.~Chu and M.~Chen, ``Hierarchical text-conditional image generation with clip latents,'' 2022.
+A.~Ramesh, P.~Dhariwal, A.~Nichol, C.~Chu and M.~Chen, ``Hierarchical text-conditional image generation with clip latents,'' in \emph{arXiv:2204.06125}, 2022.
 
 \bibitem{weng2021diffusion}
 \BIBentryALTinterwordspacing
-L.~Weng, ``What are diffusion models?'' \emph{lilianweng.github.io}, Jul 2021. [Online]. Available: \url{https://lilianweng.github.io/posts/2021-07-11-diffusion-models/}
+L.~Weng, ``What are diffusion models?'' \emph{lilianweng.github.io}, 2021. [Online]. Available: \url{https://lilianweng.github.io/posts/2021-07-11-diffusion-models/}
 \BIBentrySTDinterwordspacing
 
 \bibitem{nichol2021improved}
-A.~Nichol and P.~Dhariwal, ``Improved denoising diffusion probabilistic models,'' 2021.
+A.~Nichol and P.~Dhariwal, ``Improved denoising diffusion probabilistic models,'' in \emph{PMLR}, 2021.
 
 \bibitem{xiao2022DDGAN}
-Z.~Xiao, K.~Kreis and A.~Vahdat, ``Tackling the generative learning trilemma with denoising diffusion {GAN}s,'' in \emph{International Conference on Learning Representations (ICLR)}, 2022.
+Z.~Xiao, K.~Kreis and A.~Vahdat, ``Tackling the generative learning trilemma with denoising diffusion {GAN}s,'' in \emph{ICLR}, 2022.
 
 \bibitem{song2020generative}
-Y.~Song and S.~Ermon, ``Generative modeling by estimating gradients of the data distribution,'' 2020.
+Y.~Song and S.~Ermon, ``Generative modeling by estimating gradients of the data distribution,'' in \emph{NIPS}, 2020.
 
 \bibitem{ho2022classifierfree}
-J.~Ho and T.~Salimans, ``Classifier-free diffusion guidance,'' 2022.
+J.~Ho and T.~Salimans, ``Classifier-free diffusion guidance,'' in \emph{arXiv:2207.12598}, 2022.
 
 \bibitem{yang2023diffusion}
-L.~Yang, Z.~Zhang, Y.~Song, S.~Hong, R.~Xu, Y.~Zhao, W.~Zhang, B.~Cui and M.-H. Yang, ``Diffusion models: A comprehensive survey of methods and applications,'' 2023.
+L.~Yang, Z.~Zhang, Y.~Song, S.~Hong, R.~Xu, Y.~Zhao, W.~Zhang, B.~Cui and M.-H. Yang, ``Diffusion models: A comprehensive survey of methods and applications,'' in \emph{ACM Computing Surveys}, 2023.
 
 \bibitem{saharia2021image}
-C.~Saharia, J.~Ho, W.~Chan, T.~Salimans, D.~J. Fleet and M.~Norouzi, ``Image super-resolution via iterative refinement,'' \emph{arXiv:2104.07636}, 2021.
+C.~Saharia, J.~Ho, W.~Chan, T.~Salimans, D.~J. Fleet and M.~Norouzi, ``Image super-resolution via iterative refinement,'' in \emph{PAMI}, 2021.
 
 \bibitem{ho2021cascaded}
-J.~Ho, C.~Saharia, W.~Chan, D.~J. Fleet, M.~Norouzi and T.~Salimans, ``Cascaded diffusion models for high fidelity image generation,'' \emph{arXiv preprint arXiv:2106.15282}, 2021.
+J.~Ho, C.~Saharia, W.~Chan, D.~J. Fleet, M.~Norouzi and T.~Salimans, ``Cascaded diffusion models for high fidelity image generation,'' in \emph{The Journal of Machine Learning Research}, 2021.
 
 \bibitem{gao2023implicit}
-S.~Gao, X.~Liu, B.~Zeng, S.~Xu, Y.~Li, X.~Luo, J.~Liu, X.~Zhen and B.~Zhang, ``Implicit diffusion models for continuous super-resolution,'' 2023.
+S.~Gao, X.~Liu, B.~Zeng, S.~Xu, Y.~Li, X.~Luo, J.~Liu, X.~Zhen and B.~Zhang, ``Implicit diffusion models for continuous super-resolution,'' in \emph{CVPR}, 2023.
 
 \bibitem{lugmayr2022repaint}
-A.~Lugmayr, M.~Danelljan, A.~Romero, F.~Yu, R.~Timofte and L.~V. Gool, ``Repaint: Inpainting using denoising diffusion probabilistic models,'' 2022.
+A.~Lugmayr, M.~Danelljan, A.~Romero, F.~Yu, R.~Timofte and L.~V. Gool, ``Repaint: Inpainting using denoising diffusion probabilistic models,'' in \emph{CVPR}, 2022.
 
 \bibitem{saharia2022palette}
-C.~Saharia, W.~Chan, H.~Chang, C.~A. Lee, J.~Ho, T.~Salimans, D.~J. Fleet and M.~Norouzi, ``Palette: Image-to-image diffusion models,'' 2022.
+C.~Saharia, W.~Chan, H.~Chang, C.~A. Lee, J.~Ho, T.~Salimans, D.~J. Fleet and M.~Norouzi, ``Palette: Image-to-image diffusion models,'' in \emph{SIGGRAPH}, 2022.
 
 \bibitem{kwon2023diffusionbased}
-G.~Kwon and J.~C. Ye, ``Diffusion-based image translation using disentangled style and content representation,'' 2023.
+G.~Kwon and J.~C. Ye, ``Diffusion-based image translation using disentangled style and content representation,'' in \emph{arXiv:2209.15264}, 2023.
 
 \bibitem{luo2021diffusion}
-S.~Luo and W.~Hu, ``Diffusion probabilistic models for 3d point cloud generation,'' 2021.
+S.~Luo and W.~Hu, ``Diffusion probabilistic models for 3d point cloud generation,'' in \emph{CVPR}, 2021.
 
 \bibitem{zeng2022lion}
-X.~Zeng, A.~Vahdat, F.~Williams, Z.~Gojcic, O.~Litany, S.~Fidler and K.~Kreis, ``Lion: Latent point diffusion models for 3d shape generation,'' 2022.
+X.~Zeng, A.~Vahdat, F.~Williams, Z.~Gojcic, O.~Litany, S.~Fidler and K.~Kreis, ``Lion: Latent point diffusion models for 3d shape generation,'' in \emph{arXiv:2210.06978}, 2022.
 
 \bibitem{lyu2022conditional}
-Z.~Lyu, Z.~Kong, X.~Xu, L.~Pan and D.~Lin, ``A conditional point diffusion-refinement paradigm for 3d point cloud completion,'' 2022.
+Z.~Lyu, Z.~Kong, X.~Xu, L.~Pan and D.~Lin, ``A conditional point diffusion-refinement paradigm for 3d point cloud completion,'' in \emph{arXiv:2112.03530}, 2022.
 
 \bibitem{devlin2019bert}
-J.~Devlin, M.-W. Chang, K.~Lee and K.~Toutanova, ``Bert: Pre-training of deep bidirectional transformers for language understanding,'' 2019.
+J.~Devlin, M.-W. Chang, K.~Lee and K.~Toutanova, ``Bert: Pre-training of deep bidirectional transformers for language understanding,'' in \emph{arXiv:1810.04805}, 2019.
 
 \bibitem{Radford2018ImprovingLU}
 \BIBentryALTinterwordspacing
@@ -172,294 +166,276 @@ A.~Radford and K.~Narasimhan, ``Improving language understanding by generative p
 \BIBentrySTDinterwordspacing
 
 \bibitem{touvron2023llama}
-H.~Touvron, T.~Lavril, G.~Izacard, X.~Martinet, M.-A. Lachaux, T.~Lacroix, B.~Rozière, N.~Goyal, E.~Hambro, F.~Azhar, A.~Rodriguez, A.~Joulin, E.~Grave and G.~Lample, ``Llama: Open and efficient foundation language models,'' 2023.
+H.~Touvron, T.~Lavril, G.~Izacard, X.~Martinet, M.-A. Lachaux, T.~Lacroix, B.~Rozière, N.~Goyal, E.~Hambro, F.~Azhar, A.~Rodriguez, A.~Joulin, E.~Grave and G.~Lample, ``Llama: Open and efficient foundation language models,'' in \emph{arXiv:2302.13971}, 2023.
 
 \bibitem{zou2023survey}
-H.~Zou, Z.~M. Kim and D.~Kang, ``A survey of diffusion models in natural language processing,'' 2023.
+H.~Zou, Z.~M. Kim and D.~Kang, ``A survey of diffusion models in natural language processing,'' in \emph{arXiv:2305.14671}, 2023.
 
 \bibitem{austin2023structured}
-J.~Austin, D.~D. Johnson, J.~Ho, D.~Tarlow and R.~van~den Berg, ``Structured denoising diffusion models in discrete state-spaces,'' 2023.
+J.~Austin, D.~D. Johnson, J.~Ho, D.~Tarlow and R.~van~den Berg, ``Structured denoising diffusion models in discrete state-spaces,'' in \emph{NIPS}, 2023.
 
 \bibitem{hoogeboom2021argmax}
-E.~Hoogeboom, D.~Nielsen, P.~Jaini, P.~Forré and M.~Welling, ``Argmax flows and multinomial diffusion: Learning categorical distributions,'' 2021.
+E.~Hoogeboom, D.~Nielsen, P.~Jaini, P.~Forré and M.~Welling, ``Argmax flows and multinomial diffusion: Learning categorical distributions,'' in \emph{NIPS}, 2021.
 
 \bibitem{li2022diffusionlm}
-X.~L. Li, J.~Thickstun, I.~Gulrajani, P.~Liang and T.~B. Hashimoto, ``Diffusion-lm improves controllable text generation,'' 2022.
+X.~L. Li, J.~Thickstun, I.~Gulrajani, P.~Liang and T.~B. Hashimoto, ``Diffusion-lm improves controllable text generation,'' in \emph{NIPS}, 2022.
 
 \bibitem{radford2021learning}
-A.~Radford, J.~W. Kim, C.~Hallacy, A.~Ramesh, G.~Goh, S.~Agarwal, G.~Sastry, A.~Askell, P.~Mishkin, J.~Clark, G.~Krueger and I.~Sutskever, ``Learning transferable visual models from natural language supervision,'' 2021.
+A.~Radford, J.~W. Kim, C.~Hallacy, A.~Ramesh, G.~Goh, S.~Agarwal, G.~Sastry, A.~Askell, P.~Mishkin, J.~Clark, G.~Krueger and I.~Sutskever, ``Learning transferable visual models from natural language supervision,'' in \emph{PMLR}, 2021.
 
 \bibitem{rombach2022highresolution}
-R.~Rombach, A.~Blattmann, D.~Lorenz, P.~Esser and B.~Ommer, ``High-resolution image synthesis with latent diffusion models,'' 2022.
+R.~Rombach, A.~Blattmann, D.~Lorenz, P.~Esser and B.~Ommer, ``High-resolution image synthesis with latent diffusion models,'' in \emph{CVPR}, 2022.
 
 \bibitem{zhang2023adding}
-L.~Zhang, A.~Rao and M.~Agrawala, ``Adding conditional control to text-to-image diffusion models,'' 2023.
+L.~Zhang, A.~Rao and M.~Agrawala, ``Adding conditional control to text-to-image diffusion models,'' in \emph{ICCV}, 2023.
 
 \bibitem{poole2022dreamfusion}
-B.~Poole, A.~Jain, J.~T. Barron and B.~Mildenhall, ``Dreamfusion: Text-to-3d using 2d diffusion,'' 2022.
+B.~Poole, A.~Jain, J.~T. Barron and B.~Mildenhall, ``Dreamfusion: Text-to-3d using 2d diffusion,'' in \emph{arXiv:2209.14988}, 2022.
 
 \bibitem{sift}
-D.~Lowe, ``Distinctive image features from scale-invariant keypoints,'' \emph{International Journal of Computer Vision}, vol.~60, pp. 91--, 11 2004.
+D.~Lowe, ``Distinctive image features from scale-invariant keypoints,'' in \emph{IJCV}, 2004.
 
 \bibitem{surf}
-H.~Bay, T.~Tuytelaars and L.~Van~Gool, ``Surf: Speeded up robust features,'' vol. 3951, 07 2006, pp. 404--417.
+H.~Bay, T.~Tuytelaars and L.~Van~Gool, ``Surf: Speeded up robust features,'' in \emph{ECCV}, 2006.
 
 \bibitem{6126544}
-E.~Rublee, V.~Rabaud, K.~Konolige and G.~Bradski, ``Orb: An efficient alternative to sift or surf,'' in \emph{2011 International Conference on Computer Vision}, 2011, pp. 2564--2571.
+E.~Rublee, V.~Rabaud, K.~Konolige and G.~Bradski, ``Orb: An efficient alternative to sift or surf,'' in \emph{ICCV}, 2011.
 
 \bibitem{10.1145/358669.358692}
-\BIBentryALTinterwordspacing
-M.~A. Fischler and R.~C. Bolles, ``Random sample consensus: A paradigm for model fitting with applications to image analysis and automated cartography,'' \emph{Commun. ACM}, vol.~24, no.~6, p. 381–395, jun 1981. [Online]. Available: \url{https://doi.org/10.1145/358669.358692}
-\BIBentrySTDinterwordspacing
+M.~A. Fischler and R.~C. Bolles, ``Random sample consensus: A paradigm for model fitting with applications to image analysis and automated cartography,'' in \emph{Commun. ACM}.\hskip 1em plus 0.5em minus 0.4em\relax Association for Computing Machinery, 1981.
 
 \bibitem{gicp}
-A.~Segal, D.~Hähnel and S.~Thrun, ``Generalized-icp,'' 06 2009.
+A.~Segal, D.~Hähnel and S.~Thrun, ``Generalized-icp,'' 2009.
 
 \bibitem{nicp}
-J.~Serafin and G.~Grisetti, ``Nicp: Dense normal based point cloud registration,'' in \emph{2015 IEEE/RSJ International Conference on Intelligent Robots and Systems (IROS)}, 2015, pp. 742--749.
+J.~Serafin and G.~Grisetti, ``Nicp: Dense normal based point cloud registration,'' in \emph{IROS}, 2015.
 
 \bibitem{gu2010discriminative}
-C.~Gu and X.~Ren, ``Discriminative mixture-of-templates for viewpoint classification,'' vol. 6315, 12 2010, pp. 408--421.
+C.~Gu and X.~Ren, ``Discriminative mixture-of-templates for viewpoint classification,'' in \emph{ECCV}, 2010.
 
 \bibitem{hinterstoisser2012gradient}
-S.~Hinterstoisser, C.~Cagniart, S.~Ilic, P.~Sturm, N.~Navab, P.~Fua, V.~Lepetit and b.~Lepetit, ``Gradient response maps for real-time detection of texture-less objects,'' \emph{IEEE TRANSACTIONS ON PATTERN ANALYSIS AND MACHINE INTELLIGENCE}, vol.~1, 05 2012.
+S.~Hinterstoisser, C.~Cagniart, S.~Ilic, P.~Sturm, N.~Navab, P.~Fua, V.~Lepetit and b.~Lepetit, ``Gradient response maps for real-time detection of texture-less objects,'' in \emph{PAMI}, 2012.
 
 \bibitem{Wohlhart_2015}
-\BIBentryALTinterwordspacing
-P.~Wohlhart and V.~Lepetit, ``Learning descriptors for object recognition and 3d pose estimation,'' in \emph{2015 {IEEE} Conference on Computer Vision and Pattern Recognition ({CVPR})}.\hskip 1em plus 0.5em minus 0.4em\relax {IEEE}, jun 2015. [Online]. Available: \url{https://doi.org/10.1109%2Fcvpr.2015.7298930}
-\BIBentrySTDinterwordspacing
+P.~Wohlhart and V.~Lepetit, ``Learning descriptors for object recognition and 3d pose estimation,'' in \emph{CVPR}, 2015.
 
 \bibitem{nguyen2022templates}
-V.~N. Nguyen, Y.~Hu, Y.~Xiao, M.~Salzmann and V.~Lepetit, ``Templates for 3d object pose estimation revisited: Generalization to new objects and robustness to occlusions,'' 2022.
+V.~N. Nguyen, Y.~Hu, Y.~Xiao, M.~Salzmann and V.~Lepetit, ``Templates for 3d object pose estimation revisited: Generalization to new objects and robustness to occlusions,'' in \emph{CVPR}, 2022.
 
 \bibitem{shugurov2022osop}
-I.~Shugurov, F.~Li, B.~Busam and S.~Ilic, ``Osop: A multi-stage one shot object pose estimation framework,'' 2022.
+I.~Shugurov, F.~Li, B.~Busam and S.~Ilic, ``Osop: A multi-stage one shot object pose estimation framework,'' in \emph{CVPR}, 2022.
 
 \bibitem{kabsch1976solution}
-W.~Kabsch, ``A solution for the best rotation to relate two sets of vectors,'' \emph{Acta Crystallographica Section A: Crystal Physics, Diffraction, Theoretical and General Crystallography}, vol.~32, no.~5, pp. 922--923, 1976.
+W.~Kabsch, ``A solution for the best rotation to relate two sets of vectors,'' in \emph{Acta Crystallographica Section A: Crystal Physics, Diffraction, Theoretical and General Crystallography}, 1976.
 
 \bibitem{rad2018bb8}
-M.~Rad and V.~Lepetit, ``Bb8: A scalable, accurate, robust to partial occlusion method for predicting the 3d poses of challenging objects without using depth,'' 2018.
+M.~Rad and V.~Lepetit, ``Bb8: A scalable, accurate, robust to partial occlusion method for predicting the 3d poses of challenging objects without using depth,'' in \emph{ICCV}, 2018.
 
 \bibitem{pmlr-v87-tremblay18a}
-\BIBentryALTinterwordspacing
-J.~Tremblay, T.~To, B.~Sundaralingam, Y.~Xiang, D.~Fox and S.~Birchfield, ``Deep object pose estimation for semantic robotic grasping of household objects,'' in \emph{Proceedings of The 2nd Conference on Robot Learning}, ser. Proceedings of Machine Learning Research, A.~Billard, A.~Dragan, J.~Peters and J.~Morimoto, Eds., vol.~87.\hskip 1em plus 0.5em minus 0.4em\relax PMLR, 29--31 Oct 2018, pp. 306--316. [Online]. Available: \url{https://proceedings.mlr.press/v87/tremblay18a.html}
-\BIBentrySTDinterwordspacing
+J.~Tremblay, T.~To, B.~Sundaralingam, Y.~Xiang, D.~Fox and S.~Birchfield, ``Deep object pose estimation for semantic robotic grasping of household objects,'' in \emph{Proceedings of The 2nd Conference on Robot Learning}, 2018.
 
 \bibitem{tekin2018realtime}
-B.~Tekin, S.~N. Sinha and P.~Fua, ``Real-time seamless single shot 6d object pose prediction,'' 2018.
+B.~Tekin, S.~N. Sinha and P.~Fua, ``Real-time seamless single shot 6d object pose prediction,'' in \emph{CVPR}, 2018.
 
 \bibitem{zakharov2019dpod}
-S.~Zakharov, I.~Shugurov and S.~Ilic, ``Dpod: 6d pose object detector and refiner,'' 2019.
+S.~Zakharov, I.~Shugurov and S.~Ilic, ``Dpod: 6d pose object detector and refiner,'' in \emph{ICCV}, 2019.
 
 \bibitem{oberweger2018making}
-M.~Oberweger, M.~Rad and V.~Lepetit, ``Making deep heatmaps robust to partial occlusions for 3d object pose estimation,'' 2018.
+M.~Oberweger, M.~Rad and V.~Lepetit, ``Making deep heatmaps robust to partial occlusions for 3d object pose estimation,'' in \emph{ECCV}, 2018.
 
 \bibitem{su2022zebrapose}
-Y.~Su, M.~Saleh, T.~Fetzer, J.~Rambach, N.~Navab, B.~Busam, D.~Stricker and F.~Tombari, ``Zebrapose: Coarse to fine surface encoding for 6dof object pose estimation,'' 2022.
+Y.~Su, M.~Saleh, T.~Fetzer, J.~Rambach, N.~Navab, B.~Busam, D.~Stricker and F.~Tombari, ``Zebrapose: Coarse to fine surface encoding for 6dof object pose estimation,'' in \emph{CVPR}, 2022.
 
 \bibitem{qi2017pointnet}
-C.~R. Qi, H.~Su, K.~Mo and L.~J. Guibas, ``Pointnet: Deep learning on point sets for 3d classification and segmentation,'' 2017.
+C.~R. Qi, H.~Su, K.~Mo and L.~J. Guibas, ``Pointnet: Deep learning on point sets for 3d classification and segmentation,'' in \emph{CVPR}, 2017.
 
 \bibitem{qi2017pointnet++}
-C.~R. Qi, L.~Yi, H.~Su and L.~J. Guibas, ``Pointnet++: Deep hierarchical feature learning on point sets in a metric space,'' 2017.
+C.~R. Qi, L.~Yi, H.~Su and L.~J. Guibas, ``Pointnet++: Deep hierarchical feature learning on point sets in a metric space,'' in \emph{NIPS}, 2017.
 
 \bibitem{bai2020d3feat}
-X.~Bai, Z.~Luo, L.~Zhou, H.~Fu, L.~Quan and C.-L. Tai, ``D3feat: Joint learning of dense detection and description of 3d local features,'' 2020.
+X.~Bai, Z.~Luo, L.~Zhou, H.~Fu, L.~Quan and C.-L. Tai, ``D3feat: Joint learning of dense detection and description of 3d local features,'' in \emph{CVPR}, 2020.
 
 \bibitem{ao2021spinnet}
-S.~Ao, Q.~Hu, B.~Yang, A.~Markham and Y.~Guo, ``Spinnet: Learning a general surface descriptor for 3d point cloud registration,'' 2021.
+S.~Ao, Q.~Hu, B.~Yang, A.~Markham and Y.~Guo, ``Spinnet: Learning a general surface descriptor for 3d point cloud registration,'' in \emph{CVPR}, 2021.
 
 \bibitem{wang2022hypothesize}
-H.~Wang, Y.~Liu, Z.~Dong and W.~Wang, ``You only hypothesize once: Point cloud registration with rotation-equivariant descriptors,'' 2022.
+H.~Wang, Y.~Liu, Z.~Dong and W.~Wang, ``You only hypothesize once: Point cloud registration with rotation-equivariant descriptors,'' in \emph{ACMMM}, 2022.
 
 \bibitem{yu2023rotationinvariant}
-H.~Yu, Z.~Qin, J.~Hou, M.~Saleh, D.~Li, B.~Busam and S.~Ilic, ``Rotation-invariant transformer for point cloud matching,'' 2023.
+H.~Yu, Z.~Qin, J.~Hou, M.~Saleh, D.~Li, B.~Busam and S.~Ilic, ``Rotation-invariant transformer for point cloud matching,'' in \emph{CVPR}, 2023.
 
 \bibitem{xiang2018posecnn}
-Y.~Xiang, T.~Schmidt, V.~Narayanan and D.~Fox, ``Posecnn: A convolutional neural network for 6d object pose estimation in cluttered scenes,'' 2018.
+Y.~Xiang, T.~Schmidt, V.~Narayanan and D.~Fox, ``Posecnn: A convolutional neural network for 6d object pose estimation in cluttered scenes,'' in \emph{RSS}, 2018.
 
 \bibitem{Wu_2018}
-\BIBentryALTinterwordspacing
-J.~Wu, B.~Zhou, R.~Russell, V.~Kee, S.~Wagner, M.~Hebert, A.~Torralba and D.~M. Johnson, ``Real-time object pose estimation with pose interpreter networks,'' in \emph{2018 {IEEE}/{RSJ} International Conference on Intelligent Robots and Systems ({IROS})}.\hskip 1em plus 0.5em minus 0.4em\relax {IEEE}, oct 2018. [Online]. Available: \url{https://doi.org/10.1109%2Firos.2018.8593662}
-\BIBentrySTDinterwordspacing
+J.~Wu, B.~Zhou, R.~Russell, V.~Kee, S.~Wagner, M.~Hebert, A.~Torralba and D.~M. Johnson, ``Real-time object pose estimation with pose interpreter networks,'' in \emph{IROS}, 2018.
 
 \bibitem{do2018deep6dpose}
-T.-T. Do, M.~Cai, T.~Pham and I.~Reid, ``Deep-6dpose: Recovering 6d object pose from a single rgb image,'' 2018.
+T.-T. Do, M.~Cai, T.~Pham and I.~Reid, ``Deep-6dpose: Recovering 6d object pose from a single rgb image,'' in \emph{arXiv:1802.10367}, 2018.
 
 \bibitem{he2018mask}
-K.~He, G.~Gkioxari, P.~Dollár and R.~Girshick, ``Mask r-cnn,'' 2018.
+K.~He, G.~Gkioxari, P.~Dollár and R.~Girshick, ``Mask r-cnn,'' in \emph{ICCV}, 2018.
 
 \bibitem{wang2021gdrnet}
-G.~Wang, F.~Manhardt, F.~Tombari and X.~Ji, ``Gdr-net: Geometry-guided direct regression network for monocular 6d object pose estimation,'' 2021.
+G.~Wang, F.~Manhardt, F.~Tombari and X.~Ji, ``Gdr-net: Geometry-guided direct regression network for monocular 6d object pose estimation,'' in \emph{CVPR}, 2021.
 
 \bibitem{aoki2019pointnetlk}
-Y.~Aoki, H.~Goforth, R.~A. Srivatsan and S.~Lucey, ``Pointnetlk: Robust \& efficient point cloud registration using pointnet,'' 2019.
+Y.~Aoki, H.~Goforth, R.~A. Srivatsan and S.~Lucey, ``Pointnetlk: Robust \& efficient point cloud registration using pointnet,'' in \emph{CVPR}, 2019.
 
 \bibitem{Lucas1981AnII}
-\BIBentryALTinterwordspacing
-B.~D. Lucas and T.~Kanade, ``An iterative image registration technique with an application to stereo vision,'' in \emph{International Joint Conference on Artificial Intelligence}, 1981. [Online]. Available: \url{https://api.semanticscholar.org/CorpusID:2121536}
-\BIBentrySTDinterwordspacing
+B.~D. Lucas and T.~Kanade, ``An iterative image registration technique with an application to stereo vision,'' in \emph{International Joint Conference on Artificial Intelligence}, 1981.
 
 \bibitem{huang2020featuremetric}
-X.~Huang, G.~Mei and J.~Zhang, ``Feature-metric registration: A fast semi-supervised approach for robust point cloud registration without correspondences,'' 2020.
+X.~Huang, G.~Mei and J.~Zhang, ``Feature-metric registration: A fast semi-supervised approach for robust point cloud registration without correspondences,'' in \emph{CVPR}, 2020.
 
 \bibitem{xu2021omnet}
-H.~Xu, S.~Liu, G.~Wang, G.~Liu and B.~Zeng, ``Omnet: Learning overlapping mask for partial-to-partial point cloud registration,'' 2021.
+H.~Xu, S.~Liu, G.~Wang, G.~Liu and B.~Zeng, ``Omnet: Learning overlapping mask for partial-to-partial point cloud registration,'' in \emph{ICCV}, 2021.
 
 \bibitem{kehl2016deep}
-W.~Kehl, F.~Milletari, F.~Tombari, S.~Ilic and N.~Navab, ``Deep learning of local rgb-d patches for 3d object detection and 6d pose estimation,'' 2016.
+W.~Kehl, F.~Milletari, F.~Tombari, S.~Ilic and N.~Navab, ``Deep learning of local rgb-d patches for 3d object detection and 6d pose estimation,'' in \emph{ECCV}, 2016.
 
 \bibitem{Park_2019}
-\BIBentryALTinterwordspacing
-K.~Park, T.~Patten and M.~Vincze, ``Pix2pose: Pixel-wise coordinate regression of objects for 6d pose estimation,'' in \emph{2019 IEEE/CVF International Conference on Computer Vision (ICCV)}.\hskip 1em plus 0.5em minus 0.4em\relax IEEE, Oct. 2019. [Online]. Available: \url{http://dx.doi.org/10.1109/ICCV.2019.00776}
-\BIBentrySTDinterwordspacing
+K.~Park, T.~Patten and M.~Vincze, ``Pix2pose: Pixel-wise coordinate regression of objects for 6d pose estimation,'' in \emph{ICCV}, 2019.
 
 \bibitem{peng_pvnet_2019}
-\BIBentryALTinterwordspacing
-S.~Peng, Y.~Liu, Q.~Huang, X.~Zhou and H.~Bao, ``\BIBforeignlanguage{en}{{PVNet}: {Pixel}-{Wise} {Voting} {Network} for {6DoF} {Pose} {Estimation}},'' in \emph{\BIBforeignlanguage{en}{2019 {IEEE}/{CVF} {Conference} on {Computer} {Vision} and {Pattern} {Recognition} ({CVPR})}}.\hskip 1em plus 0.5em minus 0.4em\relax Long Beach, CA, USA: IEEE, Jun. 2019, pp. 4556--4565. [Online]. Available: \url{https://ieeexplore.ieee.org/document/8954204/}
-\BIBentrySTDinterwordspacing
+S.~Peng, Y.~Liu, Q.~Huang, X.~Zhou and H.~Bao, ``Pvnet: Pixel-wise voting network for 6dof pose estimation,'' in \emph{CVPR}, 2019.
 
 \bibitem{wang2019densefusion}
-C.~Wang, D.~Xu, Y.~Zhu, R.~Martín-Martín, C.~Lu, L.~Fei-Fei and S.~Savarese, ``Densefusion: 6d object pose estimation by iterative dense fusion,'' 2019.
+C.~Wang, D.~Xu, Y.~Zhu, R.~Martín-Martín, C.~Lu, L.~Fei-Fei and S.~Savarese, ``Densefusion: 6d object pose estimation by iterative dense fusion,'' in \emph{CVPR}, 2019.
 
 \bibitem{he2021ffb6d}
-Y.~He, H.~Huang, H.~Fan, Q.~Chen and J.~Sun, ``Ffb6d: A full flow bidirectional fusion network for 6d pose estimation,'' 2021.
+Y.~He, H.~Huang, H.~Fan, Q.~Chen and J.~Sun, ``Ffb6d: A full flow bidirectional fusion network for 6d pose estimation,'' in \emph{CVPR}, 2021.
 
 \bibitem{song2020hybridpose}
-C.~Song, J.~Song and Q.~Huang, ``Hybridpose: 6d object pose estimation under hybrid representations,'' 2020.
+C.~Song, J.~Song and Q.~Huang, ``Hybridpose: 6d object pose estimation under hybrid representations,'' in \emph{CVPR}, 2020.
 
 \bibitem{song2020improved}
-Y.~Song and S.~Ermon, ``Improved techniques for training score-based generative models,'' 2020.
+Y.~Song and S.~Ermon, ``Improved techniques for training score-based generative models,'' in \emph{NIPS}, 2020.
 
 \bibitem{song2021maximum}
-Y.~Song, C.~Durkan, I.~Murray and S.~Ermon, ``Maximum likelihood training of score-based diffusion models,'' 2021.
+Y.~Song, C.~Durkan, I.~Murray and S.~Ermon, ``Maximum likelihood training of score-based diffusion models,'' in \emph{NIPS}, 2021.
 
 \bibitem{song2021scorebased}
-Y.~Song, J.~Sohl-Dickstein, D.~P. Kingma, A.~Kumar, S.~Ermon and B.~Poole, ``Score-based generative modeling through stochastic differential equations,'' 2021.
+Y.~Song, J.~Sohl-Dickstein, D.~P. Kingma, A.~Kumar, S.~Ermon and B.~Poole, ``Score-based generative modeling through stochastic differential equations,'' in \emph{ICLR}, 2021.
 
 \bibitem{10.5555/1046920.1088696}
-A.~Hyv\"{a}rinen, ``Estimation of non-normalized statistical models by score matching,'' \emph{J. Mach. Learn. Res.}, vol.~6, p. 695–709, dec 2005.
+A.~Hyv\"{a}rinen, ``Estimation of non-normalized statistical models by score matching,'' in \emph{JMLR}, 2005.
 
 \bibitem{6795935}
-P.~Vincent, ``A connection between score matching and denoising autoencoders,'' \emph{Neural Computation}, vol.~23, no.~7, pp. 1661--1674, 2011.
+P.~Vincent, ``A connection between score matching and denoising autoencoders,'' in \emph{Neural Computation}, 2011.
 
 \bibitem{jolicoeurmartineau2020adversarial}
-A.~Jolicoeur-Martineau, R.~Piché-Taillefer, R.~T. des Combes and I.~Mitliagkas, ``Adversarial score matching and improved sampling for image generation,'' 2020.
+A.~Jolicoeur-Martineau, R.~Piché-Taillefer, R.~T. des Combes and I.~Mitliagkas, ``Adversarial score matching and improved sampling for image generation,'' in \emph{ICLR}, 2020.
 
 \bibitem{dockhorn2022scorebased}
-T.~Dockhorn, A.~Vahdat and K.~Kreis, ``Score-based generative modeling with critically-damped langevin diffusion,'' 2022.
+T.~Dockhorn, A.~Vahdat and K.~Kreis, ``Score-based generative modeling with critically-damped langevin diffusion,'' in \emph{ICLR}, 2022.
 
 \bibitem{jolicoeurmartineau2021gotta}
-A.~Jolicoeur-Martineau, K.~Li, R.~Piché-Taillefer, T.~Kachman and I.~Mitliagkas, ``Gotta go fast when generating data with score-based models,'' 2021.
+A.~Jolicoeur-Martineau, K.~Li, R.~Piché-Taillefer, T.~Kachman and I.~Mitliagkas, ``Gotta go fast when generating data with score-based models,'' in \emph{ICLR}, 2021.
 
 \bibitem{song2022denoising}
-J.~Song, C.~Meng and S.~Ermon, ``Denoising diffusion implicit models,'' 2022.
+J.~Song, C.~Meng and S.~Ermon, ``Denoising diffusion implicit models,'' in \emph{ICLR}, 2022.
 
 \bibitem{karras2022elucidating}
-T.~Karras, M.~Aittala, T.~Aila and S.~Laine, ``Elucidating the design space of diffusion-based generative models,'' 2022.
+T.~Karras, M.~Aittala, T.~Aila and S.~Laine, ``Elucidating the design space of diffusion-based generative models,'' in \emph{NIPS}, 2022.
 
 \bibitem{lu2022dpmsolver}
-C.~Lu, Y.~Zhou, F.~Bao, J.~Chen, C.~Li and J.~Zhu, ``Dpm-solver: A fast ode solver for diffusion probabilistic model sampling in around 10 steps,'' 2022.
+C.~Lu, Y.~Zhou, F.~Bao, J.~Chen, C.~Li and J.~Zhu, ``Dpm-solver: A fast ode solver for diffusion probabilistic model sampling in around 10 steps,'' in \emph{NIPS}, 2022.
 
 \bibitem{watson2021learning}
-D.~Watson, J.~Ho, M.~Norouzi and W.~Chan, ``Learning to efficiently sample from diffusion probabilistic models,'' 2021.
+D.~Watson, J.~Ho, M.~Norouzi and W.~Chan, ``Learning to efficiently sample from diffusion probabilistic models,'' in \emph{arXiv:2106.03802}, 2021.
 
 \bibitem{watson2022learning}
-D.~Watson, W.~Chan, J.~Ho and M.~Norouzi, ``Learning fast samplers for diffusion models by differentiating through sample quality,'' 2022.
+D.~Watson, W.~Chan, J.~Ho and M.~Norouzi, ``Learning fast samplers for diffusion models by differentiating through sample quality,'' in \emph{arXiv:2202.05830}, 2022.
 
 \bibitem{zheng2023truncated}
-H.~Zheng, P.~He, W.~Chen and M.~Zhou, ``Truncated diffusion probabilistic models and diffusion-based adversarial auto-encoders,'' 2023.
+H.~Zheng, P.~He, W.~Chen and M.~Zhou, ``Truncated diffusion probabilistic models and diffusion-based adversarial auto-encoders,'' in \emph{ICLR}, 2023.
 
 \bibitem{salimans2022progressive}
-T.~Salimans and J.~Ho, ``Progressive distillation for fast sampling of diffusion models,'' 2022.
+T.~Salimans and J.~Ho, ``Progressive distillation for fast sampling of diffusion models,'' in \emph{ICLR}, 2022.
 
 \bibitem{meng2023distillation}
-C.~Meng, R.~Rombach, R.~Gao, D.~P. Kingma, S.~Ermon, J.~Ho and T.~Salimans, ``On distillation of guided diffusion models,'' 2023.
+C.~Meng, R.~Rombach, R.~Gao, D.~P. Kingma, S.~Ermon, J.~Ho and T.~Salimans, ``On distillation of guided diffusion models,'' in \emph{CVPR}, 2023.
 
 \bibitem{kingma2023variational}
-D.~P. Kingma, T.~Salimans, B.~Poole and J.~Ho, ``Variational diffusion models,'' 2023.
+D.~P. Kingma, T.~Salimans, B.~Poole and J.~Ho, ``Variational diffusion models,'' in \emph{NIPS}, 2023.
 
 \bibitem{gu2022vector}
-S.~Gu, D.~Chen, J.~Bao, F.~Wen, B.~Zhang, D.~Chen, L.~Yuan and B.~Guo, ``Vector quantized diffusion model for text-to-image synthesis,'' 2022.
+S.~Gu, D.~Chen, J.~Bao, F.~Wen, B.~Zhang, D.~Chen, L.~Yuan and B.~Guo, ``Vector quantized diffusion model for text-to-image synthesis,'' in \emph{CVPR}, 2022.
 
 \bibitem{oord2018neural}
-A.~van~den Oord, O.~Vinyals and K.~Kavukcuoglu, ``Neural discrete representation learning,'' 2018.
+A.~van~den Oord, O.~Vinyals and K.~Kavukcuoglu, ``Neural discrete representation learning,'' in \emph{NIPS}, 2018.
 
 \bibitem{liu2023learning}
-\BIBentryALTinterwordspacing
-X.~Liu, L.~Wu, M.~Ye and qiang liu, ``Learning diffusion bridges on constrained domains,'' in \emph{The Eleventh International Conference on Learning Representations}, 2023. [Online]. Available: \url{https://openreview.net/forum?id=WH1yCa0TbB}
-\BIBentrySTDinterwordspacing
+X.~Liu, L.~Wu, M.~Ye and qiang Liu, ``Learning diffusion bridges on constrained domains,'' in \emph{ICLR}, 2023.
 
 \bibitem{huang2022riemannian}
-C.-W. Huang, M.~Aghajohari, A.~J. Bose, P.~Panangaden and A.~Courville, ``Riemannian diffusion models,'' 2022.
+C.-W. Huang, M.~Aghajohari, A.~J. Bose, P.~Panangaden and A.~Courville, ``Riemannian diffusion models,'' in \emph{NIPS}, 2022.
 
 \bibitem{debortoli2022riemannian}
-V.~D. Bortoli, E.~Mathieu, M.~Hutchinson, J.~Thornton, Y.~W. Teh and A.~Doucet, ``Riemannian score-based generative modelling,'' 2022.
+V.~D. Bortoli, E.~Mathieu, M.~Hutchinson, J.~Thornton, Y.~W. Teh and A.~Doucet, ``Riemannian score-based generative modelling,'' in \emph{NIPS}, 2022.
 
 \bibitem{niu2020permutation}
-C.~Niu, Y.~Song, J.~Song, S.~Zhao, A.~Grover and S.~Ermon, ``Permutation invariant graph generation via score-based generative modeling,'' 2020.
+C.~Niu, Y.~Song, J.~Song, S.~Zhao, A.~Grover and S.~Ermon, ``Permutation invariant graph generation via score-based generative modeling,'' in \emph{PMLR}, 2020.
 
 \bibitem{huang2022graphgdp}
-H.~Huang, L.~Sun, B.~Du, Y.~Fu and W.~Lv, ``Graphgdp: Generative diffusion processes for permutation invariant graph generation,'' 2022.
+H.~Huang, L.~Sun, B.~Du, Y.~Fu and W.~Lv, ``Graphgdp: Generative diffusion processes for permutation invariant graph generation,'' in \emph{ICDM}, 2022.
 
 \bibitem{vahdat2021scorebased}
-A.~Vahdat, K.~Kreis and J.~Kautz, ``Score-based generative modeling in latent space,'' 2021.
+A.~Vahdat, K.~Kreis and J.~Kautz, ``Score-based generative modeling in latent space,'' in \emph{NIPS}, 2021.
 
 \bibitem{leach2022denoising}
-\BIBentryALTinterwordspacing
-A.~Leach, S.~M. Schmon, M.~T. Degiacomi and C.~G. Willcocks, ``Denoising diffusion probabilistic models on {SO}(3) for rotational alignment,'' in \emph{ICLR 2022 Workshop on Geometrical and Topological Representation Learning}, 2022. [Online]. Available: \url{https://openreview.net/forum?id=BY88eBbkpe5}
-\BIBentrySTDinterwordspacing
+A.~Leach, S.~M. Schmon, M.~T. Degiacomi and C.~G. Willcocks, ``Denoising diffusion probabilistic models on so(3) for rotational alignment,'' in \emph{ICLR}, 2022.
 
 \bibitem{jagvaral2023diffusion}
 \BIBentryALTinterwordspacing
-Y.~Jagvaral, F.~Lanusse and R.~Mandelbaum, ``{DIFFUSION} {GENERATIVE} {MODELS} {ON} {SO}(3),'' 2023. [Online]. Available: \url{https://openreview.net/forum?id=jHA-yCyBGb}
+Y.~Jagvaral, F.~Lanusse and R.~Mandelbaum, ``Diffusion generative models on so(3),'' 2023. [Online]. Available: \url{https://openreview.net/forum?id=jHA-yCyBGb}
 \BIBentrySTDinterwordspacing
 
 \bibitem{urain2023se3diffusionfields}
-J.~Urain, N.~Funk, J.~Peters and G.~Chalvatzaki, ``Se(3)-diffusionfields: Learning smooth cost functions for joint grasp and motion optimization through diffusion,'' 2023.
+J.~Urain, N.~Funk, J.~Peters and G.~Chalvatzaki, ``Se(3)-diffusionfields: Learning smooth cost functions for joint grasp and motion optimization through diffusion,'' in \emph{ICRA}, 2023.
 
 \bibitem{yim2023se3}
-J.~Yim, B.~L. Trippe, V.~D. Bortoli, E.~Mathieu, A.~Doucet, R.~Barzilay and T.~Jaakkola, ``Se(3) diffusion model with application to protein backbone generation,'' 2023.
+J.~Yim, B.~L. Trippe, V.~D. Bortoli, E.~Mathieu, A.~Doucet, R.~Barzilay and T.~Jaakkola, ``Se(3) diffusion model with application to protein backbone generation,'' in \emph{ICML}, 2023.
 
 \bibitem{hsiao2023confronting}
-T.-C. Hsiao, H.-W. Chen, H.-K. Yang and C.-Y. Lee, ``Confronting ambiguity in 6d object pose estimation via score-based diffusion on se(3),'' 2023.
+T.-C. Hsiao, H.-W. Chen, H.-K. Yang and C.-Y. Lee, ``Confronting ambiguity in 6d object pose estimation via score-based diffusion on se(3),'' in \emph{arXiv:2305.15873}, 2023.
 
 \bibitem{implicitpdf2021}
-K.~A. Murphy, C.~Esteves, V.~Jampani, S.~Ramalingam and A.~Makadia, ``Implicit-pdf: Non-parametric representation of probability distributions on the rotation manifold,'' in \emph{Proceedings of the 38th International Conference on Machine Learning}, 2021, pp. 7882--7893.
+K.~A. Murphy, C.~Esteves, V.~Jampani, S.~Ramalingam and A.~Makadia, ``Implicit-pdf: Non-parametric representation of probability distributions on the rotation manifold,'' in \emph{ICML}, 2021.
 
 \bibitem{wang2023pd}
-J.~Wang, C.~Rupprecht and D.~Novotny, ``{PoseDiffusion}: Solving pose estimation via diffusion-aided bundle adjustment,'' 2023.
+J.~Wang, C.~Rupprecht and D.~Novotny, ``Posediffusion: Solving pose estimation via diffusion-aided bundle adjustment,'' in \emph{ICCV}, 2023.
 
 \bibitem{reizenstein2021common}
-J.~Reizenstein, R.~Shapovalov, P.~Henzler, L.~Sbordone, P.~Labatut and D.~Novotny, ``Common objects in 3d: Large-scale learning and evaluation of real-life 3d category reconstruction,'' 2021.
+J.~Reizenstein, R.~Shapovalov, P.~Henzler, L.~Sbordone, P.~Labatut and D.~Novotny, ``Common objects in 3d: Large-scale learning and evaluation of real-life 3d category reconstruction,'' in \emph{ICCV}, 2021.
 
 \bibitem{zhou2018stereo}
-T.~Zhou, R.~Tucker, J.~Flynn, G.~Fyffe and N.~Snavely, ``Stereo magnification: Learning view synthesis using multiplane images,'' 2018.
+T.~Zhou, R.~Tucker, J.~Flynn, G.~Fyffe and N.~Snavely, ``Stereo magnification: Learning view synthesis using multiplane images,'' in \emph{SIGGRAPH}, 2018.
 
 \bibitem{ronneberger2015unet}
-O.~Ronneberger, P.~Fischer and T.~Brox, ``U-net: Convolutional networks for biomedical image segmentation,'' 2015.
+O.~Ronneberger, P.~Fischer and T.~Brox, ``U-net: Convolutional networks for biomedical image segmentation,'' in \emph{MICCAI}, 2015.
 
 \bibitem{caron2021emerging}
-M.~Caron, H.~Touvron, I.~Misra, H.~J\'egou, J.~Mairal, P.~Bojanowski and A.~Joulin, ``Emerging properties in self-supervised vision transformers,'' in \emph{Proceedings of the International Conference on Computer Vision (ICCV)}, 2021.
+M.~Caron, H.~Touvron, I.~Misra, H.~J\'egou, J.~Mairal, P.~Bojanowski and A.~Joulin, ``Emerging properties in self-supervised vision transformers,'' in \emph{ICCV}, 2021.
 
 \bibitem{yang2018foldingnet}
-Y.~Yang, C.~Feng, Y.~Shen and D.~Tian, ``Foldingnet: Point cloud auto-encoder via deep grid deformation,'' 2018.
+Y.~Yang, C.~Feng, Y.~Shen and D.~Tian, ``Foldingnet: Point cloud auto-encoder via deep grid deformation,'' in \emph{CVPR}, 2018.
 
 \bibitem{121791}
-P.~Besl and N.~D. McKay, ``A method for registration of 3-d shapes,'' \emph{IEEE Transactions on Pattern Analysis and Machine Intelligence}, vol.~14, no.~2, pp. 239--256, 1992.
+P.~Besl and N.~D. McKay, ``A method for registration of 3-d shapes,'' in \emph{PAMI}, 1992.
 
 \bibitem{vaswani2023attention}
-A.~Vaswani, N.~Shazeer, N.~Parmar, J.~Uszkoreit, L.~Jones, A.~N. Gomez, L.~Kaiser and I.~Polosukhin, ``Attention is all you need,'' 2023.
+A.~Vaswani, N.~Shazeer, N.~Parmar, J.~Uszkoreit, L.~Jones, A.~N. Gomez, L.~Kaiser and I.~Polosukhin, ``Attention is all you need,'' in \emph{NIPS}, 2023.
 
 \bibitem{dosovitskiy2021image}
-A.~Dosovitskiy, L.~Beyer, A.~Kolesnikov, D.~Weissenborn, X.~Zhai, T.~Unterthiner, M.~Dehghani, M.~Minderer, G.~Heigold, S.~Gelly, J.~Uszkoreit and N.~Houlsby, ``An image is worth 16x16 words: Transformers for image recognition at scale,'' 2021.
+A.~Dosovitskiy, L.~Beyer, A.~Kolesnikov, D.~Weissenborn, X.~Zhai, T.~Unterthiner, M.~Dehghani, M.~Minderer, G.~Heigold, S.~Gelly, J.~Uszkoreit and N.~Houlsby, ``An image is worth 16x16 words: Transformers for image recognition at scale,'' in \emph{ICLR}, 2021.
 
 \bibitem{perez2017film}
-E.~Perez, F.~Strub, H.~de~Vries, V.~Dumoulin and A.~Courville, ``Film: Visual reasoning with a general conditioning layer,'' 2017.
+E.~Perez, F.~Strub, H.~de~Vries, V.~Dumoulin and A.~Courville, ``Film: Visual reasoning with a general conditioning layer,'' in \emph{AAAI}, 2017.
 
 \bibitem{Peebles2022DiT}
-W.~Peebles and S.~Xie, ``Scalable diffusion models with transformers,'' \emph{arXiv preprint arXiv:2212.09748}, 2022.
+W.~Peebles and S.~Xie, ``Scalable diffusion models with transformers,'' in \emph{ICCV}, 2022.
 
 \bibitem{kazemnejad2019:pencoding}
 \BIBentryALTinterwordspacing
@@ -467,27 +443,27 @@ A.~Kazemnejad, ``Transformer architecture: The positional encoding,'' \emph{kaze
 \BIBentrySTDinterwordspacing
 
 \bibitem{5206848}
-J.~Deng, W.~Dong, R.~Socher, L.-J. Li, K.~Li and L.~Fei-Fei, ``Imagenet: A large-scale hierarchical image database,'' in \emph{2009 IEEE Conference on Computer Vision and Pattern Recognition}, 2009, pp. 248--255.
+J.~Deng, W.~Dong, R.~Socher, L.-J. Li, K.~Li and L.~Fei-Fei, ``Imagenet: A large-scale hierarchical image database,'' in \emph{CVPR}, 2009.
 
 \bibitem{thomas2019kpconv}
-H.~Thomas, C.~R. Qi, J.-E. Deschaud, B.~Marcotegui, F.~Goulette and L.~J. Guibas, ``Kpconv: Flexible and deformable convolution for point clouds,'' 2019.
+H.~Thomas, C.~R. Qi, J.-E. Deschaud, B.~Marcotegui, F.~Goulette and L.~J. Guibas, ``Kpconv: Flexible and deformable convolution for point clouds,'' in \emph{ICCVW}, 2019.
 
 \bibitem{shen2018mining}
-Y.~Shen, C.~Feng, Y.~Yang and D.~Tian, ``Mining point cloud local structures by kernel correlation and graph pooling,'' 2018.
+Y.~Shen, C.~Feng, Y.~Yang and D.~Tian, ``Mining point cloud local structures by kernel correlation and graph pooling,'' in \emph{CVPR}, 2018.
 
 \bibitem{hinterstoisser2012model}
-S.~Hinterstoisser, V.~Lepetit, S.~Ilic, S.~Holzer, G.~Bradski, K.~Konolige and N.~Navab, ``Model based training, detection and pose estimation of texture-less 3d objects in heavily cluttered scenes,'' vol. 7724, 10 2012.
+S.~Hinterstoisser, V.~Lepetit, S.~Ilic, S.~Holzer, G.~Bradski, K.~Konolige and N.~Navab, ``Model based training, detection and pose estimation of texture-less 3d objects in heavily cluttered scenes,'' in \emph{ACCV}, 2012.
 
 \bibitem{hodan2018bop}
-T.~Hodan, F.~Michel, E.~Brachmann, W.~Kehl, A.~G. Buch, D.~Kraft, B.~Drost, J.~Vidal, S.~Ihrke, X.~Zabulis, C.~Sahin, F.~Manhardt, F.~Tombari, T.-K. Kim, J.~Matas and C.~Rother, ``Bop: Benchmark for 6d object pose estimation,'' 2018.
+T.~Hodan, F.~Michel, E.~Brachmann, W.~Kehl, A.~G. Buch, D.~Kraft, B.~Drost, J.~Vidal, S.~Ihrke, X.~Zabulis, C.~Sahin, F.~Manhardt, F.~Tombari, T.-K. Kim, J.~Matas and C.~Rother, ``Bop: Benchmark for 6d object pose estimation,'' in \emph{ECCV}, 2018.
 
 \bibitem{denninger2019blenderproc}
-M.~Denninger, M.~Sundermeyer, D.~Winkelbauer, Y.~Zidan, D.~Olefir, M.~Elbadrawy, A.~Lodhi and H.~Katam, ``Blenderproc,'' 2019.
+M.~Denninger, M.~Sundermeyer, D.~Winkelbauer, Y.~Zidan, D.~Olefir, M.~Elbadrawy, A.~Lodhi and H.~Katam, ``Blenderproc,'' in \emph{arXiv:1911.01911}, 2019.
 
 \bibitem{hodan2020bop}
-T.~Hodan, M.~Sundermeyer, B.~Drost, Y.~Labbe, E.~Brachmann, F.~Michel, C.~Rother and J.~Matas, ``Bop challenge 2020 on 6d object localization,'' 2020.
+T.~Hodan, M.~Sundermeyer, B.~Drost, Y.~Labbe, E.~Brachmann, F.~Michel, C.~Rother and J.~Matas, ``Bop challenge 2020 on 6d object localization,'' in \emph{ECCVW}, 2020.
 
 \bibitem{7780735}
-E.~Brachmann, F.~Michel, A.~Krull, M.~Y. Yang, S.~Gumhold and C.~Rother, ``Uncertainty-driven 6d pose estimation of objects and scenes from a single rgb image,'' in \emph{2016 IEEE Conference on Computer Vision and Pattern Recognition (CVPR)}, 2016, pp. 3364--3372.
+E.~Brachmann, F.~Michel, A.~Krull, M.~Y. Yang, S.~Gumhold and C.~Rother, ``Uncertainty-driven 6d pose estimation of objects and scenes from a single rgb image,'' in \emph{CVPR}, 2016.
 
 \end{thebibliography}

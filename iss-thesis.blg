@@ -9,58 +9,53 @@ Reallocated wiz_functions (elt_size=4) to 6000 items from 3000.
 Reallocated singl_function (elt_size=4) to 100 items from 50.
 Reallocated field_info (elt_size=4) to 11570 items from 5000.
 Database file #1: refs.bib
-Warning--entry type for "dataV4MUMX2020" isn't style-file defined
---line 136 of file refs.bib
 -- IEEEtran.bst version 1.13 (2008/09/30) by Michael Shell.
 -- http://www.michaelshell.org/tex/ieeetran/bibtex/
 -- See the "IEEEtran_bst_HOWTO.pdf" manual for usage information.
-Warning--empty booktitle in Radford2018ImprovingLU
-Warning--empty booktitle in surf
+Warning--empty journal in Radford2018ImprovingLU
 Warning--empty booktitle in gicp
-Warning--empty booktitle in gu2010discriminative
-Warning--empty booktitle in wang2023pd
-Warning--empty booktitle in hinterstoisser2012model
+Warning--empty booktitle in jagvaral2023diffusion
 
 Done.
 You've used 146 entries,
             4186 wiz_defined-function locations,
-            1406 strings with 33700 characters,
-and the built_in function-call counts, 77826 in all, are:
-= -- 5269
-> -- 2892
-< -- 168
-+ -- 1420
-- -- 657
-* -- 3370
-:= -- 11508
-add.period$ -- 297
+            1360 strings with 31591 characters,
+and the built_in function-call counts, 79177 in all, are:
+= -- 5062
+> -- 2775
+< -- 8
++ -- 1322
+- -- 658
+* -- 3640
+:= -- 11864
+add.period$ -- 293
 call.type$ -- 146
-change.case$ -- 148
-chr.to.int$ -- 384
-cite$ -- 152
-duplicate$ -- 6237
-empty$ -- 7133
-format.name$ -- 793
-if$ -- 17566
+change.case$ -- 146
+chr.to.int$ -- 21
+cite$ -- 149
+duplicate$ -- 6553
+empty$ -- 8839
+format.name$ -- 794
+if$ -- 18384
 int.to.chr$ -- 0
 int.to.str$ -- 146
-missing$ -- 1544
-newline$ -- 493
-num.names$ -- 148
-pop$ -- 4540
+missing$ -- 1527
+newline$ -- 469
+num.names$ -- 146
+pop$ -- 4425
 preamble$ -- 1
 purify$ -- 0
 quote$ -- 2
-skip$ -- 5906
+skip$ -- 6297
 stack$ -- 0
-substring$ -- 1079
-swap$ -- 4104
-text.length$ -- 40
+substring$ -- 195
+swap$ -- 3661
+text.length$ -- 1
 text.prefix$ -- 0
 top$ -- 5
 type$ -- 146
-warning$ -- 6
-while$ -- 204
+warning$ -- 3
+while$ -- 149
 width$ -- 149
-write$ -- 1173
-(There were 7 warnings)
+write$ -- 1201
+(There were 3 warnings)
