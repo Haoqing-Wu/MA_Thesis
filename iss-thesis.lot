@@ -17,7 +17,7 @@
 \contentsline {table}{\numberline {5.12}{\ignorespaces Comparison of the different feature fusion methods on LMO dataset.\relax }}{66}{table.caption.99}%
 \contentsline {table}{\numberline {5.13}{\ignorespaces Comparison of the different rotation representations on LMO dataset.\relax }}{67}{table.caption.100}%
 \contentsline {table}{\numberline {5.14}{\ignorespaces Comparison of the model trained with and without residual translation on LMO dataset.\relax }}{67}{table.caption.101}%
-\contentsline {table}{\numberline {5.15}{\ignorespaces Effect of the number of denoising steps on the estimation results.\relax }}{67}{table.caption.102}%
+\contentsline {table}{\numberline {5.15}{\ignorespaces Comparision of the different scales of the backbone on LMO dataset.\relax }}{67}{table.caption.102}%
 \contentsline {table}{\numberline {5.16}{\ignorespaces Effect of the number of denoising steps on the estimation results.\relax }}{68}{table.caption.103}%
 \addvspace {10\p@ }
 \addvspace {10\p@ }

@@ -37,7 +37,7 @@
 \contentsline {figure}{\numberline {5.8}{\ignorespaces Development of the reconstructed point cloud during the training process.\relax }}{57}{figure.caption.81}%
 \contentsline {figure}{\numberline {5.9}{\ignorespaces Comparision of the CD distributions between the model trained with the whole data set and the overfitted model on a single object (the first 7 objects of LM are shown).\relax }}{58}{figure.caption.82}%
 \contentsline {figure}{\numberline {5.10}{\ignorespaces L2 loss of the training phase of the diffusion model. Original data (gray) is downsampled and smoothed with a $2^{nd}$ order filter (orange) for visualization. \relax }}{60}{figure.caption.86}%
-\contentsline {figure}{\numberline {5.11}{\ignorespaces Visualization of some objects highlighted at estimated pose. First row: objects without occlusion; Second row: objects with occlussion.\relax }}{64}{figure.caption.96}%
+\contentsline {figure}{\numberline {5.11}{\ignorespaces Visualization of some objects highlighted at estimated pose. First row: objects without occlusion; Second row: objects with occlusion.\relax }}{64}{figure.caption.96}%
 \contentsline {figure}{\numberline {5.12}{\ignorespaces Visualization of the 6 DoF pose denoising process.\relax }}{65}{figure.caption.97}%
 \addvspace {10\p@ }
 \addvspace {10\p@ }
@@ -46,7 +46,7 @@
 \contentsline {figure}{\numberline {A.2}{\ignorespaces Rotation error under different representations of rotation during the training phase (without refinement).\relax }}{76}{figure.caption.105}%
 \contentsline {figure}{\numberline {A.3}{\ignorespaces Translation error with and without using residual translation during the training phase (without refinement).\relax }}{76}{figure.caption.106}%
 \contentsline {figure}{\numberline {A.4}{\ignorespaces Point cloud completion results of the FoldingNet. From top to bottom: cup, camera, phone, egg box, glue. From left to right: estimation(viewpoint 1), ground truth(viewpoint 1), estimation(viewpoint 2), ground truth(viewpoint 2). Blue points are the input partial point cloud.\relax }}{79}{figure.caption.111}%
-\contentsline {figure}{\numberline {A.5}{\ignorespaces Visualization of some objects highlighted at estimated pose. Row 1-2: objects without occlusion; Row 3-4: objects with occlussion; Row 5: objects with occlusion shown in one scene.\relax }}{80}{figure.caption.112}%
+\contentsline {figure}{\numberline {A.5}{\ignorespaces Visualization of some objects highlighted at estimated pose. Row 1-2: objects without occlusion; Row 3-4: objects with occlusion; Row 5: objects with occlusion shown in one scene.\relax }}{80}{figure.caption.112}%
 \contentsline {figure}{\numberline {A.6}{\ignorespaces Visualization of the denoising process of the pose estimation of cat object (Sequence: top to bottom, left to right).\relax }}{81}{figure.caption.113}%
 \contentsline {figure}{\numberline {A.7}{\ignorespaces Visualization of the denoising process of the pose estimation of bench object (Sequence: top to bottom, left to right).\relax }}{82}{figure.caption.114}%
 \addvspace {10\p@ }

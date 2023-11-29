@@ -95,11 +95,11 @@
 \def \signagedate{30.11.2023}   % Date of signature of declaration on last page
 \def \keywords{Deep Learning, Computer Vision, 6 DoF Pose Estimation, Diffusion Probabilistic Models}
 \def \abstract{
-  6 DoF pose estimation, a crucial aspect in the realms of computer vision and robotics, has witnessed considerable attention, particularly with the advent of deep learning methodologies. Recent years have seen the emergence of diverse techniques, encompassing RGB-based methods, depth-focused approaches and RGB-D fusion, aimed at enhancing the accuracy of pose estimation. However, challenges persist in scenarios involving textureless objects, occlusion, and cluttered backgrounds. This thesis introduces a pioneering pose estimation method founded on diffusion models, which have demonstrated notable success in image synthesis tasks. The objective is to leverage the strengths of diffusion models, such as their scalability to large-scale data and the diversity of generation, to address the complexities inherent in 6 DoF pose estimation. A comprehensive diffusion framework is proposed, utilizing a single RGB-D image to generate multiple hypotheses for the 6 DoF pose of an object. The proposed method is rigorously evaluated on real-world datasets featuring noise and occlusion. Results indicate that our approach achieves comparable performance with state-of-the-art methods, highlighting its effectiveness in challenging scenarios. This study not only contributes a novel perspective to pose estimation but also underscores the potential of diffusion models in advancing the state of the art in this critical domain.
+  6 DoF pose estimation, a crucial aspect in the realms of computer vision and robotics, has witnessed considerable attention, particularly with the advent of deep learning methodologies. Recent years have seen the emergence of diverse techniques, encompassing RGB-based methods, depth-focused approaches and RGB-D fusion, aimed at enhancing the accuracy of pose estimation. However, challenges persist in scenarios involving textureless objects, occlusion, and cluttered backgrounds. This thesis introduces a novel pose estimation method founded on diffusion models, which have demonstrated notable success in image synthesis tasks. The objective is to leverage the strengths of diffusion models, such as their scalability to large-scale data and the diversity of generation, to address the complexities inherent in 6 DoF pose estimation. A comprehensive diffusion framework is proposed, utilizing a single RGB-D image to generate multiple hypotheses for the 6 DoF pose of an object. The proposed method is rigorously evaluated on real-world datasets featuring noise and occlusion. Results indicate that our approach achieves comparable performance with state-of-the-art methods, highlighting its effectiveness in challenging scenarios. This study not only contributes a novel perspective to pose estimation but also underscores the potential of diffusion models in advancing the state of the art in this critical domain.
   \newline
   \newline
   \newline
-  Schätzung der 6-DoF-Pose, ein entscheidender Aspekt in den Bereichen Computer Vision und Robotik, hat erhebliche Aufmerksamkeit erfahren, insbesondere mit dem Aufkommen von Deep Learning Methoden. In den letzten Jahren sind verschiedene Techniken aufgetaucht, darunter RGB-basierte Methoden, auf Tiefen fokussierte Ansätze und RGB-D Fusion, die darauf abzielen, die Genauigkeit der Schätzung zu verbessern. Herausforderungen bleiben jedoch in Szenarien mit strukturlosen Objekten, Okklusion und überladenem Hintergrund bestehen. Diese Arbrit stellt eine bahnbrechende Pose-Schätzungsmethode auf Grundlage von Diffusionsmodellen vor, die in Bildsyntheseaufgaben bemerkenswerte Erfolge gezeigt haben. Das Ziel besteht darin, die Stärken der Diffusionsmodelle, wie ihre Skalierbarkeit für große Datenmengen und die Vielfalt der Generierung, zu nutzen, um den in der 6-DoF-Pose-Schätzung inhärenten Komplexitäten zu begegnen. Es wird ein umfassender Diffusionsrahmen vorgeschlagen, der ein einzelnes RGB-D-Bild verwendet, um mehrere Hypothesen für die 6-DoF-Pose eines Objekts zu generieren. Die vorgeschlagene Methode wird sorgfältig an realen Datensätzen mit Rauschen und Okklusion evaluiert. Die Ergebnisse zeigen, dass unser Ansatz vergleichbare Leistungen mit modernsten Methoden erreicht, was seine Effektivität in anspruchsvollen Szenarien unterstreicht. Diese Studie trägt nicht nur eine neue Perspektive zur Pose-Schätzung bei, sondern betont auch das Potenzial der Diffusionsmodelle zur Weiterentwicklung des State-of-the-Art in diesem kritischen Bereich.
+  Schätzung der 6-DoF-Pose, ein entscheidender Aspekt in den Bereichen Computer Vision und Robotik, hat erhebliche Aufmerksamkeit erfahren, insbesondere mit dem Aufkommen von Deep Learning Methoden. In den letzten Jahren sind verschiedene Techniken aufgetaucht, darunter RGB-basierte Methoden, auf Tiefen fokussierte Ansätze und RGB-D Fusion, die darauf abzielen, die Genauigkeit der Schätzung zu verbessern. Herausforderungen bleiben jedoch in Szenarien mit strukturlosen Objekten, Okklusion und überladenem Hintergrund bestehen. Diese Arbrit stellt eine neue Pose-Schätzungsmethode auf Grundlage von Diffusionsmodellen vor, die in Bildsyntheseaufgaben bemerkenswerte Erfolge gezeigt haben. Das Ziel besteht darin, die Stärken der Diffusionsmodelle, wie ihre Skalierbarkeit für große Datenmengen und die Vielfalt der Generierung, zu nutzen, um den in der 6-DoF-Pose-Schätzung inhärenten Komplexitäten zu begegnen. Es wird ein umfassender Diffusionsrahmen vorgeschlagen, der ein einzelnes RGB-D-Bild verwendet, um mehrere Hypothesen für die 6-DoF-Pose eines Objekts zu generieren. Die vorgeschlagene Methode wird sorgfältig an realen Datensätzen mit Rauschen und Okklusion evaluiert. Die Ergebnisse zeigen, dass unser Ansatz vergleichbare Leistungen mit modernsten Methoden erreicht, was seine Effektivität in anspruchsvollen Szenarien unterstreicht. Diese Studie trägt nicht nur eine neue Perspektive zur Pose-Schätzung bei, sondern betont auch das Potenzial der Diffusionsmodelle zur Weiterentwicklung des State-of-the-Art in diesem kritischen Bereich.
 }
 
 % *****************************************************************
@@ -1230,7 +1230,7 @@ To remove the noise and outliers in the point cloud. We use the statistical outl
 
 After that, the point cloud is then downsampled to 1000 points to reduce the computational cost but still maintain the geometry information of the object. The whole original training dataset is divided into the training part (90\%) and validation part (10\%) randomly and together with the separate test dataset we get the dataset we preprocessed for the training and evaluation of our models.
 
-As the \gls{2d} image is combined with \gls{3d} point cloud in the pose estimation task and we don't need to train the \gls{2d} feature extractor, we only use the data augmentation of the random rotation during the training of the \gls{3d} feature extractor. Because the \gls{2d} image with \gls{3d} depth uniquely defines uniquely the \gls{6dof} pose of the object. So during the training of the pose estimation task we don't let orginal point cloud rotate, but still add noise and consider the symmetry of the object.
+As the \gls{2d} image is combined with \gls{3d} point cloud in the pose estimation task and we don't need to train the \gls{2d} feature extractor, we only use the data augmentation of the random rotation during the training of the \gls{3d} feature extractor. Because the \gls{2d} image with \gls{3d} depth uniquely defines uniquely the \gls{6dof} pose of the object. So during the training of the pose estimation task, we don't let the original point cloud rotate, but still add noise and consider the symmetry of the object.
 \section{Implementation Details}
 In this section, we first present the implementation of the \gls{2d} and \gls{3d} feature extractors and the corresponding evaluations on the module level. Then we demonstrate the training details of our diffusion model.
 \subsection{2D Feature Extractor}
@@ -1620,7 +1620,7 @@ Here we also demonstrate the qualitative result of our model on the pose estimat
 \begin{figure}[h]
 	\centering
 	\includegraphics[width=1.\textwidth]{img/eval_vis.pdf}
-	\caption{Visualization of some objects highlighted at estimated pose. First row: objects without occlusion; Second row: objects with occlussion.}
+	\caption{Visualization of some objects highlighted at estimated pose. First row: objects without occlusion; Second row: objects with occlusion.}
 	\label{img:eval_vis_img}
 \end{figure}
 
@@ -1716,17 +1716,17 @@ Table \ref{tab:ab_trans_lm} and \ref{tab:ab_trans_lmo} show the results of the m
 
 
 \subsection{Backbone Scaling}
-To test the scaling of our backbone, we compare the results of three different settings of our transformer encoder: Small-L4H2-D128, Base-L8H4-D256 and  Large-L12H6-D768 (L, H and D represent the number of layers, heads and hidden dimensions respectively). The results are shown in table \ref{tab:ab_scale}. With a larger and deeper network, the performance of the diffusion model is improved. The Large setting achieves $1~2\%$ higher \gls{avre} than the Base setting with a tradeoff of additional $20\%$ training time.
+To test the scaling of our backbone, we compare the results of three different settings of our transformer encoder: Small-L4H2-D128, Base-L8H4-D256 and  Large-L12H6-D768 (L, H and D represent the number of layers, heads and hidden dimensions respectively). The models are trained on the whole dataset to make the distinction more obvious and the results are shown in table \ref{tab:ab_scale}. With a larger and deeper network, the performance of the diffusion model is improved. The Large setting achieves $1\sim 2\%$ higher \gls{avre} than the Base setting with a tradeoff of additional $20\%$ training time.
 
 \begin{table}[h] 
   \centering
-  \caption{Effect of the number of denoising steps on the estimation results.}
+  \caption{Comparision of the different scales of the backbone on LMO dataset.}
   \label{tab:ab_scale}
   \begin{tabular}{l | c | C{12mm} C{12mm} C{12mm}| C{12mm} C{12mm} C{12mm}}
       \toprule
       \multicolumn{2}{c|}{Dataset} & \multicolumn{3}{c|}{LM} & \multicolumn{3}{c}{LMO} \\
       \midrule
-      \multicolumn{2}{c|}{\#Steps} & Small & Base & Large & Small & Base & Large \\
+      \multicolumn{2}{c|}{Backbone scale} & Small & Base & Large & Small & Base & Large \\
       \midrule
       \multirow{2}{*}{AR} & w/o ICP & 66.7 & 68.4 & 69.2 & 44.1 & 45.5 & 47.6 \\
       & w/ ICP & 77.0 & 78.4 & 79.2 & 52.2 & 52.9 & 55.0 \\
@@ -1919,7 +1919,7 @@ Another avenue for extension is adapting our method for object-tracking tasks. L
 \begin{figure}[H]
 	\centering
 	\includegraphics[width=1.\textwidth]{img/vis_all.pdf}
-	\caption{Visualization of some objects highlighted at estimated pose. Row 1-2: objects without occlusion; Row 3-4: objects with occlussion; Row 5: objects with occlusion shown in one scene.}
+	\caption{Visualization of some objects highlighted at estimated pose. Row 1-2: objects without occlusion; Row 3-4: objects with occlusion; Row 5: objects with occlusion shown in one scene.}
 	\label{img:vis_all}
 \end{figure}
 
